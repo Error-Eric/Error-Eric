@@ -3,9 +3,10 @@
 - 🌱 I’m currently learning H5 & CSS.
 - 💞️ I’m looking to collaborate on some interesting websites.
 - 📫 How to reach me :
-My e-mail address is zhouchanghuieric@qq.com
-My QQ is 3163402537
+My e-mail address is cutesmalle@foxmail.com
 My luogu uid is 217300
+
+btw I'm only a high school student now.
 
 <!---
 Error-Eric/Error-Eric is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
