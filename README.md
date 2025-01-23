@@ -4,7 +4,7 @@ I don't know why you find my repo. It sounds stupid to scroll through my repo, s
 
 This repo is not a project but a place to have a online backup.
 
-Tags: CPP (USACO, CCC, NOIp, ~~ and hopefully ICPC in the future~~), Python (Data Sci. & Web & PyGame), ~~Java (AP CSA only),~~ and also HTML&CSS + LaTeX, if you think they sound like computer languages.
+Tags: CPP (USACO, CCC, NOIp, ~~and hopefully ICPC in the future~~), Python (Data Sci. & Web & PyGame), ~~Java (AP CSA only),~~ and also HTML&CSS + LaTeX, if you think they sound like computer languages.
 
 Other tags: Prefer not to Tell.
 
