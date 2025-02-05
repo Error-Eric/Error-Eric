@@ -34,6 +34,7 @@
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\renewcommand{\arraystretch}{1.2}
 
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -188,16 +189,16 @@
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{mailto:cutesmalle@foxmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}cutesmalle@foxmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:zhouchanghuieric@qq.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}zhouchanghuieric@qq.com}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{tel:+90-541-999-99-99}{{\footnotesize\faPhone*}\hspace*{0.13cm}+86 183 6749 2342}}%
+        \mbox{\hrefWithoutArrow{tel:+86 183 6749 2342}{{\footnotesize\faPhone*}\hspace*{0.13cm}+86 183 6749 2342}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://yourwebsite.com/}{{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}%
-        \kern 0.25 cm%
+        %\mbox{\hrefWithoutArrow{https://yourwebsite.com/}{{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}%
+        %\kern 0.25 cm%
         
     \end{header}
 
@@ -224,146 +225,167 @@
     %    \end{highlightsforbulletentries}
     %\end{onecolentry}
 
-    \section{Education}
-
-
-        \begin{twocolentry}{
-            Sept 2023 - June 2026
-        }
+    \section{Education Experience}
+        \begin{twocolentry}{ Sept 2023 - June 2026 }
             \textbf{Ningbo Xiaoshi High School International Center}, International Baccalaureate® (IB) Diploma Programme
             \begin{highlights}
                 \item \textbf{Predicted Grade}: Unknown/45 %(\href{https://example.com}{a link to somewhere})
-                \item \textbf{Courses:} Chinese A Lit SL, English B HL, Environmental Science and Societies SL, Mathematics AA HL, Chemistry SL, Physics HL.
+                \item \textbf{Courses:} Chinese A Lit SL, English B HL, Environmental System and Societies SL, Chemistry SL, Physics HL, Mathematics AA HL.
+                \item \textbf{Subject Awards:}
+                
+                \vspace{0.2cm}
+                \begin{tabular}{ c c c c c c c }
+                    \hline
+                    Subjects & Chin. & Eng. & ESS & Phy. & Chem. & Math \\ \hline
+                    Semester I, G 10 & SD &  & SD & SD & SD & SD \\ %\hline
+                    Semester II, G 10 &  & SD & / & SD & SD & SD \\ \hline
+                \end{tabular}
+                \vspace{0.1cm} 
+                
+                {
+                    \small
+
+                SD: SD refers to the Scholartisc Distinction Award (top 5\% of the grade). %, which is conferred by the school to the top 5\% of students based on their overall semester performance in the subject, as well as to those students who exhibit exceptional inquisitiveness in that subject. 
+                
+                }
+                
+                \item \textbf{Other Awards:}
+                Li Zutong Scholarship, Outstanding Student, Distinction in IB Student Union, Star of the Class, Nomination in Star of Xiaoshi.
+                
+                
             \end{highlights}
         \end{twocolentry}
 
-        \begin{twocolentry}{
-            Sept 2023 - June 2026
-        }
-            \textbf{Ningbo Xiaoshi High School International Center}, International Baccalaureate® (IB) Diploma Programme
-            \begin{highlights}
-                \item \textbf{Predicted Grade}: Unknown/45 %(\href{https://example.com}{a link to somewhere})
-                \item \textbf{Courses:} Chinese A Lit SL, English B HL, Environmental Science and Societies SL, Mathematics AA HL, Chemistry SL, Physics HL.
-            \end{highlights}
-        \end{twocolentry}
+    \section{Standardized Tests}
+    \begin{twocolentry}{March 9, 2024}
+        \setlength{\parindent}{20pt}
 
+        \noindent\textbf{SAT}, College Board
 
-    
-    \section{Experience}
+        \vspace{5pt}
+
+        Total Score: \textbf{1560}/1600. 
+
+        Reading and writing: \textbf{760}/800, Math: \textbf{800}/800.
         
-        \begin{twocolentry}{
-            Cupertino, CA
+    \end{twocolentry}
 
-        June 2005 – Aug 2007
-        }
-            \textbf{Apple}, Software Engineer
-            \begin{highlights}
-                \item Reduced time to render user buddy lists by 75\% by implementing a prediction algorithm
-                \item Integrated iChat with Spotlight Search by creating a tool to extract metadata from saved chat transcripts and provide metadata to a system-wide search database
-                \item Redesigned chat file format and implemented backward compatibility for search
-            \end{highlights}
-        \end{twocolentry}
+    \vspace{0.2cm}
 
+    \begin{twocolentry}{October 24, 2024}
+        \setlength{\parindent}{20pt}
 
-        \vspace{0.2 cm}
+        \textbf{TOEFL iBT}, Education Testing Service
 
-        \begin{twocolentry}{
-            Redmond, WA
+        \vspace{5pt}
 
-        June 2003 – Aug 2003
-        }
-            \textbf{Microsoft}, Software Engineer Intern
-            \begin{highlights}
-                \item Designed a UI for the VS open file switcher (Ctrl-Tab) and extended it to tool windows
-                \item Created a service to provide gradient across VS and VS add-ins, optimizing its performance via caching
-                \item Built an app to compute the similarity of all methods in a codebase, reducing the time from $\mathcal{O}(n^2)$ to $\mathcal{O}(n \log n)$
-                \item Created a test case generation tool that creates random XML docs from XML Schema
-                \item Automated the extraction and processing of large datasets from legacy systems using SQL and Perl scripts
-            \end{highlights}
-        \end{twocolentry}
+        Total Score: \textbf{107}/120.
 
+        Reading, Listening, Speaking, Writing: 30/30, 30/30, 21/30, 26/30.
+        
+    \end{twocolentry}
+
+    \section{Academic Awards}
+
+    
+    \textbf{Computing / Informatics}
+
+    \begin{highlights}
+        \item Canadian Computing Competition (CCC) \hfill Global Top 1\%.
+
+        \item USA Computing Olympiad (USACO) \hfill Platinum Division.
+    \end{highlights}
+
+    \textbf{Mathematics}
+    
+    \begin{highlights}
+        \item American Mathematics Competition (AMC) \hfill Distinction
+
+        \item American Invitational Mathematics Examination (AIME) \hfill 8/15
+
+        \item Berkeley Math Tournament (BMT) \hfill High Distinction (Gold) + Distinction (Silver)
+
+        \item UK Maths Trust - Senior Maths Challenge (UKMT - SMC) \hfill Global Gold
+
+        \item Australian Mathematics Competition \hfill First Prize
+
+        \item High School Mathematical Contest in Modeling (HiMCM) \hfill Successful Participant
+    \end{highlights}
+    
 
 
     
+    \section{Other Experience (Activities \& Internships)}    
+        \begin{twocolentry}{ August 2023 }
+            \textbf{Teaching Assistant} Local after-school care program.
+
+            \begin{highlights}
+                \item Provide students with tiny science lectures and homework assistance.
+                \item Organize game sessions.
+            \end{highlights}
+        \end{twocolentry}
+
+        \begin{twocolentry}{ September 2023-June 2024}
+            \textbf{Member} of Smiling club.
+
+            \begin{highlights}
+                \item Provide children with orofacial cleft pronunciation adjusting service.
+                \item Promote knowledge about orofacial cleft.
+            \end{highlights}
+        \end{twocolentry}
+
+        \begin{twocolentry}{ September 2024 }
+            \textbf{Co-founder} of Computer Science Club.
+
+            \begin{highlights}
+                \item Share knowledge and skills about different areas related to computer.
+                \item Build programs for another club and an education institution.
+            \end{highlights}
+        \end{twocolentry}
+
+        \begin{twocolentry}{ February 2025 }
+            \textbf{Teaching Assistant} Local language training centers.
+
+            \begin{highlights}
+                \item Provide students with tiny science lectures and homework assistance.
+                \item Build program for vocabulary tests.
+            \end{highlights}
+        \end{twocolentry}
+    \section{Skills}
+
+    \begin{onecolentry}
+        %\setlength{\parindent}{20pt}
+
+        \textbf{Language}  English (Fluent), Chinese (Native Speaker).
+
+        \vspace{5pt}
+
+        \textbf{Programming Language} C++, Python, Java
+
+        \vspace{5pt}
+
+        \textbf{Other Skills} \LaTeX, Premiere Pro
+    \end{onecolentry}
+
+        
+
     \section{Publications}
         
         \begin{samepage}
             \begin{twocolentry}{
-                Jan 2004
+                October 2024
             }
-                \textbf{3D Finite Element Analysis of No-Insulation Coils}
+                \textbf{AI-empowered Search Drone: \\ Advanced AI-based Tiny Object Search Drone for Broad Areas}
 
                 \vspace{0.10 cm}
 
-                \mbox{Frodo Baggins}, \mbox{\textbf{\textit{John Doe}}}, \mbox{Samwise Gamgee}
+                \mbox{\textbf{C Zhou}}, \mbox{T Yu}
                 \vspace{0.10 cm}
 
-        \href{https://doi.org/10.1109/TASC.2023.3340648}{10.1109/TASC.2023.3340648}
+        \href{https://doi.org/10.54254/2755-2721/95/20241767}{10.54254/2755-2721/95/20241767}
             \end{twocolentry}
         \end{samepage}
 
-
-    
-    \section{Projects}
-
-
-
-        
-        \begin{twocolentry}{
-            \href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}
-        }
-            \textbf{Multi-User Drawing Tool}
-            \begin{highlights}
-                \item Developed an electronic classroom where multiple users can simultaneously view and draw on a "chalkboard" with each person's edits synchronized
-                \item Tools Used: C++, MFC
-            \end{highlights}
-        \end{twocolentry}
-
-
-        \vspace{0.2 cm}
-
-        \begin{twocolentry}{
-            \href{https://github.com/sinaatalay/rendercv}{github.com/name/repo}
-        }
-            \textbf{Synchronized Desktop Calendar}
-            \begin{highlights}
-                \item Developed a desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users
-                \item Tools Used: C\#, .NET, SQL, XML
-            \end{highlights}
-        \end{twocolentry}
-
-
-        \vspace{0.2 cm}
-
-        \begin{twocolentry}{
-            2002
-        }
-            \textbf{Custom Operating System}
-            \begin{highlights}
-                \item Built a UNIX-style OS with a scheduler, file system, text editor, and calculator
-                \item Tools Used: C
-            \end{highlights}
-        \end{twocolentry}
-
-
-
-    
-    \section{Technologies}
-
-
-
-        
-        \begin{onecolentry}
-            \textbf{Languages:} C++, C, Java, Objective-C, C\#, SQL, JavaScript
-        \end{onecolentry}
-
-        \vspace{0.2 cm}
-
-        \begin{onecolentry}
-            \textbf{Technologies:} .NET, Microsoft SQL Server, XCode, Interface Builder
-        \end{onecolentry}
-
-
-    
+      
 
 \end{document}
