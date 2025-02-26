@@ -4,6 +4,13 @@
         "random": "cpp",
         "ostream": "cpp",
         "iosfwd": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "tuple": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "*.tcc": "cpp",
+        "istream": "cpp",
+        "utility": "cpp",
+        "bitset": "cpp"
     }
 }

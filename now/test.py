@@ -1,15 +1,7 @@
-"""
-Before running the code, you need to run 
-> pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple/
-
-To check installation status, run pip list / pip --version
-To uninstall, run pip uninstall
-"""
-
-import numpy as np
-import random
-x = [random.random() for _ in range(10)]
-y = [random.random() for _ in range(10)]
-print(np.corrcoef(x, y))
-
-print(x, y)
+n = int(input())
+a = list(map(int, input().split()))
+a.sort(reverse= True)
+a = a[:(n+1) // 2]
+while len(a) > 0 and a[-1] < 0:
+    a.pop(-1)
+print(sum(a+[0]))
