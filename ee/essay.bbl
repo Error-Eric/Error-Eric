@@ -1,0 +1,27 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+GeeksforGeeks%
+}{%
+GeeksforGeeks%
+}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+geeksforgeeks_data_structures}
+\APACinsertmetastar {%
+geeksforgeeks_data_structures}%
+\begin{APACrefauthors}%
+GeeksforGeeks.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APACrefbtitle {Introduction to Data Structures.} {Introduction to data structures.}
+\newblock
+\begin{APACrefURL} \url{https://www.geeksforgeeks.org/introduction-to-data-structures/} \end{APACrefURL}
+\newblock
+\APACrefnote{[Accessed April 13, 2025]}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

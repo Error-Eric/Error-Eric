@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{apacite}
+
+% Code listings
+% Basic color definitions
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{keyword}{RGB}{0,0,255}
+\definecolor{comment}{RGB}{34,139,34}
+\definecolor{string}{RGB}{170,55,241}
+
+% Simplified listings setup
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns = fullflexible,
+    backgroundcolor=\color{codebg},         
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword},
+    stringstyle=\color{string},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!50},
+    framesep=5pt,
+    xleftmargin=15pt,
+    tabsize=4,
+    language=C++ % Default language
+}
+
+\title{\textbf{Comparing different data structures in merging efficiency.}}
+\author{Changhui (Eric) Zhou}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    \centering word count: ???
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+A \textit{data structure} is a particular way of organising data in a computer so that it can be used effectively \cite{geeksforgeeks_data_structures}. Designing and choosing more efficient data structures has always been a great persuit for computer scientists, for optimal data structures can save huge amount of computing resources, especially in face of large amount of data. Basic data structures include ordered data structures like arrays, linked lists and binary search trees and unordered data structures like hashtables. 
+
+For ordered data structures, merging two or more instances of them while maintaining its ordered property may be frequently used in practice. For example, to investigate the factors affacting the school grade, data from different schools may be grouped and merged according to various factors. The efficiency of combination varies significantly based on the data structure itself and the algorithm used in the process. 
+
+This essay will focus on invesitgating the theoratical time complexity (need definitions aa) and actual performance of merging algorithms of different data structures, namely arrays, and BSTs, which are the most commonly used data structure in real life. 
+
+\textbf{Research question:} to be done aa
+
+\section{Theory}
+
+\subsection{Data structure terminology}
+
+When a homogeneous relation (a binary relation between two elements) $\le$ on a set of element $X$ satisfies
+
+% What should be put there?
+
+We say $P = (X, \le)$ is a total order.
+
+% Some examples?
+
+\section*{Simple C++ Code Example}
+
+\begin{lstlisting}[caption={Basic C++ Code},label=lst:basic]
+#include <iostream>
+
+// Simple factorial function
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    std::cout << "Factorial of 5: " 
+              << factorial(5) << std::endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section*{Including External Code}
+%Use the simple \texttt{\textbackslash lstinputlisting} command:
+
+\lstinputlisting[
+    caption={External C++ File},
+    label=lst:external
+]{data_generator.h}
+
+\bibliographystyle{apacite}
+\bibliography{cit.bib}
+
+\end{document}
