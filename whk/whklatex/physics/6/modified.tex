@@ -19,6 +19,8 @@
 %\usepackage{framed}
 \usepackage{tcolorbox}
 \usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{soul}
 \newcommand{\grayrow}{\rowcolor[gray]{0.925}}
 \renewcommand{\arraystretch}{1.4}
 
@@ -244,7 +246,7 @@ As is mentioned in Procedure part, the string length, number of time span, start
     \label{tab.rawd}
     \begin{tabularx}{\textwidth}{p{1cm} X p{1cm} X X X}
     \hline
-        Group No. & String length $l(\SI{}{cm})$ & Trial No. & Start time $t_0$ & End time $t_1$ & Number of periods $n$ \\ \hline
+        Group No. & String length $l(\SI{}{cm})\text{\hl{$(\pm 0.1cm)$}}$* & Trial No. & Start time $t_0 \text{\hl{$(\pm 0.1s)$}}$ & End time $t_1 \text{\hl{$(\pm 0.1s)$}}$ & Number of periods $n$ \\ \hline
         \grayrow 1 & 10 & 1 & 15.1 & 28.9 & 40  \\ %\hline
         1 & 10 & 2 & 6.4 & 19.8 & 40  \\ %\hline
         \grayrow 1 & 10 & 3 & 9.8 & 23.3 & 40  \\ %\hline
@@ -254,7 +256,12 @@ As is mentioned in Procedure part, the string length, number of time span, start
         \grayrow$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\ %\hline
         5 & 50 & 5 & 13.9 & 27.8 & 19  \\ \hline
     \end{tabularx}
+    \hl{The length is derived by adding the distance from the top of the bob to the hook and the radius of the bob (measured using a vernier caliper).}
 \end{table}
+
+\begin{tcolorbox}[title = Note]
+    The diameter and the string length should be included separately but I can't make up data.
+\end{tcolorbox}
 
 \subsection{Processed data}
 
@@ -287,7 +294,13 @@ $T-L$ graph and $T^2-L$ graph are plotted, as is shown in Figure \ref{fig.proc}.
 
 \subsection{Sample processing}
 
-Take processing of group 1 data as an example, the pendulum time period can be given by $t_1-t_0\over \frac{1}{2} n$ (since in one complete oscillation, the force gauge reaches the crest twice)
+Take processing of group 1 data as an example, the pendulum time period can be given by $t_1-t_0\over \frac{1}{2} n$ (since in one complete oscillation, the force gauge reaches the crest twice) \hl{should elaborate a little bit here.}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{add.png}
+    \caption{Illustration should look like this.}
+\end{figure}
 
 $$T_a = {{t_1}_a - {t_0}_a \over \frac{1}{2}n} = {28.90 \SI{}{s} - 15.10 \SI{}{s} \over 20} = 0.69 \SI{}{s}$$
 
