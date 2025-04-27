@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  21 APR 2025 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  25 APR 2025 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -130,16 +130,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 42.
  [1
 
-{d:/apps/oc/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./essay.toc)
+{d:/apps/oc/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./essay.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+)
 \tf@toc=\write3
 \openout3 = `essay.toc'.
 
- [1]
-Overfull \hbox (4.46951pt too wide) in paragraph at lines 55--56
-\OT1/cmr/m/n/12 (need def-i-ni-tions aa) of merg-ing al-go-rithms of dif-fer-ent data struc-tures, namely
- []
-
-[2
+ [1] [2
 
 ] (./data_generator.h [3]) (./essay.bbl
 Overfull \hbox (22.22488pt too wide) in paragraph at lines 14--26
@@ -153,18 +155,18 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3784 strings out of 474116
- 53922 string characters out of 5743693
- 2126190 words of memory out of 5000000
- 26155 multiletter control sequences out of 15000+600000
- 562084 words of font info for 50 fonts, out of 8000000 for 9000
+ 3800 strings out of 474116
+ 54105 string characters out of 5743693
+ 2121190 words of memory out of 5000000
+ 26166 multiletter control sequences out of 15000+600000
+ 564528 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,6n,62p,588b,1778s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on essay.pdf (5 pages, 84487 bytes).
+<d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/apps/oc/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on essay.pdf (5 pages, 101840 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
