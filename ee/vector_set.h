@@ -8,8 +8,10 @@ private:
 
 public:
     VectorSet() = default;
-    VectorSet(const std::vector<T>& vec){
+    VectorSet(const std::vector<T>& vec, bool sorted = 0){
         elements = vec;
+        if(!sorted)
+            std::sort(elements.begin(), elements.end());
     }
 
     // Inserts an element into the set if not already present
@@ -52,7 +54,7 @@ public:
         return elements.end();
     }
 
-    // Optional: Clear all elements from the set
+    // Clear all elements from the set
     void clear() {
         elements.clear();
     }
