@@ -2,6 +2,10 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{apacite}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Recipe: pdflatex -> bibtex -> pdflatex*2
 
 % Code listings
 % Basic color definitions
@@ -54,47 +58,87 @@ For ordered data structures, merging two or more instances of them while maintai
 
 This essay will focus on invesitgating the theoratical time complexity (need definitions aa) and actual performance of merging algorithms of different data structures, namely arrays, and BSTs, which are the most commonly used data structure in real life. 
 
-\textbf{Research question:} to be done aa
+\textbf{Research question: How does different algorithm affect the efficiency of merging two instances of ordered data structures?}
 
 \section{Theory}
 
 \subsection{Data structure terminology}
 
-When a homogeneous relation (a binary relation between two elements) $\le$ on a set of element $X$ satisfies
+When a homogeneous relation (a binary relation between two elements) $\le$ on a set of elements $X$ satisfies:
 
-% What should be put there?
+\begin{align*}
+&\text{1. Antisymmetry:} && \forall u, v \in X, (u \le v \land v \le u) \Leftrightarrow u = v. \\
+&\text{2. Totality:} && \forall u, v \in X, u \le v \lor v \le u. \\
+&\text{3. Transitivity:} && \forall u, v, w \in X, (u \le v \land v \le w) \Rightarrow u \le w.\\
+\end{align*}
 
-We say $P = (X, \le)$ is a total order.
+We say $P = (X, \le)$ is a total order. For example $P = (\mathbb{R}, \le)$, where $\le$ is numerical comparison, is a total order. But $P = (\{S: S\subset \mathbb{R}\}, \subset)$ is not a total order.
 
-% Some examples?
+Ordered data structures can store elements that satisfies a total order while maintaining their order. 
 
-\section*{Simple C++ Code Example}
+% Perhaps more on data structures here. 
 
-\begin{lstlisting}[caption={Basic C++ Code},label=lst:basic]
-#include <iostream>
+\subsection{Optimality}
+ 
+When merging two instances of size $n$ and $m$ respectively, there are in total $\binom{n+m}{n}$ possible outcomes. According to the decision tree theory, each of them corresponds to a decision tree leaf node. Since the merging algorithm is comparison based, the decision tree has to be a binary tree (i.e. Each node has at most two children). The height of the decision tree is therefore no lower than $O(\log_2({\binom{n+m}{n}}))$.
 
-// Simple factorial function
-int factorial(int n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);
-}
+According to Sterling's approximation, 
 
-int main() {
-    std::cout << "Factorial of 5: " 
-              << factorial(5) << std::endl;
-    return 0;
-}
-\end{lstlisting}
+\begin{equation}
+    n!\approx \sqrt{2\pi n}(\frac{n}{e})^n
+\end{equation}
 
-\section*{Including External Code}
+which means
+
+\begin{equation}
+    \begin{aligned}
+        O(\log(n!)) &= O(\frac{1}{2}\log(2\pi n) + n\log n - n\log e )
+                    &= O(n\log n)
+    \end{aligned}
+\end{equation}
+
+Using the definition of combination number, 
+
+\begin{equation}
+    \binom{n+m}{n} = \frac{(n+m)!}{n!m!}
+\end{equation}
+
+which is approximately $O(n\log_2{(\frac{n}{m})})$ (provided $n\le m$).
+
+
+
+\section*{Appendix}
+
 %Use the simple \texttt{\textbackslash lstinputlisting} command:
 
 \lstinputlisting[
-    caption={External C++ File},
-    label=lst:external
-]{data_generator.h}
+    caption={VectorSet},
+    label=lst:vecsetheader
+]{code/vector_set.h}
+
+\lstinputlisting[
+    caption={AvlSet},
+    label=lst:avlsetheader
+]{code/avl_set.h}
 
 \bibliographystyle{apacite}
 \bibliography{cit.bib}
+
+% Working directory info:
+%PS D:\code\ee> tree /f /a
+%Folder PATH listing for volume Data
+%Volume serial number is 5ADF-3FB3
+%D:.
+%|   cit.bib
+%|   essay.bbl
+%|   essay.dvi
+%|   essay.pdf
+%|   essay.synctex.gz
+%|   essay.tex
+%|
+%\---code
+%        avl_set.h
+%        test.cpp
+%        vector_set.h
 
 \end{document}
