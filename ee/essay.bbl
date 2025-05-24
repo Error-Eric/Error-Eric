@@ -1,27 +1,31 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-GeeksforGeeks%
+Cormen%
+, Leiserson%
+, Rivest%
+\BCBL {}\ \BBA {} Stein%
 }{%
-GeeksforGeeks%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
+Cormen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
 }]{%
-geeksforgeeks_data_structures}
+ItA}
 \APACinsertmetastar {%
-geeksforgeeks_data_structures}%
+ItA}%
 \begin{APACrefauthors}%
-GeeksforGeeks.%
+Cormen, T\BPBI H.%
+, Leiserson, C\BPBI E.%
+, Rivest, R\BPBI L.%
+\BCBL {}\ \BBA {} Stein, C.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\APACrefYear{2022}.
 \newblock
-\APACrefbtitle {Introduction to Data Structures.} {Introduction to data structures.}
+\APACrefbtitle {Introduction to Algorithms} {Introduction to algorithms}\ (\PrintOrdinal{Fourth}\ \BEd).
 \newblock
-\begin{APACrefURL} \url{https://www.geeksforgeeks.org/introduction-to-data-structures/} \end{APACrefURL}
-\newblock
-\APACrefnote{[Accessed April 13, 2025]}
+\APACaddressPublisher{}{MIT Press}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
