@@ -30,6 +30,11 @@ private:
     std::list<Node> node_storage;
     std::vector<Node*> free_nodes;
 
+    // Helper functions for merging
+    int height(Node* node) const {
+        return node ? node->height : 0;
+    }
+
     // Memory pool operations
     Node* create_node(const T& key) {
         if (!free_nodes.empty()) {
@@ -53,13 +58,28 @@ private:
         return &node_storage.back();
     }
 
+    // Generates a balanced subtree in O(n) time out from a ordered sequence.
+    // Returns the root node pointer.
+    // *Preconditions
+    //  keys have to be ordered
+    //  _RandAccIt is the random access iterator
+    //  (*bg) and (*ed) should be of type T
+
+    template<typename _RandAccIt>
+    Node* create_node(const _RandAccIt& bg, const _RandAccIt& ed){
+        if(bg == ed) return nullptr;
+        auto it = bg;
+        if(++it == ed) return create_node(*bg);
+        it = bg + (ed - bg) / 2; // The same as (bg + ed)/2 but avoids overflow problems
+        auto cur = create_node(*it);
+        cur->left = create_node(bg, it);
+        cur->right = create_node(++it, ed);
+        update_height(cur);
+        return cur;
+    }
+    
     void recycle_node(Node* node) {
         free_nodes.push_back(node);
-    }
-
-    // Helper functions for merging
-    int height(Node* node) const {
-        return node ? node->height : 0;
     }
 
     void update_height(Node* node) {
@@ -228,6 +248,19 @@ public:
         traverse_in_order(root, f);
     }
 
+    std::vector<T>* to_vector(Node *node = nullptr){
+        if(node == nullptr) 
+            return nullptr;
+        std::vector<T> *lson = to_vector(node->left), *rson = to_vector(node->right);
+        if(lson == nullptr) 
+            lson = new std::vector<T>;
+        lson->push_back(node->key);
+        if(rson != nullptr)
+            for(T it: *rson) 
+                lson->push_back(it);
+        return lson;
+    }
+
     void merge(AVLSet&& other) {
         if (other.empty()) return;
 
@@ -245,6 +278,10 @@ public:
         });
 
         other.clear();
+    }
+
+    void linearmerge(AVLSet&& other){
+        
     }
     
     private:
@@ -298,5 +335,12 @@ public:
     void remove(const T& val){
         remove(root, val);
     }
+
+    friend AVLSet<T>* AVLSet_from_ordered(std::vector<T> data){};
 };
 
+template <typename T> 
+AVLSet<T>* AVLSet_from_ordered(std::vector<T> data){
+    AVLSet<T>* ret = new AVLSet<T>;
+    //ret->root = ret->create_node()
+}
