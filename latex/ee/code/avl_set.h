@@ -66,14 +66,14 @@ private:
     //  (*bg) and (*ed) should be of type T
 
     template<typename _RandAccIt>
-    Node* create_node(const _RandAccIt& bg, const _RandAccIt& ed){
+    Node* build(const _RandAccIt& bg, const _RandAccIt& ed){
         if(bg == ed) return nullptr;
         auto it = bg;
         if(++it == ed) return create_node(*bg);
         it = bg + (ed - bg) / 2; // The same as (bg + ed)/2 but avoids overflow problems
         auto cur = create_node(*it);
-        cur->left = create_node(bg, it);
-        cur->right = create_node(++it, ed);
+        cur->left = build(bg, it);
+        cur->right = build(++it, ed);
         update_height(cur);
         return cur;
     }
@@ -143,59 +143,8 @@ private:
         traverse_in_order(node->right, f);
     }
 
-    void insert_merge(const T& key) {
-        if (!root) {
-            root = create_node(key);
-            size++;
-            return;
-        }
-
-        std::vector<Node*> path;
-        std::vector<Node*> successor;
-        Node* current = root;
-        bool inserted = false;
-
-        // Climb up to find the insertion path
-        while (true) {
-            path.push_back(current);
-            if (comp(key, current->key)) {
-                if (!current->left) break;
-                successor.push_back(current);
-                current = current->left;
-            } else if (comp(current->key, key)) {
-                if (!current->right) break;
-                current = current->right;
-            } else {
-                // Duplicate, do not insert
-                return;
-            }
-        }
-
-        // Insert the new node
-        Node* newNode = create_node(key);
-        if (comp(key, current->key)) {
-            current->left = newNode;
-        } else {
-            current->right = newNode;
-        }
-        size++;
-
-        // Retrace the path to update heights and balance
-        while (!path.empty()) {
-            Node* node = path.back();
-            path.pop_back();
-            node = balance(node);
-
-            if (!path.empty()) {
-                if (path.back()->left == node) {
-                    path.back()->left = node;
-                } else {
-                    path.back()->right = node;
-                }
-            } else {
-                root = node;
-            }
-        }
+    void insert_with_path(std::vector<Node*>& path, const T& key){
+        
     }
 
 public:
@@ -248,10 +197,10 @@ public:
         traverse_in_order(root, f);
     }
 
-    std::vector<T>* to_vector(Node *node = nullptr){
+    std::vector<T>* items(Node *node = nullptr){
         if(node == nullptr) 
             return nullptr;
-        std::vector<T> *lson = to_vector(node->left), *rson = to_vector(node->right);
+        std::vector<T> *lson = items(node->left), *rson = items(node->right);
         if(lson == nullptr) 
             lson = new std::vector<T>;
         lson->push_back(node->key);
@@ -274,14 +223,51 @@ public:
 
         // Insert all elements from the smaller tree (now 'other') into this
         other.traverse_in_order([this](const T& key) {
-            this->insert_merge(key);
+            //this->insert_merge(key);
         });
 
         other.clear();
     }
 
+    /*  Merge two sets in O(N+M) time.
+    *   Some additional space may be costed.
+    *   But it does not affect the result of the experiment.
+    */
+
     void linearmerge(AVLSet&& other){
-        
+        if(other.empty()) return;
+
+        std::vector<T> all_elements, q1 = this->items(), q2 = other.items();
+        all_elements.reserve(q1.size() + q2.size());
+
+        auto it1 = q1.begin(), it2 = q2.begin();
+        while(it1 != q1.end() || it2 != q2.end()) {
+            if(it1 != q1.end() && ( it2 == q2.end() || comp(*it1, *it2) ))
+                all_elements.push_back(*it1), ++it1;
+            else all_elements.push_back(*it2), ++it2;
+        }
+
+        this->traverse_in_order(recycle_node);
+        this->root = build(all_elements.begin(), all_elements.end());
+    }
+
+    void simplemerge(AVLSet&& other) {
+        if (other.empty()) return;
+
+        if (size < other.size) {
+            // Swap to merge smaller into larger
+            std::swap(root, other.root);
+            std::swap(size, other.size);
+            std::swap(node_storage, other.node_storage);
+            std::swap(free_nodes, other.free_nodes);
+        }
+
+        // Insert all elements from the smaller tree (now 'other') into this
+        other.traverse_in_order([this](const T& key) {
+            this->insert(key);
+        });
+
+        other.clear();
     }
     
     private:
