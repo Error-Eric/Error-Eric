@@ -73,7 +73,7 @@ private:
         it = bg + (ed - bg) / 2; // The same as (bg + ed)/2 but avoids overflow problems
         auto cur = create_node(*it);
         cur->left = build(bg, it);
-        cur->right = build(++it, ed);
+        cur->right = build(it + 1, ed); 
         update_height(cur);
         return cur;
     }
@@ -138,9 +138,41 @@ private:
     template <typename Func>
     void traverse_in_order(Node* node, Func f) const {
         if (!node) return;
-        traverse_in_order(node->left, f);
-        f(node->key);
-        traverse_in_order(node->right, f);
+        std::stack<Node*> stack;
+        Node* current = node;
+        while (current || !stack.empty()) {
+            while (current) {
+                stack.push(current);
+                current = current->left;
+            }
+            current = stack.top();
+            stack.pop();
+            f(current->key);
+            current = current->right;
+        }
+    }
+
+    void recycle_tree(Node* node) {
+        if (!node) return;
+        std::stack<Node*> stack;
+        Node* current = node;
+        Node* last_visited = nullptr;
+
+        while (current || !stack.empty()) {
+            if (current) {
+                stack.push(current);
+                current = current->left;
+            } else {
+                Node* top = stack.top();
+                if (top->right && top->right != last_visited) {
+                    current = top->right;
+                } else {
+                    recycle_node(top);
+                    last_visited = top;
+                    stack.pop();
+                }
+            }
+        }
     }
 
     void insert_with_path(std::vector<Node*>& path, const T& key){
@@ -178,6 +210,7 @@ public:
     AVLSet& operator=(const AVLSet&) = delete;
 
     void clear() {
+        recycle_tree(root);
         node_storage.clear();
         free_nodes.clear();
         root = nullptr;
@@ -197,36 +230,12 @@ public:
         traverse_in_order(root, f);
     }
 
-    std::vector<T>* items(Node *node = nullptr){
-        if(node == nullptr) 
-            return nullptr;
-        std::vector<T> *lson = items(node->left), *rson = items(node->right);
-        if(lson == nullptr) 
-            lson = new std::vector<T>;
-        lson->push_back(node->key);
-        if(rson != nullptr)
-            for(T it: *rson) 
-                lson->push_back(it);
-        return lson;
-    }
-
-    void merge(AVLSet&& other) {
-        if (other.empty()) return;
-
-        if (size < other.size) {
-            // Swap to merge smaller into larger
-            std::swap(root, other.root);
-            std::swap(size, other.size);
-            std::swap(node_storage, other.node_storage);
-            std::swap(free_nodes, other.free_nodes);
-        }
-
-        // Insert all elements from the smaller tree (now 'other') into this
-        other.traverse_in_order([this](const T& key) {
-            //this->insert_merge(key);
+    std::vector<T> items() const {
+        std::vector<T> result;
+        traverse_in_order([&result](const T& key) {
+            result.push_back(key);
         });
-
-        other.clear();
+        return result;
     }
 
     /*  Merge two sets in O(N+M) time.
@@ -234,21 +243,32 @@ public:
     *   But it does not affect the result of the experiment.
     */
 
-    void linearmerge(AVLSet&& other){
-        if(other.empty()) return;
+    void linearmerge(AVLSet&& other) {
+        if (other.empty()) return;
 
-        std::vector<T> all_elements, q1 = this->items(), q2 = other.items();
+        other.free_nodes.clear();
+
+        // Get elements from both trees
+        std::vector<T> q1 = items();
+        std::vector<T> q2 = other.items();
+        std::vector<T> all_elements;
         all_elements.reserve(q1.size() + q2.size());
 
-        auto it1 = q1.begin(), it2 = q2.begin();
-        while(it1 != q1.end() || it2 != q2.end()) {
-            if(it1 != q1.end() && ( it2 == q2.end() || comp(*it1, *it2) ))
-                all_elements.push_back(*it1), ++it1;
-            else all_elements.push_back(*it2), ++it2;
-        }
+        // Merge sorted vectors
+        std::merge(q1.begin(), q1.end(), q2.begin(), q2.end(),
+                  std::back_inserter(all_elements), comp);
 
-        this->traverse_in_order(recycle_node);
-        this->root = build(all_elements.begin(), all_elements.end());
+        // Recycle both trees
+        recycle_tree(root);
+        recycle_tree(other.root);
+        root = nullptr;
+        other.root = nullptr;
+        size = 0;
+        other.size = 0;
+
+        // Build new tree
+        root = build(all_elements.begin(), all_elements.end());
+        size = all_elements.size();
     }
 
     void simplemerge(AVLSet&& other) {
@@ -271,7 +291,7 @@ public:
     }
     
     private:
-    // Example of modified insert implementation
+    
     Node* insert(Node* node, const T& key) {
         if (!node) {
             size++;
@@ -289,44 +309,20 @@ public:
         return balance(node);
     }
 
-    // Example of modified remove implementation
-    Node* remove(Node* node, const T& key) {
-        if (!node) return nullptr;
-
-        if (comp(key, node->key)) {
-            node->left = remove(node->left, key);
-        } else if (comp(node->key, key)) {
-            node->right = remove(node->right, key);
-        } else {
-            // Node deletion with recycling
-            if (!node->left || !node->right) {
-                Node* temp = node->left ? node->left : node->right;
-                recycle_node(node);
-                size--;
-                node = temp;
-            } else {
-                Node* temp = findMin(node->right);
-                node->key = std::move(temp->key);
-                node->right = remove(node->right, temp->key);
-            }
-        }
-
-        return node ? balance(node) : nullptr;
-    }
-
     public:
     void insert(const T& val){
-        insert(root, val);
+        root = insert(root, val);
     }
     void remove(const T& val){
-        remove(root, val);
+        root = remove(root, val);
     }
-
-    friend AVLSet<T>* AVLSet_from_ordered(std::vector<T> data){};
+    template<typename RandAccIt>
+    void construct(RandAccIt bg, RandAccIt ed){
+        // Clear the current tree
+        recycle_tree(root);
+        root = nullptr;
+        // Build new tree
+        root = build(bg, ed);
+        size = static_cast<size_t>(ed - bg);
+    }
 };
-
-template <typename T> 
-AVLSet<T>* AVLSet_from_ordered(std::vector<T> data){
-    AVLSet<T>* ret = new AVLSet<T>;
-    //ret->root = ret->create_node()
-}
