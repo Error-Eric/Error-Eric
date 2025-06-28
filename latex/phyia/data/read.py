@@ -1,4 +1,4 @@
-import xlrd
+import xlrd, xlwt, os
 import matplotlib.pyplot as plt
 from typing import Tuple, List, Deque
 import collections
@@ -80,7 +80,6 @@ def readsheet(file_path: str, showplot: bool = False) -> Tuple[List[float], List
             except TypeError as te: 
                 print(te)
                 break
-            
         if showplot:
             plotft(dependent, independent)
         
@@ -121,7 +120,7 @@ def getpeaks(depen_v: list, radius: int) -> List[List[int]]:
     
     grouped_peaks = []
     current_group = [peak_indices[0]]
-    print(peak_indices)
+    #print(peak_indices)
     for idx in range(1, len(peak_indices)):
         if peak_indices[idx] == peak_indices[idx-1] + 1:
             current_group.append(peak_indices[idx])
@@ -132,16 +131,38 @@ def getpeaks(depen_v: list, radius: int) -> List[List[int]]:
     
     return grouped_peaks
 
+def readfilew(r = 7.5, n = 1):
+    if r not in [2.5 + i for i in range(7)] : raise ValueError(f"Invalid r: {r}.")
+    if n not in [1, 2, 3, 4, 5] : raise ValueError(f"Invalid n: {n}.")
+    filepath = f"D:\code\latex\phyia\data\R={r}({n}).xls"
+    x, y = readsheet(file_path=filepath, showplot = False)
+    peaks = getpeaks(y, 150 + int(r * 30))
+    #plotft(y, x, peaks)
+    xs = []
+    for indices in peaks:
+        xs.append(avg_err([x[i] for i in indices])[0])
+    return [xs[i+1] - xs[i] for i in range(len(xs)-1)]
+    #print([int(dxi * 10000) / 10000 for dxi in dx])
+
+def overallgraph():
+    scatterx, scattery = [], []
+    for r in [2.5 + i for i in range(7)]:
+        for i in [1, 2, 3, 4, 5, 6]:
+            try:
+                ti = readfilew(r, i)
+                scatterx.append(r); scattery.append(max(ti[:3]))
+            except Exception as e: print(e)
+    #print(scatterx, scattery)
+    plt.scatter(scatterx, scattery, marker = 'X', s = 2)
+    scatterx, scattery = [], []
+    import theocalc as tc
+    for r in [2.5 + i for i in range(7)]:
+        scatterx.append(r); scattery.append(tc.r_to_t(r))
+    plt.plot(scatterx, scattery, c= 'green')
+    plt.show()
+
 if __name__ == "__main__":
-    try:
-        filepath = "D:\code\latex\phyia\data\R=8,1st.xls"
-        x, y = readsheet(file_path=filepath, showplot=False)
-        peaks = getpeaks(y, 300)
-        plotft(y, x, peaks)
-        xs = []
-        for indices in peaks:
-            xs.append(avg_err([x[i] for i in indices])[0])
-        dx = [xs[i+1] - xs[i] for i in range(len(xs)-1)]
-        print(dx)
-    except Exception as e:
-        print(e)
+    for r in [2.5 + i for i in range(7)]:
+        for t in range(1, 7, 1):
+            try: merge_excel_sheets(f"D:\code\latex\phyia\data\R={r}({t}).xls", "D:\code\latex\phyia\data\data.xls")
+            except: pass
