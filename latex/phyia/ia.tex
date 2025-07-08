@@ -9,6 +9,9 @@
 \usepackage{amsmath}
 \usepackage{rotating}
 \usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{arydshln} % Dashed hline
+\usepackage{makecell} % Makecell
 \usepackage[absolute]{textpos}
 
 
@@ -16,8 +19,6 @@
 
 
 \begin{titlepage}
-    
-
     \title{\textbf{How does the moment of inertia affect the period of Maxwell's Wheel? \\ \small Physics HL Internal Assesment}}
     \author{Zhou Changhui}
     \date{\today}
@@ -26,6 +27,14 @@
 \end{titlepage}
 
 \section{Introduction and background knowledge}
+
+Back in ancient Greece (around 220 B.C.), Archimedes has laid solid foundation for rigid body statics by discovering and formalizing the equilibrium requirement for levers. People studied Archimedes's work and developed concepts like torque after then, but it was not until Issac Newton (1643-1727) formulated Newton's Laws of Motion that humans are well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Eular (1707-1783) successfully formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
+
+Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at storing rotational kinetic energy, which makes them suitable for objects like flywheels, while objects with small moment of inertia can rotate faster. 
+
+Maxwell's wheel is commonly used as an instrument to illustrate the conservation of energy and the concept of rotational kinetic energy in physics education. It can also be utilized to measure the moment of inertia of a disk-shaped object. This experiment aims at discovering the significance of the moment of inertia in a Maxwell's wheel experiment.
+
+\textbf{Research question: How does the moment of inertia affect the period of Maxwell's Wheel?}
 
 \section{Hypothesis and reasoning}
 
@@ -132,6 +141,12 @@ which can be re-written as
     T^2 = 8l\dfrac{(m+\frac{I}{r^2})}{mg}
 \end{equation}
 
+Or
+
+\begin{equation}
+    T^2 = \dfrac{8l}{mgr^2} I + \dfrac{8l}{g}
+\end{equation}
+
 From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ increases. $T^2$ and $I$ has a linear relationship.}
 
 \section{Experiment design}
@@ -139,8 +154,8 @@ From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ i
 \subsection{Variables} 
 
 \begin{itemize}
-    \item Independent variable: 
-    \item Dependent variable: 
+    \item Independent variable: Moment of inertia (manipulated by changing the distance from the magnets to the pivot: $2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5 \SI{}{cm}$).
+    \item Dependent variable: ``Period'' of the Maxwell's Wheel (Time between two lowest positions).
     \item Controlled variables: The material, mass and size of the plate and magnets. The length of the string. The mass, radius and length of the axle, etc.
 \end{itemize}
 
@@ -150,14 +165,17 @@ From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ i
     \item[*] 2 Iron stands (height $\approx \SI{50}{cm}$)
     \item[*] 2 Cotton strings (length $\approx \SI{70}{cm}$)
     \item[*] 1 Acrylic disc (radius $\approx \SI{10}{cm}$, mass $\approx \SI{110}{g}$)
-    \item[*] 16 Magnets (radius $\approx ??aa$, mass $\approx ??aa$)
+    \item[*] 16 Magnets (radius $\approx \SI{3.0}{cm}$, mass $\approx \SI{23}{g}$)
     \item[*] 1 Force gauge ($\SI{50}{N}$)
     \item[*] 1 Tape rule
     \item[*] 1 Electric balance
-    \item[*] 1 Vernier caliper  
+    \item[*] 1 Vernier caliper
+    \item[*] 1 Hot glue gun  
 \end{itemize}
 
 \subsection{Setup diagram}
+
+The apparatus is set up by hanging the Maxwell's Wheel between two iron stands using cotton string, as is shown in Figure \ref{fig.setupdiagram}.
 
 \begin{figure}[ht]
     \centering
@@ -194,17 +212,101 @@ From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ i
         \draw[gray] ($(O) - (135 : 3.5)$) -- ($(O) + (135 : 3.5)$);
         %\draw[black, ultra thick]
     \end{tikzpicture}
-
+    \caption{Setup diagram}
     \label{fig.setupdiagram}
 \end{figure}
 
 \subsection{Procedure}
 
+\begin{enumerate}
+    \item Measure the total mass of the magnets, mass of the acrylic plate, radius of the acrylic plate, radius of the axle and maximum vertical displacement after setting up the apparatus as is shown in Figure \ref{fig.setupdiagram}
+    \item Find a pair of diameters of the acrylic plane that is perpendicular to each other. This can be done by drawing the perpendicular bisector of an arbitrary pair of perpendicular chords. 
+    \item Calibrate both axis with the assistance of a ruler. Make sure the center of the circle is scaled zero. 
+    \item Attach four pairs of magnets to the plane.
+    \item Adjust the position of the magnets to make the distance for the magnets' centers of mass are $r = \SI{8.5}{cm}$. This can be done by placing the magnet (with radius $r' = \SI{3}{cm}$) between $r = \SI{10}{cm}$ mark and $r = \SI{7}{cm}$ mark, while touching the both marks.
+    \item Fix the magnets with glue guns.
+    \item Swirl up the axle until it reaches the designated point, start the forcemeter and release the wheel. 
+    \item Record the time for the first and second time where the forcemeter reading reaches local maxima \footnote{This is done with the assistance of a program. If the first local maximum is not clear, the second and the third local maxima is used instead.} 
+    \item Repeat Steps 7 and 8 for $4$ additional trials.
+    \item Repeat Steps 5 to 9 with $r = 7.5, 6.5, 5.5, 4.5, 3.5 \SI{}{cm}$.
+\end{enumerate}
+
 \section{Results}
 
 \subsection{Raw data}
 
+Raw data is collected as follows:
+
+\begin{itemize}
+    \item Total mass of the magnets $M_m$ : $193.70\pm0.01\SI{}{g}$
+    \item Total mass of the acrylic plate $M_a$: $193.17\pm0.01\SI{}{g}$
+    \item Radius of the acrylic plate $R_a$: $10.0\pm0.05\SI{}{cm}$
+    \item Radius of the axle $r$: $4.0\pm0.1\SI{}{mm}$
+    \item Maximum vertical displacement $H$: $20\pm0.5\SI{}{cm}$
+    \item Other data is shown in Table \ref{tab.raw}.
+\end{itemize}
+
+\begin{table}[ht]
+\centering
+\caption{Raw Data}
+\label{tab.raw}
+\begin{tabular}{llllllllll}
+\hline
+\hline
+\multicolumn{5}{c}{Experiments 1-4} & \multicolumn{5}{c}{Experiments 5-7} \\
+\hline
+No.         & \makecell{$r(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & 
+No.         & \makecell{$r(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } \\
+\hline
+\multirow{5}{*}{1} & \multirow{5}{*}{$2.5$} & 1     & $2.28$   & $6.68$   & 
+\multirow{5}{*}{5} & \multirow{5}{*}{$6.5$} & 1     & $3.58$   & $9.48$   \\
+                   &                                & 2     & $2.25$   & $6.63$   &
+                   &                                & 2     & $9.28$   & $15.23$  \\
+                   &                                & 3     & $2.48$   & $7.03$   &
+                   &                                & 3     & $3.45$   & $9.48$   \\
+                   &                                & 4     & $6.73$   & $11.28$  &
+                   &                                & 4     & $3.53$   & $9.43$   \\
+                   &                                & 5     & $2.33$   & $6.78$   &
+                   &                                & 5     & $9.28$   & $15.23$   \\
+\cdashline{1-5} \cdashline{6-10}
+\multirow{5}{*}{2} & \multirow{5}{*}{$3.5$} & 1     & $2.73$   & $7.23$   & 
+\multirow{5}{*}{6} & \multirow{5}{*}{$7.5$} & 1     & $10.43$  & $17.68$  \\
+                   &                                & 2     & $7.03$   & $11.53$  &
+                   &                                & 2     & $3.93$   & $10.68$  \\
+                   &                                & 3     & $2.78$   & $7.63$   &
+                   &                                & 3     & $4.08$   & $11.03$  \\
+                   &                                & 4     & $2.58$   & $7.38$   &
+                   &                                & 4     & $4.23$   & $11.13$  \\
+                   &                                & 5     & $2.83$   & $7.33$   &
+                   &                                & 5     & $4.03$   & $10.53$   \\
+\cdashline{1-5} \cdashline{6-10}
+\multirow{5}{*}{3} & \multirow{5}{*}{$4.5$} & 1     & $2.88$   & $8.13$   & 
+\multirow{6}{*}{7} & \multirow{6}{*}{$8.5$} & 1     & $4.08$   & $11.78$  \\
+                   &                                & 2     & $3.18$   & $8.63$   &
+                   &                                & 2     & $11.68$  & $18.33$  \\
+                   &                                & 3     & $3.08$   & $8.53$   &
+                   &                                & 3     & $11.48$  & $18.38$  \\
+                   &                                & 4     & $2.88$   & $7.88$   &
+                   &                                & 4     & $12.03$  & $20.58$  \\
+                   &                                & 5     & $3.03$   & $8.28$   &
+                   &                                & 5     & $11.78$  & $18.63$   \\
+\cdashline{1-5}
+\multirow{5}{*}{4} & \multirow{5}{*}{$5.5$} & 1     & $3.28$   & $8.93$   &
+                   &                                & 6     & $4.13$   & $11.63$   \\
+\cdashline{6-10}
+                   &                                & 2     & $3.23$   & $8.73$   & & & & & \\
+                   &                                & 3     & $3.23$   & $8.83$   & & & & & \\
+                   &                                & 4     & $3.18$   & $8.73$   & & & & & \\
+                   &                                & 5     & $3.48$   & $9.23$   & & & & & \\
+%\cdashline{1-5}
+\hline
+\hline
+\end{tabular}
+\end{table}
+
 \subsection{Processed data}
+
+
 
 \subsection{Sample processing}
 
@@ -217,8 +319,11 @@ The experiment was conducted successfully, gathering sufficient data and support
 \begin{itemize}
     \item \textbf{Defect in modelling} It is assumed in the hypothesis that the wheel do not swing horizontally and the string is always vertical, but small horizontal movement is inevitable during the experiment process.
     \item \textbf{Screw-threaded axle} For an ideal Maxwell's Wheel, the radius of the small axle should be constant. However, a screw-threaded axle is utilized to ensure better installation of the wheel, making the string swirl around the thread with inconsistant radius. This can be improved by using an axle that has screw thread only in the middle point. 
-    \item \textbf{String attaching} When attaching the wire to the axle, some hot-melt adhesive is used to ensure connection stability. This also contributed to inconsistant radius. Opt for an axle with a hole for attachment to avoid the use of hot-melt adhesive. 
+    \item \textbf{String attaching} When attaching the wire to the axle, some adhesive (hot glue) is used to ensure connection stability. This also contributed to inconsistant radius. Opt for an axle with a hole for attachment to avoid the use of hot-melt adhesive. 
     \item \textbf{Horizontal movement} The hypothesis is based on negeligibile horizontal movement, but in the real experiment horizontal movement is inevitable because the wheel is controlled and released by hand. Using a plumb line to adjust the string before releasing can minimize the horizontal deflection.
 \end{itemize}
+
+\bibliographystyle{apacite}
+\bibliography{cit.bib}
 
 \end{document}

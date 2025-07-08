@@ -1,0 +1,200 @@
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usepackage{apacite}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage[absolute]{textpos}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \title{\textbf{Grouping problems in combinarotics}}
+    \author{Zhou Changhui}
+    \date{\today}
+    \maketitle
+    %\tableofcontents
+\end{titlepage}
+
+\begin{abstract}
+
+This will be removed in formal submission.
+
+Methodology and calculation
+
+$n$ items are partitiond in to $m$ groups, how many ways of distribution is available?
+
+Condition 1: Balls are identical.
+
+Condition 2: Groups (boxes) are identical.
+
+Condition 3: There should be at least $1$ ball in each group.
+
+Scenario 1 (No constraints): $m^n$.
+
+Scenario 2 (Condition 3): $\sum_{i=0}^{m}(-1)^{i}{m\choose i}(m-i)^{n}$.
+
+Scenario 3 (Condition 2): The Stirling Number of the Second Kind $\sum_{i=1}^{m}S_{n,i}$.
+
+Scenario 4 (Condition 2, 3): The Stirling Number of the Second Kind $S_{n,m}$.
+
+Scenario 5 (Condition 1): ${n+m-1\choose m-1}$.
+
+Scenario 6 (Condition 1, 3): ${m\choose n}$.
+
+Scenario 7 (Condition 1, 2): $p_{n,m} = p_{n-m, m} + p_{n, m-1}$.
+
+Scenario 8 (Condition 1, 2, 3): $p_{n, m}$.
+    
+\end{abstract}
+
+\section{Introduction}
+
+Combinarotics plays a vital role in mathematics and our daily lives. One of the most intriguing parts of combinarotics is partition. People want to figure out ``how many ways are there to divide $n$ items'' for various reasons, and generally with various definition and additional constraints on partition. In IB DP studies, combination was introduced to calculate the number of ways to select a subset of size $m$ from $n$ items (i.e. partitioning the items into two disjoint parts: the selected ones and the non-selected one). In mathematic competitions, such question is also 
+
+\section{Overview of questions}
+
+These problems can be paraphrased to such a statement:
+
+\begin{tcolorbox}[title = Problem 0]
+    How many distinct ways are there to partition $n$ items to $m$ boxes?
+\end{tcolorbox}
+
+But the definition of ``distinct" is different in different scenarios. Detailed examples TBD.
+
+\section{Case 1: Both items and boxes are numbered.}
+
+\begin{tcolorbox}[title = Problem 1.1]
+    How many distinct ways are there to partition $n$ numbered items to $m$ numbered boxes? 
+
+    Two ways are considered different if and only if at least one item is a differently numbered box. 
+\end{tcolorbox}
+
+In this case, we can trivially apply the fundamental counting principle. The fundamental counting principle states that for a finite sequence of decisions, if the number of choices for each individual decisions is independent of previous decisions, the total number of ways is the product of these number of choices.
+
+First, we try to allocate the first item into a box. We have $m$ choices. 
+
+Then, we try to allocate the second item into a box. We have $m$ choices. Since each decision is independent, there are $m \times m$ ways in total.
+
+This process can go on for $n$ rounds, giving the total number of ways $\underbrace{m \times m \times \cdot m}_{n} = m^n$.
+
+Therefore, the answer to the first question is $m^n$.
+
+However, if no box can be left empty, the last several allocated items may have to fill the empty boxes, making the number of choices dependent of the previous choices. Another differnet approch has to be taken to solve this problem.
+
+\begin{tcolorbox}[title = Problem 1.2]
+    How many distinct ways are there to partition $n$ numbered items to $m$ numbered boxes ($n \ge m$), and each numbered box has to contain at least one item? 
+
+    Two ways are considered different if and only if at least one item is a differently numbered box. 
+\end{tcolorbox}
+
+First, consider cases where $m = 1$. The answer is $1$ as all the items are put into one box.
+
+Now, condier $m = 2$. Among all $n^2$ cases, $2$ cases (put all into the first box or the second box) are invalid, and $n^2 - 2$ cases are valid.
+
+As for $m = 3$
+
+\section{Case 2: Balls are identical but boxes are numbered.}
+
+\begin{tcolorbox}[title = Problem 2.1]
+    How many distinct ways are there to partition $n$ identical items to $m$ numbered boxes? 
+
+    Two ways are considered different if and only if at least one box contains a different number of balls. 
+\end{tcolorbox}
+
+\begin{tcolorbox}[title = Problem 2.2]
+    How many distinct ways are there to partition $n$ identical items to $m$ numbered boxes, provided each box have to get at least one ball? 
+
+    Two ways are considered different if and only if at least one box contains a different number of balls. 
+\end{tcolorbox}
+
+It is hard to consider this step-by-step, as one decision can affect the number of TBD.
+
+To solve Problem 2.2, we can imagine the itmes are placed in a row (since they are identical, the order does not matter), as is shown in Figure TBD.
+
+Now what remains to be done is to decide how to divide the items. All that is needed is to insert $m-1$ bars between the items and the items will be split into $m$ groups. Label the groups from $1$ to $m$ and the grouping is done.
+
+It is easy to prove that each way of grouping corresponds to a way of inserting the dividers. There for the total way of grouping equals to the way of inserting dividers, which is ${n-1 \choose m-1}$. 
+
+From this solution, we can derive the solution for Problem 2.1. In order to make them the same, we can add additional $m$ items, partition the items as in Problem 2.2, and remove $1$ item from each box. It can be noticed that every valid way can be derived from excactly one way from Problem 2.2, and each valid way in Problem 2.2 corresponds to a valid way in Problem 2.1. So the overall answer is ${n+m-1 \choose m-1}$.
+
+\section{Case 3: Balls are numbered but boxes are identical.}
+
+\begin{tcolorbox}[title = Problem 3.1]
+    How many distinct ways are there to partition $n$ numbered items to $m$ identical boxes? 
+
+    Two ways are considered different if and only if at least one item is a differently numbered box. 
+\end{tcolorbox}
+
+\begin{tcolorbox}[title = Problem 3.2]
+    How many distinct ways are there to partition $n$ numbered items to $m$ identical boxes ($n \ge m$), and each numbered box has to contain at least one item? 
+
+    Two ways are considered different if and only if at least one item is a differently numbered box. 
+\end{tcolorbox}
+
+Analysis TBD. 
+
+This is exactly the definition of Stirling Number of the Second Kind. 
+
+${n\brace m} = {n-1\brace m-1} + m{n-1\brace k}$.
+
+${n\brace 0} = 0$.
+
+${0\brace 0} = 1$.
+
+${n\brace m} = \sum_{i=0}^{m}{\frac{(-1)^{m-i}i^{n}}{i!(m-i)!}}$.
+
+\section{Case 4: Balls and boxes are both numbered.}
+
+\begin{tcolorbox}[title = Problem 4.1]
+    How many distinct ways are there to partition $n$ identical items to $m$ identical boxes? 
+
+    Two ways are considered different if and only if the multiset\footnote{A multiset a.k.a. bag, mset, is a generalization of a set where repetition of elements matters. $\{1, 1, 2, 3, 3\}$ and $\{3, 1, 1, 2, 3\}$ are same multisets but $\{1, 2, 2, 2, 3\}$ are different from them.} of each box's number of items are different.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title = Problem 4.2]
+    How many distinct ways are there to partition $n$ identical items to $m$ identical boxes ($n \ge m$), provided no box can be left empty? 
+
+    Two ways are considered different if and only if the multiset of each box's number of items are different.
+\end{tcolorbox}
+
+Difficulty analysis TBD.
+
+In fact, such partition can be studied in a similar way to Case 3, where recurrence is utilized to provide a general recurrence from which we can get the number of ways. 
+
+First, the marginal condition should be studied. When there is $0$ boxes, the total ways of partition is $0$ (except for $n = 0$, where the answer should be $1$). Or formally, 
+
+Formula TBD.
+
+Now we need to consider the general cases, where $n$ and $m$ are not $0$.
+
+We divide ways of valid partition into to catogories: The way in which the fewest number in box is $1$, and the way in which there are no less than $2$ items in each box. 
+
+For the first catogory, a one-to-one mapping from this catogory and $p(n-1, m-1)$ can be established. Each partition in this catogory corresponds to a way with a fewer $1$ in partition. For example, when $n = 11, m = 4$, $\{1, 2, 3, 5\}$ corresponds to $\{2, 3, 5\}$, $\{1, 1, 3, 6\}$ corresponds to $\{1, 3, 6\}$. Therefore, the number of ways in the first catogory is $p(n-1, m-1)$.
+
+For the second catogory, a one-to-one mapping from this catogory and $p(n-m, m)$ can be established by substracting each number of items in box by one. For example, $\{2, 2, 3, 4\}$ corresponds to $\{1, 1, 2, 3\}$. Therefore, the number of ways in the second catogory is $p(n-m, m)$.
+
+The recurrence\footnote{It does not have a universally accepted name but can be refer to as recurrence of partition.} goes as 
+
+\begin{equation*}
+    p(n, m) = p(n-1, m-1) + p(n-m, m)
+\end{equation*}
+
+Some additional information regarding generating function TBD.
+
+The transition from Problem 4.2 to Problem 4.1 is trivial. To allow empty boxes, we only need to add $m$ items and remove one from each box.
+
+Example TBD. 
+
+\begin{equation*}
+    p'(n, m) = p(n + m, m)
+\end{equation*}
+
+\end{document}
+
+
+

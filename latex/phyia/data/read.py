@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 from typing import Tuple, List, Deque
 import collections
 
+Rs = [2.5 + i for i in range(7)]
+Ns = [1, 2, 3, 4, 5, 6]
+
 def readcell(cell) -> float:
     if cell.ctype == xlrd.XL_CELL_TEXT: 
         return float(cell.value)
@@ -63,10 +66,20 @@ def plotft(f: list, t: list, peak = []) -> None:
     ax1.grid(True)
     plt.show()
 
-def readsheet(file_path: str, showplot: bool = False) -> Tuple[List[float], List[float]]:
+def getsheets(file_path: str):
+    workbook = xlrd.open_workbook(file_path)
+    ret = []
+    for r in Rs:
+        for n in Ns:
+            try: ret.append((r, n, workbook.sheet_by_name(f"R={r}({n}).xls")))
+            except: pass
+    print(f"{len(ret)} sheet(s) read")
+    return ret
+
+
+def readsheet(sheet, radius = 150, showplot: bool = False) -> List[int]:
     try:
-        workbook = xlrd.open_workbook(file_path)
-        sheet = workbook.sheet_by_index(0)
+        #sheet = workbook.sheet_by_index(0)
         
         independent = []
         dependent = []
@@ -82,8 +95,18 @@ def readsheet(file_path: str, showplot: bool = False) -> Tuple[List[float], List
                 break
         if showplot:
             plotft(dependent, independent)
-        
-        return independent, dependent
+        peaks = getpeaks(dependent, radius)
+        xs = []
+        for indices in peaks:
+            xs.append(avg_err([independent[i] for i in indices])[0])
+        # Print independent variables (t1, t2)
+        for i in range(3):
+            if xs[i+1] - xs[i] == max([xs[i+1] - xs[i] for i in range(3)]):
+                #print(f"${round(xs[i], 2)}\pm0.01$",f"${round( xs[i+1], 2)}\pm0.01$")
+                print(round(xs[i+1], 2))
+                break
+
+        return [xs[i+1] - xs[i] for i in range(len(xs)-1)]
         
     except Exception as e:
         raise RuntimeError(f"Error processing file: {e}")
@@ -131,38 +154,18 @@ def getpeaks(depen_v: list, radius: int) -> List[List[int]]:
     
     return grouped_peaks
 
-def readfilew(r = 7.5, n = 1):
-    if r not in [2.5 + i for i in range(7)] : raise ValueError(f"Invalid r: {r}.")
-    if n not in [1, 2, 3, 4, 5] : raise ValueError(f"Invalid n: {n}.")
-    filepath = f"D:\code\latex\phyia\data\R={r}({n}).xls"
-    x, y = readsheet(file_path=filepath, showplot = False)
-    peaks = getpeaks(y, 150 + int(r * 30))
-    #plotft(y, x, peaks)
-    xs = []
-    for indices in peaks:
-        xs.append(avg_err([x[i] for i in indices])[0])
-    return [xs[i+1] - xs[i] for i in range(len(xs)-1)]
-    #print([int(dxi * 10000) / 10000 for dxi in dx])
-
-def overallgraph():
+def overallgraph(dat: List[Tuple]):
     scatterx, scattery = [], []
-    for r in [2.5 + i for i in range(7)]:
-        for i in [1, 2, 3, 4, 5, 6]:
-            try:
-                ti = readfilew(r, i)
-                scatterx.append(r); scattery.append(max(ti[:3]))
-            except Exception as e: print(e)
-    #print(scatterx, scattery)
+    for r, i, sheetx in dat:
+        scatterx.append(r); scattery.append(max(readsheet(sheetx, int(r * 30 + 150))[:3]))
+    print(scatterx, scattery)
     plt.scatter(scatterx, scattery, marker = 'X', s = 2)
     scatterx, scattery = [], []
     import theocalc as tc
-    for r in [2.5 + i for i in range(7)]:
+    for r in Rs:
         scatterx.append(r); scattery.append(tc.r_to_t(r))
     plt.plot(scatterx, scattery, c= 'green')
     plt.show()
 
 if __name__ == "__main__":
-    for r in [2.5 + i for i in range(7)]:
-        for t in range(1, 7, 1):
-            try: merge_excel_sheets(f"D:\code\latex\phyia\data\R={r}({t}).xls", "D:\code\latex\phyia\data\data.xls")
-            except: pass
+    overallgraph(getsheets("D:\code\latex\phyia\data\data.xls"))

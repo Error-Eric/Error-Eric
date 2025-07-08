@@ -4,7 +4,7 @@ def r_to_t(r: float): # r is in cm
     Ma = 0.1112 # Mass of acrylic plane in kg
     Itot = 8 * Mm * (re ** 2) + 0.5 * Ma * 0.1 * 0.1
     Mtot = 371e-3
-    print(Itot)
+    print(Itot*1e3)
     t2 = 8 * 0.2 * (Mtot + Itot / (4e-3**2)) / (Mtot * 9.81)
     return (t2 ** 0.5)
 
