@@ -21,7 +21,7 @@ outlier_y = sheet.cell_value(36, 24)
 slope, intercept = np.polyfit(x_data, y_data, 1)
 fit_line = np.poly1d([slope, intercept])
 
-# Calculate theoratical fit line
+# Calculate theoretical fit line
 slope2, intercept2 = 1e5/((193.17+193.10)*9.81), 1.6/9.81
 theo_line = np.poly1d([slope2, intercept2])
 
@@ -37,7 +37,7 @@ x_max = max(x_data)
 x_extended = np.linspace(0, x_max, 100)  # Extend slightly beyond max x-value
 y_extended = fit_line(x_extended)
 
-# Create theoratical line (from x = 0 to max x-value)
+# Create theoretical line (from x = 0 to max x-value)
 ty_extended = theo_line(x_extended)
 
 # Create the plot
@@ -61,12 +61,22 @@ plt.plot(x_extended[mask], y_extended[mask], 'b-',
 mask = x_extended < x_min
 plt.plot(x_extended[mask], y_extended[mask], 'b--', lw = 0.8)
 
-# Theoratical fit line
-plt.plot(x_extended, ty_extended, 'g-.', label = f'Theoratical line: y = {slope2:.4f}x + {intercept2:.4f}', lw = 0.8)
+# theoretical fit line
+#plt.plot(x_extended, ty_extended, 'g-.', label = f'theoretical line: y = {slope2:.4f}x + {intercept2:.4f}', lw = 0.8)
 
 # Min-Max fit line
-plt.plot([x_data[0], x_data[-1]], [minfy0, minfy1], 'p--', lw = 0.8, 
-         label = f'Min fit line: y = {((minfy1 - minfy0) / (x_data[-1] - x_data[0])):.4f}')
+xmin = [x_data[0], x_data[-1]]
+ymin = [minfy0, minfy1]
+kmin, bmin = np.polyfit(xmin, ymin, 1)
+plt.plot(xmin, ymin, 'p--', lw = 0.8, 
+         label = f'Min fit line: y = {kmin:.4f}x + {bmin:.4f}')
+
+xmax = [x_data[0], x_data[-1]]
+ymax = [maxfy0, maxfy1]
+kmax, bmax = np.polyfit(xmax, ymax, 1)
+plt.plot(xmax, ymax, 'p--', lw = 0.8, 
+         label = f'Max fit line: y = {kmax:.4f}x + {bmax:.4f}')
+
 
 """
 # Highlight y-intercept point
@@ -87,7 +97,7 @@ plt.plot(outlier_x, outlier_y, 'rx', markersize=6, label='Outlier')
 # Add labels and title
 plt.xlabel('Moment of inertia (I/10$^{-3}$ kg·m$^{2}$)', fontsize=12)
 plt.ylabel('Period$^{2}$ (T$^{2}$/s$^{2}$)', fontsize=12)
-plt.title('Scatter Plot with Extended Best Fit Line', fontsize=14)
+plt.title('T$^{2}$ - I graph', fontsize=14)
 
 # Set axis limits to include y-intercept
 plt.xlim(left=-0.05 * max(x_extended))  # Show x=0
