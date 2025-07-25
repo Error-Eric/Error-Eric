@@ -31,7 +31,7 @@ def plotft(f: list, t: list, peak = []) -> None:
         
         for i in range(len(peak)):
             ax1.text(px[i] - 1.5, py[i] + 0.03, f"x={px[i]:.2f}", color='purple')
-        
+        """
         if len(peak) > 1:
             cy = [px[i+1] - px[i] for i in range(len(peak) - 1)]
             cx = [(px[i+1] + px[i])/2 for i in range(len(peak) - 1)]
@@ -41,6 +41,7 @@ def plotft(f: list, t: list, peak = []) -> None:
             ax2.plot(cx, cy, 'go--', markersize=5, linewidth=1, label='Inter-peak Interval')
             ax2.set_ylabel('Time Interval (s)', color='g')
             ax2.tick_params(axis='y', labelcolor='g')
+        """
     
     # Collect all legend handles and labels from both axes
     handles = []
@@ -78,6 +79,27 @@ def getsheets(file_path: str):
 
 
 def readsheet(sheet, radius = 150, showplot: bool = False) -> List[int]:
+    """
+    Reads data from a given Excel sheet, processes it, and optionally plots the data.
+
+    Args:
+        sheet: An xlrd sheet object from which data will be read.
+        radius: An integer specifying the radius for peak detection. Default is 150.
+        showplot: A boolean flag to indicate whether to plot the data. Default is False.
+
+    Returns:
+        A list of integers representing the time intervals between the detected peak points.
+
+    Raises:
+        RuntimeError: If an error occurs during the processing of the sheet.
+
+    The function reads the sheet starting from the third row, assuming the first two rows
+    contain headers or non-relevant data. It extracts the independent and dependent variables
+    from the specified columns, detects peaks in the dependent data, and calculates the time
+    intervals between these peaks using the independent variable data. If showplot is True,
+    it plots the force vs time graph and highlights the detected peaks.
+    """
+
     try:
         #sheet = workbook.sheet_by_index(0)
         
@@ -92,10 +114,10 @@ def readsheet(sheet, radius = 150, showplot: bool = False) -> List[int]:
                 dependent.append(bvalue)
             except TypeError as te: 
                 print(te)
-                break
-        if showplot:
-            plotft(dependent, independent)
+                breakpoint
         peaks = getpeaks(dependent, radius)
+        if showplot:
+            plotft(dependent, independent, peaks)
         xs = []
         for indices in peaks:
             xs.append(avg_err([independent[i] for i in indices])[0])
@@ -168,4 +190,7 @@ def overallgraph(dat: List[Tuple]):
     plt.show()
 
 if __name__ == "__main__":
-    overallgraph(getsheets("D:\code\latex\phyia\data\data.xls"))
+    #overallgraph(getsheets("D:\code\latex\phyia\data\data.xls"))
+    for r, id, sheet in getsheets("D:\\code\\latex\\phyia\\data\\data.xls"):
+        readsheet(sheet, 150, True)
+        #readsheet(sheet[2], showplot = True)
