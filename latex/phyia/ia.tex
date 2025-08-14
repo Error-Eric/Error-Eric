@@ -31,7 +31,7 @@
 
 \section{Introduction and background knowledge}
 
-In ancient Greece (around 220 B.C.), Archimedes has laid solid foundation for rigid body statics by discovering and formalizing the equilibrium requirement for levers. People studied Archimedes's work and developed concepts like torque after then, but it was not until Issac Newton (1643-1727) formulated Newton's Laws of Motion that humans are well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Eular (1707-1783) successfully formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
+In ancient Greece (around 220 B.C.), Archimedes laid solid foundation for rigid body statics by discovering and formalizing the conditions of equilibrium for levers. People studied Archimedes's work and developed concepts like torque after then, but it was not until Issac Newton (1643-1727) formulated Newton's Laws of Motion that humans are well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Eular (1707-1783) successfully formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
 
 Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at storing rotational kinetic energy, which makes them suitable for objects like flywheels, while objects with small moment of inertia can rotate faster. 
 
@@ -356,6 +356,12 @@ Experiment & $I(\times 10^{-3}\SI{}{kgm^2})$ & $T^2(\SI{}{s^2})$ \\ \hline
 \end{figure}
 
 \subsection{Sample processing}
+
+Take the data processing of experiment $1$ as an example. The force gauge data is recorded and plotted against time in Figure \ref{fig.ft}. It can be noticed that the reading of the force gauge is noisy but shows clear peaks. With the assistance of a program, prominant peaks are marked in the figure using red dots.
+
+The x-index of the first two peaks are taken as $t_1$ and $t_2$ of this trial.
+
+$$T_a = t_1 - t_0 = {\SI{6.68}{s} -  \SI{2.28}{s}} = \SI{4.40}{s}$$
 
 \begin{figure}
     \centering
