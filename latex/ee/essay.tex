@@ -4,6 +4,7 @@
 \usepackage{apacite}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tcolorbox}
 
 % Recipe: pdflatex -> bibtex -> pdflatex*2
 
@@ -74,8 +75,11 @@ When a homogeneous relation (a binary relation between two elements) $\le$ on a 
 
 We say $P = (X, \le)$ is a total order. For example $P = (\mathbb{R}, \le)$, where $\le$ is numerical comparison, is a total order. But $P = (\{S: S\subset \mathbb{R}\}, \subset)$ is not a total order.
 
-Ordered data structures can store elements that satisfies a total order while maintaining their order. 
+Ordered data structures can store elements that satisfies a total order while maintaining their order. In C++, arrays, vectors, linked lists and sets can be ordered data structures, but unordered sets are not ordered data structures.
 
+\begin{tcolorbox}[title=Definition]
+    Ordered data structures are data structures that can store elements that satisfies a total order while maintaining their order.
+\end{tcolorbox}
 % Perhaps more on data structures here. 
 
 \subsection{Optimality}
@@ -105,7 +109,9 @@ Using the definition of combination number,
 
 which is approximately $O(n\log_2{(\frac{n}{m})})$ (provided $n\le m$).
 
-
+\begin{tcolorbox}[title = Theorem]
+    The optimal time complexity of merging two instances of ordered data structures is $O(n\log{(\frac{n}{m})})$, provided the moving and comparision cost is $O(1)$.
+\end{tcolorbox}
 
 \section*{Appendix}
 

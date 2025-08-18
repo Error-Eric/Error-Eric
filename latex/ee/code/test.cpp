@@ -25,16 +25,19 @@ void testmerge(int type, std::mt19937_64& rnd, size_t q1 = 5e5, size_t q2 = 5e5)
         s1.linearmerge(std::move(s2));
     else if (type == 2)
         s1.simplemerge(std::move(s2));
+    //else if (type == 3)
+    //    s1.fastmerge(std::move(s2));
     const auto t2 = std::chrono::steady_clock::now();
     using namespace::std::literals; // millisecond literals
     std::cout << "Time for "<< methodnames[type] << " merging is " << (t2-t1)/1ms << "ms" << std::endl;
 }
 
 int main() {
-    int a[10] = {0, 3, 5, 7, 8, 9, 13, 14, 18, 20};
+    int a[8] = {0, 3, 5, 7, 8, 9, 13, 14};
     int b[10] = {1, 2, 6, 11, 12, 15, 17, 19, 30, 31};
     AVLSet<int> u, v;
-    u.construct(a, a + 10), v.construct(b, b+10);
+    u.construct(a, a + 8), v.construct(b, b+10);
+    std::cout << "constructed" << std::endl;
     u.simplemerge(std::move(v));
     u.traverse_in_order([](int x){std::cout << x << std::endl;});
     return 0;
@@ -44,7 +47,7 @@ int main() {
     unsigned int s1, s2, ty;
     std::mt19937_64 rnd(seedx);
     while(std::cout << "size, size, type", std::cin >> s1 >> s2 >> ty){
-        if(s1 == 0 || s2 == 0 || ty < 1 || ty > 2) break;
+        if(s1 == 0 || s2 == 0 || ty < 1 || ty > 3) break;
         else testmerge(ty, rnd, s1, s2);
     }
     return 0;

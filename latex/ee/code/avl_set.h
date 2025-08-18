@@ -175,9 +175,6 @@ private:
         }
     }
 
-    void insert_with_path(std::vector<Node*>& path, const T& key){
-        
-    }
 
 public:
     AVLSet() : root(nullptr), size(0), comp(Compare()) {}
@@ -238,6 +235,14 @@ public:
         return result;
     }
 
+    void swap_with(AVLSet& other) {
+        std::swap(root, other.root);
+        std::swap(size, other.size);
+        std::swap(node_storage, other.node_storage);
+        std::swap(free_nodes, other.free_nodes);
+    }
+
+
     /*  Merge two sets in O(N+M) time.
     *   Some additional space may be costed.
     *   But it does not affect the result of the experiment.
@@ -274,13 +279,7 @@ public:
     void simplemerge(AVLSet&& other) {
         if (other.empty()) return;
 
-        if (size < other.size) {
-            // Swap to merge smaller into larger
-            std::swap(root, other.root);
-            std::swap(size, other.size);
-            std::swap(node_storage, other.node_storage);
-            std::swap(free_nodes, other.free_nodes);
-        }
+        if (size < other.size) { swap_with(other); }
 
         // Insert all elements from the smaller tree (now 'other') into this
         other.traverse_in_order([this](const T& key) {
@@ -289,7 +288,7 @@ public:
 
         other.clear();
     }
-    
+
     private:
     
     Node* insert(Node* node, const T& key) {
