@@ -9,9 +9,10 @@
 \usepackage{rotating}
 \usepackage{colortbl}
 \usepackage{multirow}
-\usepackage{arydshln} % Dashed hline
+%\usepackage{arydshln} % Dashed hline
 \usepackage{makecell} % Makecell
 \usepackage{graphicx}
+\usepackage{threeparttable}
 \usepackage[absolute]{textpos}
 
 \sisetup{
@@ -87,6 +88,15 @@ Electrolysis experiments also serve a pivotal role in chemistry education, since
 
 \subsection{Setup diagram}
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{setup.jpg}
+    \caption{Setup diagram\protect\footnotemark[1] \label{this:figure}}
+    %\label{fig.setup}
+\end{figure}
+
+\footnotetext[1]{This diagram is made using chemix and mspaint.}
+
 \subsection{Procedure}
 
 \begin{enumerate}
@@ -102,6 +112,33 @@ Electrolysis experiments also serve a pivotal role in chemistry education, since
     \item Repeat steps 1-9 twice to get two additional trials.
     \item Repeat steps 1-10 with $m=\SI{4.12}{g},\SI{6.18}{g},\SI{8.24}{g}$ and $\SI{10.30}{g}$.
 \end{enumerate}
+
+\subsection{Risk Assessment}
+\begin{table}[htbp]
+\centering
+\begin{threeparttable}
+\caption{Materials and Safety Information}
+\begin{tabular}{p{1.8cm}p{5cm}p{6cm}}
+\hline
+\textbf{Name} & \textbf{Potential Hazards} & \textbf{Measure/Precaution} \\
+\hline
+Distilled water & Physical, health, environmental hazards: Not Classified & None \\
+Magnesium chloride & Nonhazardous per GHS; treat all lab chemicals with caution & Use protective gloves/clothing/eye protection. Avoid inhalation, ingestion, or skin/eye contact. First-aid measures included. \\
+Hydrogen \tnote{1} & H220: Extremely flammable gas; H280: Gas under pressure & P210: Keep away from ignition sources. P377: Do not extinguish leaking gas fire unless leak can be stopped safely. \\
+Oxygen \tnote{1} & H270: May intensify fire; oxidizer. H280: Gas under pressure & P220: Keep away from combustibles. P244: Valves free from oil/grease. In fire: Stop leak if safe. \\
+Chlorine water \tnote{1,2} & Acute toxicity (oral, dermal, inhalation Cat. 5); skin/eye irritation; inhalation toxicity for chlorine gas & Avoid breathing vapors; immediate medical attention if exposed. First-aid and dilution instructions provided. \\
+Student power supply & Below safe voltage (24V DC) & No special precautions. Disconnect power in unexpected events. \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\item Sources: \cite{distilledwater_chemicalsUK,magnesiumchloride_flinn2014,oxygen_linde2022,hydrogen_chemicalbook2025,chlorinewater_flinn2014}
+\item[1] Product. Other supplier of the same chemical substance is referred to for the MSDS table and hazard assessment. These products are in very low amount (hydrogen and oxygen less than 10ml, chlorine gas less than 1ml) and are not able to cause as much potential hazard, therefore disposal or accidental release is not listed in the table. 
+\item[2] Chlorine may be released as gas, or undergo complicated side reactions in the solution during the experiment. The experiment will therefore be conducted in a fume hood. However, it still share similar property with chlorine water, so chlorine water is used for hazard assessment. 
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\noindent \textbf{Conclusion:} With PPE, teacher supervision, and basic laboratory discipline, overall risk is low for high school students.
+
 
 \section{Results}
 
