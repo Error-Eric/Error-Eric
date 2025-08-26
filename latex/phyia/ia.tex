@@ -13,6 +13,7 @@
 \usepackage{arydshln} % Dashed hline
 \usepackage{makecell} % Makecell
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage[absolute]{textpos}
 
 % No more than 3000 words.
@@ -196,51 +197,65 @@ Temperature and humidity    & Around 25$^\circ$C, 40\% RH  & Avoid the change in
 
 \subsection{Setup diagram}
 
-The apparatus is set up by hanging the Maxwell's Wheel between two iron stands using cotton string, as is shown in Figure \ref{fig.setupdiagram}.
+The apparatus is set up by hanging the Maxwell's Wheel between two iron stands using cotton string, as is shown in Figure \ref{fig.setup}.
 
 \begin{figure}[ht]
     \centering
+    \includegraphics[width = 0.8\textwidth]{setup.png}
+    \caption{Setup diagram $^{2}$}
+    \label{fig.setup}
+    \begin{minipage}{0.8\textwidth}
+    \begin{flushleft}
+        \footnotesize{1 The rough location of rolling up is marked with a rubber band and the precise location is marked with a pen.} \\
+        \footnotesize{2 The graph is made with chemix and mspaint.}
+    \end{flushleft}
+    \end{minipage}
     
-    \begin{tikzpicture}[scale = 0.5]
-    % No I think this is stupid
-    
-    % The acrylic plate 
-        \draw[fill=blue!20, opacity=0.3, even odd rule] (0,0) ellipse (0.8 and 3);
-        \coordinate (P) at ($(0,0) - (30:2)$);
-        \coordinate (Q) at ($(0,0) + (30:2)$);
-        \draw[line width=3pt, gray] (P) -- (0,0);
-        \draw[densely dotted, line width = 3pt, gray] (0,0) -- ($(0,0) + (30:1)$);
-        \draw[line width=3pt, gray] ($(0,0) + (30:1)$) -- (Q);
-        \draw[blue, semithick] (P) -- ($(P) + (0, 8)$);
-        \draw[blue, semithick] (Q) -- ($(Q) + (0, 8)$);
-        \draw[black, ultra thick] ($(P) + (0, 8)$) -- ($(P) + (0, 8) - (30:3)$);
-        \draw[black, ultra thick] ($(Q) + (0, 8)$) -- ($(Q) + (0, 8) + (30:3)$);
-        \coordinate (R) at ($(P) + (0, -6) - (30:2.5)$);
-        \coordinate (S) at ($(Q) + (0, -6) + (30:2.5)$);
-        \draw[black, ultra thick] ($(P) + (0, 10) - (30:2.5)$) -- (R);
-        \draw[black, ultra thick] ($(Q) + (0, 10) + (30:2.5)$) -- (S);
-        \draw[black, ultra thick] ($(R) + (30: 2) + (2, 0)$) -- ($(R) + (30: 2) - (2, 0)$) -- ($(R) - (30: 2) - (2, 0)$) -- ($(R) - (30: 2) + (2, 0)$) -- cycle;
-        \draw[black, ultra thick] ($(S) + (30: 2) + (2, 0)$) -- ($(S) + (30: 2) - (2, 0)$) -- ($(S) - (30: 2) - (2, 0)$) -- ($(S) - (30: 2) + (2, 0)$) -- cycle;
-        \coordinate (X) at ($(P) + (0, 5)$);
-        \fill[red] ($(X) + (0, 1) + (30: 0.5)$) -- ($(X) + (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) + (30: 0.5)$) -- cycle;
-        \node[red] at ($(X) + (0.7, 2)$) {Force gauge};
-        
-        \coordinate (O) at (15, 2);
-        \draw[fill=blue!20, opacity=0.3] (O) circle (3.5);
-        \draw[gray] ($(O) - (0 : 3.5)$) -- ($(O) + (0 : 3.5)$);
-        \draw[gray] ($(O) - (45 : 3.5)$) -- ($(O) + (45 : 3.5)$);
-        \draw[gray] ($(O) - (90 : 3.5)$) -- ($(O) + (90 : 3.5)$);
-        \draw[gray] ($(O) - (135 : 3.5)$) -- ($(O) + (135 : 3.5)$);
-        %\draw[black, ultra thick]
-    \end{tikzpicture}
-    \caption{Setup diagram}
-    \label{fig.setupdiagram}
 \end{figure}
+
+% \begin{figure}[ht]
+%     \centering
+%     
+%     \begin{tikzpicture}[scale = 0.5]
+%     % No I think this is stupid
+%     
+%     % The acrylic plate 
+%         \draw[fill=blue!20, opacity=0.3, even odd rule] (0,0) ellipse (0.8 and 3);
+%         \coordinate (P) at ($(0,0) - (30:2)$);
+%         \coordinate (Q) at ($(0,0) + (30:2)$);
+%         \draw[line width=3pt, gray] (P) -- (0,0);
+%         \draw[densely dotted, line width = 3pt, gray] (0,0) -- ($(0,0) + (30:1)$);
+%         \draw[line width=3pt, gray] ($(0,0) + (30:1)$) -- (Q);
+%         \draw[blue, semithick] (P) -- ($(P) + (0, 8)$);
+%         \draw[blue, semithick] (Q) -- ($(Q) + (0, 8)$);
+%         \draw[black, ultra thick] ($(P) + (0, 8)$) -- ($(P) + (0, 8) - (30:3)$);
+%         \draw[black, ultra thick] ($(Q) + (0, 8)$) -- ($(Q) + (0, 8) + (30:3)$);
+%         \coordinate (R) at ($(P) + (0, -6) - (30:2.5)$);
+%         \coordinate (S) at ($(Q) + (0, -6) + (30:2.5)$);
+%         \draw[black, ultra thick] ($(P) + (0, 10) - (30:2.5)$) -- (R);
+%         \draw[black, ultra thick] ($(Q) + (0, 10) + (30:2.5)$) -- (S);
+%         \draw[black, ultra thick] ($(R) + (30: 2) + (2, 0)$) -- ($(R) + (30: 2) - (2, 0)$) -- ($(R) - (30: 2) - (2, 0)$) -- ($(R) - (30: 2) + (2, 0)$) -- cycle;
+%         \draw[black, ultra thick] ($(S) + (30: 2) + (2, 0)$) -- ($(S) + (30: 2) - (2, 0)$) -- ($(S) - (30: 2) - (2, 0)$) -- ($(S) - (30: 2) + (2, 0)$) -- cycle;
+%         \coordinate (X) at ($(P) + (0, 5)$);
+%         \fill[red] ($(X) + (0, 1) + (30: 0.5)$) -- ($(X) + (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) + (30: 0.5)$) -- cycle;
+%         \node[red] at ($(X) + (0.7, 2)$) {Force gauge};
+%         
+%         \coordinate (O) at (15, 2);
+%         \draw[fill=blue!20, opacity=0.3] (O) circle (3.5);
+%         \draw[gray] ($(O) - (0 : 3.5)$) -- ($(O) + (0 : 3.5)$);
+%         \draw[gray] ($(O) - (45 : 3.5)$) -- ($(O) + (45 : 3.5)$);
+%         \draw[gray] ($(O) - (90 : 3.5)$) -- ($(O) + (90 : 3.5)$);
+%         \draw[gray] ($(O) - (135 : 3.5)$) -- ($(O) + (135 : 3.5)$);
+%         %\draw[black, ultra thick]
+%     \end{tikzpicture}
+%     \caption{Setup diagram}
+%     \label{fig.setupdiagram}
+% \end{figure}
 
 \subsection{Procedure}
 
 \begin{enumerate}
-    \item Measure the total mass of the magnets, mass of the acrylic plate, radius of the acrylic plate, radius of the axle and maximum vertical displacement after setting up the apparatus as is shown in Figure \ref{fig.setupdiagram}
+    \item Measure the total mass of the magnets, mass of the acrylic plate, radius of the acrylic plate, radius of the axle and maximum vertical displacement after setting up the apparatus as is shown in Figure \ref{fig.setup}
     \item Find a pair of diameters of the acrylic plane that is perpendicular to each other. This can be done by drawing the perpendicular bisector of an arbitrary pair of perpendicular chords. 
     \item Calibrate both axis with the assistance of a ruler. Make sure the center of the circle is scaled zero. 
     \item Attach four pairs of magnets to the plane.
