@@ -13,6 +13,8 @@
 \usepackage{makecell} % Makecell
 \usepackage{graphicx}
 \usepackage{threeparttable}
+\usepackage{chemformula}
+\usepackage[version=4]{mhchem}
 \usepackage[absolute]{textpos}
 
 \sisetup{
@@ -45,9 +47,66 @@ Electrolysis experiments also serve a pivotal role in chemistry education, since
 
 \textbf{Research question: How does the hardness of water (measured using MgCl$_2$ concentration) affect the rate of electrolysis?}
 
+% This concentration is way too signifcant for hardness of water. Perhaps ion concentration?
+
 \section{Hypothesis and reasoning}
 
+Pure distilled water contains a low concentration ions. Water dissociation takes place with a very low tendency of ionization.
 
+\begin{equation}
+    \ce{2H2O(l) <=> H3O+(aq) + OH-(aq)}
+\end{equation}
+
+The equilibrium constant is $Kw=1\times10^{-14} \SI{}{mol^2 dm^{-6}}(\SI{25}{\degreeCelsius})$, which means only $1\times 10^{-7}\SI{}{mol}$ of ion can be found in one liter of water. This is insufficient for significant electrolysis to occur.  
+
+When magnesium chloride is dissolved in water, it dissociates and form ions.
+
+\begin{equation}
+    \ce{MgCl2(aq) -> Mg^2+(aq) + 2 Cl-(aq)}
+\end{equation}
+
+However, $\ce{Mg^2+}$ tend to bound with $\ce{H2O}$ and form $\ce{[Mg(H2O)6]^2+}$.
+
+\begin{equation}
+    \ce{Mg^2+(aq) + 6 H2O(l) <=> [Mg(H2O)6]^2+(aq)}
+\end{equation}
+
+$\ce{[Mg(H2O)6]^2+}$ is actually a lewis acid, which means it donates proton to water. 
+
+\begin{equation}
+    \ce{[Mg(H2O)6]^2+(aq) + H2O(l) <-> [Mg(H2O)5OH]^+(aq) + H3O^+(aq)}
+\end{equation}
+
+For $\ce{MgCl2}$ solution having a concentration significantly higher than $1\times 10^{-7} \SI{}{mol\cdot dm^{-3}}$, that series of reactions can lead to a signifcant increase in ion concentration. In fact, most of ion in the solution results from the presence of the electrolyte. These freely moving charged particles can act as charge carriers, make the solution a good conductor and increase the rate of electrolysis. When the concentration is relatively low, complete dissociation is expected, which means the amount if ion is directly proportional to the concentration, and so is the rate of electrolysis. However, as the concentration gets higher, full dissociation may not happen, which means the direct proportionality will no longer apply.
+
+\textbf{Hypothesis 1: The rate of electrolysis should be approximately directly proportional to the concentration of the solution at low concentration, but can increase at a slower rate at higher concentration.}
+
+During the electrolysis, the main reaction is the electrolysis of water:
+
+\begin{align}
+    \ce{2 H+ + 2 e- &-> H2(g)}  \label{eq.cathode}\\ 
+    \ce{2 H2O(l) &-> O2(g) + 4H+(aq) + e-}   \label{eq.anode}\\ 
+    \ce{2 H2O(l) &-> O2(g) + 2 H2(g)}  \label{eq.overall}
+\end{align}
+
+where Equation~\ref{eq.cathode} formulates the reaction happening at the cathode, Equation~\ref{eq.anode} formulates the reaction happening at the anode, and Equation~\ref{eq.overall} describes the overall reaction. The reaction happens only when the solution is acidic. Basic environment, which might result from extensive side reaction mentioned in Equation~\ref{eq.sidecl}, does not change the overall reaction but does change the reaction at electrodes. However, this should not happen due to the slow rate and short time span in this experiment. $\ce{H2}$ and $\ce{O2}$ results in vibrant effervescence in the solution.
+
+However, when the concentration of $\ce{[Cl-]}$ is high, more $\ce{[Cl-]}$ tend to compete with , the side reaction begin to compete and eventually dominate.
+
+\begin{equation}
+    \ce{2Cl-(aq) -> Cl2(g) + 2e-} \label{eq.sidecl}
+\end{equation}
+
+The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor that smells like bleach, or end up dissolved in water and undergo a series of complicated side reaction as described in Equations~\ref{eq.s1},\ref{eq.s2} and \ref{eq.s3}, producing chlorine water. Magnesium ion may also undergo side reactions mentioned in Equation~\ref{eq.s4}.
+
+\begin{align}
+  &\text{Hydrolysis of chlorine:} && \ch{Cl2 + H2O <=> HOCl + H+ + Cl^-} \label{eq.s1}\\
+  &\text{Bleach formation:} && \ch{Cl2 + 2OH^- -> Cl^- + ClO^- + H2O} \label{eq.s2}\\
+  &\text{Chlorate formation:} && \ch{3 ClO^- -> ClO3^- + 2 Cl^-} \label{eq.s3}\\
+  &\text{Precipitation near cathode:} && \ch{Mg^{2+} + 2 OH^- -> Mg(OH)2(s)}\label{eq.s4}
+\end{align}
+
+\textbf{Hypothesis2: The following phenomena may be observed---- the higher the concentration, the more vigorous effervescence is released form electrodes, the greener the liquid around the anode becomes. Some cloudy precipitation can be found around the cathode.}
 
 \section{Experiment design}
 
@@ -64,15 +123,15 @@ Electrolysis experiments also serve a pivotal role in chemistry education, since
     \centering
     \caption{Controlled variables}
     \label{tab.control}
-    \begin{tabularx}{1.2\textwidth}{p{2cm} p{1cm} XX}
+    \begin{tabularx}{1\textwidth}{p{2cm} p{0.8cm} X X}
         \hline
         Variable                    & Value                  & Reason to control                                          & Method to control                                    \\ \hline
         Temperature              & $25^oC$                & Can significantly affect the rate of chemical reactions. & Complete the experiment during a short time period, in an air-conditioned room. \\
         Atmospheric pressure        & $\SI{1.0 }{atm}$       & Might change the volume and pressureof the gas collected      & Complete the experiment during a short time period. \\
         Voltage                     & $\SI{16 }{V}$          & Can affect the current passing through the electrolyte.                             & Use the same cell throughout the experiment. \\
         Distance between electrodes & $\SI{5.0}{cm}$        & Can affect the resistance between electrodes. & Use the same setup throughout the experiment. \\
-        Material of the electrodes  & Graphite            & Can affect the conductivity and chemical property of the electrodes. & Use the same electrodes throughout the experiment. \\ 
-        Time duration of the experiment & $\SI{20}{min}$ & Short time leads to inaccuarcy, but the concentration chage and side-effect accumulates over time. & Always time $\SI{20}{min}$ using a stopwatch.\\\hline
+        Material of the electrodes  & \makecell{Gra-\\phite}           & Can affect the conductivity and chemical property of the electrodes. & Use the same electrodes throughout the experiment. \\ 
+        Time duration of the experiment & $\SI{20}{min}$ & Short time leads to inaccuarcy, but the concentration change and side-effect accumulates over time. & Always time $\SI{20}{min}$ using a stopwatch.\\\hline
     \end{tabularx}
 \end{table}
 
@@ -142,7 +201,7 @@ Student power supply & Below safe voltage (24V DC) & No special precautions. Dis
 
 \section{Results}
 
-\subsection{Raw data}
+\subsection{Raw data} % need qualifying (not quantifying data)
 
 \begin{table}[ht]
 \centering
