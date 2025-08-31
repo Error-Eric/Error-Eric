@@ -85,45 +85,43 @@ Due to the negeligibility of friction, we can assume that all the gravitational 
 \begin{equation}
     mg\Delta h = \frac{1}{2}m v^2 + \frac{1}{2} I \omega ^2
 \end{equation}
-
+% IDK, maybe the original version is better? 
 
 where $I$ is the moment of inertia of the entire wheel. 
 
-Moreover, using the definition of velocity and angular velocity, the following identites can be derived,
+Moreover, using the definition of velocity and angular velocity, we can derive identities \ref{eq.defv}, \ref{eq.defomega}, and \ref{eq.h0}.
 
-\begin{equation}
+\begin{equation}\label{eq.defv}
     \dfrac{\mathrm{d}\Delta H}{\mathrm{d}t} = v
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq.defomega}
     \omega r = v
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq.h0}
     \Delta H(0) = 0
 \end{equation}
 
-Therefore
+Therefore we can get Equation \ref{eq.general}, in which terms can be moved and combined to derive Equation \ref{eq.separate}.
 
-\begin{equation}
+\begin{equation}\label{eq.general}
     mg\Delta H = \frac{1}{2}m v^2 + \frac{1}{2} \frac{I}{r^2} v ^2
 \end{equation}
 
-After moving and combining the terms
-
-\begin{equation}
+\begin{equation}\label{eq.separate}
     \frac{2mg\Delta H}{m+\frac{I}{r^2}} = (\dfrac{\mathrm{d}\Delta H}{\mathrm{d}t})^2
 \end{equation}
 
-Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left size and make its index $1$,
+Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left size and make its index $1$, a simple ODE displaced as Equation \ref{eq.odeform} is obtained.
 
-\begin{equation}
+\begin{equation}\label{eq.odeform}
     \dfrac{\mathrm{d}\Delta H}{\mathrm{d}t} = \sqrt{\frac{2mg}{m+\frac{I}{r^2}}} \Delta H ^ {0.5}
 \end{equation}
 
-This is a simple ODE, with the help of formula (4), we can get that,
+With the help of formula \ref{eq.h0}, the ODE is solved, and the solution is Equation \ref{eq.h}.
 
-\begin{equation}
+\begin{equation}\label{eq.h}
     \Delta H(t) = \dfrac{mg}{2m+\frac{2I}{r^2}} t^2
 \end{equation}
 
@@ -171,27 +169,27 @@ Independent variable turned out to be $0.668, 0.776, 0.919, 1.09, 1.31, 1.56$ an
 \centering
 \caption{Controlled variables}
 \label{tab.control}
-\begin{tabular}{llll}
+\begin{tabularx}{\textwidth}{p{2.0cm}p{1.5cm}XX}
 \hline
 Variable                    & Value                  & Reason to control                                          & Method to control                                    \\ \hline
 Total mass of the wheel $m$ & $\approx \SI{400}{g}$  & To make sure the gradient is not affected.                 & Use the same set of magnets, plate and axle.         \\
 Material of the wheel       & Acrylic + NdFeB magnet & To make sure the mass distribution is even and consistent. & Use the same set of magnets and plate.               \\
 Height of displacement      & $\approx \SI{20}{cm}$  & Unify the initial kinetic energy and length of path.       & Determine and mark a release position on the string. \\ 
 Temperature and humidity    & Around 25$^\circ$C, 40\% RH  & Avoid the change in air resistance                   & Conduct the experiment in a short period of time.    \\\hline
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \subsection{Materials}
 
 \begin{itemize}
-    \item[*] 2 Iron stands (height $\approx \SI{50}{cm}$)
+    \item[*] 2 Retort stands (height $\approx \SI{50}{cm}$) with clamps
     \item[*] 2 Cotton strings (length $\approx \SI{70}{cm}$)
-    \item[*] 1 Acrylic disc (radius $\approx \SI{10}{cm}$, mass $\approx \SI{110}{g}$)
-    \item[*] 16 Magnets (radius $\approx \SI{3.0}{cm}$, mass $\approx \SI{23}{g}$)
-    \item[*] 1 Force gauge ($\SI{50}{N}$)
-    \item[*] 1 Tape rule
-    \item[*] 1 Electric balance
-    \item[*] 1 Vernier caliper
+    \item[*] 1 Acrylic disc with axle (radius $\approx \SI{10}{cm}$, mass $\approx \SI{110}{g}$)
+    \item[*] 16 Round magnets (radius $\approx \SI{3.0}{cm}$, mass $\approx \SI{23}{g}$)
+    \item[*] 1 Electric force gauge ($\SI{50}{N}$), with compatible data cable
+    \item[*] 1 Tape rule (range $\ge \SI{50}{cm}$, resolution $\le \SI{0.1}{cm}$)
+    \item[*] 1 Electric balance (range $\ge \SI{400}{g}$, resolution $\le \SI{0.1}{g}$)
+    \item[*] 1 Vernier caliper (range $\ge \SI{5}{cm}$, resolution $\le \SI{0.01}{cm}$)
     \item[*] 1 Hot glue gun  
 \end{itemize}
 
@@ -212,45 +210,6 @@ The apparatus is set up by hanging the Maxwell's Wheel between two iron stands u
     \end{minipage}
     
 \end{figure}
-
-% \begin{figure}[ht]
-%     \centering
-%     
-%     \begin{tikzpicture}[scale = 0.5]
-%     % No I think this is stupid
-%     
-%     % The acrylic plate 
-%         \draw[fill=blue!20, opacity=0.3, even odd rule] (0,0) ellipse (0.8 and 3);
-%         \coordinate (P) at ($(0,0) - (30:2)$);
-%         \coordinate (Q) at ($(0,0) + (30:2)$);
-%         \draw[line width=3pt, gray] (P) -- (0,0);
-%         \draw[densely dotted, line width = 3pt, gray] (0,0) -- ($(0,0) + (30:1)$);
-%         \draw[line width=3pt, gray] ($(0,0) + (30:1)$) -- (Q);
-%         \draw[blue, semithick] (P) -- ($(P) + (0, 8)$);
-%         \draw[blue, semithick] (Q) -- ($(Q) + (0, 8)$);
-%         \draw[black, ultra thick] ($(P) + (0, 8)$) -- ($(P) + (0, 8) - (30:3)$);
-%         \draw[black, ultra thick] ($(Q) + (0, 8)$) -- ($(Q) + (0, 8) + (30:3)$);
-%         \coordinate (R) at ($(P) + (0, -6) - (30:2.5)$);
-%         \coordinate (S) at ($(Q) + (0, -6) + (30:2.5)$);
-%         \draw[black, ultra thick] ($(P) + (0, 10) - (30:2.5)$) -- (R);
-%         \draw[black, ultra thick] ($(Q) + (0, 10) + (30:2.5)$) -- (S);
-%         \draw[black, ultra thick] ($(R) + (30: 2) + (2, 0)$) -- ($(R) + (30: 2) - (2, 0)$) -- ($(R) - (30: 2) - (2, 0)$) -- ($(R) - (30: 2) + (2, 0)$) -- cycle;
-%         \draw[black, ultra thick] ($(S) + (30: 2) + (2, 0)$) -- ($(S) + (30: 2) - (2, 0)$) -- ($(S) - (30: 2) - (2, 0)$) -- ($(S) - (30: 2) + (2, 0)$) -- cycle;
-%         \coordinate (X) at ($(P) + (0, 5)$);
-%         \fill[red] ($(X) + (0, 1) + (30: 0.5)$) -- ($(X) + (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) - (30: 0.5)$) -- ($(X) - (0, 1) + (30: 0.5)$) -- cycle;
-%         \node[red] at ($(X) + (0.7, 2)$) {Force gauge};
-%         
-%         \coordinate (O) at (15, 2);
-%         \draw[fill=blue!20, opacity=0.3] (O) circle (3.5);
-%         \draw[gray] ($(O) - (0 : 3.5)$) -- ($(O) + (0 : 3.5)$);
-%         \draw[gray] ($(O) - (45 : 3.5)$) -- ($(O) + (45 : 3.5)$);
-%         \draw[gray] ($(O) - (90 : 3.5)$) -- ($(O) + (90 : 3.5)$);
-%         \draw[gray] ($(O) - (135 : 3.5)$) -- ($(O) + (135 : 3.5)$);
-%         %\draw[black, ultra thick]
-%     \end{tikzpicture}
-%     \caption{Setup diagram}
-%     \label{fig.setupdiagram}
-% \end{figure}
 
 \subsection{Procedure}
 
@@ -378,11 +337,27 @@ Experiment & $I(\times 10^{-3}\SI{}{kgm^2})$ & $T^2(\SI{}{s^2})$ \\ \hline
 
 \subsection{Sample processing}
 
-Take the data processing of experiment $1$ as an example. The force gauge data is recorded and plotted against time in Figure \ref{fig.ft}. It can be noticed that the reading of the force gauge is noisy but shows clear peaks. With the assistance of a program, prominant peaks are marked in the figure using red dots.
+Take the data processing of experiment $1$ as an example. 
 
-The x-index of the first two peaks are taken as $t_1$ and $t_2$ of this trial.
+The $R$, distance from the magnets' center of mass to the pivot, is measured to be $2.5\pm 0.1\SI{}{cm}$. Therefore the moment of inertia contributed by the magnets is calculated as 
 
-$$T_a = t_1 - t_0 = {\SI{6.68}{s} -  \SI{2.28}{s}} = \SI{4.40}{s}$$
+\begin{equation}
+    \begin{aligned}
+        I_m &= MR^2 \\
+            &= 179.39 \times 10^-3 \SI{}{kg} (\times 2.5 \times 10^-2)^2 \SI{}{m^2}\\
+            &= 1.1\times 10^{-3}\SI{}{kgm^2}
+    \end{aligned}
+\end{equation}% 1.112119
+
+\begin{equation}
+    \begin{aligned}
+        \Delta I_m &= \%\Delta I_m \times I_m \\
+            &= (\frac{\Delta M}{M} + 2\frac{\Delta R}{R})\times I_m\\
+            &= \pm 9\times 10^{-6}\SI{}{kgm^2}
+    \end{aligned} %8.97575
+\end{equation}
+
+The force gauge data is recorded and plotted against time in Figure \ref{fig.ft}. It can be noticed that the reading of the force gauge is noisy but shows clear peaks. With the assistance of a program, prominant peaks are marked in the figure using red dots.
 
 \begin{figure}
     \centering
@@ -390,6 +365,59 @@ $$T_a = t_1 - t_0 = {\SI{6.68}{s} -  \SI{2.28}{s}} = \SI{4.40}{s}$$
     \caption{$F - t$ graph}
     \label{fig.ft}
 \end{figure}
+
+The x-index of the first two peaks are taken as $t_1$ and $t_2$ of this trial. The ``period" of the experiment $T_a$ is calculated as in Equation \ref{eq.ta}, whose uncertainty is calculated as in Equation \ref{eq.dta}.
+
+\begin{equation}
+    \begin{aligned}
+        T_a &= t_1 - t_0 \\
+            &= \SI{6.68}{s} -  \SI{2.28}{s}\\
+            &= \SI{4.40}{s}
+    \end{aligned}
+    \label{eq.ta}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \Delta T_a &= \Delta t_1 + \Delta t_0 \\
+                   &= (\pm \SI{0.01}{s}) + (\pm\SI{0.01}{s}) \\
+                   &= \pm \SI{0.02}{s}
+    \end{aligned}
+    \label{eq.dta}
+\end{equation}
+
+Applying this two five trials, we can get the average of the first experiment and the corresponding uncertainties, as is shown in Equations .
+
+\begin{equation}
+    \begin{aligned}
+        \bar{T} &= \frac{T_a + T_b + T_c + T_d + T_e}{5} \\
+                &= \SI{4.466}{s}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \Delta\bar{T} &= \frac{\max\{T_i\} - \min\{T_i\}}{2} \\
+                      &= \frac{\SI{4.55}{s} - \SI{4.38}{s}}{2} \\
+                      &= \SI{0.085}{s}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \bar{T}^2 &= (\SI{4.466}{s})^2\\
+                        &= \SI{19.94}{s^2}
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \Delta\bar{T}^2 &= \frac{\Delta\bar{T}}{\bar{T}}\times 2 \times \bar{T}^2\\
+                        &= 1.9032\% \times 2 \times \SI{19.94}{s^2}\\
+                        &= \SI{0.7592}{s^2}
+    \end{aligned}
+\end{equation}
+
 
 \section{Discussion and conclusion}
 
