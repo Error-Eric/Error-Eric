@@ -1,28 +1,35 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import openpyxl
 
-# Data
-x = np.array([0.199726185, 0.399419577, 0.600811608, 0.798816199, 0.996322348])
-x_err = np.array([0.00152484, 0.000838662, 0.002019183, 0.000641909, 0.00351697])
-y = np.array([1.36667E-07, 2.39167E-07, 3.40528E-07, 4.4075E-07, 4.93139E-07])
-y_err = np.array([5.125E-09, 3.41667E-09, 1.70833E-09, 3.41667E-09, 1.36667E-08])
+def get_numbers_from_column(column):
+    numbers = []
+    for cell in column:
+        if cell.data_type != 'n': continue
+        if cell.value is None: continue
+        try: numbers.append(float(cell.value))
+        except ValueError: pass
+    return numbers
 
-# Rescale y to 1e-7 units
-y_scaled = y / 1e-7
-y_err_scaled = y_err / 1e-7
+# Read data from Excel file
+workbook = openpyxl.load_workbook('data.xlsx', data_only= True)
+sheet = workbook['Sheet1']
+x = get_numbers_from_column(sheet['Q'])
+y = get_numbers_from_column(sheet['O'])
+y_err = get_numbers_from_column(sheet['P'])
 
 # Fit line
-coeffs = np.polyfit(x, y_scaled, 1)
+coeffs = np.polyfit(x, y, 1)
 poly_eq = np.poly1d(coeffs)
 y_fit_scaled = poly_eq(x)
 
 # Calculate R^2
-ss_res = np.sum((y_scaled - y_fit_scaled) ** 2)
-ss_tot = np.sum((y_scaled - np.mean(y_scaled)) ** 2)
+ss_res = np.sum((y - y_fit_scaled) ** 2)
+ss_tot = np.sum((y - np.mean(y)) ** 2)
 r_squared = 1 - (ss_res / ss_tot)
 
 # Plot
-plt.errorbar(x, y_scaled, yerr=y_err_scaled, fmt='o',
+plt.errorbar(x, y, yerr=y_err, fmt='o',
              label='Data with error bars', capsize=4, markersize = 2)
 plt.plot(x, y_fit_scaled, 'r-', alpha=0.7,  # <-- transparency here
          label=fr'Linear fit: $y = {coeffs[0]:.3f}x + {coeffs[1]:.3f}$')
