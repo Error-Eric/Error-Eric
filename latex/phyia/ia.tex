@@ -34,7 +34,7 @@
 
 In ancient Greece (around 220 B.C.), Archimedes laid solid foundation for rigid body statics by discovering and formalizing the conditions of equilibrium for levers. People studied Archimedes's work and developed concepts like torque after then, but it was not until Issac Newton (1643-1727) formulated Newton's Laws of Motion that humans are well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Eular (1707-1783) successfully formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
 
-Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at storing rotational kinetic energy, which makes them suitable for objects like flywheels, while objects with small moment of inertia can rotate faster. 
+Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at ``storing'' rotational kinetic energy, which makes them suitable for objects like flywheels, while objects with small moment of inertia can rotate faster. 
 
 Maxwell's wheel is commonly used as an instrument to illustrate the conservation of energy and the concept of rotational kinetic energy in physics education. It can also be utilized to measure the moment of inertia of a disk-shaped object. This experiment aims at discovering the significance of the moment of inertia in a Maxwell's wheel experiment.
 
@@ -74,15 +74,15 @@ Maxwell's wheel is commonly used as an instrument to illustrate the conservation
     \label{fig.maxwellwheel}
 \end{figure}
 
-As is shown in Figure \ref{fig.maxwellwheel}, the Maxwell's wheel mainly consists of three parts: a wheel of radius $R$, an axle of radius $r$, and a string. Aside from friction, two forces are acting on the pendulum: the tension from the string and the gravitational force. During the entire process, the gravitational potential energy converts to kinetic energy of the wheel. 
+As is shown in Figure \ref{fig.maxwellwheel}, the Maxwell's wheel mainly consists of three parts: a disk-shaped wheel of radius $R$, an axle of radius $r$ penetrating the wheel, and a string that swirls around the axle. Aside from friction, two forces are acting on the pendulum: the tension from the string and the gravitational force. During the entire process, the gravitational potential energy converts to kinetic energy of the wheel. 
 
-The downward movement and the upward movement is basically symmetric, so only the downward reaction needs algebraric analysis.
+The downward movement and the upward movement is basically symmetric, so only the downward process needs algebraric analysis.
 
 Since the wheel is not in equilibrium, its hard to analyze the magnitude of tention $T$. However, the problem can be tackled using conservation of energy.
 
-Due to the negeligibility of friction, we can assume that all the gravitational potential energy lost is converted to the kinetic energy. Or more specificly, the sum of the translational kinetic energy and rotational kinetic energy should equal to the loss in gravitational potential energy. Or formally,
+Due to the negeligibility of friction, it can be assumed that all the gravitational potential energy lost is converted to the kinetic energy. Or more specificly, the sum of the translational kinetic energy and rotational kinetic energy should equal to the loss in gravitational potential energy, as is formally stated in Equation \ref{eq.con}.
 
-\begin{equation}
+\begin{equation}\label{eq.con}
     mg\Delta h = \frac{1}{2}m v^2 + \frac{1}{2} I \omega ^2
 \end{equation}
 % IDK, maybe the original version is better? 
@@ -103,7 +103,7 @@ Moreover, using the definition of velocity and angular velocity, we can derive i
     \Delta H(0) = 0
 \end{equation}
 
-Therefore we can get Equation \ref{eq.general}, in which terms can be moved and combined to derive Equation \ref{eq.separate}.
+Therefore, after replacing $\omega$ in Equation \ref{eq.con} with Equation \ref{eq.defomega}, we can get Equation \ref{eq.general}, whose terms can be moved and combined and $v$ can be replaced using Equation \ref{eq.defv} to derive Equation \ref{eq.separate}.
 
 \begin{equation}\label{eq.general}
     mg\Delta H = \frac{1}{2}m v^2 + \frac{1}{2} \frac{I}{r^2} v ^2
@@ -113,50 +113,72 @@ Therefore we can get Equation \ref{eq.general}, in which terms can be moved and 
     \frac{2mg\Delta H}{m+\frac{I}{r^2}} = (\dfrac{\mathrm{d}\Delta H}{\mathrm{d}t})^2
 \end{equation}
 
-Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left size and make its index $1$, a simple ODE displaced as Equation \ref{eq.odeform} is obtained.
+Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left size and make its index $1$, a simple ODE (Ordinary Differential Equation) for $\Delta H(t)$ is obtained, as is shown in Equation \ref{eq.odeform}.
 
 \begin{equation}\label{eq.odeform}
     \dfrac{\mathrm{d}\Delta H}{\mathrm{d}t} = \sqrt{\frac{2mg}{m+\frac{I}{r^2}}} \Delta H ^ {0.5}
 \end{equation}
 
-With the help of formula \ref{eq.h0}, the ODE is solved, and the solution is Equation \ref{eq.h}.
+By letting coefficient $k$ be $\sqrt{\frac{2mg}{m+\frac{I}{r^2}}}$, the ODE can be solved by separating variables and intergrate the both sides, as is shown in Equation \ref{eq.solveode}.
+
+\begin{equation}
+    \label{eq.solveode}
+    \begin{aligned}
+        \dfrac{\mathrm{d}\Delta H}{\mathrm{d}t} &= k \Delta H ^ {0.5}\\
+        \Delta H ^ {-0.5} \mathrm{d}\Delta H  &= k\mathrm{d}t \\
+        \int \Delta H ^ {-0.5} \mathrm{d}\Delta H &= \int k\mathrm{d}t \\
+        2\Delta H ^ {0.5} &= k t + C\\
+    \end{aligned}
+\end{equation}
+
+With the help of initial condition Equation \ref{eq.h0}, we know that $C = 0$. 
+
+\begin{equation}
+    \begin{aligned}
+        2\Delta H ^ {0.5} &= k t \\
+        \Delta H  &= (\dfrac{k}{2})^2 t^2 \\
+    \end{aligned}
+\end{equation}
+
+Therefore the ODE is solved, and the solution is Equation \ref{eq.h}.
 
 \begin{equation}\label{eq.h}
-    \Delta H(t) = \dfrac{mg}{2m+\frac{2I}{r^2}} t^2
+    \Delta H(t) = \dfrac{k^2}{4} t^2 = \dfrac{mg}{2m+\frac{2I}{r^2}} t^2
 \end{equation}
 
-The downward movement terminates when $\Delta H(t) = l$, which means 
+The downward movement terminates when $\Delta H(t) = l$, where $l$ is the length of the string. Therefore, the time for downward movement $t_{down}$ is calculated as Equation \ref{eq.tdown}.
 
-\begin{equation}
-    t_{down} = \sqrt{\dfrac{(2m+\frac{2I}{r^2})l}{mg}}
+\begin{equation}\label{eq.tdown}
+    \begin{aligned}
+        \Delta H(t_{down}) = \dfrac{k^2}{4} t_{down}^2 &= l\\
+        t_{down} &= 2\sqrt{\dfrac{l}{k^2}}
+    \end{aligned}
 \end{equation}
 
-The entire period of the Maxwell's Wheel is 
+Since the doward and upward movements are symmetric, the entire period of the Maxwell's Wheel can be formulated in Equation \ref{eq.period}.
 
-\begin{equation}
-    T = 2t_{down} = 2\sqrt{\dfrac{(2m+\frac{2I}{r^2})l}{mg}}
+\begin{equation}\label{eq.period}
+    T = 2t_{down} = 4\sqrt{\dfrac{l}{k^2}}
 \end{equation}
 
-which can be re-written as 
+When both sides are squared, we can get Equation \ref{eq.t2}, which can be further simplified by separating terms with and without $I$ to get Equation \ref{eq.t22}.
 
-\begin{equation}
-    T^2 = 8l\dfrac{(m+\frac{I}{r^2})}{mg}
+\begin{equation}\label{eq.t2}
+    T^2 = 16\dfrac{l}{k^2} = 8l\dfrac{(m+\frac{I}{r^2})}{mg}
 \end{equation}
 
-Or
-
-\begin{equation}
+\begin{equation}\label{eq.t22}
     T^2 = \dfrac{8l}{mgr^2} I + \dfrac{8l}{g}
 \end{equation}
 
-From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ increases. $T^2$ and $I$ has a linear relationship.}
+From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ increases. $T^2$ and $I$ has a linear relationship.} When $T^2$ is plotted against $I$, a straight line with a positive gradient and positive y-intercept is expected.
 
 \section{Experiment design}
 
 \subsection{Variables} 
 
 \begin{itemize}
-    \item Independent variable: Moment of inertia (manipulated by changing the distance from the magnets to the pivot: $r' = 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5 \SI{}{cm}$).
+    \item Independent variable: Moment of inertia (manipulated by changing the distance from the magnets to the pivot: $r' = \SI{2.5}{cm}, \SI{3.5}{cm}, \SI{4.5}{cm}, \SI{5.5}{cm},\allowbreak \SI{6.5}{cm}, \SI{7.5}{cm}, \SI{8.5}{cm}$).
     \item Dependent variable: ``Period'' of the Maxwell's Wheel (Time between two lowest positions).
     \item Controlled variables: The material, mass and size of the plate and magnets. The length of the string. The mass, radius and length of the axle, etc. They are listed in table \ref{tab.control}.
 \end{itemize}
@@ -219,11 +241,11 @@ The apparatus is set up by hanging the Maxwell's Wheel between two iron stands u
     \item Calibrate both axis with the assistance of a ruler. Make sure the center of the circle is scaled zero. 
     \item Attach four pairs of magnets to the plane.
     \item Adjust the position of the magnets to make the distance for the magnets' centers of mass are $r = \SI{8.5}{cm}$. This can be done by placing the magnet (with radius $r' = \SI{3}{cm}$) between $r = \SI{10}{cm}$ mark and $r = \SI{7}{cm}$ mark, while touching the both marks.
-    \item Fix the magnets with glue guns.
+    \item Fix the magnets with the glue gun to prevent them from sliding on the plate.
     \item Swirl up the axle until it reaches the designated point, start the forcemeter and release the wheel. 
-    \item Record the time for the first and second time where the forcemeter reading reaches local maxima \footnote{This is done with the assistance of a program. If the first local maximum is not prominant, the second and the third local maxima is used instead.} 
+    \item Record the time for the first and second time where the forcemeter reading reaches local maxima. Take them down as $t_1$ and $t_2$. \footnote{This is done with the assistance of a program. If the first local maximum is not prominant, the second and the third local maxima is used instead.} 
     \item Repeat Steps 7 and 8 for $4$ additional trials.
-    \item Repeat Steps 5 to 9 with $r = 7.5, 6.5, 5.5, 4.5, 3.5 \SI{}{cm}$.
+    \item Repeat Steps 5 to 9 with $r = \SI{7.5}{cm}, \SI{6.5}{cm}, \SI{5.5}{cm}, \SI{4.5}{cm}, \SI{3.5}{cm}$.
 \end{enumerate}
 
 \subsection{Risk assessment}
@@ -261,8 +283,8 @@ Raw data is collected as follows:
 \hline
 \multicolumn{5}{c}{Experiments 1-4} & \multicolumn{5}{c}{Experiments 5-7} \\
 \hline
-No.         & \makecell{$r(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & 
-No.         & \makecell{$r(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } \\
+No.         & \makecell{$r'(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & 
+No.         & \makecell{$r'(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \makecell{$t_1(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } & \makecell{$t_2(\SI{}{s})$ \\ $\pm \SI{0.01}{s}$ } \\
 \hline
 \multirow{5}{*}{1} & \multirow{5}{*}{$2.5$} & 1     & $2.28$   & $6.68$   & 
 \multirow{5}{*}{5} & \multirow{5}{*}{$6.5$} & 1     & $3.58$   & $9.48$   \\
@@ -346,7 +368,7 @@ The $R$, distance from the magnets' center of mass to the pivot, is measured to 
 \begin{equation}
     \begin{aligned}
         I_m &= MR^2 \\
-            &= 179.39 \times 10^-3 \SI{}{kg} (\times 2.5 \times 10^-2)^2 \SI{}{m^2}\\
+            &= 179.39 \times 10^{-3} \SI{}{kg} (\times 2.5 \times 10^{-2})^2 \SI{}{m^2}\\
             &= 1.1\times 10^{-3}\SI{}{kgm^2}
     \end{aligned}
 \end{equation}% 1.112119
@@ -392,14 +414,14 @@ Applying this two five trials, we can get the average of the first experiment an
 
 \begin{equation}
     \begin{aligned}
-        \bar{T} &= \frac{T_a + T_b + T_c + T_d + T_e}{5} \\
+        \overline{T} &= \frac{T_a + T_b + T_c + T_d + T_e}{5} \\
                 &= \SI{4.466}{s}
     \end{aligned}
 \end{equation}
 
 \begin{equation}
     \begin{aligned}
-        \Delta\bar{T} &= \frac{\max\{T_i\} - \min\{T_i\}}{2} \\
+        \Delta\overline{T} &= \frac{\max\{T_i\} - \min\{T_i\}}{2} \\
                       &= \frac{\SI{4.55}{s} - \SI{4.38}{s}}{2} \\
                       &= \SI{0.085}{s}
     \end{aligned}
@@ -407,14 +429,14 @@ Applying this two five trials, we can get the average of the first experiment an
 
 \begin{equation}
     \begin{aligned}
-        \bar{T}^2 &= (\SI{4.466}{s})^2\\
+        \overline{T}^2 &= (\SI{4.466}{s})^2\\
                         &= \SI{19.94}{s^2}
     \end{aligned}
 \end{equation}
 
 \begin{equation}
     \begin{aligned}
-        \Delta\bar{T}^2 &= \frac{\Delta\bar{T}}{\bar{T}}\times 2 \times \bar{T}^2\\
+        \Delta\overline{T}^2 &= \frac{\Delta\overline{T}}{\overline{T}}\times 2 \times \overline{T}^2\\
                         &= 1.9032\% \times 2 \times \SI{19.94}{s^2}\\
                         &= \SI{0.7592}{s^2}
     \end{aligned}
