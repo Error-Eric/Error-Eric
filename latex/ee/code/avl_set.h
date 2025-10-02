@@ -24,11 +24,7 @@ private:
 
     Node* root;
     size_t size;
-    Compare comp;
-    
-    // Memory pool management
-    std::list<Node> node_storage;
-    std::vector<Node*> free_nodes;
+    Compare comp_;
 
     // Helper functions for merging
     int height(Node* node) const {
@@ -37,25 +33,11 @@ private:
 
     // Memory pool operations
     Node* create_node(const T& key) {
-        if (!free_nodes.empty()) {
-            Node* node = free_nodes.back();
-            free_nodes.pop_back();
-            *node = Node(key);
-            return node;
-        }
-        node_storage.emplace_back(key);
-        return &node_storage.back();
+        return new Node(key);
     }
 
     Node* create_node(T&& key) {
-        if (!free_nodes.empty()) {
-            Node* node = free_nodes.back();
-            free_nodes.pop_back();
-            *node = Node(std::move(key));
-            return node;
-        }
-        node_storage.emplace_back(std::move(key));
-        return &node_storage.back();
+        return new Node(std::move(key));
     }
 
     // Generates a balanced subtree in O(n) time out from a ordered sequence.
@@ -77,13 +59,16 @@ private:
         update_height(cur);
         return cur;
     }
-    
-    void recycle_node(Node* node) {
-        free_nodes.push_back(node);
-    }
 
     void update_height(Node* node) {
         node->height = 1 + std::max(height(node->left), height(node->right));
+    }
+
+    void delete_tree(Node* node) {
+        if (!node) return;
+        delete_tree(node->left);
+        delete_tree(node->right);
+        delete node;
     }
 
     Node* rotate_right(Node* y) {
@@ -177,14 +162,12 @@ private:
 
 
 public:
-    AVLSet() : root(nullptr), size(0), comp(Compare()) {}
-    
+    AVLSet(Compare Comp = Compare()) : root(nullptr), size(0), comp_(Comp) {}
+    Compare comparator() const { return comp_; }
     // Move operations
     AVLSet(AVLSet&& other) noexcept 
         : root(other.root), 
-          size(other.size),
-          node_storage(std::move(other.node_storage)),
-          free_nodes(std::move(other.free_nodes)) {
+          size(other.size),{
         other.root = nullptr;
         other.size = 0;
     }
@@ -194,8 +177,6 @@ public:
             clear();
             root = other.root;
             size = other.size;
-            node_storage = std::move(other.node_storage);
-            free_nodes = std::move(other.free_nodes);
             other.root = nullptr;
             other.size = 0;
         }
@@ -207,9 +188,7 @@ public:
     AVLSet& operator=(const AVLSet&) = delete;
 
     void clear() {
-        recycle_tree(root);
-        node_storage.clear();
-        free_nodes.clear();
+        delete_tree(root);
         root = nullptr;
         size = 0;
     }
@@ -235,11 +214,10 @@ public:
         return result;
     }
 
+
     void swap_with(AVLSet& other) {
         std::swap(root, other.root);
         std::swap(size, other.size);
-        std::swap(node_storage, other.node_storage);
-        std::swap(free_nodes, other.free_nodes);
     }
 
 
@@ -261,11 +239,11 @@ public:
 
         // Merge sorted vectors
         std::merge(q1.begin(), q1.end(), q2.begin(), q2.end(),
-                  std::back_inserter(all_elements), comp);
+                  std::back_inserter(all_elements), comp_);
 
         // Recycle both trees
-        recycle_tree(root);
-        recycle_tree(other.root);
+        delete_tree(root);
+        delete_tree(other.root);
         root = nullptr;
         other.root = nullptr;
         size = 0;
@@ -297,9 +275,9 @@ public:
             return create_node(key);
         }
 
-        if (comp(key, node->key)) {
+        if (comp_(key, node->key)) {
             node->left = insert(node->left, key);
-        } else if (comp(node->key, key)) {
+        } else if (comp_(node->key, key)) {
             node->right = insert(node->right, key);
         } else {
             return node;
@@ -318,7 +296,7 @@ public:
     template<typename RandAccIt>
     void construct(RandAccIt bg, RandAccIt ed){
         // Clear the current tree
-        recycle_tree(root);
+        delete_tree(root);
         root = nullptr;
         // Build new tree
         root = build(bg, ed);
