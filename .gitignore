@@ -36,3 +36,6 @@ avl_set(pooled older version).h
 
 # no need to update reference as I dont read them
 /latex/ee/references/*
+
+# venv makes the repo redundant
+/pygame/venv
