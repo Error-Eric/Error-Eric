@@ -32,7 +32,18 @@ AVLSet<int, SharedCountingComp> random_tset(size_t n, std::mt19937_64& rng, cons
     return ans;
 }
 
-const std::string methodnames[] = {"linear", "simple"};
+void print_tset(AVLSet<int, SharedCountingComp>& s){
+    auto items = s.items();
+    for(size_t i = 0; i < s.get_size()-1; i++){
+        if(items[i] > items[i+1]) {std::cout << "wow bad\n"; break;}
+    }
+    std::cout << "[there are" << s.get_size() << " items]" << std::endl;
+    for(size_t i = 0; i < s.get_size(); i++){
+        std::cout << items[i] << " \n"[i==s.get_size()-1];
+    }
+}
+
+const std::string methodnames[] = {"linear", "simple", "brown"};
 void testmerge(int type, std::mt19937_64& rnd, size_t q1 = 5e5, size_t q2 = 5e5){
     CounterPtr sharecounter = std::make_shared<std::size_t>(0);
     auto s1 = random_tset(q1, rnd, sharecounter), s2 = random_tset(q2, rnd, sharecounter);
@@ -43,35 +54,28 @@ void testmerge(int type, std::mt19937_64& rnd, size_t q1 = 5e5, size_t q2 = 5e5)
         s1.linearmerge(std::move(s2));
     else if (type == 2)
         s1.simplemerge(std::move(s2));
-    //else if (type == 3)
-    //    s1.fastmerge(std::move(s2));
+    else if (type == 3)
+        s1.brownmerge(std::move(s2));
     const auto t2 = std::chrono::steady_clock::now();
     using namespace::std::literals; // millisecond literals
     std::cout << "Time for "<< methodnames[type-1] << " merging is " << (t2-t1)/1ms << "ms" << std::endl;
     std::cout << "Number of comparisons: " << s1.comparator().getcount() << std::endl;
+    if(q1+q2 <= 20) print_tset(s1);
 }
 
+
 int main() {
-    int a[8] = {0, 3, 5, 7, 8, 9, 13, 14};
-    int b[10] = {1, 2, 6, 11, 12, 15, 17, 19, 30, 31};
-    /*
-    AVLSet<int> u, v;
-    u.construct(a, a + 8), v.construct(b, b+10);
-    std::cout << "constructed" << std::endl;
-    u.simplemerge(std::move(v));
-    u.traverse_in_order([](int x){std::cout << x << std::endl;});
-    return 0;*/
     size_t seedx;
     std::cout << "The seed is:" << std::endl;
     std::cin >> seedx;
     unsigned int s1, s2, ty;
     std::mt19937_64 rnd(seedx);
     while(std::cout << "size, size, type:" << std::endl, std::cin >> s1 >> s2 >> ty){
-        if(s1 == 0 || s2 == 0 || ty < 1 || ty > 3) break;
+        if(s1 == 0 || s2 == 0 || ty < 1 || ty > 3) {std::cout<< "test ended" << std::endl; break;}
         else testmerge(ty, rnd, s1, s2);
     }
     return 0;
 }
 /*
-    g++ test.cpp -std=c++14 -o test.exe && .\test.exe
+    cd D:\code\latex\ee\code && g++ test.cpp -std=c++17 -o test.exe && .\test.exe
 */

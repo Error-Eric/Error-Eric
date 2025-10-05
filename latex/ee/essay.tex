@@ -5,6 +5,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocodex}
+\tcbuselibrary{breakable}
 
 % Recipe: pdflatex -> bibtex -> pdflatex*2
 
@@ -53,13 +59,13 @@
 
 \section{Introduction}
 
-A \textit{data structure} is a way to store and organize data in order to facilitate access and modifications \cite{ItA}. Designing and choosing more efficient data structures has always been a great persuit for computer scientists, for optimal data structures can save huge amount of computing resources, especially in face of large amount of data. Basic data structures include ordered data structures like arrays, linked lists and binary search trees and unordered data structures like hashtables. 
+A \textit{data structure} is a way to store and organize data in order to facilitate access and modifications \cite{CLRS}. Designing and choosing more efficient data structures has always been a great persuit for computer scientists, for optimal data structures can save huge amount of computing resources, especially in face of large amount of data. Basic data structures include ordered data structures like arrays, linked lists and binary search trees and unordered data structures like hashtables. 
 
 For ordered data structures, merging two or more instances of them while maintaining its ordered property may be frequently used in practice. For example, to investigate the factors affacting the school grade, data from different schools may be grouped and merged according to various factors. The efficiency of combination varies significantly based on the data structure itself and the algorithm used in the process. 
 
 This essay will focus on invesitgating the theoratical time complexity (need definitions aa) and actual performance of merging algorithms of different data structures, namely arrays, and BSTs, which are the most commonly used data structure in real life. 
 
-\textbf{Research question: How does different algorithm affect the efficiency of merging two instances of ordered data structures?}
+\textbf{Research question: How does different algorithm affect the efficiency of merging two instances of balanced search trees?}
 
 \section{Theory}
 
@@ -73,14 +79,143 @@ When a homogeneous relation (a binary relation between two elements) $\le$ on a 
 &\text{3. Transitivity:} && \forall u, v, w \in X, (u \le v \land v \le w) \Rightarrow u \le w.\\
 \end{align*}
 
-We say $P = (X, \le)$ is a total order. For example $P = (\mathbb{R}, \le)$, where $\le$ is numerical comparison, is a total order. But $P = (\{S: S\subset \mathbb{R}\}, \subset)$ is not a total order.
+We say $P = (X, \le)$ is a total order. For example $P = (\mathbb{R}, \le)$, where $\le$ is numerical comparison, is a total order. The set of finite strings and lexographical order comparison is also a total order. But $P = (\{S: S\subset \mathbb{R}\}, \subset)$ is not a total order.
 
-Ordered data structures can store elements that satisfies a total order while maintaining their order. In C++, arrays, vectors, linked lists and sets can be ordered data structures, but unordered sets are not ordered data structures.
+Ordered data structures can store elements that satisfies a total order while maintaining their order. In C++, arrays, vectors, linked lists and sets can be ordered data structures, but unordered sets (hashtables) are not ordered data structures.
 
 \begin{tcolorbox}[title=Definition]
     Ordered data structures are data structures that can store elements that satisfies a total order while maintaining their order.
 \end{tcolorbox}
+
+\subsection{Balanced binary search trees}
+
+\begin{itemize} %might need to define edge, path, cycle, root, children, parent, subtree(?)
+    \item A \textit{graph} $G = (V, E)$ is the combination of the vertex set $V$ and the edge set $E$.
+    \item A \textit{tree} $T = (V, E)$ is a connected acylic graph.
+    \item A \textit{binary tree} is a tree that has no more than two children for each node.
+    \item A \textit{binary search tree (BST)} is a binary tree, whose nodes contain values under a total order, that has the following property: For any node $v$, all nodes in its left subtree are less than $v$, and all nodes in its right subtree are greater than $v$ \cite{CLRS}.
+\end{itemize}
+
+Generally speaking, a balanced BST is a BST whose depth or the cost of iterating from the root to one specific leaf is strictly, expectedly or amortized $O(\log n)$. There are different kinds of balanced BSTs, like splay tree, treap, AVL trees and red-black trees. This essay will focus on AVL trees. AVL trees are a type of self-balancing binary search trees, which adjusts its shape through rotations and maintain the difference of the depths of two subtrees at most one \cite{avl}\footnote{In fact, this kind of BST was refered to as HB[1], but AVL trees nowadays are mainly HB[1]}. 
+
+% idk, diff_max = true is not always but most of the time.
+% Perhaps talk about why choose avl trees.
+
+In this essay, we will assume that there are two instances of AVL trees $T_1$ and $T_2$ to be merged. Without losing generality, we will assume $T_1$ has $n$ elements and $T_2$ has $m$ elements and $n \ge m$.
+
 % Perhaps more on data structures here. 
+
+% Perhaps give what is already supported by avl trees. 
+
+\subsection{Insertion-based merge}
+
+One of the basic operations supported by a balanced BST is insertion, where one element is added to the tree and the order of the tree is automatically maintained. In fact, merging two instances of BSTs can be reduced to a sequence of insertions to a balanced BST. To be more specific, we iterate through all the elements in $T_2$, insert them one by one into $T_1$, that would be $m$ operations with each having time complexity of $O(\log n)$, resulting in a overall complexity of $O(m\log n)$. 
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Algorithm: Insertion-Based Merge]
+\begin{algorithmic}[1]
+\Require Two balanced binary search trees $T_1$ and $T_2$
+\Ensure A single balanced binary search tree containing all elements from $T_1$ and $T_2$
+\Procedure{InsertionBasedMerge}{$T_1, T_2$}
+    \ForAll{elements $x$ in $T_2$ (in-order traversal)}
+        \State \Call{$T_1.$ Insert}{$x$}
+    \EndFor
+    \State \Return $T_1$
+\EndProcedure
+\end{algorithmic}
+\end{tcolorbox}
+
+This algorithm performs well when $m/n$ is small, as the overall time complexity will be mainly $O(\log n)$. However, when $m$ and $n$ are relatively at the same scale, the overall time complexity will be close to $O(n\log n)$.
+
+\subsection{In-order traversal merge}
+
+Another way to merge two instances of BSTs is to utilize the property that each instance is already in-order. To combine them, we can view this process as merging two sorted subarrays into a new array, just like a merge sort. The iteration and new array construction process take $O(n+m)$ time. With proper construction function, we can create a balanced BST in linear time out of a sorted array. Therefore, the overall time complexity is $O(n+m)$.
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Algorithm: Merge-Sort-Based BST Merge]
+\begin{algorithmic}[1]
+\Require Two balanced binary search trees $T_1$ and $T_2$
+\Ensure A single balanced binary search tree containing all elements from $T_1$ and $T_2$
+\Procedure{MergeSortBasedMerge}{$T_1, T_2$}
+    \State $A_1 \gets$ \Call{InOrderTraversal}{$T_1$}
+    \State $A_2 \gets$ \Call{InOrderTraversal}{$T_2$}
+    \State $A \gets$ \Call{MergeSortedArrays}{$A_1, A_2$}
+    \State $T \gets$ \Call{BuildBalancedBST}{$A$}
+    \State \Return $T$
+\EndProcedure
+\end{algorithmic}
+\end{tcolorbox}
+
+This algorithm performs well when $m/n$ is large, as the overall time complexity will be approximately $O(n)$. However, when $m$ is pretty negeligible compared to $n$, a full iteration over $T_1$ will be still needed and the overall time complexity will still be $O(n)$, which wastes a lot of time.
+
+In fact, it Stockmayer and Yao has proven that in term of number of comparisions, this algorithm is optimal when $m\le n\le \lfloor 3m/2 \rfloor +1$ \cite{stockmeyer1980optimality}. This algorithm, however, does not perform well outside this range. 
+
+\subsection{Brown and Tarjan's merging algorithm (1979)}
+
+In 1979, Brown and Tarjan proposed another algorithm based on the two merging algorithm mentioned above. It utilized both the tree structure for fast insertion-place location and the ordered property to reduce redundent operations. The algorithm again chooses the $T_1$ as the base tree and view the merging process as $m$ insertions to a balanced BST of size $n$. However, the property that the inserted objects themselves are sorted helped to make the algorithm more efficient. Instead of iterating from the root, each insertion starts with the ending position of the last insertion, as it can be already told that the next insertion will happen to the right of the last insertion. 
+
+To be more specific, the algorithm keeps a stack called \textit{path} and a stack called \textit{successor}. The former is used to record the path from the root to the current node, while the latter records all the nodes on the \textit{path} that is larger than the current node (that means they are on the right side of the current node their left children is visited on the \textit{path}). Each insertion, instead of starting from the root, starts from the last node on the \textit{successor} that is smaller than the node to be inserted. Keep extending the \textit{path} and \textit{successor} during insertion. And the path shrinks back after the insertion, until a rebalance operation is triggered or we know that there need no rebalancing at all.
+
+\begin{tcolorbox}[breakable, colback=orange!5!white, colframe=orange!75!black, title=Algorithm: Brown-Tarjan Fast Height-Balanced Tree Merge]
+\begin{algorithmic}[1]
+\Require Two balanced binary search trees $T_1$ (size $n$) and $T_2$ (size $m$), where $n \ge m$
+\Ensure A single balanced BST containing all elements from $T_1$ and $T_2$
+\Procedure{FastMerge}{$T_1, T_2$}
+    \State Initialize stack \textit{path} $\gets$ \{root($T_1$)\}
+    \State Initialize empty stack \textit{successor}
+    \State $height \gets$ height($T_1$)
+
+    \ForAll{nodes $x$ in $T_2$ (in-order traversal)}
+        \State Detach $x$ from $T_2$ 
+
+        \Comment{--- Step 1: Adjust path to maintain PathPredicate ---}
+        \While{\textit{successor} not empty \textbf{and} $key(x) > key($top(\textit{successor})$)$}
+            \Repeat
+                \State pop(\textit{path})
+            \Until{top(\textit{path}) = top(\textit{successor})}
+            \State pop(\textit{successor})
+        \EndWhile
+
+        \Comment{--- Step 2: Search down from last successor and insert $x$ ---}
+        \State $p \gets$ top(\textit{path})
+        \While{True}
+            \If{$key(x) < key(p)$}
+                \If{$p.left = Nil$}
+                    \State $p.left \gets x$; \textbf{break}
+                \Else
+                    \State push($p$, \textit{successor}); $p \gets p.left$
+                \EndIf
+            \Else
+                \If{$p.right = Nil$}
+                    \State $p.right \gets x$; \textbf{break}
+                \Else
+                    \State $p \gets p.right$
+                \EndIf
+            \EndIf
+            \State push($p$, \textit{path})
+        \EndWhile
+
+        \Comment{--- Step 3: Adjust balance factors and rebalance if needed ---}
+        \While{\textit{path} not empty}
+            \State $s \gets$ pop(\textit{path})
+            \If{tree at $s$ is unbalanced}
+                \State \Call{Rebalance}{$s$}; \textbf{break}
+            \Else
+                \State Update balance factor of $s$
+            \EndIf
+            \If{top(\textit{successor}) = $s$}
+                \State pop(\textit{successor})
+            \EndIf
+        \EndWhile
+    \EndFor
+
+    \State \Return root of $T_1$ (now merged)
+\EndProcedure
+\end{algorithmic}
+\end{tcolorbox}
+
+
+It is worth noticing that the rebalance operation may make the initial path unusable. In this case, we can simply dispose of the path under the rotated node start next insertion there\cite{brown1979fast}. 
+
+% need to add the proof of time complexity. the essay ones are not usable as it assumed m<<n instead of m<=n. need to analyze the union of insertion path and average rotation place. 
 
 \subsection{Optimality}
  
@@ -97,23 +232,58 @@ which means
 \begin{equation}
     \begin{aligned}
         O(\log(n!)) &= O(\frac{1}{2}\log(2\pi n) + n\log n - n\log e )
-                    &= O(n\log n)
+                    &= O(n\log n - n + O(log n))
     \end{aligned}
 \end{equation}
 
 Using the definition of combination number, 
 
 \begin{equation}
-    \binom{n+m}{n} = \frac{(n+m)!}{n!m!}
+    \binom{n+m}{m} = \frac{(n+m)!}{n!m!}
 \end{equation}
 
-which is approximately $O(n\log_2{(\frac{n}{m})})$ (provided $n\le m$).
+\begin{align}
+    \log(\binom{n+m}{n}) &= \log(\frac{(n+m)!}{n!})\\
+                         &= (n+m)\log(n+m) - n\log n - m\log m + O(\log (n+m))\\
+                         &= n\log(1+\frac{m}{n}) + m\log (1+\frac{n}{m}) + O(\log (n+m))
+\end{align}
+
+Since $m\le n$ we have $n\log(1+m/n)\le n\cdot(\frac{m}{n}) = m$, therefore the first term is $O(m)$. This means the first term should be neglected as $m\log(1+\frac{n}{m})$ is the dominant term compared to $O(m)$.
+
+Since $m\log (1+\frac{n}{m})$ can bwe written as $m\log(n+m) - m\log(m)$, where the first term is more dominant than $O(\log (n+m))$, the third term should be neglected as well.
+
+We can get the overall expression
+
+\begin{equation}
+    \boxed{\log \binom{n+m}{n} = O(m\log(1+\frac{n}{m}))}
+\end{equation}
 
 \begin{tcolorbox}[title = Theorem]
-    The optimal time complexity of merging two instances of ordered data structures is $O(n\log{(\frac{n}{m})})$, provided the moving and comparision cost is $O(1)$.
+    The optimal time complexity of merging two instances of ordered data structures is $O(m\log(1+\frac{n}{m}))$, multiplied by the comparision cost with is assumed to be $O(1)$ in this case.
 \end{tcolorbox}
 
+\section{Hypothesis}
+
+\section{Experiment Design}
+
+\subsection{Variables}
+
+\subsubsection{Control Variables}
+
+
+
 \section*{Appendix}
+
+\begin{tcolorbox}[title = Test environment]
+    \begin{itemize}
+        \item Device: Laptop
+        \item CPU: Intel(R) Core(TM) Ultra 7 155H (1.40 GHz)
+        \item Memory: 32GB
+        \item OS: Windows 11 24H2 26100.6584
+        \item Compiler (C++): g++ 15.2.0 (for algorithm efficiency test and timing)
+        \item Interpreter: Python 3.12.2 (for batch test)
+    \end{itemize}
+\end{tcolorbox}
 
 %Use the simple \texttt{\textbackslash lstinputlisting} command:
 

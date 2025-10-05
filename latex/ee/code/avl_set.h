@@ -4,6 +4,9 @@
 #include <list>
 #include <functional>
 #include <stack>
+#ifdef DEBUG
+#include <assert.h>
+#endif
 
 template <typename T, typename Compare = std::less<T>>
 class AVLSet {
@@ -31,12 +34,13 @@ private:
         return node ? node->height : 0;
     }
 
-    // Memory pool operations
     Node* create_node(const T& key) {
+        ++size;
         return new Node(key);
     }
 
     Node* create_node(T&& key) {
+        ++size;
         return new Node(std::move(key));
     }
 
@@ -68,6 +72,7 @@ private:
         if (!node) return;
         delete_tree(node->left);
         delete_tree(node->right);
+        --size;
         delete node;
     }
 
@@ -137,29 +142,21 @@ private:
         }
     }
 
-    void recycle_tree(Node* node) {
-        if (!node) return;
-        std::stack<Node*> stack;
-        Node* current = node;
-        Node* last_visited = nullptr;
-
-        while (current || !stack.empty()) {
-            if (current) {
-                stack.push(current);
-                current = current->left;
-            } else {
-                Node* top = stack.top();
-                if (top->right && top->right != last_visited) {
-                    current = top->right;
-                } else {
-                    recycle_node(top);
-                    last_visited = top;
-                    stack.pop();
-                }
-            }
+    Node* insert(Node* node, const T& key) {
+        if (!node) {
+            return create_node(key);
         }
-    }
 
+        if (comp_(key, node->key)) {
+            node->left = insert(node->left, key);
+        } else if (comp_(node->key, key)) {
+            node->right = insert(node->right, key);
+        } else {
+            return node;
+        }
+
+        return balance(node);
+    }
 
 public:
     AVLSet(Compare Comp = Compare()) : root(nullptr), size(0), comp_(Comp) {}
@@ -167,7 +164,7 @@ public:
     // Move operations
     AVLSet(AVLSet&& other) noexcept 
         : root(other.root), 
-          size(other.size),{
+          size(other.size){
         other.root = nullptr;
         other.size = 0;
     }
@@ -190,7 +187,6 @@ public:
     void clear() {
         delete_tree(root);
         root = nullptr;
-        size = 0;
     }
 
     bool empty() const {
@@ -220,16 +216,31 @@ public:
         std::swap(size, other.size);
     }
 
+    void insert(const T& val){
+        root = insert(root, val);
+    }
+    void remove(const T& val){
+        root = remove(root, val);
+    }
+    template<typename RandAccIt>
+    void construct(RandAccIt bg, RandAccIt ed){
+        // Clear the current tree
+        delete_tree(root);
+        root = nullptr;
+        // Build new tree
+        root = build(bg, ed);
+        size = static_cast<size_t>(ed - bg);
+    }
 
-    /*  Merge two sets in O(N+M) time.
+
+    /** Merge two sets in O(N+M) time.
     *   Some additional space may be costed.
     *   But it does not affect the result of the experiment.
+    *   @param other The AVLSet to be merged into this set.
     */
 
     void linearmerge(AVLSet&& other) {
         if (other.empty()) return;
-
-        other.free_nodes.clear();
 
         // Get elements from both trees
         std::vector<T> q1 = items();
@@ -246,14 +257,16 @@ public:
         delete_tree(other.root);
         root = nullptr;
         other.root = nullptr;
-        size = 0;
-        other.size = 0;
 
         // Build new tree
         root = build(all_elements.begin(), all_elements.end());
         size = all_elements.size();
     }
 
+    /**
+     *   Merge two sets in O(N log(M)) time.
+     *   @param other The AVLSet to be merged into this set.
+     */
     void simplemerge(AVLSet&& other) {
         if (other.empty()) return;
 
@@ -267,39 +280,95 @@ public:
         other.clear();
     }
 
-    private:
-    
-    Node* insert(Node* node, const T& key) {
-        if (!node) {
-            size++;
-            return create_node(key);
+    void brownmerge(AVLSet&& other) {
+        if (other.empty()) return;
+        if (size < other.size) swap_with(other);
+
+        std::vector<T> elems = other.items();
+        other.clear();
+
+        // stacks of pointers-to-links (Node**). Each points to some parent->left or parent->right or &root
+        std::vector<Node**> path;
+        std::vector<Node**> successor;
+
+        path.push_back(&root);
+
+        for (const T& x : elems) {
+            // ==== CLIMB/RETRACT: pop successors while their key <= x (i.e. not (x < succ_key)) ====
+            while (!successor.empty() && !comp_(x, (*successor.back())->key)) {
+                Node** succLink = successor.back();
+                // pop path entries until top == succLink
+                while (!path.empty() && path.back() != succLink) path.pop_back();
+                successor.pop_back();
+            }
+
+            // ==== DESCEND from current finger (path.back()) to insertion point ====
+            Node** curLink = path.empty() ? &root : path.back();
+            Node* p = *curLink;
+            if (!p) {
+                // empty subtree (rare because root existed), insert directly
+                *curLink = create_node(x);
+                path.push_back(curLink);
+            } else {
+                for (;;) {
+                    path.push_back(curLink); // link that points to p
+                    if (comp_(x, p->key)) {
+                        // go left; mark this link as a successor (we turned left here)
+                        if (p->left == nullptr) {
+                            p->left = create_node(x);
+                            path.push_back(&(p->left));
+                            break;
+                        } else {
+                            successor.push_back(curLink);
+                            curLink = &(p->left);
+                            p = *curLink;
+                        }
+                    } else {
+                        // go right
+                        if (p->right == nullptr) {
+                            p->right = create_node(x);
+                            path.push_back(&(p->right));
+                            break;
+                        } else {
+                            curLink = &(p->right);
+                            p = *curLink;
+                        }
+                    }
+                }
+            }
+
+            // ==== REBALANCE upward using the link-stack; attach rotated subtree via *link ====
+            while (!path.empty()) {
+                Node** link = path.back();
+                Node* s = *link;
+                path.pop_back();
+
+                if (!successor.empty() && successor.back() == link) successor.pop_back();
+
+                update_height(s);
+                int bf = balance_factor(s);
+
+                if (std::abs(bf) > 1) {
+                    Node* newsub = balance(s); // returns new root of this subtree
+                    *link = newsub;             // reattach correctly via the link
+
+                    // retract path until the remaining entries are consistent with this rotation
+                    while (!path.empty() && path.back() != link) path.pop_back();
+                    break; // stop climbing after performing rotation
+                }
+
+                if (bf == 0) {
+                    // height didn't increase => stop climbing
+                    break;
+                }
+                // else continue climbing
+            }
         }
-
-        if (comp_(key, node->key)) {
-            node->left = insert(node->left, key);
-        } else if (comp_(node->key, key)) {
-            node->right = insert(node->right, key);
-        } else {
-            return node;
-        }
-
-        return balance(node);
+        #ifdef DEBUG
+        auto items_after = items();
+        for (size_t i = 1; i < items_after.size(); ++i) 
+            assert(!comp_(items_after[i], items_after[i-1]));
+        #endif
     }
 
-    public:
-    void insert(const T& val){
-        root = insert(root, val);
-    }
-    void remove(const T& val){
-        root = remove(root, val);
-    }
-    template<typename RandAccIt>
-    void construct(RandAccIt bg, RandAccIt ed){
-        // Clear the current tree
-        delete_tree(root);
-        root = nullptr;
-        // Build new tree
-        root = build(bg, ed);
-        size = static_cast<size_t>(ed - bg);
-    }
 };

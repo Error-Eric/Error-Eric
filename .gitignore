@@ -29,3 +29,10 @@
 *.maf
 *.sty
 *.sty.orig
+
+# old version backup
+avl_set(pooled older version).h
+*.exe
+
+# no need to update reference as I dont read them
+/latex/ee/references/*
