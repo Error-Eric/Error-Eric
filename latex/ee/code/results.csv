@@ -1,0 +1,2701 @@
+method,alpha,N,trial,time_ms,comparisons
+Insertion-based,1,4096,1,2.0169,90036
+Insertion-based,1,4096,2,1.5414,91083
+Insertion-based,1,4096,3,1.5598,91498
+Insertion-based,1,4096,4,1.516,90642
+Insertion-based,1,4096,5,1.5823,89572
+Insertion-based,1,4096,6,1.557,90977
+Insertion-based,1,4096,7,1.5282,90160
+Insertion-based,1,4096,8,1.5315,90524
+Insertion-based,1,4096,9,1.5127,87450
+Insertion-based,1,4096,10,1.4722,87267
+Insertion-based,1,4096,11,1.8433,87674
+Insertion-based,1,4096,12,1.6259,86870
+Insertion-based,1,4096,13,1.8905,90554
+Insertion-based,1,4096,14,1.6488,89934
+Insertion-based,1,4096,15,1.4756,87695
+Insertion-based,1,4096,16,1.5427,90955
+Insertion-based,1,4096,17,1.5509,90582
+Insertion-based,1,4096,18,1.4997,90624
+Insertion-based,1,4096,19,1.5084,89391
+Insertion-based,1,4096,20,1.5492,90309
+Insertion-based,1,8192,1,2.7733,191681
+Insertion-based,1,8192,2,3.5975,197750
+Insertion-based,1,8192,3,3.2717,195277
+Insertion-based,1,8192,4,3.5748,196588
+Insertion-based,1,8192,5,3.3859,196221
+Insertion-based,1,8192,6,3.3045,191820
+Insertion-based,1,8192,7,3.3513,193540
+Insertion-based,1,8192,8,4.1112,194302
+Insertion-based,1,8192,9,3.3049,196269
+Insertion-based,1,8192,10,4.2645,196692
+Insertion-based,1,8192,11,4.2005,194220
+Insertion-based,1,8192,12,3.8537,194853
+Insertion-based,1,8192,13,4.1563,197182
+Insertion-based,1,8192,14,3.3037,196953
+Insertion-based,1,8192,15,3.4799,193828
+Insertion-based,1,8192,16,3.5113,195780
+Insertion-based,1,8192,17,3.3948,194306
+Insertion-based,1,8192,18,3.2566,197401
+Insertion-based,1,8192,19,3.3628,195001
+Insertion-based,1,8192,20,3.2369,196001
+Insertion-based,1,16384,1,8.9074,418662
+Insertion-based,1,16384,2,8.1172,421018
+Insertion-based,1,16384,3,6.798,418859
+Insertion-based,1,16384,4,7.3597,418243
+Insertion-based,1,16384,5,7.3027,421330
+Insertion-based,1,16384,6,6.8979,422541
+Insertion-based,1,16384,7,6.8305,420671
+Insertion-based,1,16384,8,6.8347,420206
+Insertion-based,1,16384,9,6.7581,419863
+Insertion-based,1,16384,10,6.7069,417301
+Insertion-based,1,16384,11,8.436,419680
+Insertion-based,1,16384,12,6.9708,419976
+Insertion-based,1,16384,13,7.0625,420660
+Insertion-based,1,16384,14,6.7154,410353
+Insertion-based,1,16384,15,7.8162,420585
+Insertion-based,1,16384,16,6.8541,416601
+Insertion-based,1,16384,17,6.8235,420032
+Insertion-based,1,16384,18,7.0195,422543
+Insertion-based,1,16384,19,9.491,418582
+Insertion-based,1,16384,20,6.7537,418419
+Insertion-based,1,32768,1,17.2072,895648
+Insertion-based,1,32768,2,17.1291,895337
+Insertion-based,1,32768,3,15.4746,890558
+Insertion-based,1,32768,4,19.1648,894654
+Insertion-based,1,32768,5,15.8847,893114
+Insertion-based,1,32768,6,15.5178,891460
+Insertion-based,1,32768,7,15.0454,897987
+Insertion-based,1,32768,8,14.6602,894071
+Insertion-based,1,32768,9,15.8141,893674
+Insertion-based,1,32768,10,14.6507,893899
+Insertion-based,1,32768,11,14.7292,897540
+Insertion-based,1,32768,12,15.788,892072
+Insertion-based,1,32768,13,17.1362,896046
+Insertion-based,1,32768,14,16.5987,897050
+Insertion-based,1,32768,15,20.0336,891812
+Insertion-based,1,32768,16,14.1883,894263
+Insertion-based,1,32768,17,19.3243,894795
+Insertion-based,1,32768,18,15.1124,893199
+Insertion-based,1,32768,19,15.3118,895856
+Insertion-based,1,32768,20,15.7953,894140
+Insertion-based,1,65536,1,36.272,1902523
+Insertion-based,1,65536,2,33.3096,1898907
+Insertion-based,1,65536,3,33.8177,1906413
+Insertion-based,1,65536,4,35.083,1917063
+Insertion-based,1,65536,5,32.7442,1918905
+Insertion-based,1,65536,6,33.1464,1896099
+Insertion-based,1,65536,7,32.2769,1895228
+Insertion-based,1,65536,8,34.9035,1892840
+Insertion-based,1,65536,9,28.9361,1899399
+Insertion-based,1,65536,10,36.8794,1895043
+Insertion-based,1,65536,11,31.4478,1916623
+Insertion-based,1,65536,12,30.8203,1902081
+Insertion-based,1,65536,13,34.2647,1911481
+Insertion-based,1,65536,14,30.9875,1899252
+Insertion-based,1,65536,15,32.6412,1888118
+Insertion-based,1,65536,16,31.4512,1897036
+Insertion-based,1,65536,17,33.384,1896916
+Insertion-based,1,65536,18,31.1207,1900624
+Insertion-based,1,65536,19,36.261,1895178
+Insertion-based,1,65536,20,31.6984,1906047
+Insertion-based,1,131072,1,70.4424,4074500
+Insertion-based,1,131072,2,67.7919,4052024
+Insertion-based,1,131072,3,67.4777,4038898
+Insertion-based,1,131072,4,72.7239,4058061
+Insertion-based,1,131072,5,81.2553,4028309
+Insertion-based,1,131072,6,70.3463,4030847
+Insertion-based,1,131072,7,67.5337,4034912
+Insertion-based,1,131072,8,70.8383,4118290
+Insertion-based,1,131072,9,69.2617,4058255
+Insertion-based,1,131072,10,72.6647,4059945
+Insertion-based,1,131072,11,72.213,4008508
+Insertion-based,1,131072,12,68.2697,4067455
+Insertion-based,1,131072,13,71.05,4012224
+Insertion-based,1,131072,14,69.3111,4037950
+Insertion-based,1,131072,15,68.6518,4107051
+Insertion-based,1,131072,16,85.4577,4106236
+Insertion-based,1,131072,17,68.003,4061454
+Insertion-based,1,131072,18,74.6446,4049923
+Insertion-based,1,131072,19,72.0127,4113383
+Insertion-based,1,131072,20,68.0864,4031647
+Insertion-based,1,262144,1,143.931,8648674
+Insertion-based,1,262144,2,144.72,8611920
+Insertion-based,1,262144,3,145.992,8538311
+Insertion-based,1,262144,4,150.875,8690628
+Insertion-based,1,262144,5,154.901,8667448
+Insertion-based,1,262144,6,145.702,8663737
+Insertion-based,1,262144,7,148.437,8661869
+Insertion-based,1,262144,8,144.963,8671571
+Insertion-based,1,262144,9,148.436,8658710
+Insertion-based,1,262144,10,145.734,8555538
+Insertion-based,1,262144,11,144.75,8644952
+Insertion-based,1,262144,12,153.587,8664622
+Insertion-based,1,262144,13,149.886,8653594
+Insertion-based,1,262144,14,147.859,8639546
+Insertion-based,1,262144,15,142.378,8580964
+Insertion-based,1,262144,16,144.045,8521163
+Insertion-based,1,262144,17,153.256,8660733
+Insertion-based,1,262144,18,145.116,8663884
+Insertion-based,1,262144,19,149.58,8660335
+Insertion-based,1,262144,20,143.276,8725379
+Insertion-based,1,524288,1,313.51,18188932
+Insertion-based,1,524288,2,304.227,18230503
+Insertion-based,1,524288,3,307.532,18302396
+Insertion-based,1,524288,4,312.032,18309303
+Insertion-based,1,524288,5,304.39,18379364
+Insertion-based,1,524288,6,298.345,17981229
+Insertion-based,1,524288,7,302.636,18315500
+Insertion-based,1,524288,8,301.395,18266668
+Insertion-based,1,524288,9,313.765,18259695
+Insertion-based,1,524288,10,306.432,18176550
+Insertion-based,1,524288,11,303.104,18394039
+Insertion-based,1,524288,12,302.064,18397484
+Insertion-based,1,524288,13,302.113,18178454
+Insertion-based,1,524288,14,304.164,18302916
+Insertion-based,1,524288,15,310.966,18263165
+Insertion-based,1,524288,16,314.124,18385875
+Insertion-based,1,524288,17,321.56,18260702
+Insertion-based,1,524288,18,316.492,18347469
+Insertion-based,1,524288,19,311.864,18305961
+Insertion-based,1,524288,20,313.675,18292133
+Insertion-based,1,1048576,1,654.597,38581335
+Insertion-based,1,1048576,2,662.633,38541784
+Insertion-based,1,1048576,3,651.609,38521443
+Insertion-based,1,1048576,4,653.987,38584307
+Insertion-based,1,1048576,5,649.906,38548307
+Insertion-based,1,1048576,6,638.736,38472364
+Insertion-based,1,1048576,7,632.322,38549558
+Insertion-based,1,1048576,8,642.765,38327904
+Insertion-based,1,1048576,9,640.319,38338762
+Insertion-based,1,1048576,10,627.176,38312910
+Insertion-based,1,1048576,11,628.351,38524381
+Insertion-based,1,1048576,12,634.609,38463653
+Insertion-based,1,1048576,13,641.267,38431022
+Insertion-based,1,1048576,14,643.168,38581545
+Insertion-based,1,1048576,15,637.035,38515097
+Insertion-based,1,1048576,16,649.356,38472678
+Insertion-based,1,1048576,17,648.813,38641184
+Insertion-based,1,1048576,18,643.326,38596460
+Insertion-based,1,1048576,19,645.476,38445241
+Insertion-based,1,1048576,20,653.126,38463838
+Insertion-based,8,4096,1,0.308,9955
+Insertion-based,8,4096,2,0.18,9370
+Insertion-based,8,4096,3,0.1745,9367
+Insertion-based,8,4096,4,0.1746,9377
+Insertion-based,8,4096,5,0.1826,9893
+Insertion-based,8,4096,6,0.1842,9620
+Insertion-based,8,4096,7,0.1764,9308
+Insertion-based,8,4096,8,0.1584,9564
+Insertion-based,8,4096,9,0.1535,9289
+Insertion-based,8,4096,10,0.1669,9271
+Insertion-based,8,4096,11,0.1688,9319
+Insertion-based,8,4096,12,0.1657,9432
+Insertion-based,8,4096,13,0.162,9340
+Insertion-based,8,4096,14,0.1681,9379
+Insertion-based,8,4096,15,0.1657,9293
+Insertion-based,8,4096,16,0.1634,9346
+Insertion-based,8,4096,17,0.1612,9339
+Insertion-based,8,4096,18,0.1672,9283
+Insertion-based,8,4096,19,0.2065,9800
+Insertion-based,8,4096,20,0.1635,9360
+Insertion-based,8,8192,1,0.3719,20176
+Insertion-based,8,8192,2,0.3646,20162
+Insertion-based,8,8192,3,0.4221,20204
+Insertion-based,8,8192,4,0.3495,20152
+Insertion-based,8,8192,5,0.3544,20236
+Insertion-based,8,8192,6,0.33,20346
+Insertion-based,8,8192,7,0.3592,21092
+Insertion-based,8,8192,8,0.343,20211
+Insertion-based,8,8192,9,0.363,21203
+Insertion-based,8,8192,10,0.3617,20434
+Insertion-based,8,8192,11,0.3682,20408
+Insertion-based,8,8192,12,0.5056,20716
+Insertion-based,8,8192,13,0.5043,20180
+Insertion-based,8,8192,14,0.4845,20162
+Insertion-based,8,8192,15,0.3911,20110
+Insertion-based,8,8192,16,0.3429,20064
+Insertion-based,8,8192,17,0.3532,20130
+Insertion-based,8,8192,18,0.3553,21189
+Insertion-based,8,8192,19,0.3464,20116
+Insertion-based,8,8192,20,0.344,20251
+Insertion-based,8,16384,1,0.9999,43401
+Insertion-based,8,16384,2,0.817,46059
+Insertion-based,8,16384,3,1.0556,45595
+Insertion-based,8,16384,4,0.756,43587
+Insertion-based,8,16384,5,0.7506,44530
+Insertion-based,8,16384,6,0.769,46146
+Insertion-based,8,16384,7,1.0695,45515
+Insertion-based,8,16384,8,1.0527,43969
+Insertion-based,8,16384,9,0.7383,43673
+Insertion-based,8,16384,10,0.7771,43580
+Insertion-based,8,16384,11,1.5297,45514
+Insertion-based,8,16384,12,0.7539,44672
+Insertion-based,8,16384,13,0.815,45815
+Insertion-based,8,16384,14,0.7479,43561
+Insertion-based,8,16384,15,0.7741,45832
+Insertion-based,8,16384,16,0.7618,45655
+Insertion-based,8,16384,17,0.7797,45767
+Insertion-based,8,16384,18,0.7349,43467
+Insertion-based,8,16384,19,0.859,44145
+Insertion-based,8,16384,20,0.7342,43595
+Insertion-based,8,32768,1,2.029,97619
+Insertion-based,8,32768,2,1.6616,97963
+Insertion-based,8,32768,3,2.4147,97196
+Insertion-based,8,32768,4,1.6708,97756
+Insertion-based,8,32768,5,1.6843,97291
+Insertion-based,8,32768,6,1.6566,97685
+Insertion-based,8,32768,7,1.6619,98482
+Insertion-based,8,32768,8,2.1728,97663
+Insertion-based,8,32768,9,1.6367,98591
+Insertion-based,8,32768,10,1.6342,98057
+Insertion-based,8,32768,11,1.69,98023
+Insertion-based,8,32768,12,1.6982,97477
+Insertion-based,8,32768,13,1.6729,95574
+Insertion-based,8,32768,14,1.6926,98151
+Insertion-based,8,32768,15,1.7081,97877
+Insertion-based,8,32768,16,1.8193,96742
+Insertion-based,8,32768,17,1.8151,98438
+Insertion-based,8,32768,18,1.8125,97443
+Insertion-based,8,32768,19,1.8257,97645
+Insertion-based,8,32768,20,1.9529,98327
+Insertion-based,8,65536,1,3.9846,207725
+Insertion-based,8,65536,2,4.3248,207480
+Insertion-based,8,65536,3,4.9576,207018
+Insertion-based,8,65536,4,5.2396,208820
+Insertion-based,8,65536,5,3.8526,209337
+Insertion-based,8,65536,6,5.4988,208888
+Insertion-based,8,65536,7,4.1112,208766
+Insertion-based,8,65536,8,4.0418,206943
+Insertion-based,8,65536,9,3.6627,203140
+Insertion-based,8,65536,10,3.7533,207639
+Insertion-based,8,65536,11,3.6027,208803
+Insertion-based,8,65536,12,4.5468,209007
+Insertion-based,8,65536,13,3.5024,207544
+Insertion-based,8,65536,14,3.5423,207102
+Insertion-based,8,65536,15,3.8242,209008
+Insertion-based,8,65536,16,3.5931,209246
+Insertion-based,8,65536,17,5.1221,200638
+Insertion-based,8,65536,18,3.8222,207492
+Insertion-based,8,65536,19,3.534,209097
+Insertion-based,8,65536,20,4.186,208756
+Insertion-based,8,131072,1,9.0908,440353
+Insertion-based,8,131072,2,8.2511,444612
+Insertion-based,8,131072,3,9.1227,443296
+Insertion-based,8,131072,4,8.5816,444574
+Insertion-based,8,131072,5,8.2079,444216
+Insertion-based,8,131072,6,10.6154,444737
+Insertion-based,8,131072,7,7.8259,438778
+Insertion-based,8,131072,8,10.8388,442651
+Insertion-based,8,131072,9,7.4466,443707
+Insertion-based,8,131072,10,7.6022,443517
+Insertion-based,8,131072,11,8.825,443255
+Insertion-based,8,131072,12,7.8818,439340
+Insertion-based,8,131072,13,7.8456,442497
+Insertion-based,8,131072,14,7.5629,443648
+Insertion-based,8,131072,15,8.3831,443128
+Insertion-based,8,131072,16,7.6056,443688
+Insertion-based,8,131072,17,8.0238,440712
+Insertion-based,8,131072,18,9.7212,442596
+Insertion-based,8,131072,19,7.7568,441080
+Insertion-based,8,131072,20,7.7856,440951
+Insertion-based,8,262144,1,19.6203,935830
+Insertion-based,8,262144,2,18.1351,936183
+Insertion-based,8,262144,3,19.4017,941926
+Insertion-based,8,262144,4,18.528,938463
+Insertion-based,8,262144,5,19.8268,937117
+Insertion-based,8,262144,6,19.3236,938545
+Insertion-based,8,262144,7,16.808,941104
+Insertion-based,8,262144,8,22.5272,941930
+Insertion-based,8,262144,9,17.5691,939805
+Insertion-based,8,262144,10,17.7602,941853
+Insertion-based,8,262144,11,18.5463,940512
+Insertion-based,8,262144,12,18.1154,942258
+Insertion-based,8,262144,13,18.6459,937561
+Insertion-based,8,262144,14,18.8715,938244
+Insertion-based,8,262144,15,19.1749,937150
+Insertion-based,8,262144,16,18.7303,939931
+Insertion-based,8,262144,17,18.7518,939120
+Insertion-based,8,262144,18,18.6978,938233
+Insertion-based,8,262144,19,18.1157,937022
+Insertion-based,8,262144,20,22.851,940944
+Insertion-based,8,524288,1,39.7021,1977279
+Insertion-based,8,524288,2,38.5388,1985049
+Insertion-based,8,524288,3,40.0825,1984733
+Insertion-based,8,524288,4,38.4468,1984208
+Insertion-based,8,524288,5,39.0259,1986264
+Insertion-based,8,524288,6,40.5877,1981301
+Insertion-based,8,524288,7,41.3392,1981550
+Insertion-based,8,524288,8,41.208,1982344
+Insertion-based,8,524288,9,43.3267,1982136
+Insertion-based,8,524288,10,40.0869,1981306
+Insertion-based,8,524288,11,38.4853,1983432
+Insertion-based,8,524288,12,39.3447,1982922
+Insertion-based,8,524288,13,42.7151,1980563
+Insertion-based,8,524288,14,42.4038,1981293
+Insertion-based,8,524288,15,46.5314,1982519
+Insertion-based,8,524288,16,40.6586,1982533
+Insertion-based,8,524288,17,40.2475,1982437
+Insertion-based,8,524288,18,39.8462,1981788
+Insertion-based,8,524288,19,40.0204,1975923
+Insertion-based,8,524288,20,39.1372,1981843
+Insertion-based,8,1048576,1,86.5191,4167770
+Insertion-based,8,1048576,2,89.8163,4174026
+Insertion-based,8,1048576,3,81.4338,4174015
+Insertion-based,8,1048576,4,83.9478,4173364
+Insertion-based,8,1048576,5,83.7571,4171230
+Insertion-based,8,1048576,6,80.3665,4172375
+Insertion-based,8,1048576,7,82.9877,4175144
+Insertion-based,8,1048576,8,81.2514,4175082
+Insertion-based,8,1048576,9,80.7601,4176683
+Insertion-based,8,1048576,10,85.8577,4173759
+Insertion-based,8,1048576,11,82.6194,4169588
+Insertion-based,8,1048576,12,81.6886,4169852
+Insertion-based,8,1048576,13,84.5703,4173584
+Insertion-based,8,1048576,14,83.0431,4170775
+Insertion-based,8,1048576,15,83.6151,4174620
+Insertion-based,8,1048576,16,82.6224,4172803
+Insertion-based,8,1048576,17,80.7262,4172042
+Insertion-based,8,1048576,18,83.424,4174815
+Insertion-based,8,1048576,19,80.0642,4176308
+Insertion-based,8,1048576,20,84.136,4170433
+Insertion-based,64,4096,1,0.0226,1138
+Insertion-based,64,4096,2,0.0219,1145
+Insertion-based,64,4096,3,0.0215,1177
+Insertion-based,64,4096,4,0.0211,1146
+Insertion-based,64,4096,5,0.0214,1151
+Insertion-based,64,4096,6,0.0224,1127
+Insertion-based,64,4096,7,0.0218,1186
+Insertion-based,64,4096,8,0.0209,1160
+Insertion-based,64,4096,9,0.0212,1145
+Insertion-based,64,4096,10,0.0214,1171
+Insertion-based,64,4096,11,0.0304,1157
+Insertion-based,64,4096,12,0.0217,1155
+Insertion-based,64,4096,13,0.0207,1135
+Insertion-based,64,4096,14,0.0223,1146
+Insertion-based,64,4096,15,0.0286,1154
+Insertion-based,64,4096,16,0.0221,1145
+Insertion-based,64,4096,17,0.0215,1181
+Insertion-based,64,4096,18,0.0214,1169
+Insertion-based,64,4096,19,0.0213,1149
+Insertion-based,64,4096,20,0.0212,1148
+Insertion-based,64,8192,1,0.0457,2481
+Insertion-based,64,8192,2,0.0514,2481
+Insertion-based,64,8192,3,0.0476,2477
+Insertion-based,64,8192,4,0.045,2480
+Insertion-based,64,8192,5,0.0453,2531
+Insertion-based,64,8192,6,0.0541,2490
+Insertion-based,64,8192,7,0.0448,2494
+Insertion-based,64,8192,8,0.0489,2531
+Insertion-based,64,8192,9,0.045,2493
+Insertion-based,64,8192,10,0.0491,2532
+Insertion-based,64,8192,11,0.0451,2507
+Insertion-based,64,8192,12,0.0453,2485
+Insertion-based,64,8192,13,0.0453,2495
+Insertion-based,64,8192,14,0.0456,2483
+Insertion-based,64,8192,15,0.0705,2489
+Insertion-based,64,8192,16,0.0466,2492
+Insertion-based,64,8192,17,0.0449,2448
+Insertion-based,64,8192,18,0.0452,2477
+Insertion-based,64,8192,19,0.0461,2463
+Insertion-based,64,8192,20,0.0465,2512
+Insertion-based,64,16384,1,0.2969,5381
+Insertion-based,64,16384,2,0.1498,5372
+Insertion-based,64,16384,3,0.103,5433
+Insertion-based,64,16384,4,0.0995,5433
+Insertion-based,64,16384,5,0.0972,5424
+Insertion-based,64,16384,6,0.0965,5376
+Insertion-based,64,16384,7,0.1028,5344
+Insertion-based,64,16384,8,0.0997,5324
+Insertion-based,64,16384,9,0.1324,5427
+Insertion-based,64,16384,10,0.0981,5414
+Insertion-based,64,16384,11,0.1235,5358
+Insertion-based,64,16384,12,0.099,5428
+Insertion-based,64,16384,13,0.0994,5361
+Insertion-based,64,16384,14,0.0935,5342
+Insertion-based,64,16384,15,0.2048,5381
+Insertion-based,64,16384,16,0.1065,5403
+Insertion-based,64,16384,17,0.1103,5367
+Insertion-based,64,16384,18,0.1121,5436
+Insertion-based,64,16384,19,0.1003,5381
+Insertion-based,64,16384,20,0.101,5372
+Insertion-based,64,32768,1,0.6483,11463
+Insertion-based,64,32768,2,0.2498,11466
+Insertion-based,64,32768,3,0.262,11541
+Insertion-based,64,32768,4,0.3504,11531
+Insertion-based,64,32768,5,0.2546,11495
+Insertion-based,64,32768,6,0.231,11561
+Insertion-based,64,32768,7,0.2543,11522
+Insertion-based,64,32768,8,0.248,11525
+Insertion-based,64,32768,9,0.2576,11536
+Insertion-based,64,32768,10,0.3221,11504
+Insertion-based,64,32768,11,0.3437,11514
+Insertion-based,64,32768,12,0.3058,11597
+Insertion-based,64,32768,13,0.2646,11528
+Insertion-based,64,32768,14,0.2809,11408
+Insertion-based,64,32768,15,0.3153,11550
+Insertion-based,64,32768,16,0.3527,11545
+Insertion-based,64,32768,17,0.3601,11440
+Insertion-based,64,32768,18,0.3136,11587
+Insertion-based,64,32768,19,0.4547,11498
+Insertion-based,64,32768,20,0.2504,11467
+Insertion-based,64,65536,1,0.6623,24660
+Insertion-based,64,65536,2,0.626,24568
+Insertion-based,64,65536,3,0.6429,24666
+Insertion-based,64,65536,4,0.6584,24770
+Insertion-based,64,65536,5,0.6686,24642
+Insertion-based,64,65536,6,0.7337,24517
+Insertion-based,64,65536,7,0.6404,24570
+Insertion-based,64,65536,8,0.6564,24648
+Insertion-based,64,65536,9,0.6467,24656
+Insertion-based,64,65536,10,0.6725,24653
+Insertion-based,64,65536,11,1.0395,24505
+Insertion-based,64,65536,12,0.6385,24553
+Insertion-based,64,65536,13,0.6516,24647
+Insertion-based,64,65536,14,1.2527,24697
+Insertion-based,64,65536,15,0.6764,24605
+Insertion-based,64,65536,16,0.6493,24707
+Insertion-based,64,65536,17,0.8043,24695
+Insertion-based,64,65536,18,0.6425,24677
+Insertion-based,64,65536,19,0.6355,24617
+Insertion-based,64,65536,20,0.6362,24555
+Insertion-based,64,131072,1,1.8818,52374
+Insertion-based,64,131072,2,1.5469,52230
+Insertion-based,64,131072,3,1.6247,52263
+Insertion-based,64,131072,4,1.6711,52417
+Insertion-based,64,131072,5,1.6123,52143
+Insertion-based,64,131072,6,1.5516,52332
+Insertion-based,64,131072,7,1.542,52349
+Insertion-based,64,131072,8,1.4992,52220
+Insertion-based,64,131072,9,1.5209,52401
+Insertion-based,64,131072,10,1.825,52246
+Insertion-based,64,131072,11,1.4515,52162
+Insertion-based,64,131072,12,1.5038,52249
+Insertion-based,64,131072,13,1.4624,52319
+Insertion-based,64,131072,14,1.4938,52243
+Insertion-based,64,131072,15,1.339,52228
+Insertion-based,64,131072,16,1.3891,52259
+Insertion-based,64,131072,17,1.3653,52441
+Insertion-based,64,131072,18,1.0643,52264
+Insertion-based,64,131072,19,1.1253,52229
+Insertion-based,64,131072,20,1.4952,52369
+Insertion-based,64,262144,1,3.9835,110863
+Insertion-based,64,262144,2,2.5151,110658
+Insertion-based,64,262144,3,2.4251,110941
+Insertion-based,64,262144,4,3.501,110744
+Insertion-based,64,262144,5,2.7039,110844
+Insertion-based,64,262144,6,4.2879,110848
+Insertion-based,64,262144,7,3.3073,110556
+Insertion-based,64,262144,8,3.0445,110714
+Insertion-based,64,262144,9,3.0752,110794
+Insertion-based,64,262144,10,3.5187,110853
+Insertion-based,64,262144,11,2.6646,110628
+Insertion-based,64,262144,12,3.5076,110592
+Insertion-based,64,262144,13,3.6751,110631
+Insertion-based,64,262144,14,3.4814,110721
+Insertion-based,64,262144,15,3.032,110678
+Insertion-based,64,262144,16,4.2319,110758
+Insertion-based,64,262144,17,3.5642,110797
+Insertion-based,64,262144,18,2.8824,110969
+Insertion-based,64,262144,19,2.4561,110519
+Insertion-based,64,262144,20,3.305,110522
+Insertion-based,64,524288,1,7.9054,233733
+Insertion-based,64,524288,2,8.5299,233890
+Insertion-based,64,524288,3,8.199,233773
+Insertion-based,64,524288,4,7.3374,233439
+Insertion-based,64,524288,5,7.5775,234084
+Insertion-based,64,524288,6,8.0151,233633
+Insertion-based,64,524288,7,7.6792,233663
+Insertion-based,64,524288,8,9.3338,233528
+Insertion-based,64,524288,9,7.6342,233745
+Insertion-based,64,524288,10,7.314,234315
+Insertion-based,64,524288,11,7.5673,234018
+Insertion-based,64,524288,12,8.5217,233988
+Insertion-based,64,524288,13,8.3853,233827
+Insertion-based,64,524288,14,8.3438,233619
+Insertion-based,64,524288,15,8.2644,233685
+Insertion-based,64,524288,16,7.1234,233718
+Insertion-based,64,524288,17,9.2682,233712
+Insertion-based,64,524288,18,7.3871,233344
+Insertion-based,64,524288,19,7.4935,233671
+Insertion-based,64,524288,20,7.5272,233733
+Insertion-based,64,1048576,1,15.8679,491711
+Insertion-based,64,1048576,2,15.6821,491904
+Insertion-based,64,1048576,3,16.6227,492135
+Insertion-based,64,1048576,4,15.8714,491974
+Insertion-based,64,1048576,5,18.3806,492153
+Insertion-based,64,1048576,6,16.8796,492186
+Insertion-based,64,1048576,7,16.261,492327
+Insertion-based,64,1048576,8,15.5589,491643
+Insertion-based,64,1048576,9,15.7876,492177
+Insertion-based,64,1048576,10,16.6989,491940
+Insertion-based,64,1048576,11,15.7721,491907
+Insertion-based,64,1048576,12,17.0175,491706
+Insertion-based,64,1048576,13,15.7461,491869
+Insertion-based,64,1048576,14,16.7704,491734
+Insertion-based,64,1048576,15,19.6719,492345
+Insertion-based,64,1048576,16,16.6194,492393
+Insertion-based,64,1048576,17,18.2258,492109
+Insertion-based,64,1048576,18,16.5069,492249
+Insertion-based,64,1048576,19,17.1433,492176
+Insertion-based,64,1048576,20,15.8091,491712
+Insertion-based,512,4096,1,0.0049,152
+Insertion-based,512,4096,2,0.0034,147
+Insertion-based,512,4096,3,0.0033,142
+Insertion-based,512,4096,4,0.0036,148
+Insertion-based,512,4096,5,0.0037,144
+Insertion-based,512,4096,6,0.0033,143
+Insertion-based,512,4096,7,0.0036,142
+Insertion-based,512,4096,8,0.0034,149
+Insertion-based,512,4096,9,0.0036,149
+Insertion-based,512,4096,10,0.0035,147
+Insertion-based,512,4096,11,0.0033,147
+Insertion-based,512,4096,12,0.0036,144
+Insertion-based,512,4096,13,0.0034,137
+Insertion-based,512,4096,14,0.0036,143
+Insertion-based,512,4096,15,0.0036,143
+Insertion-based,512,4096,16,0.0034,144
+Insertion-based,512,4096,17,0.0035,142
+Insertion-based,512,4096,18,0.0036,138
+Insertion-based,512,4096,19,0.0032,142
+Insertion-based,512,4096,20,0.0036,150
+Insertion-based,512,8192,1,0.0072,319
+Insertion-based,512,8192,2,0.0189,315
+Insertion-based,512,8192,3,0.0079,324
+Insertion-based,512,8192,4,0.0071,311
+Insertion-based,512,8192,5,0.0074,312
+Insertion-based,512,8192,6,0.0095,311
+Insertion-based,512,8192,7,0.0066,315
+Insertion-based,512,8192,8,0.007,316
+Insertion-based,512,8192,9,0.0071,302
+Insertion-based,512,8192,10,0.0069,308
+Insertion-based,512,8192,11,0.0065,304
+Insertion-based,512,8192,12,0.0068,322
+Insertion-based,512,8192,13,0.007,315
+Insertion-based,512,8192,14,0.0065,315
+Insertion-based,512,8192,15,0.0067,299
+Insertion-based,512,8192,16,0.0066,312
+Insertion-based,512,8192,17,0.0075,320
+Insertion-based,512,8192,18,0.0092,306
+Insertion-based,512,8192,19,0.0135,323
+Insertion-based,512,8192,20,0.008,301
+Insertion-based,512,16384,1,0.0203,665
+Insertion-based,512,16384,2,0.0172,664
+Insertion-based,512,16384,3,0.0144,663
+Insertion-based,512,16384,4,0.0159,680
+Insertion-based,512,16384,5,0.0147,649
+Insertion-based,512,16384,6,0.0288,653
+Insertion-based,512,16384,7,0.0174,672
+Insertion-based,512,16384,8,0.0165,698
+Insertion-based,512,16384,9,0.0165,682
+Insertion-based,512,16384,10,0.0168,695
+Insertion-based,512,16384,11,0.016,670
+Insertion-based,512,16384,12,0.0211,677
+Insertion-based,512,16384,13,0.0158,675
+Insertion-based,512,16384,14,0.0213,657
+Insertion-based,512,16384,15,0.0157,692
+Insertion-based,512,16384,16,0.0153,655
+Insertion-based,512,16384,17,0.0141,669
+Insertion-based,512,16384,18,0.015,667
+Insertion-based,512,16384,19,0.0148,670
+Insertion-based,512,16384,20,0.0217,667
+Insertion-based,512,32768,1,0.0375,1418
+Insertion-based,512,32768,2,0.0333,1437
+Insertion-based,512,32768,3,0.0641,1400
+Insertion-based,512,32768,4,0.0379,1465
+Insertion-based,512,32768,5,0.0377,1420
+Insertion-based,512,32768,6,0.034,1472
+Insertion-based,512,32768,7,0.0342,1434
+Insertion-based,512,32768,8,0.0413,1443
+Insertion-based,512,32768,9,0.0471,1435
+Insertion-based,512,32768,10,0.044,1430
+Insertion-based,512,32768,11,0.0345,1453
+Insertion-based,512,32768,12,0.0352,1447
+Insertion-based,512,32768,13,0.0363,1471
+Insertion-based,512,32768,14,0.0365,1452
+Insertion-based,512,32768,15,0.0405,1446
+Insertion-based,512,32768,16,0.0498,1453
+Insertion-based,512,32768,17,0.0361,1472
+Insertion-based,512,32768,18,0.0368,1436
+Insertion-based,512,32768,19,0.0379,1426
+Insertion-based,512,32768,20,0.0366,1462
+Insertion-based,512,65536,1,0.1016,3063
+Insertion-based,512,65536,2,0.1679,3048
+Insertion-based,512,65536,3,0.12,3109
+Insertion-based,512,65536,4,0.1267,3067
+Insertion-based,512,65536,5,0.1074,3119
+Insertion-based,512,65536,6,0.1165,3027
+Insertion-based,512,65536,7,0.1026,3100
+Insertion-based,512,65536,8,0.1012,3062
+Insertion-based,512,65536,9,0.1048,3079
+Insertion-based,512,65536,10,0.0961,3099
+Insertion-based,512,65536,11,0.1056,3044
+Insertion-based,512,65536,12,0.1076,3080
+Insertion-based,512,65536,13,0.1076,3066
+Insertion-based,512,65536,14,0.0965,3040
+Insertion-based,512,65536,15,0.1082,3100
+Insertion-based,512,65536,16,0.097,3106
+Insertion-based,512,65536,17,0.1176,3058
+Insertion-based,512,65536,18,0.1087,3059
+Insertion-based,512,65536,19,0.1037,3087
+Insertion-based,512,65536,20,0.119,3055
+Insertion-based,512,131072,1,0.3472,6552
+Insertion-based,512,131072,2,0.2648,6502
+Insertion-based,512,131072,3,0.2805,6548
+Insertion-based,512,131072,4,0.2881,6581
+Insertion-based,512,131072,5,0.3142,6546
+Insertion-based,512,131072,6,0.2717,6506
+Insertion-based,512,131072,7,0.3038,6494
+Insertion-based,512,131072,8,0.245,6522
+Insertion-based,512,131072,9,0.2576,6569
+Insertion-based,512,131072,10,0.2635,6443
+Insertion-based,512,131072,11,0.2979,6535
+Insertion-based,512,131072,12,0.3075,6534
+Insertion-based,512,131072,13,0.2736,6501
+Insertion-based,512,131072,14,0.53,6551
+Insertion-based,512,131072,15,0.2656,6516
+Insertion-based,512,131072,16,0.2701,6525
+Insertion-based,512,131072,17,0.2599,6426
+Insertion-based,512,131072,18,0.2635,6473
+Insertion-based,512,131072,19,0.2641,6492
+Insertion-based,512,131072,20,0.2703,6587
+Insertion-based,512,262144,1,0.8571,13726
+Insertion-based,512,262144,2,0.7732,13824
+Insertion-based,512,262144,3,0.6719,13856
+Insertion-based,512,262144,4,0.7131,13782
+Insertion-based,512,262144,5,0.646,13838
+Insertion-based,512,262144,6,0.6533,13810
+Insertion-based,512,262144,7,0.623,13799
+Insertion-based,512,262144,8,0.7762,13789
+Insertion-based,512,262144,9,0.6221,13823
+Insertion-based,512,262144,10,0.7351,13773
+Insertion-based,512,262144,11,0.6443,13812
+Insertion-based,512,262144,12,0.6197,13853
+Insertion-based,512,262144,13,0.642,13856
+Insertion-based,512,262144,14,0.6721,13772
+Insertion-based,512,262144,15,0.8553,13768
+Insertion-based,512,262144,16,0.6463,13861
+Insertion-based,512,262144,17,0.6455,13826
+Insertion-based,512,262144,18,0.6642,13814
+Insertion-based,512,262144,19,0.6981,13861
+Insertion-based,512,262144,20,0.7492,13796
+Insertion-based,512,524288,1,1.5358,29191
+Insertion-based,512,524288,2,1.5886,29177
+Insertion-based,512,524288,3,1.5259,29152
+Insertion-based,512,524288,4,1.4407,29184
+Insertion-based,512,524288,5,1.6543,29245
+Insertion-based,512,524288,6,1.4076,29238
+Insertion-based,512,524288,7,1.6265,29129
+Insertion-based,512,524288,8,1.5062,29123
+Insertion-based,512,524288,9,1.6811,29165
+Insertion-based,512,524288,10,1.5872,29161
+Insertion-based,512,524288,11,1.4703,29081
+Insertion-based,512,524288,12,1.5798,29076
+Insertion-based,512,524288,13,1.5194,29169
+Insertion-based,512,524288,14,1.556,29166
+Insertion-based,512,524288,15,1.4921,29175
+Insertion-based,512,524288,16,1.607,29305
+Insertion-based,512,524288,17,2.0761,29212
+Insertion-based,512,524288,18,1.4726,29135
+Insertion-based,512,524288,19,1.4611,29348
+Insertion-based,512,524288,20,1.4821,29130
+Insertion-based,512,1048576,1,3.2058,61374
+Insertion-based,512,1048576,2,3.3646,61460
+Insertion-based,512,1048576,3,3.2318,61378
+Insertion-based,512,1048576,4,3.2817,61538
+Insertion-based,512,1048576,5,3.5406,61550
+Insertion-based,512,1048576,6,3.4681,61323
+Insertion-based,512,1048576,7,3.2251,61467
+Insertion-based,512,1048576,8,3.3162,61473
+Insertion-based,512,1048576,9,3.2167,61462
+Insertion-based,512,1048576,10,3.4505,61538
+Insertion-based,512,1048576,11,4.5617,61197
+Insertion-based,512,1048576,12,3.6376,61514
+Insertion-based,512,1048576,13,3.2495,61426
+Insertion-based,512,1048576,14,3.2256,61305
+Insertion-based,512,1048576,15,3.2517,61537
+Insertion-based,512,1048576,16,3.3183,61394
+Insertion-based,512,1048576,17,3.759,61578
+Insertion-based,512,1048576,18,3.2373,61423
+Insertion-based,512,1048576,19,3.239,61506
+Insertion-based,512,1048576,20,3.2761,61427
+Insertion-based,4096,4096,1,0.0018,19
+Insertion-based,4096,4096,2,0.0009,17
+Insertion-based,4096,4096,3,0.0009,17
+Insertion-based,4096,4096,4,0.0017,16
+Insertion-based,4096,4096,5,0.0009,15
+Insertion-based,4096,4096,6,0.0009,18
+Insertion-based,4096,4096,7,0.0057,17
+Insertion-based,4096,4096,8,0.0019,17
+Insertion-based,4096,4096,9,0.0009,20
+Insertion-based,4096,4096,10,0.0008,16
+Insertion-based,4096,4096,11,0.0007,19
+Insertion-based,4096,4096,12,0.0008,19
+Insertion-based,4096,4096,13,0.001,18
+Insertion-based,4096,4096,14,0.0013,22
+Insertion-based,4096,4096,15,0.0007,21
+Insertion-based,4096,4096,16,0.0008,21
+Insertion-based,4096,4096,17,0.0008,20
+Insertion-based,4096,4096,18,0.0008,18
+Insertion-based,4096,4096,19,0.0009,22
+Insertion-based,4096,4096,20,0.001,15
+Insertion-based,4096,8192,1,0.0026,40
+Insertion-based,4096,8192,2,0.0056,37
+Insertion-based,4096,8192,3,0.0026,42
+Insertion-based,4096,8192,4,0.0028,36
+Insertion-based,4096,8192,5,0.0027,37
+Insertion-based,4096,8192,6,0.0022,38
+Insertion-based,4096,8192,7,0.0017,39
+Insertion-based,4096,8192,8,0.0025,40
+Insertion-based,4096,8192,9,0.0012,41
+Insertion-based,4096,8192,10,0.0013,38
+Insertion-based,4096,8192,11,0.0015,38
+Insertion-based,4096,8192,12,0.0014,43
+Insertion-based,4096,8192,13,0.0012,36
+Insertion-based,4096,8192,14,0.0014,37
+Insertion-based,4096,8192,15,0.0015,37
+Insertion-based,4096,8192,16,0.0013,39
+Insertion-based,4096,8192,17,0.0012,39
+Insertion-based,4096,8192,18,0.0013,39
+Insertion-based,4096,8192,19,0.0013,33
+Insertion-based,4096,8192,20,0.0014,38
+Insertion-based,4096,16384,1,0.005,89
+Insertion-based,4096,16384,2,0.0046,85
+Insertion-based,4096,16384,3,0.0043,86
+Insertion-based,4096,16384,4,0.0025,85
+Insertion-based,4096,16384,5,0.003,85
+Insertion-based,4096,16384,6,0.0027,82
+Insertion-based,4096,16384,7,0.0028,88
+Insertion-based,4096,16384,8,0.0026,81
+Insertion-based,4096,16384,9,0.0055,76
+Insertion-based,4096,16384,10,0.0032,83
+Insertion-based,4096,16384,11,0.0031,85
+Insertion-based,4096,16384,12,0.0026,87
+Insertion-based,4096,16384,13,0.0026,86
+Insertion-based,4096,16384,14,0.0025,84
+Insertion-based,4096,16384,15,0.0027,86
+Insertion-based,4096,16384,16,0.0027,89
+Insertion-based,4096,16384,17,0.0038,84
+Insertion-based,4096,16384,18,0.0026,85
+Insertion-based,4096,16384,19,0.0031,83
+Insertion-based,4096,16384,20,0.0026,89
+Insertion-based,4096,32768,1,0.0071,180
+Insertion-based,4096,32768,2,0.0105,179
+Insertion-based,4096,32768,3,0.0096,186
+Insertion-based,4096,32768,4,0.0075,181
+Insertion-based,4096,32768,5,0.0141,173
+Insertion-based,4096,32768,6,0.006,184
+Insertion-based,4096,32768,7,0.0057,187
+Insertion-based,4096,32768,8,0.0074,187
+Insertion-based,4096,32768,9,0.0204,176
+Insertion-based,4096,32768,10,0.0072,176
+Insertion-based,4096,32768,11,0.0078,172
+Insertion-based,4096,32768,12,0.0062,181
+Insertion-based,4096,32768,13,0.0088,169
+Insertion-based,4096,32768,14,0.0048,190
+Insertion-based,4096,32768,15,0.0059,185
+Insertion-based,4096,32768,16,0.0054,184
+Insertion-based,4096,32768,17,0.0056,182
+Insertion-based,4096,32768,18,0.0067,170
+Insertion-based,4096,32768,19,0.009,177
+Insertion-based,4096,32768,20,0.0061,175
+Insertion-based,4096,65536,1,0.0143,400
+Insertion-based,4096,65536,2,0.0209,373
+Insertion-based,4096,65536,3,0.0201,375
+Insertion-based,4096,65536,4,0.0287,391
+Insertion-based,4096,65536,5,0.0154,388
+Insertion-based,4096,65536,6,0.0221,380
+Insertion-based,4096,65536,7,0.0164,393
+Insertion-based,4096,65536,8,0.0137,410
+Insertion-based,4096,65536,9,0.0193,391
+Insertion-based,4096,65536,10,0.0149,384
+Insertion-based,4096,65536,11,0.0179,380
+Insertion-based,4096,65536,12,0.0169,388
+Insertion-based,4096,65536,13,0.0174,381
+Insertion-based,4096,65536,14,0.0191,386
+Insertion-based,4096,65536,15,0.0183,372
+Insertion-based,4096,65536,16,0.0198,369
+Insertion-based,4096,65536,17,0.0175,389
+Insertion-based,4096,65536,18,0.0187,383
+Insertion-based,4096,65536,19,0.0187,394
+Insertion-based,4096,65536,20,0.0213,383
+Insertion-based,4096,131072,1,0.0538,838
+Insertion-based,4096,131072,2,0.0385,821
+Insertion-based,4096,131072,3,0.0421,793
+Insertion-based,4096,131072,4,0.0425,810
+Insertion-based,4096,131072,5,0.0482,802
+Insertion-based,4096,131072,6,0.0483,831
+Insertion-based,4096,131072,7,0.0539,824
+Insertion-based,4096,131072,8,0.0428,824
+Insertion-based,4096,131072,9,0.0437,798
+Insertion-based,4096,131072,10,0.0406,824
+Insertion-based,4096,131072,11,0.044,805
+Insertion-based,4096,131072,12,0.0465,816
+Insertion-based,4096,131072,13,0.0442,808
+Insertion-based,4096,131072,14,0.0469,799
+Insertion-based,4096,131072,15,0.0433,801
+Insertion-based,4096,131072,16,0.0403,809
+Insertion-based,4096,131072,17,0.0621,813
+Insertion-based,4096,131072,18,0.0577,824
+Insertion-based,4096,131072,19,0.044,829
+Insertion-based,4096,131072,20,0.055,817
+Insertion-based,4096,262144,1,0.1078,1746
+Insertion-based,4096,262144,2,0.1151,1699
+Insertion-based,4096,262144,3,0.1142,1712
+Insertion-based,4096,262144,4,0.1124,1698
+Insertion-based,4096,262144,5,0.1137,1693
+Insertion-based,4096,262144,6,0.1038,1705
+Insertion-based,4096,262144,7,0.1174,1754
+Insertion-based,4096,262144,8,0.1361,1712
+Insertion-based,4096,262144,9,0.1385,1747
+Insertion-based,4096,262144,10,0.1106,1752
+Insertion-based,4096,262144,11,0.1025,1745
+Insertion-based,4096,262144,12,0.1059,1756
+Insertion-based,4096,262144,13,0.1088,1733
+Insertion-based,4096,262144,14,0.107,1719
+Insertion-based,4096,262144,15,0.1207,1743
+Insertion-based,4096,262144,16,0.1077,1736
+Insertion-based,4096,262144,17,0.1212,1718
+Insertion-based,4096,262144,18,0.1111,1719
+Insertion-based,4096,262144,19,0.1224,1712
+Insertion-based,4096,262144,20,0.1099,1751
+Insertion-based,4096,524288,1,0.2553,3615
+Insertion-based,4096,524288,2,0.2683,3616
+Insertion-based,4096,524288,3,0.2481,3621
+Insertion-based,4096,524288,4,0.2451,3635
+Insertion-based,4096,524288,5,0.3264,3678
+Insertion-based,4096,524288,6,0.2438,3664
+Insertion-based,4096,524288,7,0.2571,3657
+Insertion-based,4096,524288,8,0.2726,3682
+Insertion-based,4096,524288,9,0.261,3625
+Insertion-based,4096,524288,10,0.2678,3629
+Insertion-based,4096,524288,11,0.2967,3640
+Insertion-based,4096,524288,12,0.2685,3678
+Insertion-based,4096,524288,13,0.2553,3647
+Insertion-based,4096,524288,14,0.3243,3640
+Insertion-based,4096,524288,15,0.2482,3632
+Insertion-based,4096,524288,16,0.2934,3650
+Insertion-based,4096,524288,17,0.2446,3621
+Insertion-based,4096,524288,18,0.2408,3609
+Insertion-based,4096,524288,19,0.2526,3655
+Insertion-based,4096,524288,20,0.2421,3669
+Insertion-based,4096,1048576,1,0.6226,7696
+Insertion-based,4096,1048576,2,0.5541,7686
+Insertion-based,4096,1048576,3,0.5508,7639
+Insertion-based,4096,1048576,4,0.568,7720
+Insertion-based,4096,1048576,5,0.5784,7726
+Insertion-based,4096,1048576,6,0.57,7691
+Insertion-based,4096,1048576,7,0.5547,7631
+Insertion-based,4096,1048576,8,0.5094,7650
+Insertion-based,4096,1048576,9,0.5202,7642
+Insertion-based,4096,1048576,10,0.5453,7652
+Insertion-based,4096,1048576,11,0.5562,7704
+Insertion-based,4096,1048576,12,0.7178,7665
+Insertion-based,4096,1048576,13,0.5572,7726
+Insertion-based,4096,1048576,14,0.6783,7707
+Insertion-based,4096,1048576,15,0.5627,7695
+Insertion-based,4096,1048576,16,0.5554,7669
+Insertion-based,4096,1048576,17,0.5702,7664
+Insertion-based,4096,1048576,18,0.5398,7651
+Insertion-based,4096,1048576,19,0.6066,7685
+Insertion-based,4096,1048576,20,0.8381,7680
+In-order trasversal,1,4096,1,0.7876,8191
+In-order trasversal,1,4096,2,0.573,8191
+In-order trasversal,1,4096,3,0.7429,8191
+In-order trasversal,1,4096,4,0.617,8191
+In-order trasversal,1,4096,5,0.6025,8190
+In-order trasversal,1,4096,6,0.6177,8190
+In-order trasversal,1,4096,7,0.8142,8190
+In-order trasversal,1,4096,8,0.6338,8189
+In-order trasversal,1,4096,9,0.6617,8187
+In-order trasversal,1,4096,10,0.6984,8191
+In-order trasversal,1,4096,11,0.6326,8191
+In-order trasversal,1,4096,12,0.612,8186
+In-order trasversal,1,4096,13,0.6027,8189
+In-order trasversal,1,4096,14,0.6246,8188
+In-order trasversal,1,4096,15,0.6182,8189
+In-order trasversal,1,4096,16,0.6069,8190
+In-order trasversal,1,4096,17,0.614,8191
+In-order trasversal,1,4096,18,0.6042,8190
+In-order trasversal,1,4096,19,0.6194,8189
+In-order trasversal,1,4096,20,0.6592,8186
+In-order trasversal,1,8192,1,1.4168,16382
+In-order trasversal,1,8192,2,1.5206,16383
+In-order trasversal,1,8192,3,1.3232,16382
+In-order trasversal,1,8192,4,1.3266,16383
+In-order trasversal,1,8192,5,1.8048,16383
+In-order trasversal,1,8192,6,1.7038,16381
+In-order trasversal,1,8192,7,1.3833,16381
+In-order trasversal,1,8192,8,1.3599,16381
+In-order trasversal,1,8192,9,1.3112,16383
+In-order trasversal,1,8192,10,1.9373,16383
+In-order trasversal,1,8192,11,1.3547,16382
+In-order trasversal,1,8192,12,1.3153,16381
+In-order trasversal,1,8192,13,1.3656,16383
+In-order trasversal,1,8192,14,1.3652,16377
+In-order trasversal,1,8192,15,1.3371,16379
+In-order trasversal,1,8192,16,1.4137,16383
+In-order trasversal,1,8192,17,1.6182,16383
+In-order trasversal,1,8192,18,1.2637,16383
+In-order trasversal,1,8192,19,1.2445,16381
+In-order trasversal,1,8192,20,1.2661,16383
+In-order trasversal,1,16384,1,3.0785,32765
+In-order trasversal,1,16384,2,2.793,32767
+In-order trasversal,1,16384,3,2.6036,32766
+In-order trasversal,1,16384,4,2.6245,32766
+In-order trasversal,1,16384,5,2.7468,32764
+In-order trasversal,1,16384,6,2.5428,32767
+In-order trasversal,1,16384,7,2.7467,32766
+In-order trasversal,1,16384,8,2.7946,32767
+In-order trasversal,1,16384,9,2.7568,32767
+In-order trasversal,1,16384,10,2.6651,32767
+In-order trasversal,1,16384,11,2.5162,32766
+In-order trasversal,1,16384,12,2.6639,32767
+In-order trasversal,1,16384,13,2.5568,32767
+In-order trasversal,1,16384,14,2.7584,32766
+In-order trasversal,1,16384,15,2.8941,32765
+In-order trasversal,1,16384,16,3.946,32766
+In-order trasversal,1,16384,17,2.7645,32767
+In-order trasversal,1,16384,18,2.7671,32767
+In-order trasversal,1,16384,19,2.6208,32758
+In-order trasversal,1,16384,20,2.6194,32764
+In-order trasversal,1,32768,1,9.9953,65535
+In-order trasversal,1,32768,2,5.5883,65535
+In-order trasversal,1,32768,3,5.6468,65532
+In-order trasversal,1,32768,4,5.4623,65532
+In-order trasversal,1,32768,5,5.4912,65531
+In-order trasversal,1,32768,6,5.3231,65534
+In-order trasversal,1,32768,7,5.3609,65534
+In-order trasversal,1,32768,8,5.3255,65535
+In-order trasversal,1,32768,9,5.9535,65534
+In-order trasversal,1,32768,10,5.7317,65532
+In-order trasversal,1,32768,11,7.0244,65534
+In-order trasversal,1,32768,12,5.4863,65528
+In-order trasversal,1,32768,13,5.1815,65534
+In-order trasversal,1,32768,14,5.6416,65528
+In-order trasversal,1,32768,15,5.6255,65534
+In-order trasversal,1,32768,16,5.6936,65534
+In-order trasversal,1,32768,17,5.9634,65534
+In-order trasversal,1,32768,18,5.839,65534
+In-order trasversal,1,32768,19,5.5829,65535
+In-order trasversal,1,32768,20,5.8611,65528
+In-order trasversal,1,65536,1,14.5092,131070
+In-order trasversal,1,65536,2,11.9391,131063
+In-order trasversal,1,65536,3,12.0615,131066
+In-order trasversal,1,65536,4,11.2126,131065
+In-order trasversal,1,65536,5,13.178,131064
+In-order trasversal,1,65536,6,11.7235,131071
+In-order trasversal,1,65536,7,10.8663,131068
+In-order trasversal,1,65536,8,12.5103,131067
+In-order trasversal,1,65536,9,11.2975,131071
+In-order trasversal,1,65536,10,11.9324,131070
+In-order trasversal,1,65536,11,11.9404,131069
+In-order trasversal,1,65536,12,12.511,131069
+In-order trasversal,1,65536,13,15.7297,131069
+In-order trasversal,1,65536,14,12.286,131063
+In-order trasversal,1,65536,15,11.5444,131066
+In-order trasversal,1,65536,16,12.2674,131071
+In-order trasversal,1,65536,17,11.2608,131068
+In-order trasversal,1,65536,18,11.9524,131068
+In-order trasversal,1,65536,19,12.8614,131071
+In-order trasversal,1,65536,20,11.2386,131065
+In-order trasversal,1,131072,1,25.6597,262136
+In-order trasversal,1,131072,2,24.9224,262137
+In-order trasversal,1,131072,3,32.7862,262142
+In-order trasversal,1,131072,4,26.2774,262140
+In-order trasversal,1,131072,5,27.3761,262141
+In-order trasversal,1,131072,6,26.4194,262138
+In-order trasversal,1,131072,7,26.4897,262139
+In-order trasversal,1,131072,8,25.13,262137
+In-order trasversal,1,131072,9,26.1559,262137
+In-order trasversal,1,131072,10,25.2982,262136
+In-order trasversal,1,131072,11,26.0572,262134
+In-order trasversal,1,131072,12,30.5608,262132
+In-order trasversal,1,131072,13,26.0715,262140
+In-order trasversal,1,131072,14,28.5737,262139
+In-order trasversal,1,131072,15,27.6957,262136
+In-order trasversal,1,131072,16,26.8778,262138
+In-order trasversal,1,131072,17,25.7325,262140
+In-order trasversal,1,131072,18,26.1064,262135
+In-order trasversal,1,131072,19,30.6877,262138
+In-order trasversal,1,131072,20,24.075,262138
+In-order trasversal,1,262144,1,53.0384,524272
+In-order trasversal,1,262144,2,51.7289,524271
+In-order trasversal,1,262144,3,50.907,524273
+In-order trasversal,1,262144,4,52.9106,524273
+In-order trasversal,1,262144,5,51.298,524276
+In-order trasversal,1,262144,6,51.9157,524271
+In-order trasversal,1,262144,7,51.9665,524271
+In-order trasversal,1,262144,8,51.0713,524266
+In-order trasversal,1,262144,9,52.501,524269
+In-order trasversal,1,262144,10,49.7257,524264
+In-order trasversal,1,262144,11,56.8042,524275
+In-order trasversal,1,262144,12,53.5294,524274
+In-order trasversal,1,262144,13,53.8071,524266
+In-order trasversal,1,262144,14,52.6584,524273
+In-order trasversal,1,262144,15,53.1396,524267
+In-order trasversal,1,262144,16,56.0966,524267
+In-order trasversal,1,262144,17,53.1349,524272
+In-order trasversal,1,262144,18,52.413,524269
+In-order trasversal,1,262144,19,52.407,524269
+In-order trasversal,1,262144,20,53.6215,524272
+In-order trasversal,1,524288,1,107.539,1048510
+In-order trasversal,1,524288,2,106.814,1048520
+In-order trasversal,1,524288,3,107.389,1048517
+In-order trasversal,1,524288,4,107.8,1048511
+In-order trasversal,1,524288,5,105.308,1048506
+In-order trasversal,1,524288,6,108.562,1048526
+In-order trasversal,1,524288,7,104.3,1048515
+In-order trasversal,1,524288,8,104.752,1048509
+In-order trasversal,1,524288,9,104.493,1048506
+In-order trasversal,1,524288,10,101.205,1048511
+In-order trasversal,1,524288,11,107.985,1048505
+In-order trasversal,1,524288,12,103.94,1048504
+In-order trasversal,1,524288,13,110.067,1048505
+In-order trasversal,1,524288,14,105.784,1048507
+In-order trasversal,1,524288,15,105.297,1048513
+In-order trasversal,1,524288,16,108.399,1048493
+In-order trasversal,1,524288,17,102.159,1048507
+In-order trasversal,1,524288,18,103.181,1048521
+In-order trasversal,1,524288,19,104.55,1048520
+In-order trasversal,1,524288,20,104.061,1048518
+In-order trasversal,1,1048576,1,210.554,2096894
+In-order trasversal,1,1048576,2,211.632,2096906
+In-order trasversal,1,1048576,3,209.602,2096893
+In-order trasversal,1,1048576,4,210.344,2096880
+In-order trasversal,1,1048576,5,207.249,2096901
+In-order trasversal,1,1048576,6,208.038,2096898
+In-order trasversal,1,1048576,7,204.713,2096882
+In-order trasversal,1,1048576,8,209.11,2096913
+In-order trasversal,1,1048576,9,208.804,2096893
+In-order trasversal,1,1048576,10,217.066,2096891
+In-order trasversal,1,1048576,11,215.369,2096920
+In-order trasversal,1,1048576,12,206.825,2096906
+In-order trasversal,1,1048576,13,206.095,2096895
+In-order trasversal,1,1048576,14,211.005,2096914
+In-order trasversal,1,1048576,15,222.235,2096877
+In-order trasversal,1,1048576,16,206.915,2096887
+In-order trasversal,1,1048576,17,213.637,2096888
+In-order trasversal,1,1048576,18,208.954,2096888
+In-order trasversal,1,1048576,19,210.309,2096873
+In-order trasversal,1,1048576,20,208.223,2096881
+In-order trasversal,8,4096,1,0.5401,4605
+In-order trasversal,8,4096,2,0.378,4603
+In-order trasversal,8,4096,3,0.341,4594
+In-order trasversal,8,4096,4,0.4791,4601
+In-order trasversal,8,4096,5,0.3679,4606
+In-order trasversal,8,4096,6,0.3804,4600
+In-order trasversal,8,4096,7,0.4159,4605
+In-order trasversal,8,4096,8,0.5243,4574
+In-order trasversal,8,4096,9,0.4461,4607
+In-order trasversal,8,4096,10,0.4298,4574
+In-order trasversal,8,4096,11,0.3983,4595
+In-order trasversal,8,4096,12,0.4294,4601
+In-order trasversal,8,4096,13,0.4233,4586
+In-order trasversal,8,4096,14,0.4084,4607
+In-order trasversal,8,4096,15,0.4033,4607
+In-order trasversal,8,4096,16,0.4294,4607
+In-order trasversal,8,4096,17,0.4047,4607
+In-order trasversal,8,4096,18,0.37,4601
+In-order trasversal,8,4096,19,0.422,4586
+In-order trasversal,8,4096,20,0.4167,4592
+In-order trasversal,8,8192,1,0.6641,9188
+In-order trasversal,8,8192,2,0.6604,9210
+In-order trasversal,8,8192,3,0.7268,9177
+In-order trasversal,8,8192,4,0.7499,9212
+In-order trasversal,8,8192,5,0.7271,9215
+In-order trasversal,8,8192,6,0.7247,9207
+In-order trasversal,8,8192,7,0.7219,9214
+In-order trasversal,8,8192,8,1.1662,9213
+In-order trasversal,8,8192,9,0.7286,9214
+In-order trasversal,8,8192,10,0.7415,9208
+In-order trasversal,8,8192,11,0.7398,9209
+In-order trasversal,8,8192,12,0.7808,9215
+In-order trasversal,8,8192,13,0.8126,9215
+In-order trasversal,8,8192,14,0.8574,9215
+In-order trasversal,8,8192,15,0.7198,9203
+In-order trasversal,8,8192,16,0.8765,9204
+In-order trasversal,8,8192,17,0.7906,9204
+In-order trasversal,8,8192,18,0.7474,9215
+In-order trasversal,8,8192,19,0.7112,9213
+In-order trasversal,8,8192,20,0.712,9214
+In-order trasversal,8,16384,1,1.4273,18431
+In-order trasversal,8,16384,2,1.7732,18430
+In-order trasversal,8,16384,3,1.5818,18419
+In-order trasversal,8,16384,4,1.5085,18424
+In-order trasversal,8,16384,5,2.1126,18425
+In-order trasversal,8,16384,6,1.62,18428
+In-order trasversal,8,16384,7,1.5092,18431
+In-order trasversal,8,16384,8,1.5942,18422
+In-order trasversal,8,16384,9,1.6633,18427
+In-order trasversal,8,16384,10,1.436,18375
+In-order trasversal,8,16384,11,1.4187,18423
+In-order trasversal,8,16384,12,1.4005,18430
+In-order trasversal,8,16384,13,1.4782,18416
+In-order trasversal,8,16384,14,1.5302,18420
+In-order trasversal,8,16384,15,1.3894,18424
+In-order trasversal,8,16384,16,1.5081,18430
+In-order trasversal,8,16384,17,1.4987,18414
+In-order trasversal,8,16384,18,1.429,18407
+In-order trasversal,8,16384,19,1.3826,18425
+In-order trasversal,8,16384,20,1.3654,18431
+In-order trasversal,8,32768,1,3.2424,36863
+In-order trasversal,8,32768,2,3.1986,36850
+In-order trasversal,8,32768,3,3.2355,36844
+In-order trasversal,8,32768,4,2.9521,36858
+In-order trasversal,8,32768,5,2.9784,36857
+In-order trasversal,8,32768,6,2.9782,36851
+In-order trasversal,8,32768,7,3.1315,36859
+In-order trasversal,8,32768,8,3.0273,36858
+In-order trasversal,8,32768,9,3.2204,36861
+In-order trasversal,8,32768,10,3.3022,36863
+In-order trasversal,8,32768,11,3.041,36850
+In-order trasversal,8,32768,12,2.9895,36854
+In-order trasversal,8,32768,13,2.8452,36846
+In-order trasversal,8,32768,14,2.9127,36863
+In-order trasversal,8,32768,15,3.0706,36862
+In-order trasversal,8,32768,16,3.0183,36862
+In-order trasversal,8,32768,17,3.7908,36862
+In-order trasversal,8,32768,18,2.9798,36849
+In-order trasversal,8,32768,19,3.6509,36863
+In-order trasversal,8,32768,20,3.0861,36859
+In-order trasversal,8,65536,1,6.0822,73727
+In-order trasversal,8,65536,2,6.2557,73727
+In-order trasversal,8,65536,3,6.0294,73723
+In-order trasversal,8,65536,4,6.4822,73727
+In-order trasversal,8,65536,5,5.9685,73721
+In-order trasversal,8,65536,6,6.5801,73724
+In-order trasversal,8,65536,7,6.4549,73725
+In-order trasversal,8,65536,8,7.1646,73726
+In-order trasversal,8,65536,9,6.6285,73717
+In-order trasversal,8,65536,10,6.0738,73726
+In-order trasversal,8,65536,11,5.8971,73722
+In-order trasversal,8,65536,12,5.9159,73723
+In-order trasversal,8,65536,13,5.8705,73721
+In-order trasversal,8,65536,14,6.1998,73719
+In-order trasversal,8,65536,15,7.9855,73714
+In-order trasversal,8,65536,16,8.2531,73719
+In-order trasversal,8,65536,17,6.0217,73726
+In-order trasversal,8,65536,18,6.1343,73716
+In-order trasversal,8,65536,19,5.907,73726
+In-order trasversal,8,65536,20,7.328,73715
+In-order trasversal,8,131072,1,14.2418,147438
+In-order trasversal,8,131072,2,13.6644,147436
+In-order trasversal,8,131072,3,14.1746,147452
+In-order trasversal,8,131072,4,12.7919,147427
+In-order trasversal,8,131072,5,11.977,147451
+In-order trasversal,8,131072,6,13.1902,147448
+In-order trasversal,8,131072,7,12.3479,147448
+In-order trasversal,8,131072,8,12.6172,147451
+In-order trasversal,8,131072,9,13.3786,147449
+In-order trasversal,8,131072,10,12.6839,147448
+In-order trasversal,8,131072,11,12.864,147455
+In-order trasversal,8,131072,12,13.8419,147445
+In-order trasversal,8,131072,13,12.6676,147449
+In-order trasversal,8,131072,14,12.8304,147453
+In-order trasversal,8,131072,15,12.2219,147453
+In-order trasversal,8,131072,16,15.6117,147450
+In-order trasversal,8,131072,17,12.6705,147450
+In-order trasversal,8,131072,18,12.8432,147448
+In-order trasversal,8,131072,19,14.3843,147453
+In-order trasversal,8,131072,20,13.5719,147449
+In-order trasversal,8,262144,1,28.8583,294903
+In-order trasversal,8,262144,2,28.6126,294903
+In-order trasversal,8,262144,3,27.19,294891
+In-order trasversal,8,262144,4,26.9598,294876
+In-order trasversal,8,262144,5,27.5024,294892
+In-order trasversal,8,262144,6,29.8995,294900
+In-order trasversal,8,262144,7,31.3501,294901
+In-order trasversal,8,262144,8,29.9411,294883
+In-order trasversal,8,262144,9,29.0111,294889
+In-order trasversal,8,262144,10,27.9791,294893
+In-order trasversal,8,262144,11,29.0287,294900
+In-order trasversal,8,262144,12,26.7653,294907
+In-order trasversal,8,262144,13,27.0904,294872
+In-order trasversal,8,262144,14,27.6818,294901
+In-order trasversal,8,262144,15,31.9132,294862
+In-order trasversal,8,262144,16,28.6214,294893
+In-order trasversal,8,262144,17,27.8,294880
+In-order trasversal,8,262144,18,33.8439,294895
+In-order trasversal,8,262144,19,28.1378,294892
+In-order trasversal,8,262144,20,30.3084,294902
+In-order trasversal,8,524288,1,60.9399,589770
+In-order trasversal,8,524288,2,55.8692,589779
+In-order trasversal,8,524288,3,63.1289,589783
+In-order trasversal,8,524288,4,68.5293,589775
+In-order trasversal,8,524288,5,57.5656,589781
+In-order trasversal,8,524288,6,57.8705,589795
+In-order trasversal,8,524288,7,57.6849,589771
+In-order trasversal,8,524288,8,57.6054,589786
+In-order trasversal,8,524288,9,56.6691,589782
+In-order trasversal,8,524288,10,59.1962,589791
+In-order trasversal,8,524288,11,71.425,589774
+In-order trasversal,8,524288,12,55.1015,589786
+In-order trasversal,8,524288,13,56.7074,589772
+In-order trasversal,8,524288,14,56.8412,589779
+In-order trasversal,8,524288,15,54.9597,589783
+In-order trasversal,8,524288,16,56.7622,589794
+In-order trasversal,8,524288,17,56.7135,589792
+In-order trasversal,8,524288,18,56.2307,589786
+In-order trasversal,8,524288,19,54.822,589793
+In-order trasversal,8,524288,20,55.3042,589774
+In-order trasversal,8,1048576,1,117.514,1179514
+In-order trasversal,8,1048576,2,122.138,1179492
+In-order trasversal,8,1048576,3,120.678,1179524
+In-order trasversal,8,1048576,4,114.598,1179489
+In-order trasversal,8,1048576,5,109.055,1179524
+In-order trasversal,8,1048576,6,111.437,1179504
+In-order trasversal,8,1048576,7,108.622,1179507
+In-order trasversal,8,1048576,8,111.147,1179497
+In-order trasversal,8,1048576,9,112.975,1179485
+In-order trasversal,8,1048576,10,117.045,1179499
+In-order trasversal,8,1048576,11,126.534,1179488
+In-order trasversal,8,1048576,12,112.206,1179502
+In-order trasversal,8,1048576,13,115.427,1179516
+In-order trasversal,8,1048576,14,115.653,1179504
+In-order trasversal,8,1048576,15,117.236,1179525
+In-order trasversal,8,1048576,16,112.326,1179479
+In-order trasversal,8,1048576,17,112.196,1179488
+In-order trasversal,8,1048576,18,113.212,1179519
+In-order trasversal,8,1048576,19,109.38,1179514
+In-order trasversal,8,1048576,20,111.676,1179522
+In-order trasversal,64,4096,1,0.3038,4121
+In-order trasversal,64,4096,2,0.2869,4140
+In-order trasversal,64,4096,3,0.6684,3991
+In-order trasversal,64,4096,4,0.7048,4120
+In-order trasversal,64,4096,5,0.5409,4115
+In-order trasversal,64,4096,6,0.2942,4108
+In-order trasversal,64,4096,7,0.3373,4149
+In-order trasversal,64,4096,8,0.3254,4157
+In-order trasversal,64,4096,9,0.4416,4134
+In-order trasversal,64,4096,10,0.3616,4138
+In-order trasversal,64,4096,11,0.2967,4123
+In-order trasversal,64,4096,12,0.3283,4159
+In-order trasversal,64,4096,13,0.4012,4121
+In-order trasversal,64,4096,14,0.2936,4127
+In-order trasversal,64,4096,15,0.3188,4155
+In-order trasversal,64,4096,16,0.283,4157
+In-order trasversal,64,4096,17,0.2946,4048
+In-order trasversal,64,4096,18,0.3032,4055
+In-order trasversal,64,4096,19,0.3055,4158
+In-order trasversal,64,4096,20,0.2916,4143
+In-order trasversal,64,8192,1,0.576,8285
+In-order trasversal,64,8192,2,0.5732,8152
+In-order trasversal,64,8192,3,0.6014,8313
+In-order trasversal,64,8192,4,0.744,8260
+In-order trasversal,64,8192,5,0.5797,8303
+In-order trasversal,64,8192,6,0.9694,8247
+In-order trasversal,64,8192,7,0.5759,8317
+In-order trasversal,64,8192,8,0.585,8287
+In-order trasversal,64,8192,9,0.5873,8286
+In-order trasversal,64,8192,10,0.581,8283
+In-order trasversal,64,8192,11,0.5851,8212
+In-order trasversal,64,8192,12,0.5931,8291
+In-order trasversal,64,8192,13,0.6764,8318
+In-order trasversal,64,8192,14,0.5886,8306
+In-order trasversal,64,8192,15,0.5942,8314
+In-order trasversal,64,8192,16,0.5888,8279
+In-order trasversal,64,8192,17,0.5797,8230
+In-order trasversal,64,8192,18,0.5898,8319
+In-order trasversal,64,8192,19,0.5872,8073
+In-order trasversal,64,8192,20,0.5784,8304
+In-order trasversal,64,16384,1,1.3287,16626
+In-order trasversal,64,16384,2,1.3051,16504
+In-order trasversal,64,16384,3,1.2768,16599
+In-order trasversal,64,16384,4,1.2931,16625
+In-order trasversal,64,16384,5,1.2692,16619
+In-order trasversal,64,16384,6,2.4333,16635
+In-order trasversal,64,16384,7,1.3153,16540
+In-order trasversal,64,16384,8,1.2728,16632
+In-order trasversal,64,16384,9,1.2798,16508
+In-order trasversal,64,16384,10,1.356,16639
+In-order trasversal,64,16384,11,2.1035,16596
+In-order trasversal,64,16384,12,2.0559,16579
+In-order trasversal,64,16384,13,2.0291,16626
+In-order trasversal,64,16384,14,2.6131,16628
+In-order trasversal,64,16384,15,1.2963,16634
+In-order trasversal,64,16384,16,1.2831,16609
+In-order trasversal,64,16384,17,1.2972,16627
+In-order trasversal,64,16384,18,2.0974,16541
+In-order trasversal,64,16384,19,2.0987,16600
+In-order trasversal,64,16384,20,2.0327,16533
+In-order trasversal,64,32768,1,2.9593,33240
+In-order trasversal,64,32768,2,2.7547,33239
+In-order trasversal,64,32768,3,4.4641,33256
+In-order trasversal,64,32768,4,2.7596,33272
+In-order trasversal,64,32768,5,2.7721,33213
+In-order trasversal,64,32768,6,2.6264,33253
+In-order trasversal,64,32768,7,2.6367,33278
+In-order trasversal,64,32768,8,2.7013,33271
+In-order trasversal,64,32768,9,2.5955,33213
+In-order trasversal,64,32768,10,2.6318,33233
+In-order trasversal,64,32768,11,3.5315,33241
+In-order trasversal,64,32768,12,2.6585,33279
+In-order trasversal,64,32768,13,3.5998,32966
+In-order trasversal,64,32768,14,2.7161,33209
+In-order trasversal,64,32768,15,2.8844,33193
+In-order trasversal,64,32768,16,2.6661,33097
+In-order trasversal,64,32768,17,2.8798,33223
+In-order trasversal,64,32768,18,2.8176,33273
+In-order trasversal,64,32768,19,3.4028,33275
+In-order trasversal,64,32768,20,2.6896,33256
+In-order trasversal,64,65536,1,6.585,66509
+In-order trasversal,64,65536,2,5.5495,66555
+In-order trasversal,64,65536,3,5.7109,66556
+In-order trasversal,64,65536,4,5.6009,66435
+In-order trasversal,64,65536,5,5.6052,66554
+In-order trasversal,64,65536,6,5.6246,66530
+In-order trasversal,64,65536,7,6.4686,66536
+In-order trasversal,64,65536,8,6.7421,66456
+In-order trasversal,64,65536,9,6.4854,66415
+In-order trasversal,64,65536,10,7.4676,66471
+In-order trasversal,64,65536,11,5.4502,66535
+In-order trasversal,64,65536,12,5.7309,66209
+In-order trasversal,64,65536,13,5.9044,66490
+In-order trasversal,64,65536,14,5.5342,66524
+In-order trasversal,64,65536,15,5.5708,66411
+In-order trasversal,64,65536,16,7.7056,66456
+In-order trasversal,64,65536,17,5.5831,66505
+In-order trasversal,64,65536,18,5.7589,66525
+In-order trasversal,64,65536,19,5.4547,66532
+In-order trasversal,64,65536,20,5.1643,66508
+In-order trasversal,64,131072,1,12.1136,132870
+In-order trasversal,64,131072,2,13.0467,132991
+In-order trasversal,64,131072,3,11.3453,133089
+In-order trasversal,64,131072,4,12.3151,132856
+In-order trasversal,64,131072,5,13.4052,133069
+In-order trasversal,64,131072,6,10.7369,133103
+In-order trasversal,64,131072,7,10.4587,133095
+In-order trasversal,64,131072,8,10.676,133025
+In-order trasversal,64,131072,9,11.21,133107
+In-order trasversal,64,131072,10,10.7786,133026
+In-order trasversal,64,131072,11,10.7329,133047
+In-order trasversal,64,131072,12,10.5622,133094
+In-order trasversal,64,131072,13,10.6917,133078
+In-order trasversal,64,131072,14,10.5636,133107
+In-order trasversal,64,131072,15,11.5256,133096
+In-order trasversal,64,131072,16,14.5757,133094
+In-order trasversal,64,131072,17,10.6352,133066
+In-order trasversal,64,131072,18,11.1407,133116
+In-order trasversal,64,131072,19,12.435,133117
+In-order trasversal,64,131072,20,10.7239,132988
+In-order trasversal,64,262144,1,23.8887,266172
+In-order trasversal,64,262144,2,24.6624,266057
+In-order trasversal,64,262144,3,27.2715,266180
+In-order trasversal,64,262144,4,25.5704,266165
+In-order trasversal,64,262144,5,22.9687,266148
+In-order trasversal,64,262144,6,24.4826,266191
+In-order trasversal,64,262144,7,25.9382,266143
+In-order trasversal,64,262144,8,24.0048,266137
+In-order trasversal,64,262144,9,22.9003,266189
+In-order trasversal,64,262144,10,29.5706,266219
+In-order trasversal,64,262144,11,23.2366,266204
+In-order trasversal,64,262144,12,23.8127,266215
+In-order trasversal,64,262144,13,28.9304,266189
+In-order trasversal,64,262144,14,29.8223,266225
+In-order trasversal,64,262144,15,24.8582,266175
+In-order trasversal,64,262144,16,23.726,266207
+In-order trasversal,64,262144,17,24.4909,266184
+In-order trasversal,64,262144,18,25.9481,266178
+In-order trasversal,64,262144,19,24.7913,266206
+In-order trasversal,64,262144,20,24.9582,266143
+In-order trasversal,64,524288,1,56.0179,532443
+In-order trasversal,64,524288,2,52.7374,532376
+In-order trasversal,64,524288,3,48.0169,532431
+In-order trasversal,64,524288,4,55.7373,532392
+In-order trasversal,64,524288,5,51.0709,532341
+In-order trasversal,64,524288,6,51.6074,532195
+In-order trasversal,64,524288,7,51.1332,532265
+In-order trasversal,64,524288,8,54.7059,532378
+In-order trasversal,64,524288,9,50.459,532397
+In-order trasversal,64,524288,10,51.7306,532451
+In-order trasversal,64,524288,11,59.0775,532446
+In-order trasversal,64,524288,12,56.8311,532412
+In-order trasversal,64,524288,13,54.6234,532425
+In-order trasversal,64,524288,14,48.6898,532401
+In-order trasversal,64,524288,15,48.83,532395
+In-order trasversal,64,524288,16,53.786,532423
+In-order trasversal,64,524288,17,48.3988,532442
+In-order trasversal,64,524288,18,50.531,532402
+In-order trasversal,64,524288,19,57.3442,532433
+In-order trasversal,64,524288,20,50.5774,532384
+In-order trasversal,64,1048576,1,102.49,1064722
+In-order trasversal,64,1048576,2,99.0322,1064787
+In-order trasversal,64,1048576,3,100.195,1064814
+In-order trasversal,64,1048576,4,100.068,1064631
+In-order trasversal,64,1048576,5,102.288,1064823
+In-order trasversal,64,1048576,6,105.173,1064753
+In-order trasversal,64,1048576,7,99.5743,1064821
+In-order trasversal,64,1048576,8,103.422,1064611
+In-order trasversal,64,1048576,9,98.4391,1064749
+In-order trasversal,64,1048576,10,99.0497,1064738
+In-order trasversal,64,1048576,11,99.6869,1064750
+In-order trasversal,64,1048576,12,104.743,1064743
+In-order trasversal,64,1048576,13,102.633,1064814
+In-order trasversal,64,1048576,14,100.949,1064825
+In-order trasversal,64,1048576,15,96.8318,1064716
+In-order trasversal,64,1048576,16,110.357,1064628
+In-order trasversal,64,1048576,17,100.169,1064717
+In-order trasversal,64,1048576,18,108.549,1064816
+In-order trasversal,64,1048576,19,97.1544,1064764
+In-order trasversal,64,1048576,20,99.0843,1064684
+In-order trasversal,512,4096,1,0.3055,3943
+In-order trasversal,512,4096,2,0.2896,4005
+In-order trasversal,512,4096,3,0.289,3862
+In-order trasversal,512,4096,4,0.2767,3374
+In-order trasversal,512,4096,5,0.2895,4070
+In-order trasversal,512,4096,6,0.305,3739
+In-order trasversal,512,4096,7,0.2972,3539
+In-order trasversal,512,4096,8,0.288,3877
+In-order trasversal,512,4096,9,0.2972,4072
+In-order trasversal,512,4096,10,0.2825,3437
+In-order trasversal,512,4096,11,0.2879,3956
+In-order trasversal,512,4096,12,0.2899,3378
+In-order trasversal,512,4096,13,0.3138,4103
+In-order trasversal,512,4096,14,0.3046,4023
+In-order trasversal,512,4096,15,0.2918,3693
+In-order trasversal,512,4096,16,0.2922,3817
+In-order trasversal,512,4096,17,0.2866,3361
+In-order trasversal,512,4096,18,0.2866,3754
+In-order trasversal,512,4096,19,0.5167,3702
+In-order trasversal,512,4096,20,0.7576,4050
+In-order trasversal,512,8192,1,0.5872,7065
+In-order trasversal,512,8192,2,0.5896,8016
+In-order trasversal,512,8192,3,0.5981,7947
+In-order trasversal,512,8192,4,0.5664,8076
+In-order trasversal,512,8192,5,0.5809,7933
+In-order trasversal,512,8192,6,0.5979,7474
+In-order trasversal,512,8192,7,1.4347,8125
+In-order trasversal,512,8192,8,0.5838,8199
+In-order trasversal,512,8192,9,0.6851,8138
+In-order trasversal,512,8192,10,0.6308,8136
+In-order trasversal,512,8192,11,0.577,8049
+In-order trasversal,512,8192,12,0.6332,7876
+In-order trasversal,512,8192,13,0.5947,7438
+In-order trasversal,512,8192,14,0.5901,6628
+In-order trasversal,512,8192,15,0.6168,7908
+In-order trasversal,512,8192,16,0.9513,7743
+In-order trasversal,512,8192,17,0.9811,6525
+In-order trasversal,512,8192,18,0.5835,7950
+In-order trasversal,512,8192,19,0.5969,7491
+In-order trasversal,512,8192,20,0.6332,7513
+In-order trasversal,512,16384,1,1.4141,15907
+In-order trasversal,512,16384,2,2.4454,16323
+In-order trasversal,512,16384,3,1.4191,15930
+In-order trasversal,512,16384,4,1.3459,15781
+In-order trasversal,512,16384,5,1.348,16362
+In-order trasversal,512,16384,6,1.344,16298
+In-order trasversal,512,16384,7,1.3265,15840
+In-order trasversal,512,16384,8,1.3138,15750
+In-order trasversal,512,16384,9,1.2574,15361
+In-order trasversal,512,16384,10,1.3871,16065
+In-order trasversal,512,16384,11,1.4995,15899
+In-order trasversal,512,16384,12,1.4369,15849
+In-order trasversal,512,16384,13,1.3355,16207
+In-order trasversal,512,16384,14,1.5569,16267
+In-order trasversal,512,16384,15,1.2659,16185
+In-order trasversal,512,16384,16,1.3241,16271
+In-order trasversal,512,16384,17,1.34,16383
+In-order trasversal,512,16384,18,1.3404,16039
+In-order trasversal,512,16384,19,1.3264,15406
+In-order trasversal,512,16384,20,1.354,16111
+In-order trasversal,512,32768,1,2.9305,32554
+In-order trasversal,512,32768,2,2.7497,31786
+In-order trasversal,512,32768,3,3.0302,30990
+In-order trasversal,512,32768,4,2.7366,32768
+In-order trasversal,512,32768,5,3.1833,32773
+In-order trasversal,512,32768,6,2.6874,32132
+In-order trasversal,512,32768,7,2.9591,32058
+In-order trasversal,512,32768,8,2.8252,31907
+In-order trasversal,512,32768,9,3.6142,31781
+In-order trasversal,512,32768,10,2.7524,32776
+In-order trasversal,512,32768,11,2.8772,32734
+In-order trasversal,512,32768,12,2.6591,32618
+In-order trasversal,512,32768,13,2.6826,31902
+In-order trasversal,512,32768,14,2.6424,32798
+In-order trasversal,512,32768,15,2.8154,31916
+In-order trasversal,512,32768,16,2.658,31397
+In-order trasversal,512,32768,17,2.6487,31390
+In-order trasversal,512,32768,18,3.4115,32689
+In-order trasversal,512,32768,19,2.6679,32353
+In-order trasversal,512,32768,20,3.2316,31401
+In-order trasversal,512,65536,1,7.5542,64296
+In-order trasversal,512,65536,2,5.7183,65071
+In-order trasversal,512,65536,3,5.7842,65090
+In-order trasversal,512,65536,4,5.6147,65546
+In-order trasversal,512,65536,5,5.4835,65453
+In-order trasversal,512,65536,6,5.6025,65279
+In-order trasversal,512,65536,7,7.5448,62885
+In-order trasversal,512,65536,8,5.7911,65413
+In-order trasversal,512,65536,9,5.313,64966
+In-order trasversal,512,65536,10,5.4071,65437
+In-order trasversal,512,65536,11,5.2856,65101
+In-order trasversal,512,65536,12,6.1327,65424
+In-order trasversal,512,65536,13,5.5679,65161
+In-order trasversal,512,65536,14,5.531,65396
+In-order trasversal,512,65536,15,5.153,64412
+In-order trasversal,512,65536,16,5.5002,64958
+In-order trasversal,512,65536,17,8.4048,65542
+In-order trasversal,512,65536,18,5.0216,65563
+In-order trasversal,512,65536,19,4.9802,64526
+In-order trasversal,512,65536,20,5.0458,65653
+In-order trasversal,512,131072,1,13.9992,130217
+In-order trasversal,512,131072,2,11.5248,131060
+In-order trasversal,512,131072,3,11.3015,129315
+In-order trasversal,512,131072,4,12.4848,131198
+In-order trasversal,512,131072,5,15.5437,130751
+In-order trasversal,512,131072,6,10.7809,131084
+In-order trasversal,512,131072,7,11.3588,130759
+In-order trasversal,512,131072,8,10.8416,131052
+In-order trasversal,512,131072,9,10.4959,131221
+In-order trasversal,512,131072,10,10.0676,130849
+In-order trasversal,512,131072,11,14.9291,131039
+In-order trasversal,512,131072,12,10.8649,130468
+In-order trasversal,512,131072,13,16.1432,131251
+In-order trasversal,512,131072,14,11.1745,130968
+In-order trasversal,512,131072,15,10.9424,130552
+In-order trasversal,512,131072,16,11.1647,131178
+In-order trasversal,512,131072,17,13.3141,131179
+In-order trasversal,512,131072,18,11.2239,130926
+In-order trasversal,512,131072,19,11.2094,130995
+In-order trasversal,512,131072,20,10.6509,131242
+In-order trasversal,512,262144,1,24.3001,262216
+In-order trasversal,512,262144,2,28.1068,262500
+In-order trasversal,512,262144,3,25.333,262604
+In-order trasversal,512,262144,4,26.2474,261998
+In-order trasversal,512,262144,5,27.7872,262516
+In-order trasversal,512,262144,6,22.9699,262616
+In-order trasversal,512,262144,7,22.2181,262038
+In-order trasversal,512,262144,8,22.2773,262259
+In-order trasversal,512,262144,9,23.981,262236
+In-order trasversal,512,262144,10,23.3998,262281
+In-order trasversal,512,262144,11,22.3459,261587
+In-order trasversal,512,262144,12,23.0111,261986
+In-order trasversal,512,262144,13,22.479,262583
+In-order trasversal,512,262144,14,24.6425,262388
+In-order trasversal,512,262144,15,23.8348,262118
+In-order trasversal,512,262144,16,23.1181,262629
+In-order trasversal,512,262144,17,28.1557,262622
+In-order trasversal,512,262144,18,31.414,262410
+In-order trasversal,512,262144,19,24.8347,262449
+In-order trasversal,512,262144,20,29.4395,262264
+In-order trasversal,512,524288,1,49.9147,524751
+In-order trasversal,512,524288,2,47.8332,525099
+In-order trasversal,512,524288,3,48.5553,524819
+In-order trasversal,512,524288,4,48.4258,525214
+In-order trasversal,512,524288,5,47.8832,525281
+In-order trasversal,512,524288,6,51.7777,524811
+In-order trasversal,512,524288,7,51.1851,525028
+In-order trasversal,512,524288,8,50.3412,525172
+In-order trasversal,512,524288,9,54.7524,525247
+In-order trasversal,512,524288,10,58.1183,524889
+In-order trasversal,512,524288,11,56.109,524577
+In-order trasversal,512,524288,12,51.5612,525141
+In-order trasversal,512,524288,13,46.9738,524262
+In-order trasversal,512,524288,14,54.0778,525239
+In-order trasversal,512,524288,15,48.2405,524481
+In-order trasversal,512,524288,16,53.1355,525195
+In-order trasversal,512,524288,17,55.1795,525198
+In-order trasversal,512,524288,18,47.409,524333
+In-order trasversal,512,524288,19,48.8345,525022
+In-order trasversal,512,524288,20,54.8999,524704
+In-order trasversal,512,1048576,1,100.049,1050269
+In-order trasversal,512,1048576,2,104.952,1050329
+In-order trasversal,512,1048576,3,101.493,1049828
+In-order trasversal,512,1048576,4,94.9736,1049794
+In-order trasversal,512,1048576,5,97.0749,1050148
+In-order trasversal,512,1048576,6,103.373,1050453
+In-order trasversal,512,1048576,7,104.025,1050347
+In-order trasversal,512,1048576,8,102.195,1050433
+In-order trasversal,512,1048576,9,100.97,1050363
+In-order trasversal,512,1048576,10,100.157,1049757
+In-order trasversal,512,1048576,11,102.169,1049717
+In-order trasversal,512,1048576,12,95.6753,1050496
+In-order trasversal,512,1048576,13,99.9174,1049450
+In-order trasversal,512,1048576,14,104.994,1049926
+In-order trasversal,512,1048576,15,103.872,1050044
+In-order trasversal,512,1048576,16,96.2247,1050468
+In-order trasversal,512,1048576,17,95.3355,1050289
+In-order trasversal,512,1048576,18,96.9107,1049377
+In-order trasversal,512,1048576,19,102.389,1049754
+In-order trasversal,512,1048576,20,109.377,1050312
+In-order trasversal,4096,4096,1,0.2906,1225
+In-order trasversal,4096,4096,2,0.2821,712
+In-order trasversal,4096,4096,3,0.2864,2499
+In-order trasversal,4096,4096,4,0.2759,345
+In-order trasversal,4096,4096,5,0.3072,3142
+In-order trasversal,4096,4096,6,0.2798,628
+In-order trasversal,4096,4096,7,0.3099,2238
+In-order trasversal,4096,4096,8,0.2872,865
+In-order trasversal,4096,4096,9,0.2827,1247
+In-order trasversal,4096,4096,10,0.3232,2310
+In-order trasversal,4096,4096,11,0.2912,2642
+In-order trasversal,4096,4096,12,0.3551,3664
+In-order trasversal,4096,4096,13,0.3842,3140
+In-order trasversal,4096,4096,14,0.4431,3823
+In-order trasversal,4096,4096,15,0.2842,817
+In-order trasversal,4096,4096,16,0.2758,1561
+In-order trasversal,4096,4096,17,0.2786,482
+In-order trasversal,4096,4096,18,0.2812,1045
+In-order trasversal,4096,4096,19,0.2871,3346
+In-order trasversal,4096,4096,20,0.303,3309
+In-order trasversal,4096,8192,1,0.5658,1167
+In-order trasversal,4096,8192,2,0.5607,2386
+In-order trasversal,4096,8192,3,0.6103,4790
+In-order trasversal,4096,8192,4,0.5565,3253
+In-order trasversal,4096,8192,5,0.5565,3717
+In-order trasversal,4096,8192,6,0.5823,6955
+In-order trasversal,4096,8192,7,0.573,5718
+In-order trasversal,4096,8192,8,0.5686,4957
+In-order trasversal,4096,8192,9,0.5976,8103
+In-order trasversal,4096,8192,10,0.574,3540
+In-order trasversal,4096,8192,11,0.5688,5371
+In-order trasversal,4096,8192,12,0.5896,7386
+In-order trasversal,4096,8192,13,0.6519,6263
+In-order trasversal,4096,8192,14,0.5779,7780
+In-order trasversal,4096,8192,15,0.5913,6708
+In-order trasversal,4096,8192,16,0.8488,5822
+In-order trasversal,4096,8192,17,0.5839,7705
+In-order trasversal,4096,8192,18,0.5687,3977
+In-order trasversal,4096,8192,19,0.5977,7700
+In-order trasversal,4096,8192,20,0.5795,5910
+In-order trasversal,4096,16384,1,1.4867,16171
+In-order trasversal,4096,16384,2,1.5564,14790
+In-order trasversal,4096,16384,3,1.5694,11099
+In-order trasversal,4096,16384,4,1.6045,15400
+In-order trasversal,4096,16384,5,1.7415,10759
+In-order trasversal,4096,16384,6,1.9943,14775
+In-order trasversal,4096,16384,7,1.3765,16377
+In-order trasversal,4096,16384,8,1.2924,12829
+In-order trasversal,4096,16384,9,1.304,15500
+In-order trasversal,4096,16384,10,1.3115,10909
+In-order trasversal,4096,16384,11,1.28,13073
+In-order trasversal,4096,16384,12,1.3017,16130
+In-order trasversal,4096,16384,13,1.2889,14035
+In-order trasversal,4096,16384,14,1.6341,15559
+In-order trasversal,4096,16384,15,1.8246,9095
+In-order trasversal,4096,16384,16,1.7797,15054
+In-order trasversal,4096,16384,17,2.0615,10411
+In-order trasversal,4096,16384,18,1.2976,16015
+In-order trasversal,4096,16384,19,1.4294,15851
+In-order trasversal,4096,16384,20,1.2976,9479
+In-order trasversal,4096,32768,1,3.2605,29922
+In-order trasversal,4096,32768,2,3.4944,29642
+In-order trasversal,4096,32768,3,3.3747,32093
+In-order trasversal,4096,32768,4,3.7779,16365
+In-order trasversal,4096,32768,5,4.4778,31438
+In-order trasversal,4096,32768,6,3.1927,31442
+In-order trasversal,4096,32768,7,3.0237,23959
+In-order trasversal,4096,32768,8,4.154,28646
+In-order trasversal,4096,32768,9,3.6101,29928
+In-order trasversal,4096,32768,10,2.7935,26531
+In-order trasversal,4096,32768,11,3.8004,24893
+In-order trasversal,4096,32768,12,3.1391,29426
+In-order trasversal,4096,32768,13,3.4337,31013
+In-order trasversal,4096,32768,14,3.7388,23448
+In-order trasversal,4096,32768,15,2.7141,27555
+In-order trasversal,4096,32768,16,3.03,27944
+In-order trasversal,4096,32768,17,3.0597,31049
+In-order trasversal,4096,32768,18,2.7919,26759
+In-order trasversal,4096,32768,19,3.1374,31550
+In-order trasversal,4096,32768,20,3.1924,25368
+In-order trasversal,4096,65536,1,6.2077,50640
+In-order trasversal,4096,65536,2,5.5495,53581
+In-order trasversal,4096,65536,3,5.3312,61936
+In-order trasversal,4096,65536,4,5.8359,58656
+In-order trasversal,4096,65536,5,6.0443,63300
+In-order trasversal,4096,65536,6,5.7357,64945
+In-order trasversal,4096,65536,7,5.5473,59608
+In-order trasversal,4096,65536,8,5.6231,63537
+In-order trasversal,4096,65536,9,6.1562,61691
+In-order trasversal,4096,65536,10,5.9708,65135
+In-order trasversal,4096,65536,11,5.0527,57428
+In-order trasversal,4096,65536,12,5.5643,61951
+In-order trasversal,4096,65536,13,5.4029,65345
+In-order trasversal,4096,65536,14,5.0838,63358
+In-order trasversal,4096,65536,15,5.2727,59364
+In-order trasversal,4096,65536,16,5.0427,65343
+In-order trasversal,4096,65536,17,5.0076,64661
+In-order trasversal,4096,65536,18,5.4599,62709
+In-order trasversal,4096,65536,19,5.3893,64909
+In-order trasversal,4096,65536,20,5.4452,65143
+In-order trasversal,4096,131072,1,12.9916,128298
+In-order trasversal,4096,131072,2,10.5544,130870
+In-order trasversal,4096,131072,3,10.61,130548
+In-order trasversal,4096,131072,4,10.5422,126526
+In-order trasversal,4096,131072,5,10.6338,130188
+In-order trasversal,4096,131072,6,11.4682,129078
+In-order trasversal,4096,131072,7,10.8837,125756
+In-order trasversal,4096,131072,8,10.755,124806
+In-order trasversal,4096,131072,9,10.2558,127279
+In-order trasversal,4096,131072,10,10.3511,123851
+In-order trasversal,4096,131072,11,11.0917,125820
+In-order trasversal,4096,131072,12,10.0951,129857
+In-order trasversal,4096,131072,13,10.9054,130886
+In-order trasversal,4096,131072,14,10.1112,126122
+In-order trasversal,4096,131072,15,9.9803,129745
+In-order trasversal,4096,131072,16,10.7501,126655
+In-order trasversal,4096,131072,17,10.7267,128208
+In-order trasversal,4096,131072,18,11.2792,125966
+In-order trasversal,4096,131072,19,12.0145,127050
+In-order trasversal,4096,131072,20,12.6138,125329
+In-order trasversal,4096,262144,1,25.0328,257354
+In-order trasversal,4096,262144,2,23.9974,256617
+In-order trasversal,4096,262144,3,24.8876,261807
+In-order trasversal,4096,262144,4,27.1005,256326
+In-order trasversal,4096,262144,5,23.6892,261748
+In-order trasversal,4096,262144,6,25.3241,261244
+In-order trasversal,4096,262144,7,22.739,259349
+In-order trasversal,4096,262144,8,25.4521,261534
+In-order trasversal,4096,262144,9,25.4407,262123
+In-order trasversal,4096,262144,10,25.0219,255254
+In-order trasversal,4096,262144,11,26.3803,261201
+In-order trasversal,4096,262144,12,24.698,256971
+In-order trasversal,4096,262144,13,26.1351,261685
+In-order trasversal,4096,262144,14,26.1677,259072
+In-order trasversal,4096,262144,15,24.7432,262186
+In-order trasversal,4096,262144,16,24.685,248562
+In-order trasversal,4096,262144,17,23.2143,257238
+In-order trasversal,4096,262144,18,25.4497,257249
+In-order trasversal,4096,262144,19,24.332,261030
+In-order trasversal,4096,262144,20,23.9174,255509
+In-order trasversal,4096,524288,1,48.1612,520807
+In-order trasversal,4096,524288,2,50.3786,520895
+In-order trasversal,4096,524288,3,51.0875,521325
+In-order trasversal,4096,524288,4,52.0217,523337
+In-order trasversal,4096,524288,5,49.9054,523925
+In-order trasversal,4096,524288,6,51.1728,523011
+In-order trasversal,4096,524288,7,53.6344,523343
+In-order trasversal,4096,524288,8,53.0761,521916
+In-order trasversal,4096,524288,9,54.0233,523154
+In-order trasversal,4096,524288,10,65.4204,517645
+In-order trasversal,4096,524288,11,52.6572,517207
+In-order trasversal,4096,524288,12,52.6975,524245
+In-order trasversal,4096,524288,13,54.325,523832
+In-order trasversal,4096,524288,14,50.5916,519748
+In-order trasversal,4096,524288,15,51.4828,519134
+In-order trasversal,4096,524288,16,52.6985,521266
+In-order trasversal,4096,524288,17,59.2817,519382
+In-order trasversal,4096,524288,18,52.1114,514256
+In-order trasversal,4096,524288,19,49.8913,522610
+In-order trasversal,4096,524288,20,47.1978,519711
+In-order trasversal,4096,1048576,1,96.9041,1043407
+In-order trasversal,4096,1048576,2,97.4635,1047316
+In-order trasversal,4096,1048576,3,101.2,1042537
+In-order trasversal,4096,1048576,4,100.463,1038314
+In-order trasversal,4096,1048576,5,102.391,1048150
+In-order trasversal,4096,1048576,6,104.234,1039489
+In-order trasversal,4096,1048576,7,98.2494,1047864
+In-order trasversal,4096,1048576,8,99.4479,1046370
+In-order trasversal,4096,1048576,9,108.507,1046983
+In-order trasversal,4096,1048576,10,102.454,1044526
+In-order trasversal,4096,1048576,11,101.786,1048108
+In-order trasversal,4096,1048576,12,97.2893,1048496
+In-order trasversal,4096,1048576,13,96.7573,1046931
+In-order trasversal,4096,1048576,14,99.2043,1046029
+In-order trasversal,4096,1048576,15,96.6339,1041147
+In-order trasversal,4096,1048576,16,99.9837,1043844
+In-order trasversal,4096,1048576,17,108.452,1048100
+In-order trasversal,4096,1048576,18,95.4008,1046276
+In-order trasversal,4096,1048576,19,106.97,1048430
+In-order trasversal,4096,1048576,20,96.4677,1048524
+Brown and Tarjan's,1,4096,1,0.8413,16008
+Brown and Tarjan's,1,4096,2,0.7656,15953
+Brown and Tarjan's,1,4096,3,0.8403,16024
+Brown and Tarjan's,1,4096,4,0.7593,15995
+Brown and Tarjan's,1,4096,5,0.7602,15997
+Brown and Tarjan's,1,4096,6,1.4627,16003
+Brown and Tarjan's,1,4096,7,0.7986,16045
+Brown and Tarjan's,1,4096,8,0.752,15960
+Brown and Tarjan's,1,4096,9,0.8165,16037
+Brown and Tarjan's,1,4096,10,0.8242,16061
+Brown and Tarjan's,1,4096,11,0.8584,16036
+Brown and Tarjan's,1,4096,12,0.7985,16031
+Brown and Tarjan's,1,4096,13,0.7669,16021
+Brown and Tarjan's,1,4096,14,1.159,15998
+Brown and Tarjan's,1,4096,15,0.7681,16037
+Brown and Tarjan's,1,4096,16,0.7667,16010
+Brown and Tarjan's,1,4096,17,0.7483,16014
+Brown and Tarjan's,1,4096,18,0.7518,16075
+Brown and Tarjan's,1,4096,19,0.8739,15976
+Brown and Tarjan's,1,4096,20,0.762,15987
+Brown and Tarjan's,1,8192,1,1.5744,32009
+Brown and Tarjan's,1,8192,2,1.4968,32053
+Brown and Tarjan's,1,8192,3,1.5068,32100
+Brown and Tarjan's,1,8192,4,2.0819,32110
+Brown and Tarjan's,1,8192,5,1.8922,31937
+Brown and Tarjan's,1,8192,6,1.502,32121
+Brown and Tarjan's,1,8192,7,1.5078,32129
+Brown and Tarjan's,1,8192,8,1.4944,31970
+Brown and Tarjan's,1,8192,9,2.2329,32010
+Brown and Tarjan's,1,8192,10,1.6218,32062
+Brown and Tarjan's,1,8192,11,1.6069,32060
+Brown and Tarjan's,1,8192,12,1.5995,32039
+Brown and Tarjan's,1,8192,13,1.9156,32037
+Brown and Tarjan's,1,8192,14,1.5419,32108
+Brown and Tarjan's,1,8192,15,1.4926,32035
+Brown and Tarjan's,1,8192,16,1.5,32024
+Brown and Tarjan's,1,8192,17,1.8528,31997
+Brown and Tarjan's,1,8192,18,1.5256,32079
+Brown and Tarjan's,1,8192,19,1.5065,32007
+Brown and Tarjan's,1,8192,20,1.5389,32055
+Brown and Tarjan's,1,16384,1,3.1159,64093
+Brown and Tarjan's,1,16384,2,3.1162,63999
+Brown and Tarjan's,1,16384,3,3.3276,64156
+Brown and Tarjan's,1,16384,4,3.3056,63993
+Brown and Tarjan's,1,16384,5,4.1471,64270
+Brown and Tarjan's,1,16384,6,3.3028,64155
+Brown and Tarjan's,1,16384,7,3.0972,64111
+Brown and Tarjan's,1,16384,8,4.3437,64019
+Brown and Tarjan's,1,16384,9,3.2573,63998
+Brown and Tarjan's,1,16384,10,3.5274,64171
+Brown and Tarjan's,1,16384,11,3.1055,64082
+Brown and Tarjan's,1,16384,12,3.1448,64129
+Brown and Tarjan's,1,16384,13,3.0862,64068
+Brown and Tarjan's,1,16384,14,3.1473,63978
+Brown and Tarjan's,1,16384,15,3.8738,64069
+Brown and Tarjan's,1,16384,16,3.2023,64155
+Brown and Tarjan's,1,16384,17,3.1835,64062
+Brown and Tarjan's,1,16384,18,3.0929,64062
+Brown and Tarjan's,1,16384,19,5.5178,64062
+Brown and Tarjan's,1,16384,20,4.093,64157
+Brown and Tarjan's,1,32768,1,7.8368,128249
+Brown and Tarjan's,1,32768,2,7.0877,128175
+Brown and Tarjan's,1,32768,3,6.7519,128158
+Brown and Tarjan's,1,32768,4,6.7469,128042
+Brown and Tarjan's,1,32768,5,8.937,128301
+Brown and Tarjan's,1,32768,6,7.2261,128370
+Brown and Tarjan's,1,32768,7,6.8404,128183
+Brown and Tarjan's,1,32768,8,6.6874,128293
+Brown and Tarjan's,1,32768,9,6.1995,128313
+Brown and Tarjan's,1,32768,10,6.2983,128289
+Brown and Tarjan's,1,32768,11,6.359,128302
+Brown and Tarjan's,1,32768,12,6.2807,128040
+Brown and Tarjan's,1,32768,13,6.2686,128242
+Brown and Tarjan's,1,32768,14,7.7428,128240
+Brown and Tarjan's,1,32768,15,6.2422,128267
+Brown and Tarjan's,1,32768,16,6.4509,128189
+Brown and Tarjan's,1,32768,17,6.5967,128296
+Brown and Tarjan's,1,32768,18,6.4006,128173
+Brown and Tarjan's,1,32768,19,6.3251,128385
+Brown and Tarjan's,1,32768,20,6.6017,128208
+Brown and Tarjan's,1,65536,1,15.659,256532
+Brown and Tarjan's,1,65536,2,19.8497,256532
+Brown and Tarjan's,1,65536,3,13.3232,256456
+Brown and Tarjan's,1,65536,4,12.9663,256338
+Brown and Tarjan's,1,65536,5,13.4944,256395
+Brown and Tarjan's,1,65536,6,16.4034,256469
+Brown and Tarjan's,1,65536,7,15.4989,256480
+Brown and Tarjan's,1,65536,8,16.7445,256487
+Brown and Tarjan's,1,65536,9,16.3565,256400
+Brown and Tarjan's,1,65536,10,16.0256,256201
+Brown and Tarjan's,1,65536,11,15.2224,256431
+Brown and Tarjan's,1,65536,12,15.0506,256552
+Brown and Tarjan's,1,65536,13,16.0585,256300
+Brown and Tarjan's,1,65536,14,15.9826,256615
+Brown and Tarjan's,1,65536,15,15.2343,256259
+Brown and Tarjan's,1,65536,16,14.9584,256380
+Brown and Tarjan's,1,65536,17,14.8544,256481
+Brown and Tarjan's,1,65536,18,16.4034,256692
+Brown and Tarjan's,1,65536,19,16.1012,256534
+Brown and Tarjan's,1,65536,20,15.7503,256310
+Brown and Tarjan's,1,131072,1,30.9738,512876
+Brown and Tarjan's,1,131072,2,32.1146,512884
+Brown and Tarjan's,1,131072,3,31.2595,512598
+Brown and Tarjan's,1,131072,4,33.3345,512640
+Brown and Tarjan's,1,131072,5,32.2087,512700
+Brown and Tarjan's,1,131072,6,27.5739,512693
+Brown and Tarjan's,1,131072,7,27.8317,512641
+Brown and Tarjan's,1,131072,8,30.446,513113
+Brown and Tarjan's,1,131072,9,28.2238,512776
+Brown and Tarjan's,1,131072,10,31.6791,512808
+Brown and Tarjan's,1,131072,11,28.6558,513056
+Brown and Tarjan's,1,131072,12,26.8002,512549
+Brown and Tarjan's,1,131072,13,27.7517,512810
+Brown and Tarjan's,1,131072,14,27.4417,513182
+Brown and Tarjan's,1,131072,15,27.617,513161
+Brown and Tarjan's,1,131072,16,27.4468,513104
+Brown and Tarjan's,1,131072,17,27.9297,512879
+Brown and Tarjan's,1,131072,18,28.3769,513240
+Brown and Tarjan's,1,131072,19,29.4349,512775
+Brown and Tarjan's,1,131072,20,34.4539,512583
+Brown and Tarjan's,1,262144,1,57.6567,1025787
+Brown and Tarjan's,1,262144,2,59.071,1026051
+Brown and Tarjan's,1,262144,3,57.158,1026149
+Brown and Tarjan's,1,262144,4,67.5571,1025563
+Brown and Tarjan's,1,262144,5,57.518,1025554
+Brown and Tarjan's,1,262144,6,58.8053,1025869
+Brown and Tarjan's,1,262144,7,64.1552,1025829
+Brown and Tarjan's,1,262144,8,59.2121,1025458
+Brown and Tarjan's,1,262144,9,61.0453,1025590
+Brown and Tarjan's,1,262144,10,65.0729,1025806
+Brown and Tarjan's,1,262144,11,57.22,1025615
+Brown and Tarjan's,1,262144,12,67.5568,1025777
+Brown and Tarjan's,1,262144,13,58.5209,1025887
+Brown and Tarjan's,1,262144,14,65.6329,1025680
+Brown and Tarjan's,1,262144,15,60.4631,1025718
+Brown and Tarjan's,1,262144,16,65.5124,1026118
+Brown and Tarjan's,1,262144,17,56.5813,1025416
+Brown and Tarjan's,1,262144,18,59.4775,1026028
+Brown and Tarjan's,1,262144,19,55.9514,1025970
+Brown and Tarjan's,1,262144,20,57.2539,1026085
+Brown and Tarjan's,1,524288,1,113.98,2051427
+Brown and Tarjan's,1,524288,2,128.163,2051625
+Brown and Tarjan's,1,524288,3,115.282,2051545
+Brown and Tarjan's,1,524288,4,139.241,2051301
+Brown and Tarjan's,1,524288,5,113.951,2051048
+Brown and Tarjan's,1,524288,6,122.597,2052211
+Brown and Tarjan's,1,524288,7,112.946,2052027
+Brown and Tarjan's,1,524288,8,121.349,2051363
+Brown and Tarjan's,1,524288,9,120.911,2051871
+Brown and Tarjan's,1,524288,10,122.912,2051730
+Brown and Tarjan's,1,524288,11,137.117,2051667
+Brown and Tarjan's,1,524288,12,134.364,2052147
+Brown and Tarjan's,1,524288,13,122.882,2051949
+Brown and Tarjan's,1,524288,14,114.566,2051781
+Brown and Tarjan's,1,524288,15,118.421,2051936
+Brown and Tarjan's,1,524288,16,120.479,2051867
+Brown and Tarjan's,1,524288,17,115.86,2051976
+Brown and Tarjan's,1,524288,18,119.597,2051583
+Brown and Tarjan's,1,524288,19,114.849,2051355
+Brown and Tarjan's,1,524288,20,126.813,2051440
+Brown and Tarjan's,1,1048576,1,235.086,4103376
+Brown and Tarjan's,1,1048576,2,257.393,4103031
+Brown and Tarjan's,1,1048576,3,245.138,4103175
+Brown and Tarjan's,1,1048576,4,244.609,4103932
+Brown and Tarjan's,1,1048576,5,260.948,4102931
+Brown and Tarjan's,1,1048576,6,259.194,4103088
+Brown and Tarjan's,1,1048576,7,239.678,4102781
+Brown and Tarjan's,1,1048576,8,228.635,4103087
+Brown and Tarjan's,1,1048576,9,228.475,4103715
+Brown and Tarjan's,1,1048576,10,247.192,4101904
+Brown and Tarjan's,1,1048576,11,234.864,4102912
+Brown and Tarjan's,1,1048576,12,245.343,4102961
+Brown and Tarjan's,1,1048576,13,250.564,4102396
+Brown and Tarjan's,1,1048576,14,250.378,4103080
+Brown and Tarjan's,1,1048576,15,231.521,4102541
+Brown and Tarjan's,1,1048576,16,232.836,4103261
+Brown and Tarjan's,1,1048576,17,235.095,4103089
+Brown and Tarjan's,1,1048576,18,247.737,4103030
+Brown and Tarjan's,1,1048576,19,254.577,4102800
+Brown and Tarjan's,1,1048576,20,233.9,4102793
+Brown and Tarjan's,8,4096,1,0.3048,3497
+Brown and Tarjan's,8,4096,2,0.2124,3496
+Brown and Tarjan's,8,4096,3,0.1518,3456
+Brown and Tarjan's,8,4096,4,0.1473,3489
+Brown and Tarjan's,8,4096,5,0.148,3464
+Brown and Tarjan's,8,4096,6,0.1462,3494
+Brown and Tarjan's,8,4096,7,0.1523,3471
+Brown and Tarjan's,8,4096,8,0.1509,3539
+Brown and Tarjan's,8,4096,9,0.1571,3564
+Brown and Tarjan's,8,4096,10,0.1482,3471
+Brown and Tarjan's,8,4096,11,0.15,3525
+Brown and Tarjan's,8,4096,12,0.1433,3410
+Brown and Tarjan's,8,4096,13,0.1452,3488
+Brown and Tarjan's,8,4096,14,0.1455,3437
+Brown and Tarjan's,8,4096,15,0.1525,3474
+Brown and Tarjan's,8,4096,16,0.1483,3554
+Brown and Tarjan's,8,4096,17,0.1485,3480
+Brown and Tarjan's,8,4096,18,0.3609,3526
+Brown and Tarjan's,8,4096,19,0.1594,3478
+Brown and Tarjan's,8,4096,20,0.1513,3505
+Brown and Tarjan's,8,8192,1,0.2942,6911
+Brown and Tarjan's,8,8192,2,0.4336,6941
+Brown and Tarjan's,8,8192,3,0.2904,6969
+Brown and Tarjan's,8,8192,4,0.2968,6964
+Brown and Tarjan's,8,8192,5,0.3105,7059
+Brown and Tarjan's,8,8192,6,0.2951,6961
+Brown and Tarjan's,8,8192,7,0.2907,7035
+Brown and Tarjan's,8,8192,8,0.421,7027
+Brown and Tarjan's,8,8192,9,0.3212,7026
+Brown and Tarjan's,8,8192,10,0.3049,6910
+Brown and Tarjan's,8,8192,11,0.3012,6873
+Brown and Tarjan's,8,8192,12,0.319,7095
+Brown and Tarjan's,8,8192,13,0.3016,7067
+Brown and Tarjan's,8,8192,14,0.3102,7022
+Brown and Tarjan's,8,8192,15,0.3073,6996
+Brown and Tarjan's,8,8192,16,0.3028,7015
+Brown and Tarjan's,8,8192,17,0.301,7035
+Brown and Tarjan's,8,8192,18,0.3275,7019
+Brown and Tarjan's,8,8192,19,0.3236,6976
+Brown and Tarjan's,8,8192,20,0.382,7078
+Brown and Tarjan's,8,16384,1,0.5843,14099
+Brown and Tarjan's,8,16384,2,0.5721,13971
+Brown and Tarjan's,8,16384,3,0.6248,13974
+Brown and Tarjan's,8,16384,4,0.6492,13908
+Brown and Tarjan's,8,16384,5,0.6894,14054
+Brown and Tarjan's,8,16384,6,0.6819,14015
+Brown and Tarjan's,8,16384,7,0.6464,13998
+Brown and Tarjan's,8,16384,8,0.6225,13992
+Brown and Tarjan's,8,16384,9,0.6895,13860
+Brown and Tarjan's,8,16384,10,0.5789,14064
+Brown and Tarjan's,8,16384,11,0.576,13885
+Brown and Tarjan's,8,16384,12,0.6115,13990
+Brown and Tarjan's,8,16384,13,0.8674,13896
+Brown and Tarjan's,8,16384,14,0.562,13948
+Brown and Tarjan's,8,16384,15,0.671,14044
+Brown and Tarjan's,8,16384,16,1.1619,13970
+Brown and Tarjan's,8,16384,17,0.9193,14028
+Brown and Tarjan's,8,16384,18,0.6279,13952
+Brown and Tarjan's,8,16384,19,0.6236,14013
+Brown and Tarjan's,8,16384,20,0.8152,13949
+Brown and Tarjan's,8,32768,1,1.7532,28048
+Brown and Tarjan's,8,32768,2,2.0523,28241
+Brown and Tarjan's,8,32768,3,1.6307,27850
+Brown and Tarjan's,8,32768,4,1.2739,27934
+Brown and Tarjan's,8,32768,5,1.2559,27932
+Brown and Tarjan's,8,32768,6,1.3066,27993
+Brown and Tarjan's,8,32768,7,1.2026,27953
+Brown and Tarjan's,8,32768,8,1.2219,28009
+Brown and Tarjan's,8,32768,9,1.1748,27978
+Brown and Tarjan's,8,32768,10,1.4079,27863
+Brown and Tarjan's,8,32768,11,1.3379,27940
+Brown and Tarjan's,8,32768,12,1.6235,27916
+Brown and Tarjan's,8,32768,13,1.2409,28083
+Brown and Tarjan's,8,32768,14,1.2805,27869
+Brown and Tarjan's,8,32768,15,1.3499,27860
+Brown and Tarjan's,8,32768,16,1.1773,28020
+Brown and Tarjan's,8,32768,17,1.3589,27955
+Brown and Tarjan's,8,32768,18,1.1863,28016
+Brown and Tarjan's,8,32768,19,1.3007,27942
+Brown and Tarjan's,8,32768,20,2.2943,28133
+Brown and Tarjan's,8,65536,1,2.8694,55780
+Brown and Tarjan's,8,65536,2,2.7124,56117
+Brown and Tarjan's,8,65536,3,2.5775,56149
+Brown and Tarjan's,8,65536,4,2.6563,56037
+Brown and Tarjan's,8,65536,5,2.7485,55902
+Brown and Tarjan's,8,65536,6,2.7489,56150
+Brown and Tarjan's,8,65536,7,2.891,56035
+Brown and Tarjan's,8,65536,8,2.7537,56158
+Brown and Tarjan's,8,65536,9,2.9786,56006
+Brown and Tarjan's,8,65536,10,2.41,56275
+Brown and Tarjan's,8,65536,11,3.3559,56007
+Brown and Tarjan's,8,65536,12,2.9267,55930
+Brown and Tarjan's,8,65536,13,2.9969,55868
+Brown and Tarjan's,8,65536,14,2.4738,55839
+Brown and Tarjan's,8,65536,15,2.7194,55958
+Brown and Tarjan's,8,65536,16,2.7746,56126
+Brown and Tarjan's,8,65536,17,2.7469,55973
+Brown and Tarjan's,8,65536,18,2.3412,55959
+Brown and Tarjan's,8,65536,19,2.5712,56297
+Brown and Tarjan's,8,65536,20,2.3204,55888
+Brown and Tarjan's,8,131072,1,6.147,111712
+Brown and Tarjan's,8,131072,2,5.7124,112285
+Brown and Tarjan's,8,131072,3,6.4099,112128
+Brown and Tarjan's,8,131072,4,9.1456,112124
+Brown and Tarjan's,8,131072,5,6.745,111961
+Brown and Tarjan's,8,131072,6,6.5155,111723
+Brown and Tarjan's,8,131072,7,7.5877,112297
+Brown and Tarjan's,8,131072,8,7.1432,111734
+Brown and Tarjan's,8,131072,9,7.1002,112076
+Brown and Tarjan's,8,131072,10,6.9553,112093
+Brown and Tarjan's,8,131072,11,7.6771,112018
+Brown and Tarjan's,8,131072,12,7.0851,112417
+Brown and Tarjan's,8,131072,13,6.6364,112150
+Brown and Tarjan's,8,131072,14,6.7585,112060
+Brown and Tarjan's,8,131072,15,7.1119,112025
+Brown and Tarjan's,8,131072,16,7.0965,112183
+Brown and Tarjan's,8,131072,17,7.1771,112109
+Brown and Tarjan's,8,131072,18,6.857,111971
+Brown and Tarjan's,8,131072,19,7.0216,111790
+Brown and Tarjan's,8,131072,20,7.0238,111551
+Brown and Tarjan's,8,262144,1,13.3744,224370
+Brown and Tarjan's,8,262144,2,12.98,224384
+Brown and Tarjan's,8,262144,3,13.7359,224514
+Brown and Tarjan's,8,262144,4,12.6477,224376
+Brown and Tarjan's,8,262144,5,11.2747,223728
+Brown and Tarjan's,8,262144,6,12.8622,224321
+Brown and Tarjan's,8,262144,7,11.7074,223851
+Brown and Tarjan's,8,262144,8,10.7745,223970
+Brown and Tarjan's,8,262144,9,12.089,223773
+Brown and Tarjan's,8,262144,10,12.2405,224054
+Brown and Tarjan's,8,262144,11,12.3998,223728
+Brown and Tarjan's,8,262144,12,12.0287,224065
+Brown and Tarjan's,8,262144,13,12.4757,223620
+Brown and Tarjan's,8,262144,14,12.0658,223996
+Brown and Tarjan's,8,262144,15,11.8223,223864
+Brown and Tarjan's,8,262144,16,12.2125,224439
+Brown and Tarjan's,8,262144,17,12.3067,224367
+Brown and Tarjan's,8,262144,18,12.2907,224361
+Brown and Tarjan's,8,262144,19,15.0869,223805
+Brown and Tarjan's,8,262144,20,12.2225,224086
+Brown and Tarjan's,8,524288,1,29.4174,447906
+Brown and Tarjan's,8,524288,2,25.8593,448046
+Brown and Tarjan's,8,524288,3,26.8095,447998
+Brown and Tarjan's,8,524288,4,28.1936,449187
+Brown and Tarjan's,8,524288,5,27.9794,448041
+Brown and Tarjan's,8,524288,6,25.6885,448260
+Brown and Tarjan's,8,524288,7,24.9486,448063
+Brown and Tarjan's,8,524288,8,26.491,447778
+Brown and Tarjan's,8,524288,9,25.6445,447712
+Brown and Tarjan's,8,524288,10,24.1601,448400
+Brown and Tarjan's,8,524288,11,24.5709,449023
+Brown and Tarjan's,8,524288,12,27.0151,448587
+Brown and Tarjan's,8,524288,13,25.2921,448578
+Brown and Tarjan's,8,524288,14,24.8445,448198
+Brown and Tarjan's,8,524288,15,29.3062,447714
+Brown and Tarjan's,8,524288,16,24.9757,448687
+Brown and Tarjan's,8,524288,17,26.1966,448145
+Brown and Tarjan's,8,524288,18,27.5317,447844
+Brown and Tarjan's,8,524288,19,26.1916,448265
+Brown and Tarjan's,8,524288,20,26.3612,448252
+Brown and Tarjan's,8,1048576,1,52.9076,895619
+Brown and Tarjan's,8,1048576,2,52.5171,896322
+Brown and Tarjan's,8,1048576,3,60.3052,896615
+Brown and Tarjan's,8,1048576,4,55.973,896614
+Brown and Tarjan's,8,1048576,5,59.1632,897463
+Brown and Tarjan's,8,1048576,6,49.5269,896266
+Brown and Tarjan's,8,1048576,7,48.8421,895852
+Brown and Tarjan's,8,1048576,8,51.3254,896392
+Brown and Tarjan's,8,1048576,9,50.5117,895476
+Brown and Tarjan's,8,1048576,10,51.2646,896744
+Brown and Tarjan's,8,1048576,11,55.8177,896939
+Brown and Tarjan's,8,1048576,12,54.1944,897265
+Brown and Tarjan's,8,1048576,13,51.4739,896322
+Brown and Tarjan's,8,1048576,14,49.3735,897162
+Brown and Tarjan's,8,1048576,15,51.2279,896367
+Brown and Tarjan's,8,1048576,16,48.7855,895495
+Brown and Tarjan's,8,1048576,17,56.607,897267
+Brown and Tarjan's,8,1048576,18,51.3076,896298
+Brown and Tarjan's,8,1048576,19,49.1369,895941
+Brown and Tarjan's,8,1048576,20,49.7182,896817
+Brown and Tarjan's,64,4096,1,0.0336,687
+Brown and Tarjan's,64,4096,2,0.0291,690
+Brown and Tarjan's,64,4096,3,0.0296,702
+Brown and Tarjan's,64,4096,4,0.0296,700
+Brown and Tarjan's,64,4096,5,0.0284,671
+Brown and Tarjan's,64,4096,6,0.0297,706
+Brown and Tarjan's,64,4096,7,0.0294,704
+Brown and Tarjan's,64,4096,8,0.0287,702
+Brown and Tarjan's,64,4096,9,0.029,699
+Brown and Tarjan's,64,4096,10,0.03,693
+Brown and Tarjan's,64,4096,11,0.0291,715
+Brown and Tarjan's,64,4096,12,0.0307,711
+Brown and Tarjan's,64,4096,13,0.0297,701
+Brown and Tarjan's,64,4096,14,0.0285,697
+Brown and Tarjan's,64,4096,15,0.0316,681
+Brown and Tarjan's,64,4096,16,0.029,704
+Brown and Tarjan's,64,4096,17,0.0306,707
+Brown and Tarjan's,64,4096,18,0.0298,708
+Brown and Tarjan's,64,4096,19,0.0289,706
+Brown and Tarjan's,64,4096,20,0.0286,703
+Brown and Tarjan's,64,8192,1,0.2139,1451
+Brown and Tarjan's,64,8192,2,0.0582,1396
+Brown and Tarjan's,64,8192,3,0.0547,1462
+Brown and Tarjan's,64,8192,4,0.0525,1430
+Brown and Tarjan's,64,8192,5,0.062,1415
+Brown and Tarjan's,64,8192,6,0.0671,1458
+Brown and Tarjan's,64,8192,7,0.1009,1437
+Brown and Tarjan's,64,8192,8,0.0841,1412
+Brown and Tarjan's,64,8192,9,0.0841,1416
+Brown and Tarjan's,64,8192,10,0.0835,1396
+Brown and Tarjan's,64,8192,11,0.0538,1382
+Brown and Tarjan's,64,8192,12,0.1314,1423
+Brown and Tarjan's,64,8192,13,0.0887,1389
+Brown and Tarjan's,64,8192,14,0.0819,1385
+Brown and Tarjan's,64,8192,15,0.1269,1422
+Brown and Tarjan's,64,8192,16,0.0975,1394
+Brown and Tarjan's,64,8192,17,0.057,1400
+Brown and Tarjan's,64,8192,18,0.0558,1402
+Brown and Tarjan's,64,8192,19,0.0579,1398
+Brown and Tarjan's,64,8192,20,0.06,1455
+Brown and Tarjan's,64,16384,1,0.1237,2837
+Brown and Tarjan's,64,16384,2,0.1548,2861
+Brown and Tarjan's,64,16384,3,0.1151,2914
+Brown and Tarjan's,64,16384,4,0.1209,2864
+Brown and Tarjan's,64,16384,5,0.1299,2810
+Brown and Tarjan's,64,16384,6,0.1122,2800
+Brown and Tarjan's,64,16384,7,0.1165,2846
+Brown and Tarjan's,64,16384,8,0.1456,2878
+Brown and Tarjan's,64,16384,9,0.1124,2820
+Brown and Tarjan's,64,16384,10,0.2176,2825
+Brown and Tarjan's,64,16384,11,0.1174,2870
+Brown and Tarjan's,64,16384,12,0.1138,2756
+Brown and Tarjan's,64,16384,13,0.111,2882
+Brown and Tarjan's,64,16384,14,0.1669,2786
+Brown and Tarjan's,64,16384,15,0.1096,2857
+Brown and Tarjan's,64,16384,16,0.1101,2825
+Brown and Tarjan's,64,16384,17,0.1852,2776
+Brown and Tarjan's,64,16384,18,0.112,2775
+Brown and Tarjan's,64,16384,19,0.1239,2844
+Brown and Tarjan's,64,16384,20,0.1552,2777
+Brown and Tarjan's,64,32768,1,0.2568,5680
+Brown and Tarjan's,64,32768,2,0.3604,5685
+Brown and Tarjan's,64,32768,3,0.2387,5687
+Brown and Tarjan's,64,32768,4,0.2501,5716
+Brown and Tarjan's,64,32768,5,0.2556,5694
+Brown and Tarjan's,64,32768,6,0.2535,5665
+Brown and Tarjan's,64,32768,7,0.2882,5638
+Brown and Tarjan's,64,32768,8,0.2583,5741
+Brown and Tarjan's,64,32768,9,0.2714,5645
+Brown and Tarjan's,64,32768,10,0.2936,5694
+Brown and Tarjan's,64,32768,11,0.2637,5698
+Brown and Tarjan's,64,32768,12,0.242,5780
+Brown and Tarjan's,64,32768,13,0.2524,5732
+Brown and Tarjan's,64,32768,14,0.2593,5675
+Brown and Tarjan's,64,32768,15,0.2529,5658
+Brown and Tarjan's,64,32768,16,0.3394,5697
+Brown and Tarjan's,64,32768,17,0.2669,5710
+Brown and Tarjan's,64,32768,18,0.2565,5597
+Brown and Tarjan's,64,32768,19,0.2496,5661
+Brown and Tarjan's,64,32768,20,0.2752,5701
+Brown and Tarjan's,64,65536,1,0.604,11393
+Brown and Tarjan's,64,65536,2,0.5952,11384
+Brown and Tarjan's,64,65536,3,0.6806,11479
+Brown and Tarjan's,64,65536,4,0.6143,11412
+Brown and Tarjan's,64,65536,5,0.6911,11331
+Brown and Tarjan's,64,65536,6,0.6069,11273
+Brown and Tarjan's,64,65536,7,0.5891,11302
+Brown and Tarjan's,64,65536,8,0.7367,11349
+Brown and Tarjan's,64,65536,9,0.6187,11368
+Brown and Tarjan's,64,65536,10,0.7246,11425
+Brown and Tarjan's,64,65536,11,0.6927,11502
+Brown and Tarjan's,64,65536,12,0.6298,11375
+Brown and Tarjan's,64,65536,13,0.5945,11389
+Brown and Tarjan's,64,65536,14,0.5287,11464
+Brown and Tarjan's,64,65536,15,0.4834,11453
+Brown and Tarjan's,64,65536,16,0.6136,11375
+Brown and Tarjan's,64,65536,17,0.7689,11409
+Brown and Tarjan's,64,65536,18,0.6252,11378
+Brown and Tarjan's,64,65536,19,0.6138,11369
+Brown and Tarjan's,64,65536,20,0.8943,11217
+Brown and Tarjan's,64,131072,1,1.6228,22823
+Brown and Tarjan's,64,131072,2,1.4318,22695
+Brown and Tarjan's,64,131072,3,1.669,22797
+Brown and Tarjan's,64,131072,4,2.0546,22938
+Brown and Tarjan's,64,131072,5,1.6321,22864
+Brown and Tarjan's,64,131072,6,1.7519,22701
+Brown and Tarjan's,64,131072,7,1.7104,22688
+Brown and Tarjan's,64,131072,8,1.9043,22978
+Brown and Tarjan's,64,131072,9,1.841,22704
+Brown and Tarjan's,64,131072,10,1.7981,22900
+Brown and Tarjan's,64,131072,11,1.4322,22708
+Brown and Tarjan's,64,131072,12,1.4038,22786
+Brown and Tarjan's,64,131072,13,0.9482,22913
+Brown and Tarjan's,64,131072,14,0.9745,22860
+Brown and Tarjan's,64,131072,15,1.4419,22694
+Brown and Tarjan's,64,131072,16,1.0844,22822
+Brown and Tarjan's,64,131072,17,0.9617,22964
+Brown and Tarjan's,64,131072,18,1.4924,22864
+Brown and Tarjan's,64,131072,19,1.2195,22807
+Brown and Tarjan's,64,131072,20,1.0068,22703
+Brown and Tarjan's,64,262144,1,3.5658,45665
+Brown and Tarjan's,64,262144,2,3.1017,45796
+Brown and Tarjan's,64,262144,3,3.0093,45866
+Brown and Tarjan's,64,262144,4,3.131,45835
+Brown and Tarjan's,64,262144,5,3.0994,45726
+Brown and Tarjan's,64,262144,6,3.3434,45483
+Brown and Tarjan's,64,262144,7,3.0393,45756
+Brown and Tarjan's,64,262144,8,3.2037,45855
+Brown and Tarjan's,64,262144,9,3.0526,45295
+Brown and Tarjan's,64,262144,10,3.3248,45541
+Brown and Tarjan's,64,262144,11,5.4605,45409
+Brown and Tarjan's,64,262144,12,3.884,45674
+Brown and Tarjan's,64,262144,13,3.7024,45664
+Brown and Tarjan's,64,262144,14,3.9484,45574
+Brown and Tarjan's,64,262144,15,3.5965,45862
+Brown and Tarjan's,64,262144,16,3.1138,45718
+Brown and Tarjan's,64,262144,17,3.7828,45572
+Brown and Tarjan's,64,262144,18,3.8069,45829
+Brown and Tarjan's,64,262144,19,3.6504,45779
+Brown and Tarjan's,64,262144,20,3.5642,45606
+Brown and Tarjan's,64,524288,1,7.2383,91690
+Brown and Tarjan's,64,524288,2,7.3025,91447
+Brown and Tarjan's,64,524288,3,6.3859,91529
+Brown and Tarjan's,64,524288,4,6.5143,91250
+Brown and Tarjan's,64,524288,5,6.7123,91752
+Brown and Tarjan's,64,524288,6,7.5402,91192
+Brown and Tarjan's,64,524288,7,7.4576,91645
+Brown and Tarjan's,64,524288,8,8.0118,90984
+Brown and Tarjan's,64,524288,9,8.0321,91085
+Brown and Tarjan's,64,524288,10,7.2656,91750
+Brown and Tarjan's,64,524288,11,6.6902,91257
+Brown and Tarjan's,64,524288,12,6.9488,91382
+Brown and Tarjan's,64,524288,13,7.3061,91131
+Brown and Tarjan's,64,524288,14,7.976,91321
+Brown and Tarjan's,64,524288,15,6.9147,91688
+Brown and Tarjan's,64,524288,16,7.4964,91337
+Brown and Tarjan's,64,524288,17,7.3628,91360
+Brown and Tarjan's,64,524288,18,7.1869,91024
+Brown and Tarjan's,64,524288,19,7.7444,91440
+Brown and Tarjan's,64,524288,20,7.5761,91398
+Brown and Tarjan's,64,1048576,1,14.9296,181952
+Brown and Tarjan's,64,1048576,2,15.1868,182774
+Brown and Tarjan's,64,1048576,3,14.8283,182601
+Brown and Tarjan's,64,1048576,4,14.6365,182893
+Brown and Tarjan's,64,1048576,5,13.7841,182968
+Brown and Tarjan's,64,1048576,6,14.4737,182779
+Brown and Tarjan's,64,1048576,7,13.7623,182599
+Brown and Tarjan's,64,1048576,8,14.3736,183027
+Brown and Tarjan's,64,1048576,9,15.1409,183035
+Brown and Tarjan's,64,1048576,10,14.2891,183062
+Brown and Tarjan's,64,1048576,11,14.928,183021
+Brown and Tarjan's,64,1048576,12,14.7583,182769
+Brown and Tarjan's,64,1048576,13,14.6167,182815
+Brown and Tarjan's,64,1048576,14,14.3984,182708
+Brown and Tarjan's,64,1048576,15,14.6024,182813
+Brown and Tarjan's,64,1048576,16,14.2699,182495
+Brown and Tarjan's,64,1048576,17,14.8428,182639
+Brown and Tarjan's,64,1048576,18,14.6347,182754
+Brown and Tarjan's,64,1048576,19,13.9957,182830
+Brown and Tarjan's,64,1048576,20,16.0667,183054
+Brown and Tarjan's,512,4096,1,0.0106,120
+Brown and Tarjan's,512,4096,2,0.0077,117
+Brown and Tarjan's,512,4096,3,0.0076,119
+Brown and Tarjan's,512,4096,4,0.0067,113
+Brown and Tarjan's,512,4096,5,0.0079,121
+Brown and Tarjan's,512,4096,6,0.0102,116
+Brown and Tarjan's,512,4096,7,0.0079,118
+Brown and Tarjan's,512,4096,8,0.0072,119
+Brown and Tarjan's,512,4096,9,0.0092,112
+Brown and Tarjan's,512,4096,10,0.0066,121
+Brown and Tarjan's,512,4096,11,0.0064,112
+Brown and Tarjan's,512,4096,12,0.0091,112
+Brown and Tarjan's,512,4096,13,0.0085,119
+Brown and Tarjan's,512,4096,14,0.0074,122
+Brown and Tarjan's,512,4096,15,0.007,128
+Brown and Tarjan's,512,4096,16,0.0066,108
+Brown and Tarjan's,512,4096,17,0.007,127
+Brown and Tarjan's,512,4096,18,0.0068,111
+Brown and Tarjan's,512,4096,19,0.007,113
+Brown and Tarjan's,512,4096,20,0.0065,114
+Brown and Tarjan's,512,8192,1,0.0163,254
+Brown and Tarjan's,512,8192,2,0.0122,233
+Brown and Tarjan's,512,8192,3,0.0129,229
+Brown and Tarjan's,512,8192,4,0.0145,245
+Brown and Tarjan's,512,8192,5,0.0121,235
+Brown and Tarjan's,512,8192,6,0.0129,234
+Brown and Tarjan's,512,8192,7,0.0136,237
+Brown and Tarjan's,512,8192,8,0.0126,243
+Brown and Tarjan's,512,8192,9,0.0133,244
+Brown and Tarjan's,512,8192,10,0.0152,245
+Brown and Tarjan's,512,8192,11,0.0166,231
+Brown and Tarjan's,512,8192,12,0.0183,229
+Brown and Tarjan's,512,8192,13,0.0152,251
+Brown and Tarjan's,512,8192,14,0.0139,241
+Brown and Tarjan's,512,8192,15,0.0143,238
+Brown and Tarjan's,512,8192,16,0.0153,244
+Brown and Tarjan's,512,8192,17,0.0138,250
+Brown and Tarjan's,512,8192,18,0.0116,224
+Brown and Tarjan's,512,8192,19,0.013,229
+Brown and Tarjan's,512,8192,20,0.0195,232
+Brown and Tarjan's,512,16384,1,0.0276,491
+Brown and Tarjan's,512,16384,2,0.0277,496
+Brown and Tarjan's,512,16384,3,0.0273,509
+Brown and Tarjan's,512,16384,4,0.0242,504
+Brown and Tarjan's,512,16384,5,0.0272,485
+Brown and Tarjan's,512,16384,6,0.023,492
+Brown and Tarjan's,512,16384,7,0.029,497
+Brown and Tarjan's,512,16384,8,0.0271,498
+Brown and Tarjan's,512,16384,9,0.0248,489
+Brown and Tarjan's,512,16384,10,0.0284,484
+Brown and Tarjan's,512,16384,11,0.0224,495
+Brown and Tarjan's,512,16384,12,0.0228,484
+Brown and Tarjan's,512,16384,13,0.0835,483
+Brown and Tarjan's,512,16384,14,0.0238,496
+Brown and Tarjan's,512,16384,15,0.0314,486
+Brown and Tarjan's,512,16384,16,0.0215,497
+Brown and Tarjan's,512,16384,17,0.023,498
+Brown and Tarjan's,512,16384,18,0.0306,493
+Brown and Tarjan's,512,16384,19,0.0266,508
+Brown and Tarjan's,512,16384,20,0.0241,497
+Brown and Tarjan's,512,32768,1,0.0443,1001
+Brown and Tarjan's,512,32768,2,0.0487,993
+Brown and Tarjan's,512,32768,3,0.0662,979
+Brown and Tarjan's,512,32768,4,0.0797,971
+Brown and Tarjan's,512,32768,5,0.0431,982
+Brown and Tarjan's,512,32768,6,0.0466,978
+Brown and Tarjan's,512,32768,7,0.0639,1022
+Brown and Tarjan's,512,32768,8,0.0462,971
+Brown and Tarjan's,512,32768,9,0.0513,995
+Brown and Tarjan's,512,32768,10,0.0481,988
+Brown and Tarjan's,512,32768,11,0.0512,995
+Brown and Tarjan's,512,32768,12,0.0614,1005
+Brown and Tarjan's,512,32768,13,0.0567,996
+Brown and Tarjan's,512,32768,14,0.0552,985
+Brown and Tarjan's,512,32768,15,0.0554,995
+Brown and Tarjan's,512,32768,16,0.0536,996
+Brown and Tarjan's,512,32768,17,0.0634,969
+Brown and Tarjan's,512,32768,18,0.0512,986
+Brown and Tarjan's,512,32768,19,0.0523,993
+Brown and Tarjan's,512,32768,20,0.0494,997
+Brown and Tarjan's,512,65536,1,0.1094,1945
+Brown and Tarjan's,512,65536,2,0.1201,2044
+Brown and Tarjan's,512,65536,3,0.0929,2037
+Brown and Tarjan's,512,65536,4,0.0904,1991
+Brown and Tarjan's,512,65536,5,0.1054,1980
+Brown and Tarjan's,512,65536,6,0.12,2002
+Brown and Tarjan's,512,65536,7,0.1788,1974
+Brown and Tarjan's,512,65536,8,0.1709,1983
+Brown and Tarjan's,512,65536,9,0.1513,1993
+Brown and Tarjan's,512,65536,10,0.1426,1975
+Brown and Tarjan's,512,65536,11,0.1281,2011
+Brown and Tarjan's,512,65536,12,0.1946,1963
+Brown and Tarjan's,512,65536,13,0.1211,2006
+Brown and Tarjan's,512,65536,14,0.1629,1965
+Brown and Tarjan's,512,65536,15,0.138,2037
+Brown and Tarjan's,512,65536,16,0.2499,1995
+Brown and Tarjan's,512,65536,17,0.1939,1963
+Brown and Tarjan's,512,65536,18,0.1452,1965
+Brown and Tarjan's,512,65536,19,0.2295,1988
+Brown and Tarjan's,512,65536,20,0.1724,1999
+Brown and Tarjan's,512,131072,1,0.3875,3923
+Brown and Tarjan's,512,131072,2,0.5655,3985
+Brown and Tarjan's,512,131072,3,0.2716,4014
+Brown and Tarjan's,512,131072,4,0.2003,4012
+Brown and Tarjan's,512,131072,5,0.2716,3944
+Brown and Tarjan's,512,131072,6,0.2601,3978
+Brown and Tarjan's,512,131072,7,0.2694,4011
+Brown and Tarjan's,512,131072,8,0.1849,4037
+Brown and Tarjan's,512,131072,9,0.259,3904
+Brown and Tarjan's,512,131072,10,0.2663,3929
+Brown and Tarjan's,512,131072,11,0.3017,3964
+Brown and Tarjan's,512,131072,12,0.2721,4058
+Brown and Tarjan's,512,131072,13,0.2403,3968
+Brown and Tarjan's,512,131072,14,0.2639,4002
+Brown and Tarjan's,512,131072,15,0.2737,3977
+Brown and Tarjan's,512,131072,16,0.25,4001
+Brown and Tarjan's,512,131072,17,0.2592,4051
+Brown and Tarjan's,512,131072,18,0.2513,3994
+Brown and Tarjan's,512,131072,19,0.2674,4003
+Brown and Tarjan's,512,131072,20,0.2925,4031
+Brown and Tarjan's,512,262144,1,0.699,8067
+Brown and Tarjan's,512,262144,2,0.6332,7884
+Brown and Tarjan's,512,262144,3,0.6958,8021
+Brown and Tarjan's,512,262144,4,0.6484,8025
+Brown and Tarjan's,512,262144,5,0.6381,7969
+Brown and Tarjan's,512,262144,6,0.7066,8050
+Brown and Tarjan's,512,262144,7,0.5818,7997
+Brown and Tarjan's,512,262144,8,0.6263,7890
+Brown and Tarjan's,512,262144,9,0.6808,7959
+Brown and Tarjan's,512,262144,10,0.7811,7956
+Brown and Tarjan's,512,262144,11,0.7518,8070
+Brown and Tarjan's,512,262144,12,0.643,7903
+Brown and Tarjan's,512,262144,13,0.8306,8002
+Brown and Tarjan's,512,262144,14,0.6445,7970
+Brown and Tarjan's,512,262144,15,0.6844,8054
+Brown and Tarjan's,512,262144,16,0.6786,7928
+Brown and Tarjan's,512,262144,17,0.7302,8088
+Brown and Tarjan's,512,262144,18,0.6768,8048
+Brown and Tarjan's,512,262144,19,0.6824,7901
+Brown and Tarjan's,512,262144,20,1.2192,8052
+Brown and Tarjan's,512,524288,1,1.5149,15988
+Brown and Tarjan's,512,524288,2,1.3913,16007
+Brown and Tarjan's,512,524288,3,1.4218,16027
+Brown and Tarjan's,512,524288,4,1.4079,16051
+Brown and Tarjan's,512,524288,5,1.6759,16096
+Brown and Tarjan's,512,524288,6,1.6517,16002
+Brown and Tarjan's,512,524288,7,1.5382,16023
+Brown and Tarjan's,512,524288,8,1.7082,15998
+Brown and Tarjan's,512,524288,9,1.4951,16110
+Brown and Tarjan's,512,524288,10,1.5812,15909
+Brown and Tarjan's,512,524288,11,1.5346,15972
+Brown and Tarjan's,512,524288,12,1.5459,15968
+Brown and Tarjan's,512,524288,13,1.7403,16162
+Brown and Tarjan's,512,524288,14,1.5327,15941
+Brown and Tarjan's,512,524288,15,1.3861,15969
+Brown and Tarjan's,512,524288,16,1.4931,15990
+Brown and Tarjan's,512,524288,17,1.5021,16127
+Brown and Tarjan's,512,524288,18,1.7291,16016
+Brown and Tarjan's,512,524288,19,1.5175,15999
+Brown and Tarjan's,512,524288,20,1.7439,16006
+Brown and Tarjan's,512,1048576,1,3.092,32160
+Brown and Tarjan's,512,1048576,2,3.3693,32049
+Brown and Tarjan's,512,1048576,3,3.2965,31936
+Brown and Tarjan's,512,1048576,4,3.2492,31960
+Brown and Tarjan's,512,1048576,5,3.1942,31900
+Brown and Tarjan's,512,1048576,6,3.3351,32023
+Brown and Tarjan's,512,1048576,7,3.4158,31987
+Brown and Tarjan's,512,1048576,8,3.1064,32022
+Brown and Tarjan's,512,1048576,9,3.465,31945
+Brown and Tarjan's,512,1048576,10,3.2459,31882
+Brown and Tarjan's,512,1048576,11,3.1074,32096
+Brown and Tarjan's,512,1048576,12,3.5118,32022
+Brown and Tarjan's,512,1048576,13,2.8622,32246
+Brown and Tarjan's,512,1048576,14,3.1142,31908
+Brown and Tarjan's,512,1048576,15,3.1074,32064
+Brown and Tarjan's,512,1048576,16,2.9853,31955
+Brown and Tarjan's,512,1048576,17,3.0376,32196
+Brown and Tarjan's,512,1048576,18,3.8053,32053
+Brown and Tarjan's,512,1048576,19,2.9301,32174
+Brown and Tarjan's,512,1048576,20,3.0272,32250
+Brown and Tarjan's,4096,4096,1,0.0041,12
+Brown and Tarjan's,4096,4096,2,0.0021,12
+Brown and Tarjan's,4096,4096,3,0.0021,12
+Brown and Tarjan's,4096,4096,4,0.0019,12
+Brown and Tarjan's,4096,4096,5,0.0021,12
+Brown and Tarjan's,4096,4096,6,0.002,12
+Brown and Tarjan's,4096,4096,7,0.0023,12
+Brown and Tarjan's,4096,4096,8,0.0017,12
+Brown and Tarjan's,4096,4096,9,0.0025,12
+Brown and Tarjan's,4096,4096,10,0.0026,12
+Brown and Tarjan's,4096,4096,11,0.0022,12
+Brown and Tarjan's,4096,4096,12,0.0019,12
+Brown and Tarjan's,4096,4096,13,0.0018,12
+Brown and Tarjan's,4096,4096,14,0.0021,12
+Brown and Tarjan's,4096,4096,15,0.0018,12
+Brown and Tarjan's,4096,4096,16,0.0018,12
+Brown and Tarjan's,4096,4096,17,0.0018,12
+Brown and Tarjan's,4096,4096,18,0.0021,12
+Brown and Tarjan's,4096,4096,19,0.0022,12
+Brown and Tarjan's,4096,4096,20,0.0052,12
+Brown and Tarjan's,4096,8192,1,0.0055,32
+Brown and Tarjan's,4096,8192,2,0.0038,32
+Brown and Tarjan's,4096,8192,3,0.0033,32
+Brown and Tarjan's,4096,8192,4,0.0035,32
+Brown and Tarjan's,4096,8192,5,0.0033,32
+Brown and Tarjan's,4096,8192,6,0.0047,34
+Brown and Tarjan's,4096,8192,7,0.0038,29
+Brown and Tarjan's,4096,8192,8,0.0047,34
+Brown and Tarjan's,4096,8192,9,0.0031,27
+Brown and Tarjan's,4096,8192,10,0.0037,28
+Brown and Tarjan's,4096,8192,11,0.0034,28
+Brown and Tarjan's,4096,8192,12,0.0034,31
+Brown and Tarjan's,4096,8192,13,0.0046,32
+Brown and Tarjan's,4096,8192,14,0.0064,32
+Brown and Tarjan's,4096,8192,15,0.0057,30
+Brown and Tarjan's,4096,8192,16,0.0042,30
+Brown and Tarjan's,4096,8192,17,0.0038,32
+Brown and Tarjan's,4096,8192,18,0.0039,30
+Brown and Tarjan's,4096,8192,19,0.0075,31
+Brown and Tarjan's,4096,8192,20,0.0042,32
+Brown and Tarjan's,4096,16384,1,0.0075,59
+Brown and Tarjan's,4096,16384,2,0.0105,70
+Brown and Tarjan's,4096,16384,3,0.0078,69
+Brown and Tarjan's,4096,16384,4,0.0058,76
+Brown and Tarjan's,4096,16384,5,0.0063,75
+Brown and Tarjan's,4096,16384,6,0.006,75
+Brown and Tarjan's,4096,16384,7,0.0053,68
+Brown and Tarjan's,4096,16384,8,0.0078,72
+Brown and Tarjan's,4096,16384,9,0.0074,67
+Brown and Tarjan's,4096,16384,10,0.0074,73
+Brown and Tarjan's,4096,16384,11,0.0065,73
+Brown and Tarjan's,4096,16384,12,0.0084,75
+Brown and Tarjan's,4096,16384,13,0.008,68
+Brown and Tarjan's,4096,16384,14,0.0083,70
+Brown and Tarjan's,4096,16384,15,0.0123,67
+Brown and Tarjan's,4096,16384,16,0.0082,68
+Brown and Tarjan's,4096,16384,17,0.0067,71
+Brown and Tarjan's,4096,16384,18,0.0068,70
+Brown and Tarjan's,4096,16384,19,0.0058,66
+Brown and Tarjan's,4096,16384,20,0.0074,77
+Brown and Tarjan's,4096,32768,1,0.013,151
+Brown and Tarjan's,4096,32768,2,0.01,144
+Brown and Tarjan's,4096,32768,3,0.0111,158
+Brown and Tarjan's,4096,32768,4,0.0136,145
+Brown and Tarjan's,4096,32768,5,0.012,144
+Brown and Tarjan's,4096,32768,6,0.0102,150
+Brown and Tarjan's,4096,32768,7,0.0107,158
+Brown and Tarjan's,4096,32768,8,0.0234,152
+Brown and Tarjan's,4096,32768,9,0.0144,151
+Brown and Tarjan's,4096,32768,10,0.0109,163
+Brown and Tarjan's,4096,32768,11,0.0183,154
+Brown and Tarjan's,4096,32768,12,0.0123,149
+Brown and Tarjan's,4096,32768,13,0.0108,146
+Brown and Tarjan's,4096,32768,14,0.0113,154
+Brown and Tarjan's,4096,32768,15,0.0103,152
+Brown and Tarjan's,4096,32768,16,0.0129,145
+Brown and Tarjan's,4096,32768,17,0.0126,157
+Brown and Tarjan's,4096,32768,18,0.0137,151
+Brown and Tarjan's,4096,32768,19,0.0114,146
+Brown and Tarjan's,4096,32768,20,0.0112,134
+Brown and Tarjan's,4096,65536,1,0.0267,309
+Brown and Tarjan's,4096,65536,2,0.0347,316
+Brown and Tarjan's,4096,65536,3,0.0471,314
+Brown and Tarjan's,4096,65536,4,0.0251,310
+Brown and Tarjan's,4096,65536,5,0.0242,301
+Brown and Tarjan's,4096,65536,6,0.0362,319
+Brown and Tarjan's,4096,65536,7,0.0277,297
+Brown and Tarjan's,4096,65536,8,0.0247,321
+Brown and Tarjan's,4096,65536,9,0.0267,296
+Brown and Tarjan's,4096,65536,10,0.0211,313
+Brown and Tarjan's,4096,65536,11,0.0244,298
+Brown and Tarjan's,4096,65536,12,0.03,326
+Brown and Tarjan's,4096,65536,13,0.0213,314
+Brown and Tarjan's,4096,65536,14,0.0208,317
+Brown and Tarjan's,4096,65536,15,0.0266,315
+Brown and Tarjan's,4096,65536,16,0.0222,318
+Brown and Tarjan's,4096,65536,17,0.0217,313
+Brown and Tarjan's,4096,65536,18,0.0242,318
+Brown and Tarjan's,4096,65536,19,0.026,301
+Brown and Tarjan's,4096,65536,20,0.027,315
+Brown and Tarjan's,4096,131072,1,0.0602,645
+Brown and Tarjan's,4096,131072,2,0.0651,638
+Brown and Tarjan's,4096,131072,3,0.0467,609
+Brown and Tarjan's,4096,131072,4,0.0823,634
+Brown and Tarjan's,4096,131072,5,0.0573,604
+Brown and Tarjan's,4096,131072,6,0.0543,642
+Brown and Tarjan's,4096,131072,7,0.0537,647
+Brown and Tarjan's,4096,131072,8,0.0577,621
+Brown and Tarjan's,4096,131072,9,0.0572,620
+Brown and Tarjan's,4096,131072,10,0.059,630
+Brown and Tarjan's,4096,131072,11,0.0567,638
+Brown and Tarjan's,4096,131072,12,0.0595,614
+Brown and Tarjan's,4096,131072,13,0.0522,619
+Brown and Tarjan's,4096,131072,14,0.0619,640
+Brown and Tarjan's,4096,131072,15,0.0508,625
+Brown and Tarjan's,4096,131072,16,0.0613,628
+Brown and Tarjan's,4096,131072,17,0.0567,654
+Brown and Tarjan's,4096,131072,18,0.0826,650
+Brown and Tarjan's,4096,131072,19,0.0743,625
+Brown and Tarjan's,4096,131072,20,0.0592,642
+Brown and Tarjan's,4096,262144,1,0.119,1283
+Brown and Tarjan's,4096,262144,2,0.1332,1270
+Brown and Tarjan's,4096,262144,3,0.1216,1262
+Brown and Tarjan's,4096,262144,4,0.1322,1269
+Brown and Tarjan's,4096,262144,5,0.125,1260
+Brown and Tarjan's,4096,262144,6,0.1157,1308
+Brown and Tarjan's,4096,262144,7,0.1092,1299
+Brown and Tarjan's,4096,262144,8,0.1153,1295
+Brown and Tarjan's,4096,262144,9,0.1166,1281
+Brown and Tarjan's,4096,262144,10,0.0992,1282
+Brown and Tarjan's,4096,262144,11,0.0993,1239
+Brown and Tarjan's,4096,262144,12,0.1041,1258
+Brown and Tarjan's,4096,262144,13,0.1138,1260
+Brown and Tarjan's,4096,262144,14,0.1177,1274
+Brown and Tarjan's,4096,262144,15,0.1222,1276
+Brown and Tarjan's,4096,262144,16,0.1131,1290
+Brown and Tarjan's,4096,262144,17,0.1128,1286
+Brown and Tarjan's,4096,262144,18,0.1151,1264
+Brown and Tarjan's,4096,262144,19,0.1056,1248
+Brown and Tarjan's,4096,262144,20,0.1123,1269
+Brown and Tarjan's,4096,524288,1,0.2461,2546
+Brown and Tarjan's,4096,524288,2,0.2603,2536
+Brown and Tarjan's,4096,524288,3,0.2456,2505
+Brown and Tarjan's,4096,524288,4,0.2423,2605
+Brown and Tarjan's,4096,524288,5,0.2475,2580
+Brown and Tarjan's,4096,524288,6,0.237,2602
+Brown and Tarjan's,4096,524288,7,0.2399,2580
+Brown and Tarjan's,4096,524288,8,0.3049,2599
+Brown and Tarjan's,4096,524288,9,0.3389,2501
+Brown and Tarjan's,4096,524288,10,0.2443,2594
+Brown and Tarjan's,4096,524288,11,0.2454,2586
+Brown and Tarjan's,4096,524288,12,0.2264,2530
+Brown and Tarjan's,4096,524288,13,0.2353,2562
+Brown and Tarjan's,4096,524288,14,0.2423,2541
+Brown and Tarjan's,4096,524288,15,0.249,2548
+Brown and Tarjan's,4096,524288,16,0.2389,2570
+Brown and Tarjan's,4096,524288,17,0.2263,2578
+Brown and Tarjan's,4096,524288,18,0.224,2542
+Brown and Tarjan's,4096,524288,19,0.2247,2482
+Brown and Tarjan's,4096,524288,20,0.2332,2537
+Brown and Tarjan's,4096,1048576,1,0.4967,5188
+Brown and Tarjan's,4096,1048576,2,0.5092,5141
+Brown and Tarjan's,4096,1048576,3,0.5107,5124
+Brown and Tarjan's,4096,1048576,4,0.4641,5117
+Brown and Tarjan's,4096,1048576,5,0.642,5128
+Brown and Tarjan's,4096,1048576,6,0.5036,5134
+Brown and Tarjan's,4096,1048576,7,0.5271,5140
+Brown and Tarjan's,4096,1048576,8,0.5016,5159
+Brown and Tarjan's,4096,1048576,9,0.4895,5122
+Brown and Tarjan's,4096,1048576,10,0.4995,5105
+Brown and Tarjan's,4096,1048576,11,0.5096,5108
+Brown and Tarjan's,4096,1048576,12,0.519,5176
+Brown and Tarjan's,4096,1048576,13,0.5572,5126
+Brown and Tarjan's,4096,1048576,14,0.5165,5241
+Brown and Tarjan's,4096,1048576,15,0.4609,5145
+Brown and Tarjan's,4096,1048576,16,0.5161,5079
+Brown and Tarjan's,4096,1048576,17,0.5049,5175
+Brown and Tarjan's,4096,1048576,18,0.5001,5088
+Brown and Tarjan's,4096,1048576,19,0.4834,5147
+Brown and Tarjan's,4096,1048576,20,0.5141,5180
