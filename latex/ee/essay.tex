@@ -10,6 +10,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocodex}
+\usepackage{longtable}
 \tcbuselibrary{breakable}
 
 % Recipe: pdflatex -> bibtex -> pdflatex*2
@@ -23,7 +24,7 @@
 
 % Simplified listings setup
 \lstset{
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\scriptsize,
     columns = fullflexible,
     backgroundcolor=\color{codebg},         
     commentstyle=\color{comment},
@@ -63,7 +64,7 @@ A \textit{data structure} is a way to store and organize data in order to facili
 
 For ordered data structures, merging two or more instances of them while maintaining its ordered property may be frequently used in practice. For example, to investigate the factors affacting the school grade, data from different schools may be grouped and merged according to various factors. The efficiency of combination varies significantly based on the data structure itself and the algorithm used in the process. 
 
-This essay will focus on invesitgating the theoratical time complexity (need definitions aa) and actual performance of merging algorithms of different data structures, namely arrays, and BSTs, which are the most commonly used data structure in real life. 
+This essay will focus on invesitgating the theoretical time complexity (need definitions aa) and actual performance of merging algorithms of different data structures, namely arrays, and BSTs, which are the most commonly used data structure in real life. 
 
 \textbf{Research question: How does different algorithm affect the efficiency of merging two instances of balanced search trees?}
 
@@ -111,7 +112,7 @@ In this essay, we will assume that there are two instances of AVL trees $T_1$ an
 
 One of the basic operations supported by a balanced BST is insertion, where one element is added to the tree and the order of the tree is automatically maintained. In fact, merging two instances of BSTs can be reduced to a sequence of insertions to a balanced BST. To be more specific, we iterate through all the elements in $T_2$, insert them one by one into $T_1$, that would be $m$ operations with each having time complexity of $O(\log n)$, resulting in a overall complexity of $O(m\log n)$. 
 
-\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Algorithm: Insertion-Based Merge]
+\begin{tcolorbox}[colback=orange!5!white, colframe=orange!75!black, title=Algorithm: Insertion-Based Merge]
 \begin{algorithmic}[1]
 \Require Two balanced binary search trees $T_1$ and $T_2$
 \Ensure A single balanced binary search tree containing all elements from $T_1$ and $T_2$
@@ -130,7 +131,7 @@ This algorithm performs well when $m/n$ is small, as the overall time complexity
 
 Another way to merge two instances of BSTs is to utilize the property that each instance is already in-order. To combine them, we can view this process as merging two sorted subarrays into a new array, just like a merge sort. The iteration and new array construction process take $O(n+m)$ time. With proper construction function, we can create a balanced BST in linear time out of a sorted array. Therefore, the overall time complexity is $O(n+m)$.
 
-\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Algorithm: Merge-Sort-Based BST Merge]
+\begin{tcolorbox}[colback=orange!5!white, colframe=orange!75!black, title=Algorithm: In-order traversal merge]
 \begin{algorithmic}[1]
 \Require Two balanced binary search trees $T_1$ and $T_2$
 \Ensure A single balanced binary search tree containing all elements from $T_1$ and $T_2$
@@ -154,7 +155,9 @@ In 1979, Brown and Tarjan proposed another algorithm based on the two merging al
 
 To be more specific, the algorithm keeps a stack called \textit{path} and a stack called \textit{successor}. The former is used to record the path from the root to the current node, while the latter records all the nodes on the \textit{path} that is larger than the current node (that means they are on the right side of the current node their left children is visited on the \textit{path}). Each insertion, instead of starting from the root, starts from the last node on the \textit{successor} that is smaller than the node to be inserted. Keep extending the \textit{path} and \textit{successor} during insertion. And the path shrinks back after the insertion, until a rebalance operation is triggered or we know that there need no rebalancing at all.
 
-\begin{tcolorbox}[breakable, colback=orange!5!white, colframe=orange!75!black, title=Algorithm: Brown-Tarjan Fast Height-Balanced Tree Merge]
+It is worth noticing that the rebalance operation may make the initial path unusable. In this case, we can simply dispose of the path under the rotated node start next insertion there \cite{brown1979fast}. 
+
+\begin{tcolorbox}[breakable, colback=orange!5!white, colframe=orange!75!black, title=Algorithm: Brown and Tarjan's Merging Algorithm]
 \begin{algorithmic}[1]
 \Require Two balanced binary search trees $T_1$ (size $n$) and $T_2$ (size $m$), where $n \ge m$
 \Ensure A single balanced BST containing all elements from $T_1$ and $T_2$
@@ -213,12 +216,12 @@ To be more specific, the algorithm keeps a stack called \textit{path} and a stac
 \end{tcolorbox}
 
 
-It is worth noticing that the rebalance operation may make the initial path unusable. In this case, we can simply dispose of the path under the rotated node start next insertion there\cite{brown1979fast}. 
-
 % need to add the proof of time complexity. the essay ones are not usable as it assumed m<<n instead of m<=n. need to analyze the union of insertion path and average rotation place. 
 
 \subsection{Optimality}
- 
+
+% need to modify the base of log
+
 When merging two instances of size $n$ and $m$ respectively, there are in total $\binom{n+m}{n}$ possible outcomes. According to the decision tree theory, each of them corresponds to a decision tree leaf node. Since the merging algorithm is comparison based, the decision tree has to be a binary tree (i.e. Each node has at most two children). The height of the decision tree is therefore no lower than $O(\log_2({\binom{n+m}{n}}))$.
 
 According to Sterling's approximation, 
@@ -250,7 +253,7 @@ Using the definition of combination number,
 
 Since $m\le n$ we have $n\log(1+m/n)\le n\cdot(\frac{m}{n}) = m$, therefore the first term is $O(m)$. This means the first term should be neglected as $m\log(1+\frac{n}{m})$ is the dominant term compared to $O(m)$.
 
-Since $m\log (1+\frac{n}{m})$ can bwe written as $m\log(n+m) - m\log(m)$, where the first term is more dominant than $O(\log (n+m))$, the third term should be neglected as well.
+Since $m\log (1+\frac{n}{m})$ can be written as $m\log(n+m) - m\log(m)$, where the first term is more dominant than $O(\log (n+m))$, the third term should be neglected as well.
 
 We can get the overall expression
 
@@ -268,22 +271,76 @@ We can get the overall expression
 
 \subsection{Variables}
 
-\subsubsection{Control Variables}
+\subsubsection{Independent variables}
 
+The independent variables of this experiment are:
 
+\begin{itemize}
+    \item $\alpha = n/m \in\{1.0, 9.0, 99.0, 999.0\}$.
+    \item $N = n+m \in\{10^4, 10^5, 10^6, 10^7, 10^8\}$
+\end{itemize}
 
-\section*{Appendix}
+From the definition equation, we can find property shown in Equation \ref{eq.AlphaN},
 
-\begin{tcolorbox}[title = Test environment]
-    \begin{itemize}
-        \item Device: Laptop
-        \item CPU: Intel(R) Core(TM) Ultra 7 155H (1.40 GHz)
-        \item Memory: 32GB
-        \item OS: Windows 11 24H2 26100.6584
-        \item Compiler (C++): g++ 15.2.0 (for algorithm efficiency test and timing)
-        \item Interpreter: Python 3.12.2 (for batch test)
-    \end{itemize}
-\end{tcolorbox}
+\begin{equation}
+    \label{eq.AlphaN}
+    n = \dfrac{\alpha N}{1+\alpha}, m = \dfrac{N}{1+\alpha}
+\end{equation}
+
+which means for each pair of $\alpha$ and $N$, there is a corresponding pair of $n$ and $m$. However, $n$ and $m$ are not chosen as the independent variables because $\alpha$ can better represent the \textbf{relative scale} or \textbf{balance} of $n$ and $m$, while $N$ can better represent the \textbf{total scale} of data. We are more interested in these two properties, rather than the scale of one particular part of data.
+
+$\alpha$ and $N$ are both almost uniformly chosen in the lographic scale, since it can better help us investigate the varying data size in application. The reason why $\alpha$ are not chosen in $10^k (k\in\mathrm{Z}^+)$ but $10^k-1 (k\in\mathrm{Z}^+)$ is to avoid floating point calculation and error when choosing $n$ and $m$.
+
+\subsubsection{Dependent variables}
+
+The dependent variable of the experiment is the efficiency of the algorithm. To be more specific, the efficiency is measured by the \textbf{clock time} taken by the algorithm $t$, as well as the \textbf{number of comparison operations} $c$.
+
+These two variables can both represent the cost and measure the efficiency of the algorithm, but they have different foci and advantage over theoretical time-compexity analysis. The clock time $t$ can reveal the invisible cost neglected term during big-O analysis, better representing the real world efficiency, while the comparison operations $c$ can better represent the actual number of comparisions, helping us to analyze the performance when the comparison is not actually $O(1)$ (e.g. lexographical order can be more costly to compare.)
+
+\subsubsection{Controlled Variables}
+
+\section{Results}
+
+\subsection{Raw data}
+
+The output is \texttt{seed = 524042979266800} and a 2701 row csv file, part of which is shown in Table \ref{tab.raw}.
+
+\begin{table}[h!]
+\centering
+\caption{Raw data}
+\label{tab.raw}
+\begin{tabular}{l c c c c c}
+\hline
+\textbf{Method} & $\alpha$ & $N$ & \textbf{Trial} & \textbf{Time (ms)} & \textbf{Comparisons} \\
+\hline
+Insertion-based & $1$ & $4096$ & $1$ & $2.0169$ & $90036$ \\
+Insertion-based & $1$ & $4096$ & $2$ & $1.5414$ & $91083$ \\
+Insertion-based & $1$ & $4096$ & $3$ & $1.5598$ & $91498$ \\
+Insertion-based & $1$ & $4096$ & $4$ & $1.5160$ & $90642$ \\
+Insertion-based & $1$ & $4096$ & $5$ & $1.5823$ & $89572$ \\
+\multicolumn{6}{c}{[\,\dots\,]} \\
+Brown and Tarjan's & $4096$ & $1048576$ & $16$ & $0.5161$ & $5079$ \\
+Brown and Tarjan's & $4096$ & $1048576$ & $17$ & $0.5049$ & $5175$ \\
+Brown and Tarjan's & $4096$ & $1048576$ & $18$ & $0.5001$ & $5088$ \\
+Brown and Tarjan's & $4096$ & $1048576$ & $19$ & $0.4834$ & $5147$ \\
+Brown and Tarjan's & $4096$ & $1048576$ & $20$ & $0.5141$ & $5180$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Appendix A Test environment}
+
+\begin{longtable}{@{}ll@{}}
+\caption{Test environment} \label{tab.env} \\
+\textbf{Device:} & Laptop \\
+\textbf{CPU:} & Intel(R) Core(TM) Ultra 7 155H (1.40 GHz) \\
+\textbf{Memory:} & 32GB \\
+\textbf{OS:} & Windows 11 24H2 26100.6584 \\
+\textbf{Compiler (C++):} & g++ 15.2.0 (algorithm implementation and timing) \\
+\textbf{Interpreter:} & Python 3.12.2 (graphing) \\
+\end{longtable}
+
+\section*{Appendix B Algorithm implementation}
 
 %Use the simple \texttt{\textbackslash lstinputlisting} command:
 
