@@ -67,6 +67,7 @@ for i, alpha in enumerate(alphas):
     ax_t.set_title(f"α={alpha}")
     ax_t.set_xlabel("n = N")
     ax_t.set_xlim((1<<12)/1.2, (1<<20)*1.2)
+    #ax_t.set_yscale("log")
     ax_t.set_ylabel("Time (ms, Dotted)")
 
     for method in methods:
@@ -90,6 +91,7 @@ for i, alpha in enumerate(alphas):
     ax_c.set_xlabel("n = N")
     ax_c.set_xlim((1<<12)/1.2, (1<<20)*1.2)
     ax_c.set_ylabel("Comparisons (Solid)")
+    #ax_c.set_yscale("log")
 
     for method in methods:
         data_list = agg_dict.get((alpha, method), [])

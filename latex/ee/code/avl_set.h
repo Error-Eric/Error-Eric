@@ -241,45 +241,37 @@ public:
 
     void linearmerge(AVLSet&& other) {
         if (other.empty()) return;
-
-        // Get elements from both trees
         std::vector<T> q1 = items();
         std::vector<T> q2 = other.items();
         std::vector<T> all_elements;
         all_elements.reserve(q1.size() + q2.size());
-
-        // Merge sorted vectors
         std::merge(q1.begin(), q1.end(), q2.begin(), q2.end(),
                   std::back_inserter(all_elements), comp_);
-
-        // Recycle both trees
         delete_tree(root);
         delete_tree(other.root);
         root = nullptr;
         other.root = nullptr;
-
-        // Build new tree
         root = build(all_elements.begin(), all_elements.end());
         size = all_elements.size();
     }
 
     /**
-     *   Merge two sets in O(N log(M)) time.
+     *   Merge two sets in O(M log(N)) time.
      *   @param other The AVLSet to be merged into this set.
      */
     void simplemerge(AVLSet&& other) {
         if (other.empty()) return;
-
         if (size < other.size) { swap_with(other); }
-
-        // Insert all elements from the smaller tree (now 'other') into this
         other.traverse_in_order([this](const T& key) {
             this->insert(key);
         });
-
         other.clear();
     }
 
+    /**
+     *   Merge two sets in O(M log(1+N/M)) time.
+     *   @param other The AVLSet to be merged into this set.
+     */
     void brownmerge(AVLSet&& other) {
         if (other.empty()) return;
         if (size < other.size) swap_with(other);
@@ -294,26 +286,21 @@ public:
         path.push_back(&root);
 
         for (const T& x : elems) {
-            // ==== CLIMB/RETRACT: pop successors while their key <= x (i.e. not (x < succ_key)) ====
             while (!successor.empty() && !comp_(x, (*successor.back())->key)) {
                 Node** succLink = successor.back();
-                // pop path entries until top == succLink
                 while (!path.empty() && path.back() != succLink) path.pop_back();
                 successor.pop_back();
             }
 
-            // ==== DESCEND from current finger (path.back()) to insertion point ====
             Node** curLink = path.empty() ? &root : path.back();
             Node* p = *curLink;
             if (!p) {
-                // empty subtree (rare because root existed), insert directly
                 *curLink = create_node(x);
                 path.push_back(curLink);
             } else {
                 for (;;) {
-                    path.push_back(curLink); // link that points to p
+                    path.push_back(curLink); 
                     if (comp_(x, p->key)) {
-                        // go left; mark this link as a successor (we turned left here)
                         if (p->left == nullptr) {
                             p->left = create_node(x);
                             path.push_back(&(p->left));
@@ -324,7 +311,6 @@ public:
                             p = *curLink;
                         }
                     } else {
-                        // go right
                         if (p->right == nullptr) {
                             p->right = create_node(x);
                             path.push_back(&(p->right));
@@ -336,32 +322,23 @@ public:
                     }
                 }
             }
-
-            // ==== REBALANCE upward using the link-stack; attach rotated subtree via *link ====
             while (!path.empty()) {
                 Node** link = path.back();
                 Node* s = *link;
                 path.pop_back();
-
                 if (!successor.empty() && successor.back() == link) successor.pop_back();
-
                 update_height(s);
                 int bf = balance_factor(s);
-
                 if (std::abs(bf) > 1) {
-                    Node* newsub = balance(s); // returns new root of this subtree
-                    *link = newsub;             // reattach correctly via the link
-
-                    // retract path until the remaining entries are consistent with this rotation
+                    Node* newsub = balance(s);
+                    *link = newsub;
                     while (!path.empty() && path.back() != link) path.pop_back();
-                    break; // stop climbing after performing rotation
+                    break;
                 }
 
                 if (bf == 0) {
-                    // height didn't increase => stop climbing
                     break;
                 }
-                // else continue climbing
             }
         }
         #ifdef DEBUG

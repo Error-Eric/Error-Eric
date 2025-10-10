@@ -1,0 +1,16 @@
+alpha,method,avg_time_ms,err_time_ms,avg_comparisons,err_comparisons
+1,insertion-based,33.072,3.972,1901789,15394
+8,insertion-based,4.135,0.998,207622,4350
+64,insertion-based,0.712,0.313,24630,132
+512,insertion-based,0.111,0.036,3073,46
+4096,insertion-based,0.019,0.007,386,20
+1,in-order trasversal,12.241,2.432,131068,4
+8,in-order trasversal,6.462,1.191,73722,6
+64,in-order trasversal,5.985,1.271,66486,174
+512,in-order trasversal,5.822,1.712,65059,1384
+4096,in-order trasversal,5.536,0.600,61662,7352
+1,brown and tarjan's,15.597,3.442,256442,246
+8,brown and tarjan's,2.729,0.518,56023,258
+64,brown and tarjan's,0.645,0.205,11382,142
+512,brown and tarjan's,0.151,0.080,1991,50
+4096,brown and tarjan's,0.027,0.013,312,15
