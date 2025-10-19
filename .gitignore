@@ -39,3 +39,6 @@ avl_set(pooled older version).h
 
 # venv makes the repo redundant
 /pygame/venv
+
+/latex/essia/data/fig1.py
+/latex/essia/data/fig2.py
