@@ -12,7 +12,9 @@
 %\usepackage{arydshln} % Dashed hline
 \usepackage{makecell} % Makecell
 \usepackage{graphicx}
-\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{longtable}
+\usepackage{booktabs}
 \usepackage{chemformula}
 \usepackage[version=4]{mhchem}
 \usepackage[absolute]{textpos}
@@ -28,7 +30,7 @@
 
 
 \begin{titlepage}
-    \title{\textbf{How does the hardness of water affect the rate of electrolysis? \\ \small Chemistry SL Internal Assesment}}
+    \title{\textbf{How does the ion concentration affect the rate of electrolysis? \\ \small Chemistry SL Internal Assesment}}
     \author{Zhou Changhui}
     \date{\today}
     \maketitle
@@ -45,43 +47,18 @@ Nowadays, electrolysis plays a vital role in chemical industry fields like metal
 
 Electrolysis experiments also serve a pivotal role in chemistry education, since it allows students to explore the property of different materials and reveal the atomic nature of substances (e.g. showing that water consists of hydrogen and oxygen atoms).
 
-\textbf{Research question: How does the hardness of water (measured using MgCl$_2$ concentration) affect the rate of electrolysis?}
-
-% This concentration is way too signifcant for hardness of water. Perhaps ion concentration?
-
-\section{Hypothesis and reasoning}
-
-Pure distilled water contains a low concentration ions. Water dissociation takes place with a very low tendency of ionization.
+The ion concentration of a solution is an issue routinely emphasized in electrochemisty. For instance, most electrolysis experiments require solutions prepared from distilled or deionized water to avoid ionic contaminants \cite{atkins2014physicalchemistry}, as pure distilled water contains a low concentration ions. However, when ionic contaminants, such as magnesium chloride, is dissolved in water, it dissociates and form a significant number of ions. In the case of magenesium chloride,  $\ce{Mg^2+}$ tend to bound with $\ce{H2O}$ and form $\ce{[Mg(H2O)6]^2+}$, which donates proton to water. Reaction described by Equation \ref{eq.dissociate} shows the main mechanism of dissociation.
 
 \begin{equation}
-    \ce{2H2O(l) <=> H3O+(aq) + OH-(aq)}
+    \begin{aligned}
+        \ce{MgCl2(aq) &-> Mg^2+(aq) + 2 Cl-(aq)}\\
+        \ce{Mg^2+(aq) + 6 H2O(l) &<=> [Mg(H2O)6]^2+(aq)}\\
+        \ce{[Mg(H2O)6]^2+(aq) + H2O(l) &<=> [Mg(H2O)5OH]^+(aq) + H3O^+(aq)}\\
+    \end{aligned}
+    \label{eq.dissociate}
 \end{equation}
 
-The equilibrium constant is $Kw=1\times10^{-14} \SI{}{mol^2 dm^{-6}}(\SI{25}{\degreeCelsius})$, which means only $1\times 10^{-7}\SI{}{mol}$ of ion can be found in one liter of water. This is insufficient for significant electrolysis to occur.  
-
-When magnesium chloride is dissolved in water, it dissociates and form ions.
-
-\begin{equation}
-    \ce{MgCl2(aq) -> Mg^2+(aq) + 2 Cl-(aq)}
-\end{equation}
-
-However, $\ce{Mg^2+}$ tend to bound with $\ce{H2O}$ and form $\ce{[Mg(H2O)6]^2+}$.
-
-\begin{equation}
-    \ce{Mg^2+(aq) + 6 H2O(l) <=> [Mg(H2O)6]^2+(aq)}
-\end{equation}
-
-$\ce{[Mg(H2O)6]^2+}$ is actually a lewis acid, which means it donates proton to water. 
-
-\begin{equation}
-    \ce{[Mg(H2O)6]^2+(aq) + H2O(l) <-> [Mg(H2O)5OH]^+(aq) + H3O^+(aq)}
-\end{equation}
-
-For $\ce{MgCl2}$ solution having a concentration significantly higher than $1\times 10^{-7} \SI{}{mol\cdot dm^{-3}}$, that series of reactions can lead to a signifcant increase in ion concentration. In fact, most of ion in the solution results from the presence of the electrolyte. These freely moving charged particles can act as charge carriers, make the solution a good conductor and increase the rate of electrolysis. When the concentration is relatively low, complete dissociation is expected, which means the amount if ion is directly proportional to the concentration, and so is the rate of electrolysis. However, as the concentration gets higher, full dissociation may not happen, which means the direct proportionality will no longer apply.
-
-\textbf{Hypothesis 1: The rate of electrolysis should be approximately directly proportional to the concentration of the solution at low concentration, but can increase at a slower rate at higher concentration.}
-
-During the electrolysis, the main reaction is the electrolysis of water:
+When an external voltage is applied, $\ce{H3O}$ is attracted to the anode, and $\ce{OH-}$ is attracted to the cathode, resulting in the formation of hydrogen and oxygen gas. 
 
 \begin{align}
     \ce{2 H+ + 2 e- &-> H2(g)}  \label{eq.cathode}\\ 
@@ -89,7 +66,52 @@ During the electrolysis, the main reaction is the electrolysis of water:
     \ce{2 H2O(l) &-> O2(g) + 2 H2(g)}  \label{eq.overall}
 \end{align}
 
-where Equation~\ref{eq.cathode} formulates the reaction happening at the cathode, Equation~\ref{eq.anode} formulates the reaction happening at the anode, and Equation~\ref{eq.overall} describes the overall reaction. The reaction happens only when the solution is acidic. Basic environment, which might result from extensive side reaction mentioned in Equation~\ref{eq.sidecl}, does not change the overall reaction but does change the reaction at electrodes. However, this should not happen due to the slow rate and short time span in this experiment. $\ce{H2}$ and $\ce{O2}$ results in vibrant effervescence in the solution.
+where Equation~\ref{eq.cathode} formulates the reaction happening at the cathode, Equation~\ref{eq.anode} formulates the reaction happening at the anode, and Equation~\ref{eq.overall} describes the overall reaction. The reaction happens only when the solution is acidic. The production of $\ce{H2}$ and $\ce{O2}$ results in vibrant effervescence in the solution.
+
+Some other side reaction also takes place, like $\ce{Cl-}$ can compete with $\ce{OH-}$ at higher concentrations.
+
+\textbf{Research question: How does the ion concentration in water (measured using MgCl$_2$ concentration) affect the rate of electrolysis?}
+
+\section{Hypothesis and reasoning}
+
+As is shown by reactions described in Equation \ref{eq.dissociate}, $\ce{MgCl2}$ solution whose concentration is significantly higher than $1\times 10^{-7} \SI{}{mol\cdot dm^{-3}}$ has most of its ion in the solution resulting from the presence of the electrolyte. 
+
+According to Faraday's laws of electrolysis, the extent of reaction ($\xi$) is proportional to the amount of electric charge passing through the electrolyte, can be calculated by the product of the current passing through the electrolyte and time, as is shown in Equation \ref{eq.faraday}. (The current is considered constant due to the small chage of the solution concentration)
+
+\begin{equation}
+    \begin{aligned}
+        \xi \propto Q &= I \times t \\
+                      &= \dfrac{V}{R} \times t
+    \end{aligned}
+    \label{eq.faraday}
+\end{equation}
+
+The definition of conductivity $\kappa = \dfrac{l}{A \times R}$ gives the equation for the resistance of the electrolyte, as shown in Equation \ref{eq.conductivity}.
+
+\begin{equation}
+    R = \dfrac{l}{A \times \kappa}
+    \label{eq.conductivity}
+\end{equation}
+
+For a specific electrolyte, molar conductivity $\Lambda_m$ is given by $\Lambda_m = \dfrac{\kappa}{c}$. This gives an overall equation for the rate of electrolysis, as shown in Equation \ref{eq.rate}.
+
+\begin{equation}
+    \begin{aligned}    
+    \xi \propto Q &= \dfrac{V}{\frac{l}{A \times \kappa}} \times t\\
+                  &= \dfrac{\Lambda_m c A V}{l} \times t\\
+    \text{rate} &\propto \dfrac{\mathrm{d}\xi}{\mathrm{d}t}\\
+                &= \dfrac{\Lambda_m A V}{l} \times c
+    \end{aligned}
+    \label{eq.rate}
+\end{equation}
+
+Magnesium chloride is a moderately strong electrolyte, which means $\Lambda_m$ decreases slightly as the concentration of magnesium chloride increases. At low concentration, it can be viewed as a constant. 
+
+A hypothesized value set is hard to calculated as there lacks $\Lambda_m$ data for $\ce{MgCl2}$.
+
+\textbf{Hypothesis 1: The rate of electrolysis should be approximately directly proportional to the concentration of the solution at low concentration, but can increase at a slower rate at higher concentration.}
+
+During the electrolysis, the main reaction is the electrolysis of water. Hydrogen and oxygen are produced, forming colorless effervescence. 
 
 However, when the concentration of $\ce{[Cl-]}$ is high, more $\ce{[Cl-]}$ tend to compete with , the side reaction begin to compete and eventually dominate.
 
@@ -97,29 +119,30 @@ However, when the concentration of $\ce{[Cl-]}$ is high, more $\ce{[Cl-]}$ tend 
     \ce{2Cl-(aq) -> Cl2(g) + 2e-} \label{eq.sidecl}
 \end{equation}
 
-The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor that smells like bleach, or end up dissolved in water and undergo a series of complicated side reaction as described in Equations~\ref{eq.s1},\ref{eq.s2} and \ref{eq.s3}, producing chlorine water. Magnesium ion may also undergo side reactions mentioned in Equation~\ref{eq.s4}.
+\textbf{Hypothesis2: The following phenomena will be observed--- the higher the concentration, the more vigorous effervescence is released form electrodes, the greener the liquid around the anode becomes.}
 
-\begin{align}
-  &\text{Hydrolysis of chlorine:} && \ch{Cl2 + H2O <=> HOCl + H+ + Cl^-} \label{eq.s1}\\
-  &\text{Bleach formation:} && \ch{Cl2 + 2OH^- -> Cl^- + ClO^- + H2O} \label{eq.s2}\\
-  &\text{Chlorate formation:} && \ch{3 ClO^- -> ClO3^- + 2 Cl^-} \label{eq.s3}\\
-  &\text{Precipitation near cathode:} && \ch{Mg^{2+} + 2 OH^- -> Mg(OH)2(s)}\label{eq.s4}
-\end{align}
+To measure the rate of reaction, the extent of reaction during a given time period has to be measured. the following methods can be used:
 
-\textbf{Hypothesis2: The following phenomena may be observed---- the higher the concentration, the more vigorous effervescence is released form electrodes, the greener the liquid around the anode becomes. Some cloudy precipitation can be found around the cathode.}
+\begin{itemize}
+    \item Measure the amount of hydrogen produced using water displacement.
+    \item Measure the mass change of the electrolyte.
+    \item Record the current passing through the electrolyte.
+\end{itemize}
+
+The first method is adopted since the value of the mass change and current are expected to be a very small number, which may be more significantly affected by the uncertainty of the measurement.
 
 \section{Experiment design}
 
 \subsection{Variables} 
 
 \begin{itemize}
-    \item Independent variable: hardness of water (manipulated using the concentration of MgCl$_2$: $0.2, 0.4, 0.6, 0.8$ and $ 1.0\SI{}{M}$).
-    \item Dependent variable: Rate of electrolysis.
+    \item Independent variable: ion concentration (manipulated using the concentration of MgCl$_2$: $0.2, 0.4, 0.6, 0.8$ and $ 1.0\SI{}{M}$). $\ce{Mg2+}$ and $\ce{Cl-}$ are chosen because they are easily dissolved in water and common impurities in water. These concentrations are used because they are small enough to make ensure small change in molar conductivity, but large enough to make the reaction happen at a measureable rate.
+    \item Dependent variable: Rate of electrolysis. This is measured by the amount of hydrogen produced divided by the time taken.
     \item Controlled variables: Temperature, atmospheric pressure, voltage, distance between electrodes, material of the electrodes and time duration of the experiment, etc. They are listed in Table \ref{tab.control}.
 \end{itemize}
 
 %Controlled variable table:
-\begin{table}
+\begin{table}[ht]
     \centering
     \caption{Controlled variables}
     \label{tab.control}
@@ -137,25 +160,33 @@ The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor 
 
 \subsection{Materials}
 
+The apparatus and reagents used in this experiment are listed below:
+
 \begin{itemize}
     \item[*] 1 Retort stand with clamp ($\approx \SI{50}{cm}$)
-    \item[*] 1 Side-armed U-shaped tube ($\approx \SI{100}{ml}$), with a pair of cork stoppers penetrated by graphite electrodes.
+    \item[*] 1 Side-armed U-shaped tube ($\approx \SI{100}{mL}$), with a pair of cork stoppers penetrated by graphite electrodes.
     \item[*] 1 Rubber tube.
-    \item[*] 1 Gas syringe ($\approx \SI{20}{ml}$).
+    \item[*] 1 Gas syringe ($\approx \SI{20}{mL}, \pm \SI{0.1}{mL}$).
     \item[*] 1 Student power pack ($\approx \SI{16}{V}$) and conducting wire.
-    \item[*] 1 Volumetric flask ($\SI{100}{ml}$).
-    \item[*] 1 Analytical balance ($>\SI{30}{g}$).
-    \item[*] 1 Beaker ($\approx \SI{200}{ml}$).
-    \item[*] 1 Wash bottle ($\approx \SI{500}{ml}$).
+    \item[*] 1 Volumetric flask ($\SI{100}{mL}, \pm \SI{0.5}{mL}$).
+    \item[*] 1 Analytical balance ($>\SI{30}{g}, \pm \SI{0.0001}{g}$).
+    \item[*] 1 Beaker ($\approx \SI{200}{mL}$).
+    \item[*] 1 Wash bottle ($\approx \SI{500}{mL}$).
+    \item[*] Magnesium chloride hexahydrate ($>\SI{200}{g}$).
+    \item[*] Distilled water ($> \SI{2000}{mL}$).
 \end{itemize}
 
+The reagents are analyzed in Table \ref{tab.materialsandsafetyinfo}.
+
 \subsection{Setup diagram}
+
+The setup of the experiment is shown in Figure \ref{fig.setup}. The left side of the setup is used to measure the rate of electrolysis. The right side of the setup is used to prepare the solution of given concentration.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{setup.jpg}
     \caption{Setup diagram\protect\footnotemark[1] \label{this:figure}}
-    %\label{fig.setup}
+    \label{fig.setup}
 \end{figure}
 
 \footnotetext[1]{This diagram is made using chemix and mspaint.}
@@ -163,8 +194,8 @@ The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor 
 \subsection{Procedure}
 
 \begin{enumerate}
-    \item Measure $m=\SI{2.06}{g}$ of MgCl${}_2\cdot 6$H${}_2$O in a beaker using analytical balance. Dissolve it with approximately $\SI{50}{ml}$ distilled water.
-    \item Transfer the solution to a $\SI{100}{ml}$ volumetric flask. Rinse the beaker with distilled water and put it into the flask as well.
+    \item Measure $m=\SI{2.06}{g}$ of MgCl${}_2\cdot 6$H${}_2$O in a beaker using analytical balance. Dissolve it with approximately $\SI{50}{mL}$ distilled water.
+    \item Transfer the solution to a $\SI{100}{mL}$ volumetric flask. Rinse the beaker with distilled water and put it into the flask as well.
     \item Slowly add distilled water into the volumetric flask until it is just below the calibration mark. Use teat pipette to slowly add more distilled water until the base of the meniscus reaches the mark.
     \item Insert the stopper and invert the solution for multiple times to ensure solution homogeneity.
     \item Transfer the solution to the sidearmed U-shaped tube. Insert the corkstopper fitted with graphite electrodes and attach a syringe to one side arm using flexible tubing.
@@ -177,38 +208,57 @@ The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor 
 \end{enumerate}
 
 \subsection{Risk Assessment}
-\begin{table}[htbp]
-\centering
-\begin{threeparttable}
+\begin{ThreePartTable}
+\begin{TableNotes}
+\item Sources: \cite{distilledwater_chemicalsUK,magnesiumchloride_flinn2014,oxygen_linde2022,hydrogen_chemicalbook2025,chlorinewater_flinn2014}
+\item[1] Product. Other supplier of the same chemical substance is referred to for the MSDS table and hazard assessment. These products are in very low amount (hydrogen and oxygen less than 10mL, chlorine gas less than 1mL) and are not able to cause as much potential hazard, therefore disposal or accidental release is not listed in the table. 
+\item[2] Chlorine may be released as gas, or undergo complicated side reactions in the solution during the experiment. The experiment will therefore be conducted in a fume hood. However, it still shares similar properties with chlorine water, so chlorine water is used for hazard assessment.
+\end{TableNotes}
+
+\begin{longtable}{p{1.8cm}p{5cm}p{6cm}}
 \caption{Materials and Safety Information}
-\begin{tabular}{p{1.8cm}p{5cm}p{6cm}}
-\hline
+\label{tab.materialsandsafetyinfo} \\
+\toprule
 \textbf{Name} & \textbf{Potential Hazards} & \textbf{Measure/Precaution} \\
-\hline
+\midrule
+\endfirsthead
+
+\caption*{\textit{(continued from previous page)}}\\
+\toprule
+\textbf{Name} & \textbf{Potential Hazards} & \textbf{Measure/Precaution} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\insertTableNotes
+\endlastfoot
+
 Distilled water & Physical, health, environmental hazards: Not Classified & None \\
 Magnesium chloride & Nonhazardous per GHS; treat all lab chemicals with caution & Use protective gloves/clothing/eye protection. Avoid inhalation, ingestion, or skin/eye contact. First-aid measures included. \\
-Hydrogen \tnote{1} & H220: Extremely flammable gas; H280: Gas under pressure & P210: Keep away from ignition sources. P377: Do not extinguish leaking gas fire unless leak can be stopped safely. \\
-Oxygen \tnote{1} & H270: May intensify fire; oxidizer. H280: Gas under pressure & P220: Keep away from combustibles. P244: Valves free from oil/grease. In fire: Stop leak if safe. \\
-Chlorine water \tnote{1,2} & Acute toxicity (oral, dermal, inhalation Cat. 5); skin/eye irritation; inhalation toxicity for chlorine gas & Avoid breathing vapors; immediate medical attention if exposed. First-aid and dilution instructions provided. \\
+Hydrogen\tnote{1} & H220: Extremely flammable gas; H280: Gas under pressure & P210: Keep away from ignition sources. P377: Do not extinguish leaking gas fire unless leak can be stopped safely. \\
+Oxygen\tnote{1} & H270: May intensify fire; oxidizer. H280: Gas under pressure & P220: Keep away from combustibles. P244: Valves free from oil/grease. In fire: Stop leak if safe. \\
+Chlorine water\tnote{1,2} & Acute toxicity (oral, dermal, inhalation Cat. 5); skin/eye irritation; inhalation toxicity for chlorine gas & Avoid breathing vapors; immediate medical attention if exposed. First-aid and dilution instructions provided. \\
 Student power supply & Below safe voltage (24V DC) & No special precautions. Disconnect power in unexpected events. \\
-\hline
-\end{tabular}
-\begin{tablenotes}
-\item Sources: \cite{distilledwater_chemicalsUK,magnesiumchloride_flinn2014,oxygen_linde2022,hydrogen_chemicalbook2025,chlorinewater_flinn2014}
-\item[1] Product. Other supplier of the same chemical substance is referred to for the MSDS table and hazard assessment. These products are in very low amount (hydrogen and oxygen less than 10ml, chlorine gas less than 1ml) and are not able to cause as much potential hazard, therefore disposal or accidental release is not listed in the table. 
-\item[2] Chlorine may be released as gas, or undergo complicated side reactions in the solution during the experiment. The experiment will therefore be conducted in a fume hood. However, it still share similar property with chlorine water, so chlorine water is used for hazard assessment. 
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
-\noindent \textbf{Conclusion:} With PPE, teacher supervision, and basic laboratory discipline, overall risk is low for high school students.
 
+\end{longtable}
+\end{ThreePartTable}
+
+\noindent \textbf{Conclusion:} With PPE, teacher supervision, and basic laboratory discipline, overall risk is low for high school students.
 
 \section{Results}
 
 \subsection{Raw data}
+
+Raw data can be found in Tables \ref{tab.rawqual} and \ref{tab.rawquant}.
+
 \begin{table}[ht]
 \centering
 \caption{Raw data (Qualitative)}
+\label{tab.rawqual}
 \begin{tabular}{cccc}
 \hline
     \textbf{Exp. No.} & \textbf{Effervescence} & \textbf{Odor} & \textbf{Green Color} \\ \hline
@@ -224,6 +274,7 @@ Student power supply & Below safe voltage (24V DC) & No special precautions. Dis
 \begin{table}[ht]
 \centering
 \caption{Raw data (Quantitative)}
+\label{tab.rawquant}
 \begin{tabular}{cccccc}
     \hline
     \makecell{Experi-\\ment No.} & Trial & {Mass (\si{\gram})} & \makecell{Solution\\ Volume (\si{\milli\litre})} & \makecell{Gas Volume\\ (\si{\milli\litre})} & {Time (\si{\second})} \\
@@ -251,10 +302,10 @@ Student power supply & Below safe voltage (24V DC) & No special precautions. Dis
 
 Processed data can be found in Table \ref{tab.proc}. The rate is plotted against the MgCl$_2$ concentration, and the graph is plotted in Figure \ref{fig.proc}.
 
-\begin{table}[h!]
+\begin{table}[ht!]
 \centering
 \caption{Processed data with additional measurements}
-\label{tab.proc.extended}
+\label{tab.proc}
 \begin{tabular}{cccc}
 \hline
 \makecell{MgCl$_2$ concentration\\ (mol L$^{-1}$)} & 
@@ -342,7 +393,11 @@ The error on the independent variable was too insignificant to be shown on the g
 
 The dots and error bars shows strong linear relationship between the rate and the concentration, which can be quantified with a high r$^2$ value of $0.989032$. The linear correlation suggests that the initial hypothesis is valid.
 
-Not all the error bars are passed through by the best fit line. This might have resulted from the high concentration of the last several groups of trials. As is mentioned in the hypothesis part, high concentration can change the behaviour of the electrolyte and cause side reaction. This will be further discussed in Section \ref{sec.eval}.
+Not all the error bars are passed through by the best fit line. The last error bar is significantly lower than the trend line of the former four. This might have resulted from the high concentration of the last several groups of trials. As is mentioned in the hypothesis part, high concentration can change the behaviour of the electrolyte and cause side reaction. This will be further discussed in Section \ref{sec.eval}.
+
+No study on the exact same experiment was found in the literature. However, similar experiments found generally has the same trend. For instance, Zhang \textit{et al.}'s \citeyear{zhang2020experimental} study's trend at low concentration (under $\SI{1.0}{M}$) showed a similar, almost-linear relationship and the slight reduce in gradient at around $\SI{1.0}{M}$ when rate (or the conductivity in Zhang \textit{et al.}'s case) is plotted against concentration.
+
+To conclude, the experiment provides strong evidence supporting the initial hypothesis, which states \textbf{the rate of electrolysis is linearly proportional to the concentration of $\ce{MgCl2}$ at low concentration, but can increase at a slower rate at higher concentration}.
 
 \section{Evaluation}
 \label{sec.eval}
@@ -350,9 +405,19 @@ Not all the error bars are passed through by the best fit line. This might have 
 The experiment was conducted successfully, providing sufficient data supporting the initial hypothesis. However, the expected deviation from linear relationship is not signifcant in the data. There is still room for improvement.
 
 \begin{itemize}
-    \item Imprecise marking: thin marker pen is used to mark the meniscus of the initial solution, which still results in a relatively thick stroke that can lead to unexpected uncertainty. Using a graduated, thin glass ware instead can minimize the uncertainty from adjustment.
-    \item High concentration: a concentration higher than general cases where water electrolysis take place is adopted, due to the limited time and apparatus in the laboratory. That resulted in side reaction, like the production of chlorine taking place. Using more dilute solution, larger electrode and longer experiment time can help stop the side reaction.
-    \item Bubbles' adhesion to electrodes: some gas produced is observed to have delayed or no detachment to the carbon electrodes. That can cause underminig of the total gas production, which can lead to underestimation of the rate. Using more smooth electrodes (like platinum electrodes) may help prevent that.
+    \item \textbf{Imprecise marking:} thin marker pen is used to mark the meniscus of the initial solution, which still results in a relatively thick stroke that can lead to unexpected uncertainty. Using a graduated, thin glass ware instead can minimize the uncertainty from adjustment.
+    \item \textbf{Thick gas syringe:} the gas syringe is thick and has an uncertainty of $\pm \SI{0.1}{mL}$. This is the main source of the uncertainty of the experiment. Using a thinner syringe can help reduce the uncertainty.
+    \item \textbf{Gas leakage:} gas may be leaked from the rubber stoppers and the syringe, which may result in a lower rate measured. Using a more airtight setup and testing the seal before the experiment can help prevent gas leakage. Alternatively, using a Hoffmann voltameter can also help prevent gas leakage and get more accureate readings. 
+    \item \textbf{High concentration:} a concentration higher than general cases where water electrolysis take place is adopted, due to the limited time and apparatus in the laboratory. That resulted in side reaction, like the production of chlorine taking place. Using more dilute solution, larger electrode and longer experiment time can help stop the side reaction.
+    \item \textbf{Bubbles' adhesion to electrodes:} some gas produced is observed to have delayed or no detachment to the carbon electrodes. That can cause underminig of the total gas production, which can lead to underestimation of the rate. Using more smooth electrodes (like platinum electrodes) may help prevent that.
+    \item \textbf{Side reactions:} The product $\ce{Cl2(g)}$ may be released, producing a pungent, irritating odor that smells like bleach, or end up dissolved in water and undergo a series of complicated side reaction as described in Equations~\ref{eq.s1},\ref{eq.s2} and \ref{eq.s3}, producing chlorine water. Magnesium ion may also undergo side reactions mentioned in Equation~\ref{eq.s4}.
+    \begin{align}
+    &\text{Hydrolysis of chlorine:} && \ch{Cl2 + H2O <=> HOCl + H+ + Cl^-} \label{eq.s1}\\
+    &\text{Bleach formation:} && \ch{Cl2 + 2 OH^- -> Cl^- + ClO^- + H2O} \label{eq.s2}\\
+    &\text{Chlorate formation:} && \ch{3 ClO^- -> ClO3^- + 2 Cl^-} \label{eq.s3}\\
+    &\text{Precipitation near cathode:} && \ch{Mg^{2+} + 2 OH^- -> Mg(OH)2(s)}\label{eq.s4}
+    \end{align}
+    These side reactions can reduce the rate of reaction by covering or corroding the electrodes, and can be minimized using more dilute solution, shorter experiment time or replacement with new electrodes during the experiment.
 \end{itemize}
 
 \bibliographystyle{apacite}
