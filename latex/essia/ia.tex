@@ -9,6 +9,10 @@
 \usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,positioning}
 
 % No more than 3000 words.
 
@@ -17,7 +21,7 @@
 
 
 \begin{titlepage}
-    \title{\textbf{How does the economy development (measured using GDP per capita) affect the CO2 emission per capita during 2002 - 2022? \\ \small ESS SL Internal Assesment}}
+    \title{\textbf{How do the relationship and trend of the economic development (measured using GDP per capita) and the CO2 emission per capita during 2002 - 2022 vary across countries? \\ \small ESS SL Internal Assesment}}
     \author{Zhou Changhui}
     \date{\today}
     \maketitle
@@ -31,17 +35,48 @@ Climate change is one of the most concerned issues in the modern world. Due to t
 
 Human socity has made many major progesses since then. Kyoto Protocal (1997) binded emission reduction targets for developed countries and marked the first time that global warming is globally recognized as a international issue. In Paris Agreement (2015), nearly all nations committed to “Nationally Determined Contributions” (NDCs) to reduce emissions, marking a full-scale recognision of the urgency of mitigating global warming. Many recent technology development and policies favoring green energy and decarbonization also played a major role in the reduction of GHG emission. However, many challenges are still present on the path to full solution of global warming. % Examples probably US not accepting, EU(DE) getting coal plants back, people arguing the amount of responsibility to take and balance between CO2 and development, etc. 
 
-Economy development is another factor commonly considered when talking about GHG emissions, as GHG emissions are commonly considered a side effect of economy development. In this study, the economy development is measured using GDP per capita, which is a common indicator of economic development. GDP per capita provides a simple, standardized way to compare the average economic output per person across countries and has a strong corrlation with the material affluence of a nation \cite{UNDP_HDR_2023}.
+Economic development is another factor commonly considered when talking about GHG emissions, as GHG emissions are commonly considered a side effect of economic development. In this study, the economic development is measured using GDP per capita, which is a common indicator of economic development. GDP per capita provides a simple, standardized way to compare the average economic output per person across countries and has a strong corrlation with the material affluence of a nation \cite{UNDP_HDR_2023}.
 
-\textbf{Research question: How does the economy development (measured using GDP per capita) affect the CO2 emission per capita?}
+\begin{figure}[ht!]
+    \vspace{-4mm}
+  \centering
+  \begin{tikzpicture}[scale=1, every node/.style={font=\small}]
+    % axes
+    \draw[->, thick] (0,0) -- (7,0) node[above, align=center] {Income \\per capita};
+    \draw[->, thick] (0,0) -- (0,2) node[right, align=center] {Environmental \\pressure};
+
+    \draw[very thick, blue] plot[smooth] coordinates {
+        (1, 0.3) (2, 1.5) (3.5, 1.9) (5, 1.5) (6, 0.3)
+    };
+    \draw[dashed, gray] (3.5,0) -- (3.5,1.9) node[above right, black] {Peak};
+    \draw[dashed, gray] (1,0) -- (1,0.3) ;
+    \draw[dashed, gray] (6,0) -- (6,0.3) ;
+    \node at (2+0.3, 0.7) {Early stage};
+    \node at (5-0.3, 0.7) {Later stage};
+
+  \end{tikzpicture}
+  \vspace{-2mm}
+  \caption{Schematic Kuznets curve}
+
+  \label{fig.kuznets}
+  \vspace{-2mm}
+\end{figure}
+
+The Environmental Kuznets Curve (EKC) is an inverted-U-shaped curve that prostulates and predicts the relationship between different pollutants and per capita income. It suggests that environmental pressure increases up as income goes up; after that, it decreases, as is shown in Figure \ref{fig.kuznets}. An EKC actually reveals how a technically specified measurement of environmental quality changes as the fortunes of a country change. 
+
+\textbf{Research question: How do the relationship and trend of the economic development (measured using GDP per capita) and the CO2 emission per capita during 2002 - 2022 vary across countries?}
 
 \section{Strategy (carbon budget)}
 
 Humans have set multiple critical values to limit the global warming, the most famous one being the 1.5$^\circ C$ from the 2015 Paris Agreement. To achieve that, only a certain amount of green house gases can be released to the atmosphere. A \textit{carbon budget} is estimated the total amount of carbon dioxide (CO$_2$) that humanity can emit while still having a specified probability of keeping global warming under a certain threshold, calculated using the approximately linear relationship between the rise in golbal average temperature and the amount of CO$_2$ emitted \cite{esd-15-387-2024}. When such budget is calculated, countries can hold conferences and negotiations to allocate the budget, and divide them further inside the nations. If all countries follow the agreement and manage to control the carbon emission within the budget, the global warming can be kept under control.
 
-This strategy provided a numerically quantifiable, methodologically viable solution to the problem of climate change, with some consideration of the different economical status of countries. It sets a clear boundary for each nation. Governments can therefore know how much they should invest in green technology research, and to what extent should they impose carbon taxes, with limited effect to the economy. 
+This strategy provided a numerically quantifiable, methodologically viable solution to the problem of climate change, with some consideration of the different economical status of countries. It sets a clear boundary for each nation. Governments can therefore know how much they should invest in green technology research, and to what extent should they impose carbon taxes, with limited effect to the economy. It also encourages international coopertaion.
 
-However, there are still flaws of the action that prevents it from fully taking place. First, it is challenging to accurately estimate not only the budget, but also the ongoing GHG emission due to various sources \cite{essd-budget}. Unlike fossil fuels, the emission of GHGs due to deforestation, grazing and permafrost thawing is hard to be considered into the budget. Second, it is difficult for countries to reach an agreement on the budget. Developed countries may argue that they provided the most advanced green technology and pioneered in the climate acts, and should therefore be granted more carbon budgets, while developing countries may have an economy heavily dependent on fossil fuel and took up much less historical carbon budget, and demand for the right to emit more carbon dioxide. Third, right-wing politicians and some people may not think global warming is a real problem and do not want to take any action to reduce the emission. They do not want to sacrifice the lifestyle for some distant problem that does not even sound problematic to them. Finally, it is hard to monitor if one country is following the agreement or not, as there is no central authority that can enforce the budget without the consent of the countries. % Might need to add cites. 
+However, there are still flaws of the action that prevents it from fully taking place.
+
+First, it is challenging to accurately estimate not only the budget, but also the ongoing GHG emission due to various sources \cite{essd-budget}. Unlike fossil fuels, the emission of GHGs due to deforestation, grazing and permafrost thawing is hard to be considered into the budget. Different stakeholders may have different views on how much the budget should be set and how much it is actually spent. For instance, ecocentrists may tend to give a conservative estimation on the budget available and take all possible release of carbon dioxide into consideration. On the other hand, technocentrists may tend to give a more optimistic estimation on the budget available and trust future technology in recovering the global warming. Farmers may argue that GHG release due to animal grazing should not be considered into or be limited by the budget. 
+
+Second, it is difficult for countries to reach an agreement on the budget. Developed countries may argue that they provided the most advanced green technology and pioneered in the climate acts, and should therefore be granted more carbon budgets, while developing countries may have an economy heavily dependent on fossil fuel and took up much less historical carbon budget, and demand for the right to emit more carbon dioxide. Third, right-wing politicians and some people may not think global warming is a real problem and do not want to take any action to reduce the emission. They do not want to sacrifice the lifestyle for some distant problem that does not even sound problematic to them. Finally, it is hard to monitor if one country is following the agreement or not, as there is no central authority that can enforce the budget without the consent of the countries. % Might need to add cites. 
 
 \section{Hypothesis and reasoning}
 
@@ -71,10 +106,62 @@ In fact, the Kuznet curve is commonly used to describe some side-effect of the e
 
 This study requires large dataset around the world that can not be reproduced in laboratory conditions or revealed through survery, so secondary data is adopted to carry out the research.
 
-This study uses secondary data obtained from \texttt{ourworldindata.org}. The dataset is publicly available and anonymized, ensuring no personally identifiable information is included. Data were used in compliance with the source's terms of use and citation requirements. No modifications were made to the original data. Therefore, no additional safety and ethical precautions are required.
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \includegraphics[width = 0.45\textwidth]{data/scrnshot.png}
+    \caption{Screenshot of the dataset.}
+    \label{fig.dataset}
+\end{wrapfigure}
+
+This study uses secondary data obtained from \texttt{ourworldindata.org}, which is shown in Figure \ref{fig.dataset}. The dataset is publicly available and anonymized, ensuring no personally identifiable information is included. Data were used in compliance with the source's terms of use and citation requirements. No modifications were made to the original data. Therefore, no additional safety and ethical precautions are required.
 
 Ourworldindata is generally considered a reliable source and both the variables can be calculated by commonly researched topics. The ultimate data sources are Global Carbon Budget (2024) and Bolt and van Zanden - Maddison Project Database 2023. Both are reliable enough to be used in this study.
 
+The data is recorded in a \texttt{.csv} file and processed using Python. The processing programs used libraries \texttt{csv} to read the data, \texttt{scipy} for numerical analysis and \texttt{matplotlib} for visualization. 
+
+The follwing procedures are used to process the data:
+
+\begin{tcolorbox}[
+  colback=teal!5,
+  colframe=teal!70!black,
+  title={\textbf{Steps for cross-sectional analysis}},
+  boxrule=0.9pt,
+  arc=3pt
+]
+    \begin{enumerate}
+        \item Read the data form the \texttt{co2-emissions-vs-gdp.csv} file. Select the data in 2002, 2012 and 2022.
+        \item Highlight the typical countries (e.g., China, India, USA).
+        \item For each year:
+        \begin{itemize}
+            \item Plot all countries as circles sized by population.
+            \item Add GDP on the x-axis, CO$_2$ on the y-axis.
+            \item Draw unweighted and population-weighted trend lines.
+            \item Label highlighted countries in distinct colors.
+            \end{itemize}
+        \item Visualize the data side by side.
+        \end{enumerate}
+\end{tcolorbox}
+
+\vspace{1em}
+
+\begin{tcolorbox}[
+  colback=purple!5,
+  colframe=purple!80!black,
+  title={\textbf{Steps for longitudinal analysis}},
+  boxrule=0.9pt,
+  arc=3pt
+]
+\begin{enumerate}
+  \item Read the data form the \texttt{co2-emissions-vs-gdp.csv} file.
+  \item Collect yearly GDP and CO$_2$ data (2002-2022) for selected typical countries.
+  \item Compute efficiency ratio: GDP per CO$_2$ emitted.
+  \item For each country:
+    \begin{itemize}
+      \item Plot GDP vs.  time, CO$_2$ vs.  time, and GDP/CO$_2$ vs.  time.
+      \item Adjust the scale if necessary. Keep the color consistent.
+    \end{itemize}
+  \item Visualize the data size by side.
+\end{enumerate}
+\end{tcolorbox}
 
 \section{Results and analysis}
 
@@ -93,7 +180,7 @@ Figure \ref{fig.horizontal} shows very strong correlation between the two variab
 
 We can also notice that the pattern of the scatter plot, especially the relative position of the typical countries chosen, does not change much over years. Afganistan and D.R. Congo are the examples of war-torn, foreign-exploited third-world countries, displayed in the left-bottom of the graph. China and India are the examples of large developing economies, occupying the center of the graph. The US, the UK and Luxembourg epitomizes developed nations at the right top of the graph, while Qatar, as the resource-rich fossil fuel exporter, being the outlier at the very right top corner. 
 
-However, some transition can also be noticed in the graph. There used to be a clear boundary between the developing and the developed world in the left figure, but the gap is getting smaller and less significant as the countries in the center are moving up-right as they get industrialized, probably because of technology development and globalization. China and India both occupied a righter and upper position in 2022 compared to 2002, due to the industrialization and structural economy change to secondary industry. Unlike most other countries, the UK showed a decline in CO2 per capita during the process, largely thanks to the policies in favour of decoupling CO2 from economy development. The energy generation, manufacturing, water supply, and transport played vital roles during the process \cite{noco2gdpuk}. However, some of the reduction is dependent on offshoring energy-intensive manufacturing to developing countries \cite{peters2011growth}. 
+However, some transition can also be noticed in the graph. There used to be a clear boundary between the developing and the developed world in the left figure, but the gap is getting smaller and less significant as the countries in the center are moving up-right as they get industrialized, probably because of technology development and globalization. China and India both occupied a righter and upper position in 2022 compared to 2002, due to the industrialization and structural economy change to secondary industry. Unlike most other countries, the UK showed a decline in CO2 per capita during the process, largely thanks to the policies in favour of decoupling CO2 from economic development. The energy generation, manufacturing, water supply, and transport played vital roles during the process \cite{noco2gdpuk}. However, some of the reduction is dependent on offshoring energy-intensive manufacturing to developing countries \cite{peters2011growth}. 
 
 \subsection{Longitudinal results} % might need pearson, delta pearson and so on
 
