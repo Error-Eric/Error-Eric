@@ -14,33 +14,44 @@
 \usepackage{makecell} % Makecell
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{footnote}
+\usepackage{footmisc}
 \usepackage[absolute]{textpos}
 
 % No more than 3000 words.
+
+\renewcommand{\thefootnote}{\roman{footnote}}
 
 
 \begin{document}
 
 
 \begin{titlepage}
-    \title{\textbf{How does the moment of inertia affect the period of Maxwell's Wheel? \\ \small Physics HL Internal Assesment}}
-    \author{Zhou Changhui}
-    \date{\today}
+    \title{\textbf{How does the moment of inertia affect the period of Maxwell's Wheel? \\ \small Physics HL Internal Assessment}}
+    \author{}
+    % To add personal code, add it here
+    \date{}
+    % To add date, add it here
     \maketitle
+    \centering
+    Word count: 2193
     %\tableofcontents
 \end{titlepage}
 
 \section{Introduction and background knowledge}
 
-In ancient Greece (around 220 B.C.), Archimedes laid solid foundation for rigid body statics by discovering and formalizing the conditions of equilibrium for levers. People studied Archimedes's work and developed concepts like torque after then, but it was not until Issac Newton (1643-1727) formulated Newton's Laws of Motion that humans are well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Eular (1707-1783) successfully formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
+In ancient Greece (around 220 B.C.), Archimedes laid a solid foundation for rigid body statics by discovering and formalizing the conditions of equilibrium for levers. People studied Archimedes's work and developed concepts like torque thereafter, but it was not until Isaac Newton (1643-1727) formulated Laws of Motion that physics became well equipped for rigid body dynamics \cite{farber-1961}. With the assistance of advanced mathematical tools, Leonhard Euler (1707-1783) formalized the dynamics of rigid bodies and derived the concepts of moment of inertia and principal axes \cite{marquina2016leonhard}.
 
-Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at ``storing'' rotational kinetic energy, which makes them suitable for objects like flywheels, while objects with small moment of inertia can rotate faster. 
+Just like inertia (which is determined by mass) in translational motion, the moment of inertia evaluates a body's ability to resist angular acceleration. Generally speaking, the further away the mass is distributed from its axis of rotation, the larger the body's moment of inertia is. Objects with large moment of inertia are good at storing rotational kinetic energy, which makes them suitable for objects like flywheels, whereas those with small moment of inertia can rotate more rapidly. 
 
-Maxwell's wheel is commonly used as an instrument to illustrate the conservation of energy and the concept of rotational kinetic energy in physics education. It can also be utilized to measure the moment of inertia of a disk-shaped object. This experiment aims at discovering the significance of the moment of inertia in a Maxwell's wheel experiment.
+Maxwell's wheel is commonly used as an instrument to illustrate the conservation of energy and the concept of rotational kinetic energy in physics education \cite{pecori1998maxwell}. It can also be utilized to measure the moment of inertia of a disk-shaped object and even the rolling friction if placed on a soft surface \cite{chakrabarti2020}. 
+
+This experiment aims at investigating the significance of the moment of inertia in a Maxwell's wheel experiment. This can help us better understand the rule behind the device and evaluate the pros and cons of Maxwell's Wheel in illustrating physics concepts and principles.
 
 \textbf{Research question: How does the moment of inertia affect the period of Maxwell's Wheel?}
 
 \section{Hypothesis and reasoning}
+\label{sec.hypothesis}
 
 \begin{figure}[ht]
     \centering
@@ -74,13 +85,13 @@ Maxwell's wheel is commonly used as an instrument to illustrate the conservation
     \label{fig.maxwellwheel}
 \end{figure}
 
-As is shown in Figure \ref{fig.maxwellwheel}, the Maxwell's wheel mainly consists of three parts: a disk-shaped wheel of radius $R$, an axle of radius $r$ penetrating the wheel, and a string that swirls around the axle. Aside from friction, two forces are acting on the pendulum: the tension from the string and the gravitational force. During the entire process, the gravitational potential energy converts to kinetic energy of the wheel. 
+As is shown in Figure \ref{fig.maxwellwheel}, the Maxwell's wheel mainly consists of three parts: a disk-shaped wheel of radius $R$, an axle of radius $r$ penetrating the wheel, and a string that swirls around the axle. Aside from friction, two forces are acting on the pendulum: the upward tension from the string and the gravitational force downward. During the entire process, the gravitational potential energy converts to kinetic energy of the wheel. 
 
-The downward movement and the upward movement is basically symmetric, so only the downward process needs algebraric analysis.
+The downward movement and the upward movement are approximately symmetric, so only the downward process needs algebraic analysis.
 
-Since the wheel is not in equilibrium, its hard to analyze the magnitude of tention $T$. However, the problem can be tackled using conservation of energy.
+Since the wheel is not in equilibrium, its challenging to analyze the magnitude of tension $T$. However, the problem can be appraached using conservation of energy.
 
-Due to the negeligibility of friction, it can be assumed that all the gravitational potential energy lost is converted to the kinetic energy. Or more specificly, the sum of the translational kinetic energy and rotational kinetic energy should equal to the loss in gravitational potential energy, as is formally stated in Equation \ref{eq.con}.
+Neglecting friction, it can be assumed that all the gravitational potential energy lost is converted to the kinetic energy. Or more specificaly, the sum of the translational kinetic energy and rotational kinetic energy should equal to the loss in gravitational potential energy, as is formally stated in Equation \ref{eq.con}.
 
 \begin{equation}\label{eq.con}
     mg\Delta h = \frac{1}{2}m v^2 + \frac{1}{2} I \omega ^2
@@ -113,13 +124,13 @@ Therefore, after replacing $\omega$ in Equation \ref{eq.con} with Equation \ref{
     \frac{2mg\Delta H}{m+\frac{I}{r^2}} = (\dfrac{\mathrm{d}\Delta H}{\mathrm{d}t})^2
 \end{equation}
 
-Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left size and make its index $1$, a simple ODE (Ordinary Differential Equation) for $\Delta H(t)$ is obtained, as is shown in Equation \ref{eq.odeform}.
+Moving ${\mathrm{d}\Delta H}/{\mathrm{d}t}$ to the left side and make its index $1$, a simple ODE (Ordinary Differential Equation) for $\Delta H(t)$ is obtained, as is shown in Equation \ref{eq.odeform}.
 
 \begin{equation}\label{eq.odeform}
     \dfrac{\mathrm{d}\Delta H}{\mathrm{d}t} = \sqrt{\frac{2mg}{m+\frac{I}{r^2}}} \Delta H ^ {0.5}
 \end{equation}
 
-By letting coefficient $k$ be $\sqrt{\frac{2mg}{m+\frac{I}{r^2}}}$, the ODE can be solved by separating variables and intergrate the both sides, as is shown in Equation \ref{eq.solveode}.
+By letting coefficient $k$ be $\sqrt{\frac{2mg}{m+\frac{I}{r^2}}}$, the ODE can be solved by separating variables and integrating the both sides, as is shown in Equation \ref{eq.solveode}.
 
 \begin{equation}
     \label{eq.solveode}
@@ -155,7 +166,7 @@ The downward movement terminates when $\Delta H(t) = l$, where $l$ is the length
     \end{aligned}
 \end{equation}
 
-Since the doward and upward movements are symmetric, the entire period of the Maxwell's Wheel can be formulated in Equation \ref{eq.period}.
+Since the downward and upward movements are symmetric, the entire period of the Maxwell's Wheel can be formulated in Equation \ref{eq.period}.
 
 \begin{equation}\label{eq.period}
     T = 2t_{down} = 4\sqrt{\dfrac{l}{k^2}}
@@ -180,10 +191,8 @@ From this formula, the hypothesis can be derived: \textbf{$T$ increases as $I$ i
 \begin{itemize}
     \item Independent variable: Moment of inertia (manipulated by changing the distance from the magnets to the pivot: $r' = \SI{2.5}{cm}, \SI{3.5}{cm}, \SI{4.5}{cm}, \SI{5.5}{cm},\allowbreak \SI{6.5}{cm}, \SI{7.5}{cm}, \SI{8.5}{cm}$).
     \item Dependent variable: ``Period'' of the Maxwell's Wheel (Time between two lowest positions).
-    \item Controlled variables: The material, mass and size of the plate and magnets. The length of the string. The mass, radius and length of the axle, etc. They are listed in table \ref{tab.control}.
+    \item Controlled variables: The material, mass and size of the plate and magnets. The length of the string. The mass, radius and length of the axle, etc. They are listed in Table \ref{tab.control}.
 \end{itemize}
-
-Independent variable turned out to be $0.668, 0.776, 0.919, 1.09, 1.31, 1.56$ and $1.85 \times 10^{-3}\SI{}{kgm^2}$ (as is shown in Section \ref{sec.results}). The independent variable is hard to manipulate, as the moment of inertia results from the arithmatical addition of two parts: the acrylic disk and the magnets. The former part is independent of $r'$, making it impossibe to reach very small $r'$. The latter part is proportional to $r'^2$, resulting in difficulty to place the magnets on the acrylic plane if even distribution between $I$ is needed. 
 
 %Controlled variable table:
 
@@ -194,8 +203,8 @@ Independent variable turned out to be $0.668, 0.776, 0.919, 1.09, 1.31, 1.56$ an
 \begin{tabularx}{\textwidth}{p{2.0cm}p{1.5cm}XX}
 \hline
 Variable                    & Value                  & Reason to control                                          & Method to control                                    \\ \hline
-Total mass of the wheel $m$ & $\approx \SI{400}{g}$  & To make sure the gradient is not affected.                 & Use the same set of magnets, plate and axle.         \\
-Material of the wheel       & Acrylic + NdFeB magnet & To make sure the mass distribution is even and consistent. & Use the same set of magnets and plate.               \\
+Total mass of the wheel $m$ & $\approx \SI{400}{g}$  & To ensure the gradient is not affected.                 & Use the same set of magnets, plate and axle.         \\
+Material of the wheel       & Acrylic + NdFeB magnet & To ensure the mass distribution is even and consistent. & Use the same set of magnets and plate.               \\
 Height of displacement      & $\approx \SI{20}{cm}$  & Unify the initial kinetic energy and length of path.       & Determine and mark a release position on the string. \\ 
 Temperature and humidity    & Around 25$^\circ$C, 40\% RH  & Avoid the change in air resistance                   & Conduct the experiment in a short period of time.    \\\hline
 \end{tabularx}
@@ -252,7 +261,7 @@ The apparatus is set up by hanging the Maxwell's Wheel between two iron stands u
 
 The experiment is relatively safe with little potential hazard. 
 
-It is worth keeping in mind that one should excercise caution when using the magnets, since the strong attraction of the magnets can cause unintended damage to the operator (e.g. their skin may be pinched when the magnets snaps together).
+It is worth keeping in mind that one should exercise caution when using the magnets, since the strong attraction of the magnets can cause unintended damage to the operator (e.g. their skin may be pinched when the magnets snaps together).
 
 The experiment does not involve ethical issues as no human or animal subjects are involved.
 
@@ -263,15 +272,15 @@ The experiment has little environmental issues as little material is disposed an
 
 \subsection{Raw data}
 
-Raw data is collected as follows:
+The raw data were collected as follows:
 
 \begin{itemize}
-    \item Total mass of the magnets $M_m$ : $193.70\pm0.01\SI{}{g}$
-    \item Total mass of the acrylic plate $M_a$: $193.17\pm0.01\SI{}{g}$
+    \item Total mass of the magnets $M_m$ : $179.39\pm0.01\SI{}{g}$
+    \item Total mass of the acrylic plate $M_a$: $111.2\pm0.01\SI{}{g}$
     \item Radius of the acrylic plate $R_a$: $10.0\pm0.05\SI{}{cm}$
     \item Radius of the axle $r$: $4.0\pm0.1\SI{}{mm}$
     \item Maximum vertical displacement $H$: $20\pm0.5\SI{}{cm}$
-    \item Other data is shown in Table \ref{tab.raw}.
+    \item Other data are presented in Table \ref{tab.raw} (where $r'$ denotes the distance from the center of mass of the magnets to the pivot and $t_1$ and $t_2$ represent the times for the first and second local maxima respectively).
 \end{itemize}
 
 \begin{table}[ht]
@@ -332,25 +341,36 @@ No.         & \makecell{$r'(\SI{}{cm})$ \\ $\pm \SI{0.1}{cm}$ }  & Trial & \make
 \end{tabularx}
 \end{table}
 
-\subsection{Processed data} % More details should be included.
+\newpage
+
+\subsection{Processed data} 
+
+The $I_a$, the moment of inertia due to the plate, is the same ($5.56 \pm 0.112\times10^{-4}\SI{}{kgm^2}$) for each trial, as is given in Section \ref{sec.sample}. Other processed data are listed in Table \ref{tab.proc}, where $I_m$ is the moment of inertia due to magnets, $T$ is the period, $T^2$ is the square of the period. The data is plotted in Figure \ref{fig.processedd}.
+
+% More details should be included.
 \label{sec.procd}
 
 \begin{table}[ht]
 \centering
 \caption{Processed data}
 \label{tab.proc}
-\begin{tabular}{lll}
+\begin{tabular}{lllll}
 \hline \hline
-Experiment & $I(\times 10^{-3}\SI{}{kgm^2})$ & $T^2(\SI{}{s^2})$ \\ \hline
-1          & $0.668\pm 0.0201$               & $19.9\pm0.759$    \\
-2          & $0.776\pm 0.0237$               & $21.4\pm1.62$     \\
-3          & $0.919\pm 0.0528$               & $27.9\pm2.38$     \\
-4          & $1.09\pm 0.0309$                & $31.5\pm1.40$     \\
-5          & $1.31\pm 0.0345$                & $35.4\pm0.773$    \\
-6          & $1.56\pm 0.0381$                & $47.2\pm5.15$     \\
-7          & $1.85\pm 0.0417$                & $50.7\pm7.48$     \\ \hline \hline
+Exp. &
+$ I_m (\times10^{-4}\SI{}{kgm^2}) $ &
+$ I_{tot} (\times10^{-3}\SI{}{kgm^2}) $ &
+$ \bar{T} (\SI{}{s}) $ &
+$ T^2 (\SI{}{s^2}) $ \\ \hline
+1 & $1.12 \pm 0.10$ & $0.668 \pm 0.020$ & $4.466 \pm 0.085$ & $19.9 \pm 0.76$ \\
+2 & $2.20 \pm 1.26$ & $0.776 \pm 0.024$ & $4.63 \pm 0.18$ & $21.4 \pm 1.62$ \\
+3 & $3.63 \pm 1.62$ & $0.919 \pm 0.053$ & $5.28 \pm 0.23$ & $27.9 \pm 2.38$ \\
+4 & $5.43 \pm 1.98$ & $1.099 \pm 0.031$ & $5.61 \pm 0.13$ & $31.5 \pm 1.40$ \\
+5 & $7.58 \pm 2.34$ & $1.314 \pm 0.035$ & $5.946 \pm 0.065$ & $35.4 \pm 0.77$ \\
+6 & $10.09 \pm 2.70$ & $1.566 \pm 0.038$ & $6.87 \pm 0.38$ & $47.2 \pm 5.15$ \\
+7 & $12.96 \pm 3.06$ & $1.852 \pm 0.042$ & $7.12 \pm 0.53$ & $50.7 \pm 7.48$ \\ \hline \hline
 \end{tabular}
 \end{table}
+
 
 \begin{figure}[ht]
     \centering
@@ -361,16 +381,19 @@ Experiment & $I(\times 10^{-3}\SI{}{kgm^2})$ & $T^2(\SI{}{s^2})$ \\ \hline
 
 \subsection{Sample processing}
 
+\label{sec.sample}
+
 Take the data processing of experiment $1$ as an example. 
 
-The $R$, distance from the magnets' center of mass to the pivot, is measured to be $2.5\pm 0.1\SI{}{cm}$. Therefore the moment of inertia contributed by the magnets is calculated as 
+The $R$, distance from the magnets' center of mass to the pivot, is measured to be $2.5\pm 0.1\SI{}{cm}$. Therefore the moment of inertia contributed by the magnets is calculated as Equations \ref{eq.imagnet} and \ref{eq.dimagnet}.
 
 \begin{equation}
     \begin{aligned}
-        I_m &= MR^2 \\
-            &= 179.39 \times 10^{-3} \SI{}{kg} (\times 2.5 \times 10^{-2})^2 \SI{}{m^2}\\
-            &= 1.1\times 10^{-3}\SI{}{kgm^2}
+        I_m &= M_m \times r'^2 \\
+            &= 179.39 \times 10^{-3} \SI{}{kg} \times( 2.5 \times 10^{-2})^2 \SI{}{m^2}\\
+            &= 1.1\times 10^{-4}\SI{}{kgm^2}
     \end{aligned}
+    \label{eq.imagnet}
 \end{equation}% 1.112119
 
 \begin{equation}
@@ -378,15 +401,56 @@ The $R$, distance from the magnets' center of mass to the pivot, is measured to 
         \Delta I_m &= \%\Delta I_m \times I_m \\
             &= (\frac{\Delta M}{M} + 2\frac{\Delta R}{R})\times I_m\\
             &= \pm 9\times 10^{-6}\SI{}{kgm^2}
-    \end{aligned} %8.97575
+    \end{aligned} 
+    \label{eq.dimagnet}
 \end{equation}
 
-The force gauge data is recorded and plotted against time in Figure \ref{fig.ft}. It can be noticed that the reading of the force gauge is noisy but shows clear peaks. With the assistance of a program, prominant peaks are marked in the figure using red dots.
+Furthermore, the moment of inertia contributed by the acrylic disk is calculated as in Equations \ref{eq.idisk} and \ref{eq.didisk}.
 
-\begin{figure}
+\begin{equation}
+    \begin{aligned}
+        I_a &= \dfrac{1}{2}M_a \times R_a^2 \\
+            &= 111.2 \times 10^{-3} \SI{}{kg} \times( 10.0 \times 10^{-2})^2 \SI{}{m^2}\\
+            &= 5.56\times 10^{-4}\SI{}{kgm^2}
+    \end{aligned}
+    \label{eq.idisk}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \Delta I_a &= \%\Delta I_a \times I_a \\
+            &= (\frac{\Delta M}{M} + 2\frac{\Delta R}{R})\times I_a\\
+            &= \pm 1.12\times 10^{-5}\SI{}{kgm^2}
+    \end{aligned} 
+    \label{eq.didisk}
+\end{equation}
+
+The total moment of inertia $I$ is calculated as in Equation \ref{eq.i} and the uncertainty is calculated as in Equation \ref{eq.di}.
+
+\begin{equation}
+    \begin{aligned}
+        I &= I_m + I_a \\
+            &= 1.1\times 10^{-4}\SI{}{kgm^2} + 5.56\times 10^{-4}\SI{}{kgm^2}\\
+            &= 6.68\times 10^{-4}\SI{}{kgm^2}
+    \end{aligned}
+    \label{eq.i}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \Delta I &= \Delta I_m + \Delta I_a\\
+                 &= \pm(9\times 10^{-6}\SI{}{kgm^2} + 1.12\times 10^{-5}\SI{}{kgm^2})\\
+                 &= \pm 2.02\times 10^{-5}\SI{}{kgm^2}
+    \end{aligned}
+    \label{eq.di}
+\end{equation}
+
+The force gauge data is recorded and plotted against time in Figure \ref{fig.ft}. It can be noticed that the reading of the force gauge is noisy but shows clear peaks. With the assistance of a program, prominent peaks are marked in the figure using red dots.
+
+\begin{figure}[ht]
     \centering
-    \includegraphics[width = 0.8\textwidth]{graphft.png}
-    \caption{$F - t$ graph}
+    \includegraphics[width = \textwidth]{graphft.png}
+    \caption{$F - t$ graph sample}
     \label{fig.ft}
 \end{figure}
 
@@ -410,13 +474,14 @@ The x-index of the first two peaks are taken as $t_1$ and $t_2$ of this trial. T
     \label{eq.dta}
 \end{equation}
 
-Applying this two five trials, we can get the average of the first experiment and the corresponding uncertainties, as is shown in Equations .
+Applying this to five trials, we can get the average of the first experiment and the corresponding uncertainties, as is shown in Equations \ref{eq.tavg} and \ref{eq.dtavg}.
 
 \begin{equation}
     \begin{aligned}
         \overline{T} &= \frac{T_a + T_b + T_c + T_d + T_e}{5} \\
                 &= \SI{4.466}{s}
     \end{aligned}
+    \label{eq.tavg}
 \end{equation}
 
 \begin{equation}
@@ -425,13 +490,17 @@ Applying this two five trials, we can get the average of the first experiment an
                       &= \frac{\SI{4.55}{s} - \SI{4.38}{s}}{2} \\
                       &= \SI{0.085}{s}
     \end{aligned}
+    \label{eq.dtavg}
 \end{equation}
+
+Therefore the square of the period can be calculated as in Equations \ref{eq.t2avg} and \ref{eq.dt2avg}.
 
 \begin{equation}
     \begin{aligned}
         \overline{T}^2 &= (\SI{4.466}{s})^2\\
                         &= \SI{19.94}{s^2}
     \end{aligned}
+    \label{eq.t2avg}
 \end{equation}
 
 \begin{equation}
@@ -440,6 +509,7 @@ Applying this two five trials, we can get the average of the first experiment an
                         &= 1.9032\% \times 2 \times \SI{19.94}{s^2}\\
                         &= \SI{0.7592}{s^2}
     \end{aligned}
+    \label{eq.dt2avg}
 \end{equation}
 
 
@@ -449,40 +519,50 @@ Applying this two five trials, we can get the average of the first experiment an
 
 \label{sec.discussion}
 
-The diagram shows strong correlation between $T^2$ and $I$. The best fit line of $T^2 - I$ has 
+The diagram Figure \ref{fig.processedd} indicates strong correlation between $T^2$ and $I$. The best fit line of $T^2 - I$ has 
 % directly describe the graph
 
 \begin{itemize}
     \item a gradient of $(27.3150 \pm 6.9556) \times 10^3\ \SI{}{s^2kg^{-1}m^{-2}}$.
-    \item a y-intercept of $1.4557 \SI{}{s^2}$. % Should include the uncertainty and why it is so large. 
+    \item a y-intercept of $1.4557 \SI{}{s^2}$ \footnote{The uncertainty is meaningless as the increasing uncertainty of $T^2$ results in exaggerated uncertainty of the y-intercept}. 
 \end{itemize}
 
 % Notes:
-% That horizontal error bar is too small to be displayed in the graph.
 % Correlation coefficient should be discussed. 
 % local gravity acceleration (?)
 
-As is mentioned in Section \ref{sec.procd}, the graph is expected to be a straight line very close to the origin. The diagram shows a graph with relatively small error, supporting the initial hypothesis.
+As is mentioned in Section \ref{sec.hypothesis}, the graph is expected to be a straight line very close to the origin. The diagram presents a graph with relatively small error, supporting the initial hypothesis.
 
-The y-intercept is expected to be $\frac{8l}{mgr^2} \approx 0.16\SI{}{s^2}$, but $1.4557\SI{}{s^2}$ is found. This is almost $9$ times the theoretical value. However, considering the large value of $T$ in data, $1.4557\SI{}{s^2}$ is still less than $10\%$ of the minimum dependent variable. This means it can still be considered an error, whose cause will be discussed in Section \ref{sec.eval}.
+The y-intercept is expected to be $\frac{8l}{mgr^2} \approx 0.16\SI{}{s^2}$, but $1.4557\SI{}{s^2}$ is found. This is almost $9$ times the theoretical value. However, considering the large value of $T$ in the dataset, $1.4557\SI{}{s^2}$ is still less than $10\%$ of the minimum dependent variable. This means it can still be considered an error, whose cause will be discussed in Section \ref{sec.eval}.
 
-The gradient is expected to be $\frac{8l}{g} = 26.3900 \times 10^3\ \SI{}{s^2kg^{-1}m^{-2}}$, where $l$ is the length for lifting (controlled to be close to $\SI{20}{cm}$)and $g$ is the gravitational acceleration near sea level. There is a small $3.51\%$ error between the actual gradient and predicted gradient, and the predicted gradient lies within the uncertainty range of the gradient. The low error shows high accuracy and precision of this experiment.
+\begin{equation}
+    \label{eq.deltapk}
+    \Delta\% k = \frac{|k - k_0|}{k} \times 100\% = \frac{27.3150 - 26.3900}{26.3900} \times 100\% = 3.51\%
+\end{equation}
 
-Error bars are small when $I$ is small, but becomes larger as $I$ gets larger. That might result from the significant horizontal perturbation get greater as $I$ increases. Horizontal movements make the wheel start to swing like a pendulum and makes the motion more chaotic and less trackable. 
+The gradient is expected to be $\frac{8l}{g} = 26.3900 \times 10^3\ \SI{}{s^2kg^{-1}m^{-2}}$, where $l$ is the length for lifting (controlled to be close to $\SI{20}{cm}$) and $g$ is the gravitational acceleration near sea level. There is a small $3.51\%$ error (as is shown in Equation \ref{eq.deltapk}) between the actual gradient and predicted gradient, and the predicted gradient lies within the uncertainty range of the gradient. The low error indicates high accuracy and precision of this experiment.
 
-The best fit line fails to pass through the fifth error bar, which is also coincidentially a very small error bar. That might result form coincidence, since there is only five trials in each group.
+Horizontal error bars are too small to be displayed in the graph, showing high precision and accuracy when manipulating the independent variable. Vertical error bars are small when $I$ is small, but becomes larger as $I$ gets larger. That might result from the significant horizontal perturbation getting greater as $I$ increases. Horizontal movements causes the wheel start to swing like a pendulum and makes the motion more chaotic and less trackable. 
+
+The best fit line fails to pass through the fifth error bar, which is also coincidentally a very small error bar. That might be due to coincidence, since there are only five trials in each group.
+
+Therefore, we can conclude that the period increases as the moment of inertia increases. The square of the period and the moment of inertia has a linear relationship.
 
 \section{Evaluation}
 \label{sec.eval}
 
-The experiment was conducted successfully, gathering sufficient data and supporting the initial hypothesis. However, there are some uncertainties in the experiment that can be improved. 
+The experiment was conducted successfully, gathering sufficient data and supporting the initial hypothesis. The graphs are similar to the graphs in Pecori et al.'s \citeyear{pecori1998maxwell} and Gianino et al.'s \citeyear{gianino2024analysis} experiments with similar conclusions. However, there are some parts in the experiment that can be improved. 
 
 \begin{itemize}
-    \item \textbf{Defect in modelling} It is assumed in the hypothesis that the wheel do not swing horizontally and the string is always vertical, but small horizontal movement is inevitable during the experiment process.
-    \item \textbf{Screw-threaded axle} For an ideal Maxwell's Wheel, the radius of the small axle should be constant. However, a screw-threaded axle is utilized to ensure better installation of the wheel, making the string swirl around the thread with inconsistant radius. This can be improved by using an axle that has screw thread only in the middle point. 
-    \item \textbf{String attaching} When attaching the wire to the axle, some adhesive (hot glue) is used to ensure connection stability. This also contributed to inconsistant radius. Opt for an axle with a hole for attachment to avoid the use of hot-melt adhesive. 
-    \item \textbf{Horizontal movement} The hypothesis is based on negeligibile horizontal movement, but in the real experiment horizontal movement is inevitable because the wheel is controlled and released by hand. Using a plumb line to adjust the string before releasing can minimize the horizontal deflection.
-    \item \textbf{Imprecise marking on the string} The string is not vertical to the ground, which means the marked distance is not precisely the vertical displacement. Additionaly, axle's size can also lead to inconsistant vertical displacement. This might have lead to unexpected large y-intercept mentioned in Section \ref{sec.discussion}.
+    \item \textbf{Defect in modelling} It is assumed in the hypothesis that the wheel does not swing horizontally and the string is always vertical, but small horizontal movement is inevitable during the experiment, as the extended line of the string does not go through the wheel's center of mass. Using a plumb line to adjust the string before releasing can minimize the horizontal deflection. A more advanced model taking that into consideration can provide a more precise prediction.
+    \item \textbf{Energy loss} The model negelected the effect of air resistance and other form of energy loss during the process, which means the energy during the experiment is lower than expected. Considering the damping in the model can make the model more accurate.
+    \item \textbf{Screw-threaded axle} For an ideal Maxwell's Wheel, the radius of the small axle should be constant. However, a screw-threaded axle is utilized to ensure better installation of the wheel, making the string swirl around the thread with inconsistent radius. This can be improved by using an axle that has screw thread only in the middle point. 
+    \item \textbf{String attaching} When attaching the wire to the axle, some adhesive (hot glue) is used to ensure connection stability. This also contributed to inconsistent radius. An axle with a hole for attachment can eliminate the need for adhesive.
+    \item \textbf{Imprecise marking on the string} The string is not vertical to the ground, which means the marked distance is not precisely the vertical displacement. Additionally, axle's size can also lead to inconsistant vertical displacement. This might have lead to unexpected large y-intercept mentioned in Section \ref{sec.discussion}. Using a plumbline to ensure perpendicularity can result in better measurement.
+    \item \textbf{Stretching of the string} When the Maxwell's Wheel reaches the lowermost position, the downward movement is changed to an upward one with approximately same magnitude. However, as \cite{pecori1998maxwell} suggests, this happnes because of the stretching of the string. Such process took about $\SI{0.16}{s}$ in Percori's experiment but it could not be measured accurately in the experiment due to different string material and the machine's sampling frequency. This can lead to longer ``period'' than expected, and can be compensated using a forcemeter with faster sampling speed.  
+    \item \textbf{Method of independent variable manipulation}  The independent variable is hard to manipulate, as the moment of inertia results from the arithmetical addition of two parts: the acrylic disk and the magnets. The former part is independent of $r'$, making it impossible to reach very small $I$. The latter part is proportional to $r'^2$, resulting in difficulty to place the magnets on the acrylic plane if even distribution between $I$ is needed. Lighter disk with larger size can make the manipulation easier.
+    \item \textbf{Local gravitational acceleration} The gravitational acceleration is dependent on the region and is not always consistent with the $g$ taken. This can result in deviated hypothesis and can be improved by looking up local gravitational acceleration online.
+    \item \textbf{Only 7 groups of data and 5 trials for each group} Limited number of trials make the result not convincing enough. It would be better if more independent variables are chosen and more trials are conducted.
 \end{itemize}
 
 \bibliographystyle{apacite}

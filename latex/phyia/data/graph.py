@@ -62,7 +62,7 @@ mask = x_extended < x_min
 plt.plot(x_extended[mask], y_extended[mask], 'b--', lw = 0.8)
 
 # theoretical fit line
-#plt.plot(x_extended, ty_extended, 'g-.', label = f'theoretical line: y = {slope2:.4f}x + {intercept2:.4f}', lw = 0.8)
+plt.plot(x_extended, ty_extended, 'g-.', label = f'theoretical line: y = {slope2:.4f}x + {intercept2:.4f}', lw = 0.8)
 
 # Min-Max fit line
 xmin = [x_data[0], x_data[-1]]
