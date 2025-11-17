@@ -1,0 +1,187 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{Nuclear fusion and stars}
+\subtitle{\small Physics HL Presentation}
+\author{Eric, Jerrie, Louis and Tom}
+%\institute{Ningbo Xiaoshi HS}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%\begin{frame}{Table of Contents}
+%    \tableofcontents % Make this work
+%\end{frame}
+
+\begin{frame}{Creation of Light Elements}
+
+\begin{block}{Proton--Proton (p--p) Chain}
+
+\begin{itemize}
+\item Proton-Proton (p--p) chain is the most dominant reaction in the \textbf{low mass main sequence stars} like the sun.
+\item Reactions:
+    \vspace{-8mm}
+    \begin{align*}
+    {}^{1}_{1}\mathrm{H} + {}^{1}_{1}\mathrm{H} &\rightarrow {}^{2}_{1}\mathrm{H} + {}^{0}_{1}e^{+} + {}^{0}_{0}\nu_{e} \\
+    {}^{1}_{1}\mathrm{H} + {}^{2}_{1}\mathrm{H} &\rightarrow {}^{3}_{2}\mathrm{He} + \gamma \\
+    {}^{3}_{2}\mathrm{He} + {}^{3}_{2}\mathrm{He} &\rightarrow {}^{4}_{2}\mathrm{He} + 2\,{}^{1}_{1}\mathrm{H}
+    \end{align*}
+\item Net reaction (p--p chain):
+\[
+4\times{}^{1}_{1}\mathrm{H} \rightarrow {}^{4}_{2}\mathrm{He} + {}^{0}_{1}e^{+} + 2\times {}^{0}_{0}\nu_{e} + \gamma
+\]
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Creation of Light Elements}
+    
+\begin{block}{CNO Cycle}
+\begin{itemize}
+    \item Dominates in \textbf{more massive stars} since greater Columb barrier is overcame.
+    \item Reactions:
+    \vspace{-8mm}
+    \begin{align*}
+        {}^{12}_{6}\mathrm{C} + {}^{1}_{1}\mathrm{H} &\rightarrow {}^{13}_{7}\mathrm{N} + \gamma \\
+        {}^{13}_{7}\mathrm{N} &\rightarrow {}^{13}_{6}\mathrm{C} + {}^{0}_{1}e^{+} + \nu_e \\
+        {}^{13}_{6}\mathrm{C} + {}^{1}_{1}\mathrm{H} &\rightarrow {}^{14}_{7}\mathrm{N} + \gamma \\
+        {}^{14}_{7}\mathrm{N} + {}^{1}_{1}\mathrm{H} &\rightarrow {}^{15}_{8}\mathrm{O} + \gamma \\
+        {}^{15}_{8}\mathrm{O} &\rightarrow {}^{15}_{7}\mathrm{N} + {}^{0}_{1}e^{+} + \nu_e \\
+        {}^{15}_{7}\mathrm{N} + {}^{1}_{1}\mathrm{H} &\rightarrow {}^{12}_{6}\mathrm{C} + {}^{4}_{2}\mathrm{He}
+        \end{align*}
+    \item Net reaction (CNO cycle):
+    \begin{equation*}
+        4\times{}^{1}_{1}\mathrm{H} \rightarrow {}^{4}_{2}\mathrm{He} + 2e^{+} + 2{}_{0}^{0}\nu_e + \gamma
+    \end{equation*}
+\end{itemize}
+
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Creation of Light Elements}
+
+\begin{block}{Triple alpha process}
+    \begin{itemize}
+        \item Occurs \textbf{after the main-sequence phase}  ($T \sim 10^8\,$K, $M > 0.5M_\odot$).
+        \item $0.8M_\odot < M < 2.2M_\odot$:helium flash; \quad  $M>2.2M_\odot$:smooth start.
+        \item Reactions:
+        \vspace{-6mm}
+        \begin{align*}
+            {}^{4}_{2}\mathrm{He} + {}^{4}_{2}\mathrm{He} &\rightleftharpoons {}^{8}_{4}\mathrm{Be} \\
+            {}^{8}_{4}\mathrm{Be} + {}^{4}_{2}\mathrm{He} &\rightarrow {}^{12}_{6}\mathrm{C} + \gamma
+        \end{align*}
+    \end{itemize}
+\end{block}
+
+\begin{block}{High mass stars}
+    \begin{itemize}
+        \item After helium burning, temperatures become high enough for successive fusion stages:
+        \item Carbon burning: ${}^{12}\mathrm{C} + {}^{12}\mathrm{C} \rightarrow {}^{20}\mathrm{Ne},\, {}^{23}\mathrm{Na},\, {}^{24}\mathrm{Mg},\dots$
+        \item Oxygen burning: ${}^{16}\mathrm{O} + {}^{16}\mathrm{O} \rightarrow {}^{28}\mathrm{Si},\, {}^{31}\mathrm{P},\dots$
+    \end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{``Life choices'' of stars}
+    \begin{block}{The Chanderasekhar Limit}
+        \begin{itemize}
+            \item Electron-degenerate matter is present in white dwarfs.
+            \item The Chandrasekhar limit: $1.4\,M_\odot$.
+            \item The largest mass a white dwarf star can have.
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{The Oppenheimer-Volkoff Limit}
+        \begin{itemize}
+            \item Neutron-degenerate matter is present in neutron stars.
+            \item The Oppenheimer-Volkoff limit: $3\,M_\odot$.
+            \item The largest mass a neutron star can have.
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Black holes}
+        \begin{itemize}
+            \item Happens when the mass of the star remnant reaches the OV limit.
+            \item Mainly depends on the initial mass of the star ($M>20M_\odot$ makes it possible, usually $M>40M_\odot$).
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{``Fate'' of stars}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{p{1.5cm}p{1.8cm}p{2.5cm}p{2.1cm}p{2.2cm}}
+        \hline
+        \textbf{Mass ($M_{\odot}$)} & \textbf{Main Sequence} & \textbf{Giant Phase} 
+        & \textbf{After Giant} & \textbf{Remnant} \\ \hline
+
+        $0.08$--$0.25$ 
+        & (pp chain) 
+        & --- 
+        & --- 
+        & He white dwarf \\
+
+        $0.25$--$2.2$ 
+        & (pp chain) 
+        & Red giant (triple--alpha) 
+        & Planetary nebula 
+        & C white dwarf \\
+
+        $2.2$--$8$ 
+        & ($\to$ CNO) 
+        & Red giant / AGB (He, C) 
+        & Planetary nebula 
+        & C white dwarf \\
+
+        $8$--$12$ 
+        & (CNO) 
+        & Supergiant (He, C, Ne) 
+        & Supernova 
+        & O/Ne/Mg WD \\
+
+        $12$--$40$ 
+        & (CNO) 
+        & Supergiant (He, C, Ne) 
+        & Supernova 
+        & Neutron star \\
+
+        $40$--$150$ 
+        & (CNO) 
+        & Supergiant (full fusion chain to Fe) 
+        & Core-collapse supernova 
+        & Black hole \\ \hline
+
+        \end{tabular}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Ending}
+
+\begin{quotation}
+    ``We are not figuratively, but literally stardust.''
+
+    \hfill--- Neil deGrasse Tyson.
+\end{quotation}
+
+
+Each atom in our body, everything we see around us, originated from a magnificant dying of a main sequence star. The star shined for millions of years before its final certain call, and the interstellar dust traveled light years before forming the world in which we live. 
+
+\end{frame}
+
+\end{document}
