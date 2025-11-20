@@ -3,196 +3,412 @@
 \usepackage{apacite}
 \usepackage{tabularx}
 \usepackage{amsmath}
+\usepackage{caption}
+\usepackage{pgf}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{listings}
 \usepackage{rotating}
 \usepackage{colortbl}
 \usepackage{tcolorbox}
 \usepackage[absolute]{textpos}
 
+\tcbuselibrary{breakable}
+% Code listings
+% Basic color definitions
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{keyword}{RGB}{0,0,255}
+\definecolor{comment}{RGB}{34,139,34}
+\definecolor{string}{RGB}{170,55,241}
+
+\lstset{
+    basicstyle=\ttfamily\scriptsize,
+    columns = fullflexible,
+    backgroundcolor=\color{codebg},         
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword},
+    stringstyle=\color{string},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!50},
+    framesep=5pt,
+    xleftmargin=15pt,
+    tabsize=4,
+    language=C++ % Default language
+}
 
 \begin{document}
 
 
 \begin{titlepage}
-    \title{\textbf{Partition problems in combinarotics}}
+    \title{\textbf{From Fibonacci Sequences to Generating Functions \\ \small Math HL Internal Assessment}}
     \author{Zhou Changhui}
     \date{\today}
     \maketitle
     %\tableofcontents
 \end{titlepage}
 
-\begin{abstract}
-
-This will be removed in formal submission.
-
-Methodology and calculation
-
-$n$ items are partitiond in to $m$ groups, how many ways of distribution is available?
-
-Condition 1: Balls are identical.
-
-Condition 2: Groups (boxes) are identical.
-
-Condition 3: There should be at least $1$ ball in each group.
-
-Scenario 1 (No constraints): $m^n$.
-
-Scenario 2 (Condition 3): $\sum_{i=0}^{m}(-1)^{i}{m\choose i}(m-i)^{n}$.
-
-Scenario 3 (Condition 2): The Stirling Number of the Second Kind $\sum_{i=1}^{m}S_{n,i}$.
-
-Scenario 4 (Condition 2, 3): The Stirling Number of the Second Kind $S_{n,m}$.
-
-Scenario 5 (Condition 1): ${n+m-1\choose m-1}$.
-
-Scenario 6 (Condition 1, 3): ${m\choose n}$.
-
-Scenario 7 (Condition 1, 2): $p_{n,m} = p_{n-m, m} + p_{n, m-1}$.
-
-Scenario 8 (Condition 1, 2, 3): $p_{n, m}$.
-    
-\end{abstract}
-
 \section{Introduction}
 
-Combinarotics plays a vital role in mathematics and our daily lives. One of the most intriguing parts of combinarotics is partition. People want to figure out ``how many ways are there to divide $n$ items'' for various reasons, and generally with various definition and additional constraints on partition. In IB DP studies, combination was introduced to calculate the number of ways to select a subset of size $m$ from $n$ items (i.e. partitioning the items into two disjoint parts: the selected ones and the non-selected one). In mathematic competitions, such question is also 
+During the study of mathematics, there are a number of important sequences that is commonly studied. Fibonacci sequence is usually the first sequence that a learner may meet whose term is determined by not only the previous term (and probably some coefficients), but the previous several terms (recurrence relation). To be more specific, the Fibonacci sequence is defined as follows.
 
-\section{Overview of questions}
-
-These problems can be paraphrased to such a statement:
-
-\begin{tcolorbox}[title = Problem 0]
-    How many distinct ways are there to partition $n$ items to $m$ boxes?
+\begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Definition: Fibonacci sequence]
+    \label{def.fib}
+    The Fibonacci sequence $\{F_n\}$ is given by  
+    \begin{equation}
+        \label{eq.deffib}
+        F_n =
+        \begin{cases}
+            0, & n = 0, \\
+            1, & n = 1, \\
+            F_{n-1} + F_{n-2}, & n \ge 2 .
+        \end{cases}
+    \end{equation}
 \end{tcolorbox}
 
-But the definition of ``distinct" is different in different scenarios. Detailed examples TBD.
+Fibonacci sequence is very useful in mathematics, computer science and can be found in nature. The sequence itself is the solution to the Fibonacci Rabbit problem. Additionally, the sequence (or generalized Fibonacci sequences) give solution to many combinatorics problems. For example, the number of ways to walk $n$ steps of stairs with the condition that each time either $1$ or $2$ steps cam be taken. In computer science, a consequtive pair in Fibonacci sequence can be used to test the worst posibble performance of algorithms like Euclidean Greatest Common Divisior (GCD) algorithm. Fibonacci trees and heaps are also very effective data structures, whose analysis requires the knowledge of Fibonacci sequence.
 
-\section{Case 1: Both items and boxes are numbered.}
+Despite the simple definition of the Fibonacci sequence, its closed-form expression is not as straightforwad as the expression of artihmatic sequence and geometric sequence. Despite having learnt the Fibonacci sequence for centuries, it was not until the 1800s did human discover an accurate closed-form expression. In this paper, we will study the closed-form expression of the Fibonacci sequence.
 
-\begin{tcolorbox}[title = Problem 1.1]
-    How many distinct ways are there to partition $n$ numbered items to $m$ numbered boxes? 
-
-    Two ways are considered different if and only if at least one item is a differently numbered box. 
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Problem]
+    What is $F_{n}$? Express $F_{n}$ in terms of $n$.
+\end{tcolorbox}
+ 
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Generalized Problem]
+    The first two terms $a_0$ and $a_1$ of an infinite sequence $\{a_n\}$ is given. The following terms are given by the formula $a_n = k_0 + k_1 a_{n-1} + k_2 a_{n-2}$. What is $a_n$?
 \end{tcolorbox}
 
-In this case, we can trivially apply the fundamental counting principle. The fundamental counting principle states that for a finite sequence of decisions, if the number of choices for each individual decisions is independent of previous decisions, the total number of ways is the product of these number of choices.
+\section{Background Knowledge and Definition}
 
-First, we try to allocate the first item into a box. We have $m$ choices. 
+\subsection{Maclaurin series}
 
-Then, we try to allocate the second item into a box. We have $m$ choices. Since each decision is independent, there are $m \times m$ ways in total.
+Having studied sequences and calculus (especially Maclaurin series), we can notice that each infinite sequence can connect with a polynomial with infinite number of terms. To be more specific, we the following definitions and theorems in calculus are used:
 
-This process can go on for $n$ rounds, giving the total number of ways $\underbrace{m \times m \times \cdot m}_{n} = m^n$.
+\begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Definition: Taylor Series and Maclaurin Series]
+    Suppose that $f$ is a function such that $f$ is $n$-times differentiable at a point $a$ ($f'(a), f''(a), \cdots f^{(n)}(a)$ exist). Then the \textbf{$n$-th degree Taylor polynomial of $f$ at $a$} \cite{calculus} is defined as:
 
-Therefore, the answer to the first question is $m^n$.
+    \begin{equation}
+        P_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k.
+    \end{equation}
 
-However, if no box can be left empty, the last several allocated items may have to fill the empty boxes, making the number of choices dependent of the previous choices. Another differnet approch has to be taken to solve this problem.
+    If $f$ is infinitely differentiable at $a$ and we let $n\rightarrow\infty$, we obtain the \textbf{Taylor series of $f$ at $a$}:
 
-\begin{tcolorbox}[title = Problem 1.2]
-    How many distinct ways are there to partition $n$ numbered items to $m$ numbered boxes ($n \ge m$), and each numbered box has to contain at least one item? 
+    \begin{equation}
+        \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k.
+    \end{equation}
 
-    Two ways are considered different if and only if at least one item is a differently numbered box. 
+    The special case where $a=0$ is called the \textbf{Maclaurin series of $f$}:
+
+    \begin{equation}
+        \label{eq.macl}
+        \sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!} x^k.
+    \end{equation}
 \end{tcolorbox}
 
-First, consider cases where $m = 1$. The answer is $1$ as all the items are put into one box.
+Most commonly used function has a Maclaurin series. In this essay, the main kind of function that requires the analysis of Maclaurin series is in the form of $f(x) = \dfrac{1}{x-a}$.
 
-Now, condier $m = 2$. Among all $n^2$ cases, $2$ cases (put all into the first box or the second box) are invalid, and $n^2 - 2$ cases are valid.
+\begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Theorem: The Maclaurin Series of 1/(x-a)]
+    The main focus of this essay is not calculus; therefore, the Maclaurin series of $\dfrac{1}{x-a}$ will be given without proof.
+    
+    \begin{equation}
+        \dfrac{1}{x-a} = \sum_{k=0}^{\infty} \dfrac{1}{a^{k+1}} x^k \quad (\text{radius of convergence:} |x| < |a|)
+    \end{equation}
 
-As for $m = 3$
-
-\section{Case 2: Balls are identical but boxes are numbered.}
-
-\begin{tcolorbox}[title = Problem 2.1]
-    How many distinct ways are there to partition $n$ identical items to $m$ numbered boxes? 
-
-    Two ways are considered different if and only if at least one box contains a different number of balls. 
+    
 \end{tcolorbox}
 
-\begin{tcolorbox}[title = Problem 2.2]
-    How many distinct ways are there to partition $n$ identical items to $m$ numbered boxes, provided each box have to get at least one ball? 
+\subsection{Generating functions}
 
-    Two ways are considered different if and only if at least one box contains a different number of balls. 
+Functions, on the other hand, have some ideal properties that can facilitate our understanding. In mathematics, a generating function is a representation of an infinite sequence of numbers as the coefficients of a formal power series (wikipedia, need to change cite sources). 
+
+\begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Definition: Generating Function]
+    For a sequence $\{a_i\}$, its generating function is defined as: 
+    \begin{equation}
+        G(x) = \sum_{n=0}^\infty a_n x^n
+    \end{equation}
 \end{tcolorbox}
 
-It is hard to consider this step-by-step, as one decision can affect the number of TBD.
+Here $x$ is not the variable of a polynomial, but the variable of a formal power series, or the `placeholder' for the `variable' position. The function does not have to converge on any given $x$, though sometimes it does.
 
-To solve Problem 2.2, we can imagine the itmes are placed in a row (since they are identical, the order does not matter), as is shown in Figure TBD.
+Having the generating function defined this way, we can now express some sequence operations on the infinite sequence as operations on the generating function.
 
-Now what remains to be done is to decide how to divide the items. All that is needed is to insert $m-1$ bars between the items and the items will be split into $m$ groups. Label the groups from $1$ to $m$ and the grouping is done.
+\begin{table}[ht!]
+    \centering
+    \caption{Sequence operations vs generating function operations}
+    \begin{tabular}{ll}
+    \hline
+    \textbf{Sequence Operation} & \textbf{GF Operation} \\
+    \hline
+    Original sequence $(a_0, a_1, a_2, \dots)$ & $A(x) = \sum_{n=0}^{\infty} a_n x^n$ \\
+    Shift right by $k$: $(0, \dots, a_0, a_1, \dots)$ & $x^k A(x)$ \\
+    Shift left by 1: $(a_1, a_2, a_3, \dots)$ & $\dfrac{A(x) - a_0}{x}$ \\
+    Scale by index: $(0, a_1, 2a_2, 3a_3, \dots)$ & $x A'(x)$ \\
+    Scale by constant $c$: $(c a_0, c a_1, \dots)$ & $c A(x)$ \\
+    Cumulative sum: $b_n = \sum_{k=0}^n a_k$ & $\dfrac{A(x)}{1 - x}$ \\
+    Convolution: $c_n = \sum_{k=0}^n a_k b_{n-k}$ & $A(x)\,B(x)$ \\
+    Alternating sign: $(a_0, -a_1, a_2, -a_3, \dots)$ & $A(-x)$ \\
+    Difference: $b_n = a_n - a_{n-1}$ & $(1 - x) A(x)$ \\
+    \hline
+    \end{tabular}
+\end{table}
 
-It is easy to prove that each way of grouping corresponds to a way of inserting the dividers. There for the total way of grouping equals to the way of inserting dividers, which is ${n-1 \choose m-1}$. 
+(might need to add or modify the table, but now focus on shift)
 
-From this solution, we can derive the solution for Problem 2.1. In order to make them the same, we can add additional $m$ items, partition the items as in Problem 2.2, and remove $1$ item from each box. It can be noticed that every valid way can be derived from excactly one way from Problem 2.2, and each valid way in Problem 2.2 corresponds to a valid way in Problem 2.1. So the overall answer is ${n+m-1 \choose m-1}$.
+\begin{tcolorbox}[colback=red!5!white, colframe=red!75!black, title=Proof, breakable]
 
-\section{Case 3: Balls are numbered but boxes are identical.}
+\textbf{Theorem:} If $A(x)$ is the generating function of $\{a_i\}$, then $B(x) = x^kA(x)$ is the generating function of $\{b_i\}$ obtained by shifting $\{a_i\}$ to the right by $k$ positions (and inserting $k$ zeros at the beginning).
 
-\begin{tcolorbox}[title = Problem 3.1]
-    How many distinct ways are there to partition $n$ numbered items to $m$ identical boxes? 
+\textbf{Proof:} 
 
-    Two ways are considered different if and only if at least one item is a differently numbered box. 
+From the definition of generating function, we have 
+
+\begin{equation}
+    A(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots
+\end{equation}
+
+
+Therefore we can get that 
+
+
+\begin{equation}
+    B(x) = x^kA(x) = \sum_{n=0}^\infty  a_n x^{n+k} = a_0 x^k + a_1 x^{k+1} + a_2 x^{k+2} + \cdots
+\end{equation}
+
+We can add shift $a$ by $k$ and $k$ zero term before the sequence to make a new sequence $b$. That is to say, $\{b_i\}$ is defined in the following way:
+
+\begin{equation}
+    b_i = \begin{cases}
+        0, & i < k\\
+        a_{i-k}, & i \geq k
+    \end{cases}
+\end{equation}
+
+We can notice that the generating function of $\{b_i\}$ is the same as $B(x)$.
+
+\begin{equation}
+\begin{aligned}
+\sum_{n=0}^\infty a_n x^{n+k}
+    &= \sum_{n=0}^{k-1} 0\cdot x^n + \sum_{n=k}^\infty a_{\,n-k} x^n \\[6pt]
+    &= \sum_{n=k}^\infty b_n x^n = B(x).
+\end{aligned}
+\end{equation}
+
 \end{tcolorbox}
 
-\begin{tcolorbox}[title = Problem 3.2]
-    How many distinct ways are there to partition $n$ numbered items to $m$ identical boxes ($n \ge m$), and each numbered box has to contain at least one item? 
+%\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=The GF of Fibonacci sequence]
 
-    Two ways are considered different if and only if at least one item is a differently numbered box. 
-\end{tcolorbox}
+The definition of Fibonacci sequence is given by Equation \ref{eq.deffib}.
 
-Analysis TBD. 
+We noticed that $F_{n-1}$ and $F_{n-2}$ are the shift of sequence that can be described by multiplying the generating function $G_0(x)$ by $x^k$. We can list $G_0(x), xG_0(x), x^2G_0(x)$ and their corresponding sequence as Table \ref{tab.shift}.
 
-This is exactly the definition of Stirling Number of the Second Kind. 
+\begin{table}[ht!]
+\centering
+\begin{tabular}{rllllllll}
+\hline
+\multirow{2}{*}{Generating Function} & \multicolumn{8}{l}{The coefficient of the k-th term } \\
+& $0$ & $1$ & $2$ & $3$ & $\cdots$ & $n$ & $n+1$ & $n+2$ \\ \hline
+$G_0(x)$ & $F_0$ & $F_1$ & $F_2$ & $F_3$ & $\cdots$ & $F_n$ & $F_{n+1}$ & $F_{n+2}$ \\
+$xG_0(x)$ & $0$ & $F_0$ & $F_1$ & $F_2$ & $\cdots$ & $F_{n-1}$ & $F_n$ & $F_{n+1}$ \\
+$x^2G_0(x)$ & $0$ & $0$ & $F_0$ & $F_1$ & $\cdots$ & $F_{n-2}$ & $F_{n-1}$ & $F_n$ \\ \hline
+\end{tabular}
+\caption{Shifted GF and Fibonacci Sequence}
+\label{tab.shift}
+\end{table}
 
-${n\brace m} = {n-1\brace m-1} + m{n-1\brace k}$.
+It can be noticed that for every vertical column with $n\ge 2$, it holds that the sum of the lower two terms equals the upper term, by the definition of Fibonacci sequence. The terms before $2$ can be manipulated easily. By forcing filling up the $1$ terms, we can get three equations as is shown in Equation \ref{eq.3gfs}.
 
-${n\brace 0} = 0$.
+\begin{subequations}
+    \label{eq.3gfs}
+    \begin{align}
+        G_0(x)      &=     &\sum_{n=0}^{\infty} F_n x^n =    &F_0x^0 + &F_1x^1 + &F_2x^2 + &F_3x^3\cdots \label{eq.g0def}\\
+        xG_0(x)     &= 0 + &\sum_{n=0}^{\infty} F_n x^{n+1} = &0x^0 + &F_0x^1 + &F_1x^2 + &F_2x^3\cdots\\
+        x+x^2G_0(x) &= 1 + &\sum_{n=0}^{\infty} F_n x^{n+2} = &0x^0 + &1x^1 + &F_0x^2 + &F_1x^3\cdots
+    \end{align}
+\end{subequations}
 
-${0\brace 0} = 1$.
+Therefore, by substracting $G_0(x)$ with $xG_0(x)$ and $x^2G_0(x)$, we can get Equation \ref{eq.3to1}, which can be further manipulated to get Equation \ref{eq.fxg0x} and Equation \ref{eq.g0sol}.
 
-${n\brace m} = \sum_{i=0}^{m}{\frac{(-1)^{m-i}i^{n}}{i!(m-i)!}}$.
+\begin{equation}
+    \label{eq.3to1}
+    \begin{aligned}
+         &G_0(x)-xG_0(x)-x^2G_0(x)-x\\
+        =&(F_0 - 0 - 0)x^0 + (F_1 - F_0 - 1)x^1 + (F_2 - F_1 - F_0)x^2 +\\
+        & (F_3 - F_2 - F_1) x^3 + \cdots\\
+        =& 0
+    \end{aligned}
+\end{equation}
 
-\section{Case 4: Balls and boxes are both numbered.}
+\begin{equation}
+    \label{eq.fxg0x}
+    (1-x-x^2)G_0(x) = x
+\end{equation}
 
-\begin{tcolorbox}[title = Problem 4.1]
-    How many distinct ways are there to partition $n$ identical items to $m$ identical boxes? 
+\begin{equation}
+    \label{eq.g0sol}
+    G_0(x) = \frac{x}{1-x-x^2}
+\end{equation}
 
-    Two ways are considered different if and only if the multiset\footnote{A multiset a.k.a. bag, mset, is a generalization of a set where repetition of elements matters. $\{1, 1, 2, 3, 3\}$ and $\{3, 1, 1, 2, 3\}$ are same multisets but $\{1, 2, 2, 2, 3\}$ are different from them.} of each box's number of items are different.
-\end{tcolorbox}
+We can therefore conclude that Equation \ref{eq.g0sol} is the generating function of Fibonacci sequence. However, a generating function in the factor form (instead of polynomial) does not help us understand the sequence. We can therefore use Maclaurin series to represent the GF in polynomial form.
 
-\begin{tcolorbox}[title = Problem 4.2]
-    How many distinct ways are there to partition $n$ identical items to $m$ identical boxes ($n \ge m$), provided no box can be left empty? 
+The definition of Maclaurin series is given in Equation \ref{eq.macl}. We need to find the Maclaurin series of $1/(1-x-x^2)$ to write the GF in polynomial form.
 
-    Two ways are considered different if and only if the multiset of each box's number of items are different.
-\end{tcolorbox}
+The denominator of the generating function, $1-x-x^2$, can be factorized by finding its roots.
 
-Difficulty analysis TBD.
+\begin{equation}
+    \begin{aligned}
+        x &= \dfrac{-b\pm \sqrt{b^2 - 4ac}}{2a}\\
+          &= \dfrac{1\pm\sqrt{(-1)^2+4}}{2\times(-1)}\\
+          &= \dfrac{-1\pm\sqrt{5}}{2} \\
+          & (x_1 = \dfrac{-1+\sqrt{5}}{2}, x_2 = \dfrac{-1-\sqrt{5}}{2})
+    \end{aligned}
+\end{equation}
 
-In fact, such partition can be studied in a similar way to Case 3, where recurrence is utilized to provide a general recurrence from which we can get the number of ways. 
+\begin{equation}
+    1-x-x^2 = -(x-x_1)(x-x_2)
+\end{equation}
 
-First, the marginal condition should be studied. When there is $0$ boxes, the total ways of partition is $0$ (except for $n = 0$, where the answer should be $1$). Or formally, 
+Assuming that $\lambda_1$ and $\lambda_2$ are constants, and 
 
-Formula TBD.
+\begin{equation}
+    \begin{aligned}
+        \dfrac{x}{1-x-x^2} &= \dfrac{\lambda_1}{x-x_1} + \dfrac{\lambda_2}{x-x_2}\\
+                           &= -\dfrac{\lambda_1(x-x_2)+\lambda_2(x-x_1)}{1-x-x^2}\\
+                           &= -\dfrac{(\lambda_1+\lambda_2)x - \lambda_1x_2 - \lambda_2x_1}{1-x-x^2}\\
+    \end{aligned}
+\end{equation}
 
-Now we need to consider the general cases, where $n$ and $m$ are not $0$.
+Therefore 
 
-We divide ways of valid partition into to catogories: The way in which the fewest number in box is $1$, and the way in which there are no less than $2$ items in each box. 
+\begin{equation}
+    \begin{cases}
+        \lambda_1 + \lambda_2 = -1\\
+        \lambda_1x_2 + \lambda_2x_1 = 0
+    \end{cases}
+\end{equation}
 
-For the first catogory, a one-to-one mapping from this catogory and $p(n-1, m-1)$ can be established. Each partition in this catogory corresponds to a way with a fewer $1$ in partition. For example, when $n = 11, m = 4$, $\{1, 2, 3, 5\}$ corresponds to $\{2, 3, 5\}$, $\{1, 1, 3, 6\}$ corresponds to $\{1, 3, 6\}$. Therefore, the number of ways in the first catogory is $p(n-1, m-1)$.
+We can therefore get
 
-For the second catogory, a one-to-one mapping from this catogory and $p(n-m, m)$ can be established by substracting each number of items in box by one. For example, $\{2, 2, 3, 4\}$ corresponds to $\{1, 1, 2, 3\}$. Therefore, the number of ways in the second catogory is $p(n-m, m)$.
+\begin{equation}
+    \begin{aligned}
+        \lambda_1 &= \dfrac{x_1}{x_1-x_2} = \dfrac{\sqrt{5}-5}{10}\\
+        \lambda_2 &= \dfrac{-x_2}{x_1-x_2}= \dfrac{-\sqrt{5}-5}{10}\\
+    \end{aligned}
+\end{equation}
 
-The recurrence\footnote{It does not have a universally accepted name but can be refer to as recurrence of partition.} goes as 
+Therefore $G_0(x)$ can now be re-written as $\dfrac{\lambda_1}{x-x_1} + \dfrac{\lambda_2}{x-x_2}$.
 
-\begin{equation*}
-    p(n, m) = p(n-1, m-1) + p(n-m, m)
-\end{equation*}
+By the definition of Maclaurin series, we can get that 
 
-Some additional information regarding generating function TBD.
+\begin{equation}
+    \begin{aligned}
+        G_0(x) &= \dfrac{\lambda_1}{x-x_1} + \dfrac{\lambda_2}{x-x_2} \\
+        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1}{x_1^{n+1}}x^n -\sum_{n=0}^{\infty}\dfrac{\lambda_2}{x_2^{n+1}}x^n\\
+        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1 x_2^{n+1} + \lambda_2 x_1^{n+1}}{(x_1x_2)^{n+1}}x^n\\
+        &=\sum_{n=0}^{\infty}\dfrac{\frac{1}{\sqrt{5}} x_2^n - \frac{1}{\sqrt{5}} x_1^n}{(-1)^{n}}x^n\\
+        &=\sum_{n=0}^{\infty}\dfrac{x_2^n - x_1^n}{\sqrt{5}(-1)^{n}}x^n\\
+        &=\sum_{n=0}^{\infty}\dfrac{(\frac{-1-\sqrt{5}}{2})^n - (\frac{-1+\sqrt{5}}{2})^n}{\sqrt{5}(-1)^{n}}x^n\\
+        &=\sum_{n=0}^{\infty}\dfrac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}x^n\\
+    \end{aligned}
+\end{equation}
 
-The transition from Problem 4.2 to Problem 4.1 is trivial. To allow empty boxes, we only need to add $m$ items and remove one from each box.
+By the definition of the GF, the coefficient of the $n$-th term is the $n$-th term of Fibonacci sequence.
 
-Example TBD. 
+\begin{equation}
+    F_n = \dfrac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}
+\end{equation}
 
-\begin{equation*}
-    p'(n, m) = p(n + m, m)
-\end{equation*}
+\section{Verification}
+
+Despite the complicated process of finding the closed term expression, the conclusion can be verified both algebraically and graphically simply.
+
+\subsection{Algebraic Verification}
+
+It can be noticed that the Golden Ratio is found in the closed form. Let $\varphi = \dfrac{1+\sqrt{5}}{2}$ and $\psi = \dfrac{1-\sqrt{5}}{2}$. We have 
+
+\begin{equation}
+    \begin{aligned}
+        \varphi^2 &= 1 + \varphi\\
+        \psi^2 &= 1 + \psi\\
+    \end{aligned}
+\end{equation}
+
+Let the statement $P_{k}$ be ``$F_{k} = \dfrac{\varphi^k - \psi^k}{\sqrt{5}}$''.
+
+$P_0$ is true because $F_0 = \dfrac{\varphi^0 - \psi^0}{\sqrt{5}} = 0$.
+
+$P_1$ is true because $F_1 = \dfrac{\varphi^1 - \psi^1}{\sqrt{5}} = 1$.
+
+For some positive integer $k>1$, assume $\forall i \in \mathbb{N}\cap[0, k-1], P_{i}$ is true.
+
+Then
+
+\begin{equation}
+    \begin{cases}
+        F_{k-1} = \dfrac{\varphi^{k-1} - \psi^{k-1}}{\sqrt{5}}\\
+        F_{k-2} = \dfrac{\varphi^{k-2} - \psi^{k-2}}{\sqrt{5}}\\
+    \end{cases}
+\end{equation}
+
+Then
+
+\begin{equation}
+    \begin{aligned}
+        F_{k} &= F_{k-1} + F_{k-2}\\
+              &= \dfrac{\varphi^{k-1} - \psi^{k-1}}{\sqrt{5}} + \dfrac{\varphi^{k-2} - \psi^{k-2}}{\sqrt{5}}\\
+              &= \dfrac{(\varphi\times\varphi^{k-2} - \psi\times\psi^{k-2})}{\sqrt{5}} + \dfrac{\varphi^{k-2} - \psi^{k-2}}{\sqrt{5}}\\
+              &= \dfrac{(\varphi^{k-2}(1+\varphi) - \psi^{k-2}(1+\psi))}{\sqrt{5}}\\
+              &= \dfrac{(\varphi^{k-2}\varphi^2 - \psi^{k-2}\psi^2)}{\sqrt{5}}\\
+              &= \dfrac{(\varphi^{k} - \psi^{k})}{\sqrt{5}}\\
+    \end{aligned}
+\end{equation}
+
+Which means $P_{k}$ is true.
+
+\begin{equation}
+    \begin{cases}
+        &\forall n \in \{0,1\}, P_n\, \text{is true}\\
+        &\forall n \ge 2, (P_{0}, P_{1} \cdots P_{n-1}\, \text{is true})\Rightarrow P_{n}\\
+    \end{cases}
+\end{equation}
+
+According to the strong mathematical induction, $P_{n}$ is true for all $n \in \mathbb{N}$.
+
+\subsection{Numerical Verification}
+
+% More description needed
+
+We can plot the \textit{derived generating function} (shown in Equation \ref{eq.fxg0x}) with the first few terms of \textit{generating function by definition} (shown in Equation \ref{eq.g0def}). We can notice that the latter is a good approximation of the former, as is shown in Figure \ref{fig.verif}. This suggests that the derived generating function is indeed the correct one.
+
+\begin{figure}[ht!]
+    \centering
+    \resizebox{\textwidth}{!}{\input{facvspoly.pgf}}
+    \caption{Verification of the generating function.}
+    \label{fig.verif}
+\end{figure}
+
+\section{Reflection}
+
+This essay discussed the generating functions and utilized it to derive a closed form expression of Fibonacci sequence. It also provided two verifications on the mathematical process. Additionally, this essay revealed the connection between two parts of modern mathematics: combinatorics and analysis (calculus), revealling the interconnection in mathematics. However, the essay lacks discussion on more general cases. 
+
+% and exponential asymptote should be added as well 
+
+\bibliographystyle{apacite}
+\bibliography{cit.bib}
+
+\section*{Appendix}
+
+\lstinputlisting[
+    caption={Numerical Verification},
+    label=lst.verif
+]{cmp.py}
+
+%\end{tcolorbox}
 
 \end{document}
 
