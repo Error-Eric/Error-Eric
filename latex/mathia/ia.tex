@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[12pt]{article}
 \usepackage{tikz}
 \usepackage{apacite}
 \usepackage{tabularx}
@@ -12,7 +12,11 @@
 \usepackage{rotating}
 \usepackage{colortbl}
 \usepackage{tcolorbox}
+\usepackage{lastpage}
+\usepackage{setspace}
 \usepackage[absolute]{textpos}
+
+\doublespacing
 
 \tcbuselibrary{breakable}
 % Code listings
@@ -48,9 +52,11 @@
 
 \begin{titlepage}
     \title{\textbf{From Fibonacci Sequences to Generating Functions \\ \small Math HL Internal Assessment}}
-    \author{Zhou Changhui}
+    %\author{Zhou Changhui}
     \date{\today}
+    \centering
     \maketitle
+    Page Count: \pageref{LastPage}
     %\tableofcontents
 \end{titlepage}
 
@@ -72,9 +78,9 @@ During the study of mathematics, there are a number of important sequences that 
     \end{equation}
 \end{tcolorbox}
 
-Fibonacci sequence is very useful in mathematics, computer science and can be found in nature. The sequence itself is the solution to the Fibonacci Rabbit problem. Additionally, the sequence (or generalized Fibonacci sequences) give solution to many combinatorics problems. For example, the number of ways to walk $n$ steps of stairs with the condition that each time either $1$ or $2$ steps cam be taken. In computer science, a consequtive pair in Fibonacci sequence can be used to test the worst posibble performance of algorithms like Euclidean Greatest Common Divisior (GCD) algorithm. Fibonacci trees and heaps are also very effective data structures, whose analysis requires the knowledge of Fibonacci sequence.
+Fibonacci sequence is very useful in mathematics, computer science and can be found in nature. The sequence itself is the solution to the Fibonacci Rabbit problem. Additionally, the sequence (or generalized Fibonacci sequences) give solution to many combinatorics problems. For example, the number of ways to walk $n$ steps of stairs with the condition that each time either $1$ or $2$ steps can be taken. In computer science, a consecutive pair in Fibonacci sequence can be used to test the worst possible performance of algorithms like Euclidean Greatest Common Divisor (GCD) algorithm. Fibonacci trees and heaps are also very effective data structures, whose analysis requires the knowledge of Fibonacci sequence.
 
-Despite the simple definition of the Fibonacci sequence, its closed-form expression is not as straightforwad as the expression of artihmatic sequence and geometric sequence. Despite having learnt the Fibonacci sequence for centuries, it was not until the 1800s did human discover an accurate closed-form expression. In this paper, we will study the closed-form expression of the Fibonacci sequence.
+Despite the simple definition of the Fibonacci sequence, its closed-form expression is not as straightforward as the expression of arithmetic sequence and geometric sequence. Despite having learnt the Fibonacci sequence for centuries, it was not until the 1800s did human discover an accurate closed-form expression. In this paper, we will study the closed-form expression of the Fibonacci sequence.
 
 \begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Problem]
     What is $F_{n}$? Express $F_{n}$ in terms of $n$.
@@ -232,7 +238,7 @@ It can be noticed that for every vertical column with $n\ge 2$, it holds that th
     \end{align}
 \end{subequations}
 
-Therefore, by substracting $G_0(x)$ with $xG_0(x)$ and $x^2G_0(x)$, we can get Equation \ref{eq.3to1}, which can be further manipulated to get Equation \ref{eq.fxg0x} and Equation \ref{eq.g0sol}.
+Therefore, by subtracting $G_0(x)$ with $xG_0(x)$ and $x^2G_0(x)$, we can get Equation \ref{eq.3to1}, which can be further manipulated to get Equation \ref{eq.fxg0x} and Equation \ref{eq.g0sol}.
 
 \begin{equation}
     \label{eq.3to1}
@@ -394,7 +400,7 @@ We can plot the \textit{derived generating function} (shown in Equation \ref{eq.
 
 \section{Reflection}
 
-This essay discussed the generating functions and utilized it to derive a closed form expression of Fibonacci sequence. It also provided two verifications on the mathematical process. Additionally, this essay revealed the connection between two parts of modern mathematics: combinatorics and analysis (calculus), revealling the interconnection in mathematics. However, the essay lacks discussion on more general cases. 
+This essay discussed the generating functions and utilized it to derive a closed form expression of Fibonacci sequence. It also provided two verifications on the mathematical process. Additionally, this essay revealed the connection between two parts of modern mathematics: combinatorics and analysis (calculus), revealing the interconnection in mathematics. However, the essay lacks discussion on more general cases. 
 
 % and exponential asymptote should be added as well 
 
