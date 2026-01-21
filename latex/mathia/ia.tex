@@ -52,8 +52,8 @@
 
 \begin{titlepage}
     \title{\textbf{From Fibonacci Sequences to Generating Functions \\ \small Math HL Internal Assessment}}
-    %\author{Zhou Changhui}
-    \date{\today}
+    \author{mhz237}
+    \date{}
     \centering
     \maketitle
     Page Count: \pageref{LastPage}
@@ -62,7 +62,7 @@
 
 \section{Introduction}
 
-During the study of mathematics, there are a number of important sequences that is commonly studied. Fibonacci sequence is usually the first sequence that a learner may meet whose term is determined by not only the previous term (and probably some coefficients), but the previous several terms (recurrence relation). To be more specific, the Fibonacci sequence is defined as follows.
+During the study of mathematics, there are a number of important sequences that is commonly studied. Fibonacci sequence is usually the first sequence that a learner may meet whose term is determined by not only the previous term (and probably some coefficients), but the previous two terms (recurrence relation). Except for the first two terms, every term of Fibonacci sequence is the sum of the previous two terms. To be more specific, the Fibonacci sequence is defined as follows.
 
 \begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Definition: Fibonacci sequence]
     \label{def.fib}
@@ -78,16 +78,16 @@ During the study of mathematics, there are a number of important sequences that 
     \end{equation}
 \end{tcolorbox}
 
-Fibonacci sequence is very useful in mathematics, computer science and can be found in nature. The sequence itself is the solution to the Fibonacci Rabbit problem. Additionally, the sequence (or generalized Fibonacci sequences) give solution to many combinatorics problems. For example, the number of ways to walk $n$ steps of stairs with the condition that each time either $1$ or $2$ steps can be taken. In computer science, a consecutive pair in Fibonacci sequence can be used to test the worst possible performance of algorithms like Euclidean Greatest Common Divisor (GCD) algorithm. Fibonacci trees and heaps are also very effective data structures, whose analysis requires the knowledge of Fibonacci sequence.
+Fibonacci sequence is very useful in mathematics, computer science and can be found in nature. The sequence itself is the solution to the Fibonacci Rabbit problem. Additionally, the sequence (or generalized Fibonacci sequences) give solution to many combinatorics problems. For example, the number of ways to walk $n$ steps of stairs with the condition that each time either $1$ or $2$ steps can be taken. In computer science, a consecutive pair in Fibonacci sequence can be used to test the worst possible performance of algorithms like Euclidean Greatest Common Divisor (GCD) algorithm. Fibonacci trees and heaps are also very effective data structures, whose construction and analysis requires the knowledge of Fibonacci sequence.
 
-Despite the simple definition of the Fibonacci sequence, its closed-form expression is not as straightforward as the expression of arithmetic sequence and geometric sequence. Despite having learnt the Fibonacci sequence for centuries, it was not until the 1800s did human discover an accurate closed-form expression. In this paper, we will study the closed-form expression of the Fibonacci sequence.
+Despite the simple definition of the Fibonacci sequence, its closed-form expression is not as straightforward as the expression of arithmetic sequence and geometric sequence. There are records of patterns of Fibonacci sequence in ancient India (since around 200 BCE), and it was reinvented and published by Leonardo of Pisa (Fibonacci) and Liber Abaci (1202). However, it was not until the 1800s did human discover an accurate closed-form expression \cite{BritannicaFibonacci}. It is also exceptionally interesting that the sequence, despite being defined in a completely rational way, has inevitable irrational numbers in its closed-form formula. In this paper, we will study the closed-form expression of the Fibonacci sequence.
 
 \begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Problem]
     What is $F_{n}$? Express $F_{n}$ in terms of $n$.
 \end{tcolorbox}
  
 \begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Generalized Problem]
-    The first two terms $a_0$ and $a_1$ of an infinite sequence $\{a_n\}$ is given. The following terms are given by the formula $a_n = k_0 + k_1 a_{n-1} + k_2 a_{n-2}$. What is $a_n$?
+    The first two terms $a_0$ and $a_1$ of an infinite sequence $\{a_n\}$ is given. The following terms are given by the formula $a_n =p a_{n-1} + q a_{n-2}$. What is $a_n$?
 \end{tcolorbox}
 
 \section{Background Knowledge and Definition}
@@ -131,7 +131,7 @@ Most commonly used function has a Maclaurin series. In this essay, the main kind
 
 \subsection{Generating functions}
 
-Functions, on the other hand, have some ideal properties that can facilitate our understanding. In mathematics, a generating function is a representation of an infinite sequence of numbers as the coefficients of a formal power series (wikipedia, need to change cite sources). 
+Functions, on the other hand, have some ideal properties that can facilitate our understanding. To study the property of a series, it may be convenient to write them as the coefficients of an infinitely extending polynomial. In mathematics, a generating function is a clothesline on which we hang up a sequence of numbers for display \cite{wilf1990generatingfunctionology}.
 
 \begin{tcolorbox}[colback=purple!5!white, colframe=purple!75!black, title=Definition: Generating Function]
     For a sequence $\{a_i\}$, its generating function is defined as: 
@@ -209,7 +209,9 @@ We can notice that the generating function of $\{b_i\}$ is the same as $B(x)$.
 
 %\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=The GF of Fibonacci sequence]
 
-The definition of Fibonacci sequence is given by Equation \ref{eq.deffib}.
+The definition of Fibonacci sequence is given by Equation \eqref{eq.deffib}.
+
+\section{Analysis}
 
 We noticed that $F_{n-1}$ and $F_{n-2}$ are the shift of sequence that can be described by multiplying the generating function $G_0(x)$ by $x^k$. We can list $G_0(x), xG_0(x), x^2G_0(x)$ and their corresponding sequence as Table \ref{tab.shift}.
 
@@ -227,42 +229,58 @@ $x^2G_0(x)$ & $0$ & $0$ & $F_0$ & $F_1$ & $\cdots$ & $F_{n-2}$ & $F_{n-1}$ & $F_
 \label{tab.shift}
 \end{table}
 
-It can be noticed that for every vertical column with $n\ge 2$, it holds that the sum of the lower two terms equals the upper term, by the definition of Fibonacci sequence. The terms before $2$ can be manipulated easily. By forcing filling up the $1$ terms, we can get three equations as is shown in Equation \ref{eq.3gfs}.
+It can be noticed that for every vertical column with $n\ge 2$, it holds that the sum of the lower two terms equals the upper term, by the definition of Fibonacci sequence. The terms before $2$ can be manipulated easily. By forcing filling up the $1$ terms, we can get three equations as is shown in Equation \eqref{eq.3gfs}\footnote{Some equations in this essay is colored to emphasize that terms of the same color have the same degree of $x$.}.
 
 \begin{subequations}
     \label{eq.3gfs}
     \begin{align}
-        G_0(x)      &=     &\sum_{n=0}^{\infty} F_n x^n =    &F_0x^0 + &F_1x^1 + &F_2x^2 + &F_3x^3\cdots \label{eq.g0def}\\
-        xG_0(x)     &= 0 + &\sum_{n=0}^{\infty} F_n x^{n+1} = &0x^0 + &F_0x^1 + &F_1x^2 + &F_2x^3\cdots\\
-        x+x^2G_0(x) &= 1 + &\sum_{n=0}^{\infty} F_n x^{n+2} = &0x^0 + &1x^1 + &F_0x^2 + &F_1x^3\cdots
+        G_0(x)      &=     &\sum_{n=0}^{\infty} F_n x^n =
+        &\textcolor{red!70!black}{F_0x^0} + 
+        &\textcolor{blue!50!black}{F_1x^1} + 
+        &\textcolor{green!50!black}{F_2x^2} + 
+        &\textcolor{orange!60!black}{F_3x^3}\cdots \label{eq.g0def}\\
+        xG_0(x)     &= 0 + &\sum_{n=0}^{\infty} F_n x^{n+1} = 
+        &\textcolor{red!70!black}{0x^0} + 
+        &\textcolor{blue!50!black}{F_0x^1} + 
+        &\textcolor{green!50!black}{F_1x^2} + 
+        &\textcolor{orange!60!black}{F_2x^3}\cdots\\
+        x+x^2G_0(x) &= 1 + &\sum_{n=0}^{\infty} F_n x^{n+2} = 
+        &\textcolor{red!70!black}{0x^0} + 
+        &\textcolor{blue!50!black}{1x^1} + 
+        &\textcolor{green!50!black}{F_0x^2} + 
+        &\textcolor{orange!60!black}{F_1x^3}\cdots
     \end{align}
 \end{subequations}
 
-Therefore, by subtracting $G_0(x)$ with $xG_0(x)$ and $x^2G_0(x)$, we can get Equation \ref{eq.3to1}, which can be further manipulated to get Equation \ref{eq.fxg0x} and Equation \ref{eq.g0sol}.
+Therefore, by subtracting $G_0(x)$ with $xG_0(x)$ and $x^2G_0(x)$, we can get Equation \eqref{eq.3to1}.
 
 \begin{equation}
     \label{eq.3to1}
     \begin{aligned}
          &G_0(x)-xG_0(x)-x^2G_0(x)-x\\
-        =&(F_0 - 0 - 0)x^0 + (F_1 - F_0 - 1)x^1 + (F_2 - F_1 - F_0)x^2 +\\
-        & (F_3 - F_2 - F_1) x^3 + \cdots\\
+        =&\textcolor{red!70!black}{(F_0 - 0 - 0)}x^0 + \textcolor{blue!50!black}{(F_1 - F_0 - 1)}x^1 + \textcolor{green!50!black}{(F_2 - F_1 - F_0)}x^2 +\\
+         &\textcolor{orange!60!black}{(F_3 - F_2 - F_1)} x^3 + \cdots\\
         =& 0
     \end{aligned}
 \end{equation}
+
+By the definition of Fibonacci sequence, the coefficients of $x^n$ ($n\ge2$) are all zero and these terms are eliminated. Equation \eqref{eq.3to1} can be further manipulated to get Equation \eqref{eq.fxg0x}.
 
 \begin{equation}
     \label{eq.fxg0x}
     (1-x-x^2)G_0(x) = x
 \end{equation}
 
+Dividing $(1-x-x^2)$ on the both side, Equation \eqref{eq.g0sol} is obtained.
+
 \begin{equation}
     \label{eq.g0sol}
     G_0(x) = \frac{x}{1-x-x^2}
 \end{equation}
 
-We can therefore conclude that Equation \ref{eq.g0sol} is the generating function of Fibonacci sequence. However, a generating function in the factor form (instead of polynomial) does not help us understand the sequence. We can therefore use Maclaurin series to represent the GF in polynomial form.
+We can therefore conclude that Equation \eqref{eq.g0sol} is the generating function of Fibonacci sequence. However, a generating function in the factor form (instead of polynomial) does not help us understand the sequence. We can therefore use Maclaurin series to represent the GF in polynomial form.
 
-The definition of Maclaurin series is given in Equation \ref{eq.macl}. We need to find the Maclaurin series of $1/(1-x-x^2)$ to write the GF in polynomial form.
+The definition of Maclaurin series is given in Equation \eqref{eq.macl}. We need to find the Maclaurin series of $1/(1-x-x^2)$ to write the GF in polynomial form.
 
 The denominator of the generating function, $1-x-x^2$, can be factorized by finding its roots.
 
@@ -389,7 +407,7 @@ According to the strong mathematical induction, $P_{n}$ is true for all $n \in \
 
 % More description needed
 
-We can plot the \textit{derived generating function} (shown in Equation \ref{eq.fxg0x}) with the first few terms of \textit{generating function by definition} (shown in Equation \ref{eq.g0def}). We can notice that the latter is a good approximation of the former, as is shown in Figure \ref{fig.verif}. This suggests that the derived generating function is indeed the correct one.
+We can plot the \textit{derived generating function} (shown in Equation \eqref{eq.fxg0x}) with the first few terms of \textit{generating function by definition} (shown in Equation \eqref{eq.g0def}). It can be noticed that, as the number of terms increase, the blue lines (the first $n$ terms) get closer to the red line (the generating function). This indicates that the first few terms of the generating function by definition is a good approximation of the derived generating function, as is shown in Figure \ref{fig.verif}. This suggests that the derived generating function is indeed the correct one.
 
 \begin{figure}[ht!]
     \centering
@@ -398,9 +416,149 @@ We can plot the \textit{derived generating function} (shown in Equation \ref{eq.
     \label{fig.verif}
 \end{figure}
 
+\section{Generalized Problem}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=Generalized Problem]
+    The first two terms $b_0$ and $b_1$ of an infinite sequence $\{b_n\}$ is given. The following terms are given by the formula 
+    
+    \begin{equation}\label{eq.defb}
+        b_n = p b_{n-1} + q b_{n-2} \quad (n \ge 2)
+    \end{equation}
+    
+    What is $b_n$?
+
+    (It can be noticed that the special case where $p = q = 1$ is the Fibonacci sequence.)
+\end{tcolorbox}
+
+Similarly, we define the generating function of the sequence as follows.
+
+\begin{equation}
+    \label{eq.gb}
+    G_{b}(x) = \sum_{n=0}^\infty b_n x^n
+\end{equation}
+
+The equation involves three consecutive terms. We can therefore simulate the moving operation by multiplying the equation by $x$ and $x^2$ respectively.
+
+\begin{subequations}\label{eq.3gbx}
+    \begin{align}
+        G_{b}(x) &= \sum_{n=0}^\infty b_n x^n =
+        &\textcolor{red!70!black}{b_0} + 
+        &\textcolor{blue!50!black}{b_1 x} + 
+        &\textcolor{green!50!black}{b_2 x^2} + 
+        &\textcolor{orange!60!black}{b_3 x^3} 
+        &\cdots \label{eq.3x0gbx}\\
+        xG_{b}(x) &= \sum_{n=0}^\infty b_n x^{n+1} = 
+        &\textcolor{red!70!black}{0} + 
+        &\textcolor{blue!50!black}{b_0 x} + 
+        &\textcolor{green!50!black}{b_1 x^2} + 
+        &\textcolor{orange!60!black}{b_2 x^3} + 
+        &\cdots \label{eq.3x1gbx}\\
+        x^2G_{b}(x) &= \sum_{n=0}^\infty b_n x^{n+2}
+    \end{align}
+\end{subequations}
+
+
+In the general case, there is a coefficient in front of the terms of the definition. To utilize the identity, we have to construct corresponding terms in Equation \eqref{eq.3gbx}. To achieve that, we multiple Equation \eqref{eq.3x1gbx} by the coefficient $p$ and Equation \eqref{eq.3x2gbx} by the coefficient $q$. Therefore we have Equation \eqref{eq.x1gbx} and Equation \eqref{eq.x2gbx}. 
+
+\begin{subequations}\label{eq.4gbterms}
+    \begin{align}
+        G_{b}(x) &= \sum_{n=0}^\infty b_n x^n 
+        = &\textcolor{red!70!black}{b_0} 
+        &+ \textcolor{blue!50!black}{b_1 x} 
+        &+ \textcolor{green!50!black}{b_2 x^2} 
+        &+ \textcolor{orange!60!black}{b_3 x^3} + \cdots \label{eq.x0gbx}\\
+        p x G_{b}(x) &= \sum_{n=0}^\infty p b_n x^{n+1} 
+        = &0 
+        &+ \textcolor{blue!50!black}{p b_0 x} 
+        &+ \textcolor{green!50!black}{p b_1 x^2} 
+        &+ \textcolor{orange!60!black}{p b_2 x^3} + \cdots \label{eq.x1gbx}\\
+        q x^2 G_{b}(x) &= \sum_{n=0}^\infty q b_n x^{n+2} 
+        = &0 &+ 0
+        &+ \textcolor{green!50!black}{q b_0 x^2} 
+        &+ \textcolor{orange!60!black}{q b_1 x^3} + \cdots \label{eq.x2gbx}
+    \end{align}
+\end{subequations}
+
+The definition Equation \eqref{eq.defb} shows that 
+
+\begin{equation}\label{eq.defb2}
+    \forall n\in\mathbb{N}, n\ge2, b_n - p b_{n-1} - q b_{n-2}= 0
+\end{equation}
+
+Therefore subtracting the sum of Equation \eqref{eq.x1gbx} and Equation \eqref{eq.x2gbx} from Equation \eqref{eq.x0gbx}, we have Equation \eqref{eq.fxgbx}, whose $x^n(n\ge2)$ terms are all zero.
+
+\begin{equation}\label{eq.fxgbx}
+    \begin{aligned}
+    &(1 - p x - q x^2) G_b(x)\\
+    =& \textcolor{red!70!black}{b_0} \\
+    &+ \textcolor{blue!50!black}{(b_1 - p b_0)} x \\
+    &+ \textcolor{green!50!black}{(b_2 - p b_1 - q b_0)} x^2 \\
+    &+ \textcolor{orange!60!black}{(b_3 - p b_2 - q b_1)} x^3 + \cdots
+    \end{aligned}
+\end{equation}
+
+The green and orange colored bracket and all the following terms are zero.
+
+With algebraic manipulation, we can move all things to the right and find $G_b(x)$, as is shown in 
+
+\begin{equation}\label{eq.gbxans}
+    G_b(x)= \dfrac{\textcolor{red!70!black}{b_0}+ \textcolor{blue!50!black}{(b_1 - p b_0)} x}{1 - p x - q x^2}
+\end{equation}
+
+All the remaining is following the process of finding the Maclaurin series.
+
+Using the root formula, we can factorize the denominator $1 - p x - q x^2$ let the roots be $\alpha$ and $\beta$. 
+
+\begin{equation}\label{eq.factorizedenom}
+    \alpha = \dfrac{p+ \sqrt{p^2 + 4q}}{-2q}, \beta = \dfrac{p- \sqrt{p^2 + 4q}}{-2q}
+\end{equation}
+
+It can also be noticed that $\alpha \times \beta = -\dfrac{1}{q}$
+
+Assuming $\mu, \rho$ are constants and $\dfrac{\mu}{x-\alpha} + \dfrac{\rho}{x-\beta} = G_b(x)$, we can solve for $\mu$ and $\rho$.
+
+Due to the page limit, $\mu$ and $\rho$ are directly given:
+
+\begin{equation}\label{eq.mu1mu2}
+    \begin{aligned}
+        \mu &= \dfrac{\alpha b_0+b_1-p b_0}{\alpha+\beta}\\
+        \rho &= \dfrac{\alpha b_0-b_1+p b_0}{\alpha+\beta}
+    \end{aligned}
+\end{equation}
+
+Then
+
+\begin{equation}\label{eq.explicit2}
+    \begin{aligned} 
+        -G_b(x) &= \dfrac{\mu}{x-\alpha} + \dfrac{\rho}{x-\beta}\\
+                &= \sum_{n=0}^{\infty} \dfrac{\mu}{\alpha^{n+1}}x^n + \sum_{n=0}^{\infty} \dfrac{\rho}{\beta^{n+1}}x^n\\
+                &= \sum_{n=0}^{\infty} (\dfrac{\mu\beta^{n+1}+\rho\alpha^{n+1}}{(\alpha\beta)^{n+1}})x^n
+    \end{aligned}
+\end{equation}
+
+Therefore
+
 \section{Reflection}
 
-This essay discussed the generating functions and utilized it to derive a closed form expression of Fibonacci sequence. It also provided two verifications on the mathematical process. Additionally, this essay revealed the connection between two parts of modern mathematics: combinatorics and analysis (calculus), revealing the interconnection in mathematics. However, the essay lacks discussion on more general cases. 
+This essay discussed the generating functions and utilized it to derive a closed form expression of Fibonacci sequence. It also provided two verifications on the mathematical process. Additionally, this essay revealed the connection between two parts of modern mathematics: combinatorics and analysis (calculus), revealing the interconnection in mathematics.
+
+The use of generating function is not limited to finding the closed form of a sequence. It can also 
+
+\begin{itemize}
+    \item Find averages and other statistical properties of a given sequence.
+    \item Find asymptotic formulas for a given sequence.
+    \item Prove some advanced identities \cite{wilf1990generatingfunctionology}.
+\end{itemize}
+
+This essay include one kind of generalization of the Fibonacci sequence, and proved that generating function is still useful for such generalization. However, there are other generalizations of the Fibonacci sequence that are not included in this essay, which may include
+
+\begin{itemize}
+    \item ``Tribonacci'' or ``n-bonacci'' sequence, where the terms are the sum of the previous three or $n$ terms. This can be solved by listing of all the $x^k G(x)$ terms. However, the explicit expression is very long and hard to calculate \cite{Tribonacci}.
+    \item Multiplication Fibonacci sequence, where the terms are the product of the previous two terms. This can be solved by realizing the logarithm of the terms form a normal Fibonacci sequence and find the closed form expression for the logarithm of each term.
+    \item Abelian group Fibonacci sequence, where the elements are communicative but does not have all the properties of integers. For example, the Fibonacci sequence of vectors or integers modulo a prime number. Depending on the properties of the group, the generating function may no longer be a viable method, and algorithms like matrix quick pow or BSGS algorithm may be helpful.
+\end{itemize}
+
+This essay did not include further discussion on the application of generating function due to the page limit.
 
 % and exponential asymptote should be added as well 
 
