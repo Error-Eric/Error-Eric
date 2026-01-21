@@ -23,7 +23,7 @@ plt.plot(x, Gx, label="Generating function 1/(1 - x - x^2)")
 plt.legend()
 plt.xlabel("x")
 plt.ylabel("Value")
-plt.title("Finbonacci GF v.s. The first k terms")
+plt.title("Fibonacci GF v.s. The first k terms")
 plt.grid(True)
 
 plt.show()
