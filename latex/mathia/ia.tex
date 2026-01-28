@@ -15,6 +15,7 @@
 \usepackage{lastpage}
 \usepackage{setspace}
 \usepackage[absolute]{textpos}
+\allowdisplaybreaks
 
 \doublespacing
 
@@ -51,7 +52,7 @@
 
 
 \begin{titlepage}
-    \title{\textbf{From Fibonacci Sequences to Generating Functions \\ \small Math HL Internal Assessment}}
+    \title{\textbf{Closed-Form Expressions of Fibonacci and Related Sequences via Generating Functions \\ \small Math AA HL Internal Assessment}}
     \author{mhz237}
     \date{}
     \centering
@@ -122,7 +123,7 @@ Most commonly used functions have a Maclaurin series. In this essay, the main ty
 \begin{tcolorbox}[colback=purple!5!white, colframe=blue!55!black, title=Theorem: The Maclaurin Series of 1/(x-a)]
     This essay does not focus on calculus; therefore, the Maclaurin series of $\dfrac{1}{x-a}$ will be given without proof.
     
-    \begin{equation}
+    \begin{equation}\label{eq.macl1}
         \dfrac{1}{x-a} = \sum_{k=0}^{\infty} \dfrac{1}{a^{k+1}} x^k \quad (\text{radius of convergence:} |x| < |a|)
     \end{equation}
 
@@ -152,15 +153,15 @@ Having the generating function defined this way, we can now express some sequenc
     \hline
     \textbf{Sequence Operation} & \textbf{GF Operation} \\
     \hline
-    Original sequence $(a_0, a_1, a_2, \dots)$ & $A(x) = \sum_{n=0}^{\infty} a_n x^n$ \\
-    Shift right by $k$: $(0, \dots, a_0, a_1, \dots)$ & $x^k A(x)$ \\
-    Shift left by 1: $(a_1, a_2, a_3, \dots)$ & $\dfrac{A(x) - a_0}{x}$ \\
+    Original sequence $(a_0, a_1, a_2, \dots)$ & $G_a(x) = \sum_{n=0}^{\infty} a_n x^n$ \\
+    Shift right by $k$: $(0, \dots, a_0, a_1, \dots)$ & $x^k G_a(x)$ \\
+    Shift left by 1: $(a_1, a_2, a_3, \dots)$ & $\dfrac{G_a(x) - a_0}{x}$ \\
     Scale by index: $(0, a_1, 2a_2, 3a_3, \dots)$ & $x A'(x)$ \\
-    Scale by constant $c$: $(c a_0, c a_1, \dots)$ & $c A(x)$ \\
-    Cumulative sum: $b_n = \sum_{k=0}^n a_k$ & $\dfrac{A(x)}{1 - x}$ \\
-    Convolution: $c_n = \sum_{k=0}^n a_k b_{n-k}$ & $A(x)\,B(x)$ \\
+    Scale by constant $c$: $(c a_0, c a_1, \dots)$ & $c G_a(x)$ \\
+    Cumulative sum: $b_n = \sum_{k=0}^n a_k$ & $\dfrac{G_a(x)}{1 - x}$ \\
+    Convolution: $c_n = \sum_{k=0}^n a_k b_{n-k}$ & $G_a(x)\,G_b(x)$ \\
     Alternating sign: $(a_0, -a_1, a_2, -a_3, \dots)$ & $A(-x)$ \\
-    Difference: $b_n = a_n - a_{n-1}$ & $(1 - x) A(x)$ \\
+    Difference: $b_n = a_n - a_{n-1}$ & $(1 - x) G_a(x)$ \\
     \hline
     \end{tabular}
 \end{table}
@@ -169,46 +170,50 @@ This table shows the usefulness and versatility of the generating function, desc
 
 \begin{tcolorbox}[colback=red!5!white, colframe=red!75!black, title=Proof, breakable]
 
-\textbf{Theorem:} If $A(x)$ is the generating function of $\{a_i\}$, then $B(x) = x^kA(x)$ is the generating function of $\{b_i\}$ obtained by shifting $\{a_i\}$ to the right by $k$ positions (and inserting $k$ zeros at the beginning).
+\textbf{Theorem:} If $G_u(x)$ is the generating function of $\{u_i\}$, then $G_v(x) = x^kG_u(x)$ is the generating function of $\{v_i\}$ obtained by shifting $\{u_i\}$ to the right by $k$ positions (and inserting $k$ zeros at the beginning).
 
 \textbf{Proof:} 
 
 From the definition of generating function, we have 
 
 \begin{equation}
-    A(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots
+    G_u(x) = \sum_{n=0}^\infty u_n x^n = u_0 + u_1 x + u_2 x^2 + \cdots
 \end{equation}
 
-Therefore we can get that 
+Therefore, we can get that 
 
 \begin{equation}
-    B(x) = x^kA(x) = \sum_{n=0}^\infty  a_n x^{n+k} = a_0 x^k + a_1 x^{k+1} + a_2 x^{k+2} + \cdots
+    G_v(x) = x^kG_u(x) = \sum_{n=0}^\infty  u_n x^{n+k} = u_0 x^k + u_1 x^{k+1} + u_2 x^{k+2} + \cdots
 \end{equation}
 
-We can shift $a$ by $k$ and $k$ zero term before the sequence to make a new sequence $b$. That is to say, $\{b_i\}$ is defined in the following way:
+We can shift $a$ by $k$ and $k$ zero term before the sequence to make a new sequence $b$. That is to say, $\{v_i\}$ is defined in the following way:
 
 \begin{equation}
-    b_i = \begin{cases}
+    v_i = \begin{cases}
         0, & i < k\\
-        a_{i-k}, & i \geq k
+        u_{i-k}, & i \geq k
     \end{cases}
 \end{equation}
 
-We can notice that the generating function of $\{b_i\}$ is the same as $B(x)$.
+We can notice that the generating function of $\{v_i\}$ is the same as $G_v(x)$.
 
 \begin{equation}
 \begin{aligned}
-\sum_{n=0}^\infty a_n x^{n+k}
-    &= \sum_{n=0}^{k-1} 0\cdot x^n + \sum_{n=k}^\infty a_{\,n-k} x^n \\[6pt]
-    &= \sum_{n=k}^\infty b_n x^n = B(x).
+\sum_{n=0}^\infty u_n x^{n+k}
+    &= \sum_{n=0}^{k-1} 0\cdot x^n + \sum_{n=k}^\infty u_{\,n-k} x^n \\[6pt]
+    &= \sum_{n=k}^\infty v_n x^n = G_v(x).
 \end{aligned}
 \end{equation}
 
 \end{tcolorbox}
 
-\subsection{Fibonacci sequence}
+\subsection{Notations}
 
-The definition of Fibonacci sequence is given by Equation \eqref{eq.deffib}.
+In this essay, the notation $G_p(x)$ is used to represent the generating function of a given sequence $\{p_n\}$.
+
+As is stated above, $F_n$ is the $n$-th term of the Fibonacci sequence. The definition of Fibonacci sequence is given by Equation \eqref{eq.deffib}. $\{b_n\}$ is a generalized Fibonacci sequence that is defined by the recurrence relation in Equation \eqref{eq.defb}.
+
+All other notations are numbers or statements that are defined when they first appear.
 
 \section{Analysis}
 
@@ -284,6 +289,7 @@ The definition of Maclaurin series is given in Equation \eqref{eq.macl}. We need
 The denominator of the generating function, $1-x-x^2$, can be factorized by finding its roots.
 
 \begin{equation}
+    \label{eq.x1x2}
     \begin{aligned}
         x &= \dfrac{-b\pm \sqrt{b^2 - 4ac}}{2a}\\
           &= \dfrac{1\pm\sqrt{(-1)^2+4}}{2\times(-1)}\\
@@ -306,7 +312,7 @@ Assuming that $\lambda_1$ and $\lambda_2$ are constants, and
     \end{aligned}
 \end{equation}
 
-Therefore 
+Implying that
 
 \begin{equation}
     \begin{cases}
@@ -328,17 +334,17 @@ Therefore $G_F(x)$ can now be re-written as $\dfrac{\lambda_1}{x-x_1} + \dfrac{\
 
 By the definition of Maclaurin series, we can get that 
 
-\begin{equation}
-    \begin{aligned}
-        G_F(x) &= \dfrac{\lambda_1}{x-x_1} + \dfrac{\lambda_2}{x-x_2} \\
-        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1}{x_1^{n+1}}x^n -\sum_{n=0}^{\infty}\dfrac{\lambda_2}{x_2^{n+1}}x^n\\
-        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1 x_2^{n+1} + \lambda_2 x_1^{n+1}}{(x_1x_2)^{n+1}}x^n\\
-        &=\sum_{n=0}^{\infty}\dfrac{\frac{1}{\sqrt{5}} x_2^n - \frac{1}{\sqrt{5}} x_1^n}{(-1)^{n}}x^n\\
-        &=\sum_{n=0}^{\infty}\dfrac{x_2^n - x_1^n}{\sqrt{5}(-1)^{n}}x^n\\
-        &=\sum_{n=0}^{\infty}\dfrac{(\frac{-1-\sqrt{5}}{2})^n - (\frac{-1+\sqrt{5}}{2})^n}{\sqrt{5}(-1)^{n}}x^n\\
-        &=\sum_{n=0}^{\infty}\dfrac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}x^n\\
-    \end{aligned}
-\end{equation}
+\begin{align}
+    %\begin{aligned}
+        G_F(x) &= \dfrac{\lambda_1}{x-x_1} + \dfrac{\lambda_2}{x-x_2} \notag \\
+        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1}{x_1^{n+1}}x^n -\sum_{n=0}^{\infty}\dfrac{\lambda_2}{x_2^{n+1}}x^n \text{\quad (Using Equation \eqref{eq.macl1})}\notag \\
+        &=-\sum_{n=0}^{\infty}\dfrac{\lambda_1 x_2^{n+1} + \lambda_2 x_1^{n+1}}{(x_1x_2)^{n+1}}x^n \text{\quad (Merging coefficients)}\notag \\
+        &=\sum_{n=0}^{\infty}\dfrac{\frac{1}{\sqrt{5}} x_2^n - \frac{1}{\sqrt{5}} x_1^n}{(-1)^{n}}x^n \text{\quad (Plugging in \eqref{eq.lambda} and \eqref{eq.x1x2})}\\
+        &=\sum_{n=0}^{\infty}\dfrac{x_2^n - x_1^n}{\sqrt{5}(-1)^{n}}x^n\notag\\
+        &=\sum_{n=0}^{\infty}\dfrac{(\frac{-1-\sqrt{5}}{2})^n - (\frac{-1+\sqrt{5}}{2})^n}{\sqrt{5}(-1)^{n}}x^n \text{\quad (Plugging in \eqref{eq.x1x2} again)}\notag \\
+        &=\sum_{n=0}^{\infty}\dfrac{(\frac{1+\sqrt{5}}{2})^n - (\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}x^n\notag 
+    %\end{aligned}
+\end{align}
 
 By the definition of the GF, the coefficient of the $n$-th term is the $n$-th term of Fibonacci sequence.
 
@@ -535,11 +541,11 @@ Then
         G_b(x) &= \dfrac{\mu}{x-\alpha} + \dfrac{\rho}{x-\beta}\\
                 &= \sum_{n=0}^{\infty} \dfrac{\mu}{\alpha^{n+1}}x^n + \sum_{n=0}^{\infty} \dfrac{\rho}{\beta^{n+1}}x^n\\
                 &= \sum_{n=0}^{\infty} (\dfrac{\mu\beta^{n+1}+\rho\alpha^{n+1}}{(\alpha\beta)^{n+1}})x^n\\
-                &= \sum_{n=0}^{\infty} (-q)^{n+1} (\mu\beta^{n+1}+\rho\alpha^{n+1}) x^n
+                &= \sum_{n=0}^{\infty} \boxed{(-q)^{n+1} (\mu\beta^{n+1}+\rho\alpha^{n+1})} x^n
     \end{aligned}
 \end{equation}
 
-Therefore we can get Equation \eqref{eq.conclusion2}, where $\alpha$ and $\beta$ are defined in Equation \eqref{eq.factorizedenom} and $\mu$ and $\rho$ are defined in Equation \eqref{eq.mu1mu2}.
+Since $G_b(x)$ gives the generating function of $\{b_n\}$, we can get Equation \eqref{eq.conclusion2}, where $\alpha$ and $\beta$ are defined in Equation \eqref{eq.factorizedenom} and $\mu$ and $\rho$ are defined in Equation \eqref{eq.mu1mu2}.
 
 \begin{equation}\label{eq.conclusion2}
     \boxed{b_n = (-q)^{n+1} (\mu\beta^{n+1}+\rho\alpha^{n+1})}
@@ -575,12 +581,12 @@ Further applications of generating functions were not explored in this essay.
 \bibliographystyle{apacite}
 \bibliography{cit.bib}
 
-\section*{Appendix}
+%\section*{Appendix}
 
-\lstinputlisting[
-    caption={Numerical Verification},
-    label=lst.verif
-]{cmp.py}
+%\lstinputlisting[
+%    caption={Numerical Verification},
+%    label=lst.verif
+%]{cmp.py}
 
 %\end{tcolorbox}
 
